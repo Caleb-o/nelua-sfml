@@ -575,3 +575,33 @@ function sfml.SoundStream.getMinDistance(self: *sfml.SoundStream <const>): float
 function sfml.SoundStream.getAttenuation(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getAttenuation', nodecl> end
 function sfml.SoundStream.getLoop(self: *sfml.SoundStream <const>): sfBool <cimport 'sfSoundStream_getLoop', nodecl> end
 function sfml.SoundStream.getPlayingOffset(self: *sfml.SoundStream <const>): sfml.Time <cimport 'sfSoundStream_getPlayingOffset', nodecl> end
+
+
+-- Clipboard
+global sfml.Context: type <cimport 'sfContext', nodecl, forwarddecl> = @record {}
+global sfml.Cursor: type <cimport 'sfCursor', nodecl, forwarddecl> = @record {}
+global sfml.Window: type <cimport 'sfWindow', nodecl, forwarddecl> = @record {}
+
+function sfml.Clipboard.getString(): cstring <cimport 'sfClipboard_getString', nodecl> end
+function sfml.Clipboard.getUnicodeString(): *[0]sfUint32 <cimport 'sfClipboard_getUnicodeString', nodecl> end
+function sfml.Clipboard.setString(text: cstring <const>): void <cimport 'sfClipboard_setString', nodecl> end
+function sfml.Clipboard.setUnicodeString(text: *[0]sfUint32): void <cimport 'sfClipboard_setUnicodeString', nodecl> end
+
+
+## if ccinfo.is_apple then
+global sfml.WindowHandle: type <cimport, nodecl> = @culong
+## else
+global sfml.WindowHandle: type <cimport, nodecl> = @pointer
+## end
+
+
+-- Video Mode
+global sfml.VideoMode: type <cimport 'sfVideoMode', nodecl> = @record {
+  width: cuint,
+  height: cuint,
+  bitsPerPixel: cuint
+}
+
+function sfml.VideoMode.getDesktopMode(): sfml.VideoMode <cimport 'sfVideoMode_getDesktopMode', nodecl> end
+function sfml.VideoMode.getFullscreenModes(count: *csize): *[0]sfml.VideoMode <cimport 'sfVideoMode_getFullscreenModes', nodecl> end
+function sfml.VideoMode.isValid(mode: sfVideoMode): sfBool <cimport 'sfVideoMode_isValid', nodecl> end
