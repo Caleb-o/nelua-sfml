@@ -642,109 +642,109 @@ function sfml.Joystick.update(): void <cimport 'sfJoystick_update', nodecl> end
 
 -- Control: Key
 global sfml.KeyCode: type <cimport 'sfKeyCode', nodecl, using> = @enum(cint) {
-  KeyUnknown = -1,
-  KeyA,
-  KeyB,
-  KeyC,
-  KeyD,
-  KeyE,
-  KeyF,
-  KeyG,
-  KeyH,
-  KeyI,
-  KeyJ,
-  KeyK,
-  KeyL,
-  KeyM,
-  KeyN,
-  KeyO,
-  KeyP,
-  KeyQ,
-  KeyR,
-  KeyS,
-  KeyT,
-  KeyU,
-  KeyV,
-  KeyW,
-  KeyX,
-  KeyY,
-  KeyZ,
-  KeyNum0,
-  KeyNum1,
-  KeyNum2,
-  KeyNum3,
-  KeyNum4,
-  KeyNum5,
-  KeyNum6,
-  KeyNum7,
-  KeyNum8,
-  KeyNum9,
-  KeyEscape,
-  KeyLControl,
-  KeyLShift,
-  KeyLAlt,
-  KeyLSystem,
-  KeyRControl,
-  KeyRShift,
-  KeyRAlt,
-  KeyRSystem,
-  KeyMenu,
-  KeyLBracket,
-  KeyRBracket,
-  KeySemicolon,
-  KeyComma,
-  KeyPeriod,
-  KeyQuote,
-  KeySlash,
-  KeyBackslash,
-  KeyTilde,
-  KeyEqual,
-  KeyHyphen,
-  KeySpace,
-  KeyEnter,
-  KeyBackspace,
-  KeyTab,
-  KeyPageUp,
-  KeyPageDown,
-  KeyEnd,
-  KeyHome,
-  KeyInsert,
-  KeyDelete,
-  KeyAdd,
-  KeySubtract,
-  KeyMultiply,
-  KeyDivide,
-  KeyLeft,
-  KeyRight,
-  KeyUp,
-  KeyDown,
-  KeyNumpad0,
-  KeyNumpad1,
-  KeyNumpad2,
-  KeyNumpad3,
-  KeyNumpad4,
-  KeyNumpad5,
-  KeyNumpad6,
-  KeyNumpad7,
-  KeyNumpad8,
-  KeyNumpad9,
-  KeyF1,
-  KeyF2,
-  KeyF3,
-  KeyF4,
-  KeyF5,
-  KeyF6,
-  KeyF7,
-  KeyF8,
-  KeyF9,
-  KeyF10,
-  KeyF11,
-  KeyF12,
-  KeyF13,
-  KeyF14,
-  KeyF15,
-  KeyPause,
-  KeyCount
+  Unknown = -1,
+  A,
+  B,
+  C,
+  D,
+  E,
+  F,
+  G,
+  H,
+  I,
+  J,
+  K,
+  L,
+  M,
+  N,
+  O,
+  P,
+  Q,
+  R,
+  S,
+  T,
+  U,
+  V,
+  W,
+  X,
+  Y,
+  Z,
+  Num0,
+  Num1,
+  Num2,
+  Num3,
+  Num4,
+  Num5,
+  Num6,
+  Num7,
+  Num8,
+  Num9,
+  Escape,
+  LControl,
+  LShift,
+  LAlt,
+  LSystem,
+  RControl,
+  RShift,
+  RAlt,
+  RSystem,
+  Menu,
+  LBracket,
+  RBracket,
+  Semicolon,
+  Comma,
+  Period,
+  Quote,
+  Slash,
+  Backslash,
+  Tilde,
+  Equal,
+  Hyphen,
+  Space,
+  Enter,
+  Backspace,
+  Tab,
+  PageUp,
+  PageDown,
+  End,
+  Home,
+  Insert,
+  Delete,
+  Add,
+  Subtract,
+  Multiply,
+  Divide,
+  Left,
+  Right,
+  Up,
+  Down,
+  Numpad0,
+  Numpad1,
+  Numpad2,
+  Numpad3,
+  Numpad4,
+  Numpad5,
+  Numpad6,
+  Numpad7,
+  Numpad8,
+  Numpad9,
+  F1,
+  F2,
+  F3,
+  F4,
+  F5,
+  F6,
+  F7,
+  F8,
+  F9,
+  F10,
+  F11,
+  F12,
+  F13,
+  F14,
+  F15,
+  Pause,
+  Count
 }
 
 global sfml.KeyDash: cint <cimport 'sfKeyDash', nodecl, const>
@@ -760,12 +760,12 @@ function sfml.Keyboard.setVirtualKeyboardVisible(visible: sfBool): void <cimport
 
 -- Control: Mouse
 global sfml.MouseButton: type <cimport 'sfMouseButton', nodecl, using> = @enum(cint) {
-  MouseLeft = 0,
-  MouseRight,
-  MouseMiddle,
-  MouseXButton1,
-  MouseXButton2,
-  MouseButtonCount,
+  Left = 0,
+  Right,
+  Middle,
+  XButton1,
+  XButton2,
+  ButtonCount,
 }
 
 global sfml.MouseWheel: type <cimport 'sfMouseWheel', nodecl, using> = @enum(cint) {
@@ -779,19 +779,19 @@ function sfml.Mouse.getPosition(relativeTo: *sfml.Window <const>): sfml.Vector2i
 function sfml.Mouse.setPosition(position: sfml.Vector2i, relativeTo: *sfml.Window <const>): void <cimport 'sfMouse_setPosition', nodecl> end
 
 global sfml.CursorType: type <cimport 'sfCursorType', nodecl, using> = @enum(cint) {
-  CursorArrow = 0,
-  CursorArrowWait,
-  CursorWait,
-  CursorText,
-  CursorHand,
-  CursorSizeHorizontal,
-  CursorSizeVertical,
-  CursorSizeTopLeftBottomRight,
-  CursorSizeBottomLeftTopRight,
-  CursorSizeAll,
-  CursorCross,
-  CursorHelp,
-  CursorNotAllowed
+  Arrow = 0,
+  ArrowWait,
+  Wait,
+  Text,
+  Hand,
+  SizeHorizontal,
+  SizeVertical,
+  SizeTopLeftBottomRight,
+  SizeBottomLeftTopRight,
+  SizeAll,
+  Cross,
+  Help,
+  NotAllowed
 }
 
 function sfml.Cursor.createFromPixels(pixels: *[0]sfUint8 <const>, size: sfml.Vector2u, hotspot: sfml.Vector2u): *sfml.Cursor <cimport 'sfCursor_createFromPixels', nodecl> end
@@ -817,3 +817,163 @@ function sfml.Sensor.getValue(sensor: sfml.SensorType): sfml.Vector3f <cimport '
 global sfml.Touch = @record{}
 function sfml.Touch.isDown(finger: cuint): sfBool <cimport 'sfTouch_isDown', nodecl> end
 function sfml.Touch.getPosition(finger: cuint, relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfTouch_getPosition', nodecl> end
+
+
+-- Event
+global sfml.EventType: type <cimport 'sfEventType', nodecl, using> = @enum(cint) {
+  Closed = 0,
+  Resized,
+  LostFocus,
+  GainedFocus,
+  TextEntered,
+  KeyPressed,
+  KeyReleased,
+  MouseWheelMoved,
+  MouseWheelScrolled,
+  MouseButtonPressed,
+  MouseButtonReleased,
+  MouseMoved,
+  MouseEntered,
+  KeyPressed,
+  KeyReleased,
+  MouseWheelMoved,
+  MouseWheelScrolled,
+  MouseButtonPressed,
+  MouseButtonReleased,
+  MouseMoved,
+  MouseEntered,
+  MouseLeft,
+  JoystickButtonPressed,
+  JoystickButtonReleased,
+  JoystickMoved,
+  JoystickConnected,
+  JoystickDisconnected,
+  TouchBegan,
+  TouchMoved,
+  TouchEnded,
+  SensorChanged,
+  Count
+}
+
+global sfml.KeyEvent: type <cimport 'sfKeyEvent', nodecl> = @record {
+  type: sfml.EventType,
+  code: sfml.KeyCode,
+  alt: sfBool,
+  control: sfBool,
+  shift: sfBool,
+  system: sfBool
+}
+
+global sfml.TextEvent: type <cimport 'sfTextEvent', nodecl> = @record {
+  type: sfml.EventType,
+  unicode: sfUint32
+}
+
+global sfml.MouseMoveEvent: type <cimport 'sfMouseMoveEvent', nodecl> = @record {
+  type: sfml.EventType,
+  x: cint,
+  y: cint
+}
+
+global sfml.MouseButtonEvent: type <cimport 'sfMouseButtonEvent', nodecl> = @record {
+  type: sfml.EventType,
+  button: sfml.MouseButton,
+  x: cint,
+  y: cint
+}
+
+global sfml.MouseWheelEvent: type <cimport 'sfMouseWheelEvent', nodecl> = @record {
+  type: sfml.EventType,
+  delta: cint,
+  x: cint,
+  y: cint
+}
+
+global sfml.MouseWheelScrollEvent: type <cimport 'sfMouseWheelScrollEvent', nodecl> = @record {
+  type: sfml.EventType,
+  wheel: sfml.MouseWheel,
+  delta: cint,
+  x: cint,
+  y: cint
+}
+
+global sfml.JoystickMoveEvent: type <cimport 'sfJoystickMoveEvent', nodecl> = @record {
+  type: sfml.EventType,
+  joystickId: cuint,
+  axis: sfml.JoystickAxis,
+  position: float32
+}
+
+global sfml.JoystickButtonEvent: type <cimport 'sfJoystickButtonEvent', nodecl> = @record {
+  type: sfml.EventType,
+  joystickId: cuint,
+  button: cuint
+}
+
+global sfml.JoystickConnectEvent: type <cimport 'sfJoystickConnectEvent', nodecl> = @record {
+  type: sfml.EventType,
+  joystickId: cuint
+}
+
+global sfml.SizeEvent: type <cimport 'sfSizeEvent', nodecl> = @record {
+  type: sfml.EventType,
+  width: cuint,
+  height: cuint
+}
+
+global sfml.TouchEvent: type <cimport 'sfTouchEvent', nodecl> = @record {
+  type: sfml.EventType,
+  finger: cuint,
+  x: cint,
+  y: cint
+}
+
+global sfml.SensorEvent: type <cimport 'sfSensorEvent', nodecl> = @record {
+  type: sfml.EventType,
+  sensorType: sfml.SensorType,
+  x: float32,
+  y: float32,
+  z: float32
+}
+
+global sfml.Event: type <cimport 'sfEvent',nodecl> = @union {
+  type: sfml.EventType,
+  size: sfml.SizeEvent,
+  key: sfml.KeyEvent,
+  text: sfml.TextEvent,
+  mouseMove: sfml.MouseMoveEvent,
+  mouseButton: sfml.MouseButtonEvent,
+  mouseWheel: sfml.MouseWheelEvent,
+  mouseWheelScroll: sfml.MouseWheelScrollEvent,
+  joystickMove: sfml.JoystickMoveEvent,
+  joystickButton: sfml.JoystickMoveEvent,
+  joystickConnect: sfml.JoystickMoveEvent,
+  touch: sfml.TouchEvent,
+  sensor: sfml.SensorEvent,
+}
+
+global sfml.WindowStyle: type <cimport 'sfWindowStyle', nodecl, using> = @enum(cint) {
+  None = 0,
+  Titlebar = 1 << 0,
+  Resize = 1 << 1,
+  Close = 1 << 2,
+  Fullscreen = 1 << 3
+}
+
+global sfml.DefaultStyle: cint <cimport 'sfDefaultStyle', nodecl, const>
+
+global sfml.ContextAttribute: type <cimport 'sfContextAttribute', nodecl, using> = @enum(cint) {
+  Default = 0,
+  Core = 1 << 0,
+  Debug = 1 << 2,
+}
+
+global sfml.ContextSettings: type <cimport 'sfContextSettings', nodecl> = @record {
+  depthBits: cuint,
+  stencilBits: cuint,
+  antialiasingLevel: cuint,
+  majorVersion: cuint,
+  minorVersion: cuint,
+  attributeFlags: sfUint32,
+  sRgbCapable: sfBool,
+}
