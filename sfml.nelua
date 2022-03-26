@@ -133,7 +133,7 @@ global sfml.HttpRequest: type <cimport 'sfml.HttpRequest', nodecl, forwarddecl> 
 global sfml.HttpResponse: type <cimport 'sfml.HttpResponse', nodecl, forwarddecl> = @record {}
 global sfml.Http: type <cimport 'sfml.Http', nodecl, forwarddecl> = @record {}
 global sfml.Packet: type <cimport 'sfml.Packet', nodecl, forwarddecl> = @record {}
-global sfml.SocketSelector: type <cimport 'sfSocketSelector', nodecl, forwarddecl> = @record {}
+global sfml.SocketSelector: type <cimport 'sfml.SocketSelector', nodecl, forwarddecl> = @record {}
 global sfml.TcpListener: type <cimport 'sfTcpListener', nodecl, forwarddecl> = @record {}
 global sfml.TcpSocket: type <cimport 'sfTcpSocket', nodecl, forwarddecl> = @record {}
 global sfml.UdpSocket: type <cimport 'sfUdpSocket', nodecl, forwarddecl> = @record {}
@@ -343,3 +343,74 @@ function sfml.Packet.writeFloat(self: *sfml.Packet, data: float32): void <cimpor
 function sfml.Packet.writeDouble(self: *sfml.Packet, data: float64): void <cimport 'sfPacket_writeDouble', nodecl> end
 function sfml.Packet.writeString(self: *sfml.Packet, data: cstring <const>): void <cimport 'sfPacket_writeString', nodecl> end
 function sfml.Packet.writeWideString(self: *sfml.Packet, data: *[0]cint): void <cimport 'sfPacket_writeWideString', nodecl> end
+
+
+-- Network: Selector
+global sfml.SocketStatus: type <cimport 'sfSocketStatus', nodecl, using> = @enum(cint) {
+  SocketDone = 0,
+  SocketNotReady,
+  SocketPartial,
+  SocketDisconnected,
+  SocketError
+}
+
+function sfml.SocketSelector.create(): *sfml.SocketSelector <cimport 'sfSocketSelector_create', nodecl> end
+function sfml.SocketSelector.copy(self: *sfml.SocketSelector <const>): *sfml.SocketSelector <cimport 'sfSocketSelector_copy', nodecl> end
+function sfml.SocketSelector.destroy(self: *sfml.SocketSelector): void <cimport 'sfSocketSelector_destroy', nodecl> end
+function sfml.SocketSelector.addTcpListener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_addTcpListener', nodecl> end
+function sfml.SocketSelector.addTcpSocket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_addTcpSocket', nodecl> end
+function sfml.SocketSelector.addUdpSocket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_addUdpSocket', nodecl> end
+function sfml.SocketSelector.removeTcpListener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_removeTcpListener', nodecl> end
+function sfml.SocketSelector.removeTcpSocket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_removeTcpSocket', nodecl> end
+function sfml.SocketSelector.removeUdpSocket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_removeUdpSocket', nodecl> end
+function sfml.SocketSelector.clear(self: *sfml.SocketSelector): void <cimport 'sfSocketSelector_clear', nodecl> end
+function sfml.SocketSelector.wait(self: *sfml.SocketSelector, timeout: sfml.Time): sfBool <cimport 'sfSocketSelector_wait', nodecl> end
+function sfml.SocketSelector.isTcpListenerReady(self: *sfml.SocketSelector <const>, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_isTcpListenerReady', nodecl> end
+function sfml.SocketSelector.isTcpSocketReady(self: *sfml.SocketSelector <const>, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_isTcpSocketReady', nodecl> end
+function sfml.SocketSelector.isUdpSocketReady(self: *sfml.SocketSelector <const>, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_isUdpSocketReady', nodecl> end
+
+function sfml.TcpListener.create(): *sfml.TcpListener <cimport 'sfTcpListener_create', nodecl> end
+function sfml.TcpListener.destroy(self: *sfml.TcpListener): void <cimport 'sfTcpListener_destroy', nodecl> end
+function sfml.TcpListener.setBlocking(self: *sfml.TcpListener, blocking: sfBool): void <cimport 'sfTcpListener_setBlocking', nodecl> end
+function sfml.TcpListener.isBlocking(self: *sfml.TcpListener <const>): sfBool <cimport 'sfTcpListener_isBlocking', nodecl> end
+function sfml.TcpListener.getLocalPort(self: *sfml.TcpListener <const>): cushort <cimport 'sfTcpListener_getLocalPort', nodecl> end
+function sfml.TcpListener.listen(self: *sfml.TcpListener <const>, port: cushort, address: sfml.IpAddress): sfml.SocketStatus <cimport 'sfTcpListener_listen', nodecl> end
+function sfml.TcpListener.accept(self: *sfml.TcpListener <const>, connected: *[0]*sfml.TcpSocket): sfml.SocketStatus <cimport 'sfTcpListener_accept', nodecl> end
+
+function sfml.TcpSocket.create(): *sfml.TcpSocket <cimport 'sfTcpSocket_create', nodecl> end
+function sfml.TcpSocket.destroy(self: *sfml.TcpSocket): void <cimport 'sfTcpSocket_destroy', nodecl> end
+function sfml.TcpSocket.setBlocking(self: *sfml.TcpSocket, blocking: sfBool): void <cimport 'sfTcpSocket_setBlocking', nodecl> end
+function sfml.TcpSocket.isBlocking(self: *sfml.TcpSocket <const>): sfBool <cimport 'sfTcpSocket_isBlocking', nodecl> end
+function sfml.TcpSocket.getLocalPort(self: *sfml.TcpSocket <const>): cushort <cimport 'sfTcpSocket_getLocalPort', nodecl> end
+function sfml.TcpSocket.getRemoteAddress(self: *sfml.TcpSocket <const>): sfml.IpAddress <cimport 'sfTcpSocket_getRemoteAddress', nodecl> end
+function sfml.TcpSocket.getRemotePort(self: *sfml.TcpSocket <const>): cushort <cimport 'sfTcpSocket_getRemotePort', nodecl> end
+function sfml.TcpSocket.connect(self: *sfml.TcpSocket, remoteAddress: sfml.IpAddress, remotePort: cushort, timeout: sfml.Time): sfml.SocketStatus <cimport 'sfTcpSocket_connect', nodecl> end
+function sfml.TcpSocket.disconnect(self: *sfml.TcpSocket): void <cimport 'sfTcpSocket_disconnect', nodecl> end
+function sfml.TcpSocket.send(self: *sfml.TcpSocket, data: pointer <const>, size: csize): sfml.SocketStatus <cimport 'sfTcpSocket_send', nodecl> end
+function sfml.TcpSocket.sendPartial(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus <cimport 'sfTcpSocket_sendPartial', nodecl> end
+function sfml.TcpSocket.receive(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus <cimport 'sfTcpSocket_receive', nodecl> end
+function sfml.TcpSocket.sendPacket(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus <cimport 'sfTcpSocket_sendPacket', nodecl> end
+function sfml.TcpSocket.receivePacket(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus <cimport 'sfTcpSocket_receivePacket', nodecl> end
+
+function sfml.UdpSocket.create(): *sfml.UdpSocket <cimport 'sfUdpSocket_create', nodecl> end
+function sfml.UdpSocket.destroy(self: *sfml.UdpSocket): void <cimport 'sfUdpSocket_destroy', nodecl> end
+function sfml.UdpSocket.setBlocking(self: *sfml.UdpSocket, blocking: sfBool): void <cimport 'sfUdpSocket_setBlocking', nodecl> end
+function sfml.UdpSocket.isBlocking(self: *sfml.UdpSocket <const>): sfBool <cimport 'sfUdpSocket_isBlocking', nodecl> end
+function sfml.UdpSocket.getLocalPort(self: *sfml.UdpSocket <const>): cushort <cimport 'sfUdpSocket_getLocalPort', nodecl> end
+function sfml.UdpSocket.bind(self: *sfml.UdpSocket <const>, port: cushort, address: sfml.IpAddress): sfml.SocketStatus <cimport 'sfUdpSocket_bind', nodecl> end
+function sfml.UdpSocket.unbind(self: *sfml.UdpSocket): void <cimport 'sfUdpSocket_unbind', nodecl> end
+function sfml.UdpSocket.send(self: *sfml.UdpSocket, data: pointer<const>, size: csize, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus <cimport 'sfUdpSocket_send', nodecl> end
+function sfml.UdpSocket.receive(self: *sfml.UdpSocket, data: pointer, size: csize, received: *csize, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus <cimport 'sfUdpSocket_receive', nodecl> end
+function sfml.UdpSocket.sendPacket(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus <cimport 'sfUdpSocket_sendPacket', nodecl> end
+function sfml.UdpSocket.receivePacket(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus <cimport 'sfUdpSocket_receivePacket', nodecl> end
+function sfml.UdpSocket.maxDatagramSize(): cuint <cimport 'sfUdpSocket_maxDatagramSize', nodecl> end
+
+global sfml.Listener = @record{}
+function sfml.Listener.setGlobalVolume(volume: float32): void <cimport 'sfListener_setGlobalVolume', nodecl> end
+function sfml.Listener.getGlobalVolume(): float32 <cimport 'sfListener_getGlobalVolume', nodecl> end
+function sfml.Listener.setPosition(position: sfml.Vector3f): void <cimport 'sfListener_setPosition', nodecl> end
+function sfml.Listener.getPosition(): sfml.Vector3f <cimport 'sfListener_getPosition', nodecl> end
+function sfml.Listener.setDirection(direction: sfml.Vector3f): void <cimport 'sfListener_setDirection', nodecl> end
+function sfml.Listener.getDirection(): sfml.Vector3f <cimport 'sfListener_getDirection', nodecl> end
+function sfml.Listener.setUpVector(upVector: sfml.Vector3f): void <cimport 'sfListener_setUpVector', nodecl> end
+function sfml.Listener.getUpVector(): sfml.Vector3f <cimport 'sfListener_getUpVector', nodecl> end
