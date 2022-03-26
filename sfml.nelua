@@ -1016,3 +1016,118 @@ function sfml.Context.destroy(self: *sfml.Context): void <cimport 'sfContext_des
 function sfml.Context.setActive(self: *sfml.Context, active: sfBool): sfBool <cimport 'sfContext_setActive', nodecl> end
 function sfml.Context.getSettings(self: *sfml.Context <const>): sfml.ContextSettings <cimport 'sfContext_getSettings', nodecl> end
 function sfml.Context.getActiveContextId(): sfUint64 <cimport 'sfContext_getActiveContextId', nodecl> end
+
+
+-- Graphics
+global sfml.CircleShape: type <cimport 'sfCircleShape', nodecl, forwarddecl> = @record {}
+global sfml.ConvexShape: type <cimport 'sfConvexShape', nodecl, forwarddecl> = @record {}
+global sfml.Font: type <cimport 'sfFont', nodecl, forwarddecl> = @record {}
+global sfml.Image: type <cimport 'sfImage', nodecl, forwarddecl> = @record {}
+global sfml.Shader: type <cimport 'sfShader', nodecl, forwarddecl> = @record {}
+global sfml.RectangleShape: type <cimport 'sfRectangleShape', nodecl, forwarddecl> = @record {}
+global sfml.RenderTexture: type <cimport 'sfRenderTexture', nodecl, forwarddecl> = @record {}
+global sfml.RenderWindow: type <cimport 'sfRenderWindow', nodecl, forwarddecl> = @record {}
+global sfml.Shape: type <cimport 'sfShape', nodecl, forwarddecl> = @record {}
+global sfml.Sprite: type <cimport 'sfSprite', nodecl, forwarddecl> = @record {}
+global sfml.Text: type <cimport 'sfText', nodecl, forwarddecl> = @record {}
+global sfml.Texture: type <cimport 'sfTexture', nodecl, forwarddecl> = @record {}
+global sfml.Transformable: type <cimport 'sfTransformable', nodecl, forwarddecl> = @record {}
+global sfml.VertexArray: type <cimport 'sfVertexArray', nodecl, forwarddecl> = @record {}
+global sfml.VertexBuffer: type <cimport 'sfVertexBuffer', nodecl, forwarddecl> = @record {}
+global sfml.View: type <cimport 'sfView', nodecl, forwarddecl> = @record {}
+
+
+global sfml.BlendFactor: type <cimport 'sfBlendFactor', nodecl, using> = @enum(cint) {
+  Zero = 0,
+  One,
+  SrcColor,
+  OneMinusSrcColor,
+  DstColor,
+  OneMinusDstColor,
+  SrcAlpha,
+  OneMinusSrcAlpha,
+  DstAlpha,
+  OneMinusDstAlpha
+}
+
+global sfml.BlendEquation: type <cimport 'sfBlendEquation', nodecl, using> = @enum(cint) {
+  Add = 0,
+  Subtract,
+  ReverseSubtract
+}
+
+global sfml.BlendMode: type <cimport 'sfBlendMode', nodecl> = @record {
+  colorSrcFactor: sfml.BlendFactor,
+  colorDstFactor: sfml.BlendFactor,
+  colorEquation: sfml.BlendEquation,
+  alphaSrcFactor: sfml.BlendFactor,
+  alphaDstFactor: sfml.BlendFactor,
+  alphaEquation: sfml.BlendEquation
+}
+
+global sfml.BlendAlpha: sfml.BlendMode <cimport 'sfBlendAlpha', nodecl, const>
+global sfml.BlendAdd: sfml.BlendMode <cimport 'sfBlendAdd', nodecl, const>
+global sfml.BlendMultiply: sfml.BlendMode <cimport 'sfBlendMultiply', nodecl, const>
+global sfml.BlendNone: sfml.BlendMode <cimport 'sfBlendNone', nodecl, const>
+
+global sfml.FloatRect: type <cimport 'sfFloatRect', nodecl> = @record {
+  left: float32,
+  top: float32,
+  width: float32,
+  height: float32
+}
+
+global sfml.IntRect: type <cimport 'sfIntRect', nodecl> = @record {
+  left: cint,
+  top: cint,
+  width: cint,
+  height: cint
+}
+
+global sfml.Color: type <cimport 'sfColor', nodecl> = @record {
+  r: sfUint8,
+  g: sfUint8,
+  b: sfUint8,
+  a: sfUint8
+}
+
+global sfml.Transform: type <cimport 'sfTransform', nodecl> = @record {
+  matrix: [9]float32
+}
+
+global sfml.Glyph: type <cimport 'sfGlyph', nodecl> = @record {
+  advance: float32,
+  bounds: sfml.FloatRect,
+  textureRect: sfml.IntRect
+}
+
+global sfml.Vertex: type <cimport 'sfVertex', nodecl> = @record {
+  position: sfml.Vector2f,
+  color: sfml.Color,
+  texCoords: sfml.Vector2f
+}
+
+global sfml.PrimitiveType: type <cimport 'sfPrimitiveType', nodecl, using> = @enum(cint) {
+  Points = 0,
+  Lines,
+  LineStrip,
+  Triangles,
+  TriangleStrip,
+  TriangleFan,
+  Quads
+}
+
+global sfml.LinesStrip: cint <cimport 'sfLinesStrip', nodecl, const>
+global sfml.TrianglesStrip: cint <cimport 'sfTrianglesStrip', nodecl, const>
+global sfml.TrianglesFan: cint <cimport 'sfTrianglesFan', nodecl, const>
+
+global sfml.RenderStates: type <cimport 'sfRenderStates', nodecl> = @record {
+  blendMode: sfml.BlendMode,
+  transform: sfml.Transform,
+  texture: *sfml.Texture,
+  shader: *sfml.Shader
+}
+
+global sfml.FontInfo: type <cimport 'sfFontInfo', nodecl> = @record {
+  family: cstring
+}
