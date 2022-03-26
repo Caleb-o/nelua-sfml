@@ -470,27 +470,53 @@ function sfml.Music.getAttenuation(self: *sfml.Music <const>): float32 <cimport 
 
 -- Audio: Sound
 function sfml.Sound.create(): *sfml.Sound <cimport 'sfSound_create', nodecl> end
-function sfml.Sound.copy(sound: *sfml.Sound <const>): *sfml.Sound <cimport 'sfSound_copy', nodecl> end
-function sfml.Sound.destroy(sound: *sfml.Sound): void <cimport 'sfSound_destroy', nodecl> end
-function sfml.Sound.play(sound: *sfml.Sound): void <cimport 'sfSound_play', nodecl> end
-function sfml.Sound.pause(sound: *sfml.Sound): void <cimport 'sfSound_pause', nodecl> end
-function sfml.Sound.stop(sound: *sfml.Sound): void <cimport 'sfSound_stop', nodecl> end
-function sfml.Sound.setBuffer(sound: *sfml.Sound, buffer: *sfml.SoundBuffer <const>): void <cimport 'sfSound_setBuffer', nodecl> end
-function sfml.Sound.getBuffer(sound: *sfml.Sound <const>): *sfml.SoundBuffer <cimport 'sfSound_getBuffer', nodecl> end
-function sfml.Sound.setLoop(sound: *sfml.Sound, loop: sfBool): void <cimport 'sfSound_setLoop', nodecl> end
-function sfml.Sound.getLoop(sound: *sfml.Sound <const>): sfBool <cimport 'sfSound_getLoop', nodecl> end
-function sfml.Sound.getStatus(sound: *sfml.Sound <const>): sfml.SoundStatus <cimport 'sfSound_getStatus', nodecl> end
-function sfml.Sound.setPitch(sound: *sfml.Sound, pitch: float32): void <cimport 'sfSound_setPitch', nodecl> end
-function sfml.Sound.setVolume(sound: *sfml.Sound, volume: float32): void <cimport 'sfSound_setVolume', nodecl> end
-function sfml.Sound.setPosition(sound: *sfml.Sound, position: sfml.Vector3f): void <cimport 'sfSound_setPosition', nodecl> end
-function sfml.Sound.setRelativeToListener(sound: *sfml.Sound, relative: sfBool): void <cimport 'sfSound_setRelativeToListener', nodecl> end
-function sfml.Sound.setMinDistance(sound: *sfml.Sound, distance: float32): void <cimport 'sfSound_setMinDistance', nodecl> end
-function sfml.Sound.setAttenuation(sound: *sfml.Sound, attenuation: float32): void <cimport 'sfSound_setAttenuation', nodecl> end
-function sfml.Sound.setPlayingOffset(sound: *sfml.Sound, timeOffset: sfml.Time): void <cimport 'sfSound_setPlayingOffset', nodecl> end
-function sfml.Sound.getPitch(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getPitch', nodecl> end
-function sfml.Sound.getVolume(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getVolume', nodecl> end
-function sfml.Sound.getPosition(sound: *sfml.Sound <const>): sfml.Vector3f <cimport 'sfSound_getPosition', nodecl> end
-function sfml.Sound.isRelativeToListener(sound: *sfml.Sound <const>): sfBool <cimport 'sfSound_isRelativeToListener', nodecl> end
-function sfml.Sound.getMinDistance(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getMinDistance', nodecl> end
-function sfml.Sound.getAttenuation(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getAttenuation', nodecl> end
-function sfml.Sound.getPlayingOffset(sound: *sfml.Sound <const>): sfml.Time <cimport 'sfSound_getPlayingOffset', nodecl> end
+function sfml.Sound.copy(self: *sfml.Sound <const>): *sfml.Sound <cimport 'sfSound_copy', nodecl> end
+function sfml.Sound.destroy(self: *sfml.Sound): void <cimport 'sfSound_destroy', nodecl> end
+function sfml.Sound.play(self: *sfml.Sound): void <cimport 'sfSound_play', nodecl> end
+function sfml.Sound.pause(self: *sfml.Sound): void <cimport 'sfSound_pause', nodecl> end
+function sfml.Sound.stop(self: *sfml.Sound): void <cimport 'sfSound_stop', nodecl> end
+function sfml.Sound.setBuffer(self: *sfml.Sound, buffer: *sfml.SoundBuffer <const>): void <cimport 'sfSound_setBuffer', nodecl> end
+function sfml.Sound.getBuffer(self: *sfml.Sound <const>): *sfml.SoundBuffer <cimport 'sfSound_getBuffer', nodecl> end
+function sfml.Sound.setLoop(self: *sfml.Sound, loop: sfBool): void <cimport 'sfSound_setLoop', nodecl> end
+function sfml.Sound.getLoop(self: *sfml.Sound <const>): sfBool <cimport 'sfSound_getLoop', nodecl> end
+function sfml.Sound.getStatus(self: *sfml.Sound <const>): sfml.SoundStatus <cimport 'sfSound_getStatus', nodecl> end
+function sfml.Sound.setPitch(self: *sfml.Sound, pitch: float32): void <cimport 'sfSound_setPitch', nodecl> end
+function sfml.Sound.setVolume(self: *sfml.Sound, volume: float32): void <cimport 'sfSound_setVolume', nodecl> end
+function sfml.Sound.setPosition(self: *sfml.Sound, position: sfml.Vector3f): void <cimport 'sfSound_setPosition', nodecl> end
+function sfml.Sound.setRelativeToListener(self: *sfml.Sound, relative: sfBool): void <cimport 'sfSound_setRelativeToListener', nodecl> end
+function sfml.Sound.setMinDistance(self: *sfml.Sound, distance: float32): void <cimport 'sfSound_setMinDistance', nodecl> end
+function sfml.Sound.setAttenuation(self: *sfml.Sound, attenuation: float32): void <cimport 'sfSound_setAttenuation', nodecl> end
+function sfml.Sound.setPlayingOffset(self: *sfml.Sound, timeOffset: sfml.Time): void <cimport 'sfSound_setPlayingOffset', nodecl> end
+function sfml.Sound.getPitch(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getPitch', nodecl> end
+function sfml.Sound.getVolume(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getVolume', nodecl> end
+function sfml.Sound.getPosition(self: *sfml.Sound <const>): sfml.Vector3f <cimport 'sfSound_getPosition', nodecl> end
+function sfml.Sound.isRelativeToListener(self: *sfml.Sound <const>): sfBool <cimport 'sfSound_isRelativeToListener', nodecl> end
+function sfml.Sound.getMinDistance(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getMinDistance', nodecl> end
+function sfml.Sound.getAttenuation(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getAttenuation', nodecl> end
+function sfml.Sound.getPlayingOffset(self: *sfml.Sound <const>): sfml.Time <cimport 'sfSound_getPlayingOffset', nodecl> end
+
+
+-- Audio: Sound Buffer
+function sfml.SoundBuffer.createFromFile(filename: cstring <const>): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromFile', nodecl> end
+function sfml.SoundBuffer.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromMemory', nodecl> end
+function sfml.SoundBuffer.createFromStream(stream: *sfml.InputStream): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromStream', nodecl> end
+function sfml.SoundBuffer.createFromSamples(samples: *[0]sfInt16, sampleCount: sfUint64, channelCount: cuint, sampleRate: cuint): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromSamples', nodecl> end
+function sfml.SoundBuffer.copy(self: *sfml.SoundBuffer <const>): *sfml.SoundBuffer <cimport 'sfSoundBuffer_copy', nodecl> end
+function sfml.SoundBuffer.destroy(self: *sfml.SoundBuffer): void <cimport 'sfSoundBuffer_destroy', nodecl> end
+function sfml.SoundBuffer.saveToFile(self: *sfml.SoundBuffer <const>, filename: cstring <const>): sfBool <cimport 'sfSoundBuffer_saveToFile', nodecl> end
+function sfml.SoundBuffer.getSamples(self: *sfml.SoundBuffer <const>): *[0]sfInt16 <cimport 'sfSoundBuffer_getSamples', nodecl> end
+function sfml.SoundBuffer.getSampleCount(self: *sfml.SoundBuffer <const>): sfUint64 <cimport 'sfSoundBuffer_getSampleCount', nodecl> end
+function sfml.SoundBuffer.getSampleRate(self: *sfml.SoundBuffer <const>): cuint <cimport 'sfSoundBuffer_getSampleRate', nodecl> end
+function sfml.SoundBuffer.getChannelCount(self: *sfml.SoundBuffer <const>): cuint <cimport 'sfSoundBuffer_getChannelCount', nodecl> end
+function sfml.SoundBuffer.getDuration(self: *sfml.SoundBuffer <const>): sfml.Time <cimport 'sfSoundBuffer_getDuration', nodecl> end
+
+
+-- Audio: Sound Buffer Recorder
+function sfml.SoundBufferRecorder.create(): *sfml.SoundBufferRecorder <cimport 'sfSoundBufferRecorder_create', nodecl> end
+function sfml.SoundBufferRecorder.destroy(self: *sfml.SoundBufferRecorder): void <cimport 'sfSoundBufferRecorder_destroy', nodecl> end
+function sfml.SoundBufferRecorder.start(self: *sfml.SoundBufferRecorder, sampleRate: cuint): sfBool <cimport 'sfSoundBufferRecorder_start', nodecl> end
+function sfml.SoundBufferRecorder.stop(self: *sfml.SoundBufferRecorder): void <cimport 'sfSoundBufferRecorder_stop', nodecl> end
+function sfml.SoundBufferRecorder.getSampleRate(self: *sfml.SoundBufferRecorder <const>): cuint <cimport 'sfSoundBufferRecorder_getSampleRate', nodecl> end
+function sfml.SoundBufferRecorder.getBuffer(self: *sfml.SoundBufferRecorder <const>): *sfml.SoundBuffer <cimport 'sfSoundBufferRecorder_getBuffer', nodecl> end
+function sfml.SoundBufferRecorder.setDevice(self: *sfml.SoundBufferRecorder <const>, name: cstring <const>): sfBool <cimport 'sfSoundBufferRecorder_setDevice', nodecl> end
+function sfml.SoundBufferRecorder.getDevice(self: *sfml.SoundBufferRecorder): cstring <cimport 'sfSoundBufferRecorder_getDevice', nodecl> end
