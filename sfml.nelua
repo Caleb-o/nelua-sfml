@@ -133,7 +133,7 @@ global sfml.HttpRequest: type <cimport 'sfml.HttpRequest', nodecl, forwarddecl> 
 global sfml.HttpResponse: type <cimport 'sfml.HttpResponse', nodecl, forwarddecl> = @record {}
 global sfml.Http: type <cimport 'sfml.Http', nodecl, forwarddecl> = @record {}
 global sfml.Packet: type <cimport 'sfml.Packet', nodecl, forwarddecl> = @record {}
-global sfml.SocketSelector: type <cimport 'sfml.SocketSelector', nodecl, forwarddecl> = @record {}
+global sfml.SocketSelector: type <cimport 'sfSocketSelector', nodecl, forwarddecl> = @record {}
 global sfml.TcpListener: type <cimport 'sfTcpListener', nodecl, forwarddecl> = @record {}
 global sfml.TcpSocket: type <cimport 'sfTcpSocket', nodecl, forwarddecl> = @record {}
 global sfml.UdpSocket: type <cimport 'sfUdpSocket', nodecl, forwarddecl> = @record {}
@@ -435,32 +435,62 @@ global sfml.TimeSpan: type <cimport 'sfTimeSpan', nodecl> = @record {
   length: sfml.Time
 }
 
-function sfml.Music.createFromFile(filename: cstring <const>): *sfml.Music <cimport 'sfml.Music_createFromFile', nodecl> end
-function sfml.Music.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.Music <cimport 'sfml.Music_createFromMemory', nodecl> end
-function sfml.Music.createFromStream(stream: *sfml.InputStream): *sfml.Music <cimport 'sfml.Music_createFromStream', nodecl> end
-function sfml.Music.destroy(self: *sfml.Music): void <cimport 'sfml.Music_destroy', nodecl> end
-function sfml.Music.setLoop(self: *sfml.Music, loop: sfBool): void <cimport 'sfml.Music_setLoop', nodecl> end
-function sfml.Music.getLoop(self: *sfml.Music <const>): sfBool <cimport 'sfml.Music_getLoop', nodecl> end
-function sfml.Music.getDuration(self: *sfml.Music <const>): sfml.Time <cimport 'sfml.Music_getDuration', nodecl> end
-function sfml.Music.getLoopPoints(self: *sfml.Music <const>): sfml.TimeSpan <cimport 'sfml.Music_getLoopPoints', nodecl> end
-function sfml.Music.setLoopPoints(self: *sfml.Music, timePoints: sfml.TimeSpan): void <cimport 'sfml.Music_setLoopPoints', nodecl> end
-function sfml.Music.play(self: *sfml.Music): void <cimport 'sfml.Music_play', nodecl> end
-function sfml.Music.pause(self: *sfml.Music): void <cimport 'sfml.Music_pause', nodecl> end
-function sfml.Music.stop(self: *sfml.Music): void <cimport 'sfml.Music_stop', nodecl> end
-function sfml.Music.getChannelCount(self: *sfml.Music <const>): cuint <cimport 'sfml.Music_getChannelCount', nodecl> end
-function sfml.Music.getSampleRate(self: *sfml.Music <const>): cuint <cimport 'sfml.Music_getSampleRate', nodecl> end
-function sfml.Music.getStatus(self: *sfml.Music <const>): sfml.SoundStatus <cimport 'sfml.Music_getStatus', nodecl> end
-function sfml.Music.getPlayingOffset(self: *sfml.Music <const>): sfml.Time <cimport 'sfml.Music_getPlayingOffset', nodecl> end
-function sfml.Music.setPitch(self: *sfml.Music, pitch: float32): void <cimport 'sfml.Music_setPitch', nodecl> end
-function sfml.Music.setVolume(self: *sfml.Music, volume: float32): void <cimport 'sfml.Music_setVolume', nodecl> end
-function sfml.Music.setPosition(self: *sfml.Music, position: sfml.Vector3f): void <cimport 'sfml.Music_setPosition', nodecl> end
-function sfml.Music.setRelativeToListener(music: *sfml.Music, relative: sfBool): void <cimport 'sfml.Music_setRelativeToListener', nodecl> end
-function sfml.Music.setMinDistance(self: *sfml.Music, distance: float32): void <cimport 'sfml.Music_setMinDistance', nodecl> end
-function sfml.Music.setAttenuation(self: *sfml.Music, attenuation: float32): void <cimport 'sfml.Music_setAttenuation', nodecl> end
-function sfml.Music.setPlayingOffset(self: *sfml.Music, timeOffset: sfml.Time): void <cimport 'sfml.Music_setPlayingOffset', nodecl> end
-function sfml.Music.getPitch(self: *sfml.Music <const>): float32 <cimport 'sfml.Music_getPitch', nodecl> end
-function sfml.Music.getVolume(self: *sfml.Music <const>): float32 <cimport 'sfml.Music_getVolume', nodecl> end
-function sfml.Music.getPosition(self: *sfml.Music <const>): sfml.Vector3f <cimport 'sfml.Music_getPosition', nodecl> end
-function sfml.Music.isRelativeToListener(self: *sfml.Music <const>): sfBool <cimport 'sfml.Music_isRelativeToListener', nodecl> end
-function sfml.Music.getMinDistance(self: *sfml.Music <const>): float32 <cimport 'sfml.Music_getMinDistance', nodecl> end
-function sfml.Music.getAttenuation(self: *sfml.Music <const>): float32 <cimport 'sfml.Music_getAttenuation', nodecl> end
+
+-- Audio: Music
+function sfml.Music.createFromFile(filename: cstring <const>): *sfml.Music <cimport 'sfMusic_createFromFile', nodecl> end
+function sfml.Music.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.Music <cimport 'sfMusic_createFromMemory', nodecl> end
+function sfml.Music.createFromStream(stream: *sfml.InputStream): *sfml.Music <cimport 'sfMusic_createFromStream', nodecl> end
+function sfml.Music.destroy(self: *sfml.Music): void <cimport 'sfMusic_destroy', nodecl> end
+function sfml.Music.setLoop(self: *sfml.Music, loop: sfBool): void <cimport 'sfMusic_setLoop', nodecl> end
+function sfml.Music.getLoop(self: *sfml.Music <const>): sfBool <cimport 'sfMusic_getLoop', nodecl> end
+function sfml.Music.getDuration(self: *sfml.Music <const>): sfml.Time <cimport 'sfMusic_getDuration', nodecl> end
+function sfml.Music.getLoopPoints(self: *sfml.Music <const>): sfml.TimeSpan <cimport 'sfMusic_getLoopPoints', nodecl> end
+function sfml.Music.setLoopPoints(self: *sfml.Music, timePoints: sfml.TimeSpan): void <cimport 'sfMusic_setLoopPoints', nodecl> end
+function sfml.Music.play(self: *sfml.Music): void <cimport 'sfMusic_play', nodecl> end
+function sfml.Music.pause(self: *sfml.Music): void <cimport 'sfMusic_pause', nodecl> end
+function sfml.Music.stop(self: *sfml.Music): void <cimport 'sfMusic_stop', nodecl> end
+function sfml.Music.getChannelCount(self: *sfml.Music <const>): cuint <cimport 'sfMusic_getChannelCount', nodecl> end
+function sfml.Music.getSampleRate(self: *sfml.Music <const>): cuint <cimport 'sfMusic_getSampleRate', nodecl> end
+function sfml.Music.getStatus(self: *sfml.Music <const>): sfml.SoundStatus <cimport 'sfMusic_getStatus', nodecl> end
+function sfml.Music.getPlayingOffset(self: *sfml.Music <const>): sfml.Time <cimport 'sfMusic_getPlayingOffset', nodecl> end
+function sfml.Music.setPitch(self: *sfml.Music, pitch: float32): void <cimport 'sfMusic_setPitch', nodecl> end
+function sfml.Music.setVolume(self: *sfml.Music, volume: float32): void <cimport 'sfMusic_setVolume', nodecl> end
+function sfml.Music.setPosition(self: *sfml.Music, position: sfml.Vector3f): void <cimport 'sfMusic_setPosition', nodecl> end
+function sfml.Music.setRelativeToListener(music: *sfml.Music, relative: sfBool): void <cimport 'sfMusic_setRelativeToListener', nodecl> end
+function sfml.Music.setMinDistance(self: *sfml.Music, distance: float32): void <cimport 'sfMusic_setMinDistance', nodecl> end
+function sfml.Music.setAttenuation(self: *sfml.Music, attenuation: float32): void <cimport 'sfMusic_setAttenuation', nodecl> end
+function sfml.Music.setPlayingOffset(self: *sfml.Music, timeOffset: sfml.Time): void <cimport 'sfMusic_setPlayingOffset', nodecl> end
+function sfml.Music.getPitch(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getPitch', nodecl> end
+function sfml.Music.getVolume(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getVolume', nodecl> end
+function sfml.Music.getPosition(self: *sfml.Music <const>): sfml.Vector3f <cimport 'sfMusic_getPosition', nodecl> end
+function sfml.Music.isRelativeToListener(self: *sfml.Music <const>): sfBool <cimport 'sfMusic_isRelativeToListener', nodecl> end
+function sfml.Music.getMinDistance(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getMinDistance', nodecl> end
+function sfml.Music.getAttenuation(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getAttenuation', nodecl> end
+
+
+-- Audio: Sound
+function sfml.Sound.create(): *sfml.Sound <cimport 'sfSound_create', nodecl> end
+function sfml.Sound.copy(sound: *sfml.Sound <const>): *sfml.Sound <cimport 'sfSound_copy', nodecl> end
+function sfml.Sound.destroy(sound: *sfml.Sound): void <cimport 'sfSound_destroy', nodecl> end
+function sfml.Sound.play(sound: *sfml.Sound): void <cimport 'sfSound_play', nodecl> end
+function sfml.Sound.pause(sound: *sfml.Sound): void <cimport 'sfSound_pause', nodecl> end
+function sfml.Sound.stop(sound: *sfml.Sound): void <cimport 'sfSound_stop', nodecl> end
+function sfml.Sound.setBuffer(sound: *sfml.Sound, buffer: *sfml.SoundBuffer <const>): void <cimport 'sfSound_setBuffer', nodecl> end
+function sfml.Sound.getBuffer(sound: *sfml.Sound <const>): *sfml.SoundBuffer <cimport 'sfSound_getBuffer', nodecl> end
+function sfml.Sound.setLoop(sound: *sfml.Sound, loop: sfBool): void <cimport 'sfSound_setLoop', nodecl> end
+function sfml.Sound.getLoop(sound: *sfml.Sound <const>): sfBool <cimport 'sfSound_getLoop', nodecl> end
+function sfml.Sound.getStatus(sound: *sfml.Sound <const>): sfml.SoundStatus <cimport 'sfSound_getStatus', nodecl> end
+function sfml.Sound.setPitch(sound: *sfml.Sound, pitch: float32): void <cimport 'sfSound_setPitch', nodecl> end
+function sfml.Sound.setVolume(sound: *sfml.Sound, volume: float32): void <cimport 'sfSound_setVolume', nodecl> end
+function sfml.Sound.setPosition(sound: *sfml.Sound, position: sfml.Vector3f): void <cimport 'sfSound_setPosition', nodecl> end
+function sfml.Sound.setRelativeToListener(sound: *sfml.Sound, relative: sfBool): void <cimport 'sfSound_setRelativeToListener', nodecl> end
+function sfml.Sound.setMinDistance(sound: *sfml.Sound, distance: float32): void <cimport 'sfSound_setMinDistance', nodecl> end
+function sfml.Sound.setAttenuation(sound: *sfml.Sound, attenuation: float32): void <cimport 'sfSound_setAttenuation', nodecl> end
+function sfml.Sound.setPlayingOffset(sound: *sfml.Sound, timeOffset: sfml.Time): void <cimport 'sfSound_setPlayingOffset', nodecl> end
+function sfml.Sound.getPitch(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getPitch', nodecl> end
+function sfml.Sound.getVolume(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getVolume', nodecl> end
+function sfml.Sound.getPosition(sound: *sfml.Sound <const>): sfml.Vector3f <cimport 'sfSound_getPosition', nodecl> end
+function sfml.Sound.isRelativeToListener(sound: *sfml.Sound <const>): sfBool <cimport 'sfSound_isRelativeToListener', nodecl> end
+function sfml.Sound.getMinDistance(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getMinDistance', nodecl> end
+function sfml.Sound.getAttenuation(sound: *sfml.Sound <const>): float32 <cimport 'sfSound_getAttenuation', nodecl> end
+function sfml.Sound.getPlayingOffset(sound: *sfml.Sound <const>): sfml.Time <cimport 'sfSound_getPlayingOffset', nodecl> end
