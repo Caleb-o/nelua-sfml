@@ -1,0 +1,74 @@
+global sfml = @record{}
+
+##[[
+  cinclude "SFML/Config.h"
+  cinclude "SFML/GPUPreference.h"
+  cinclude "SFML/System.h"
+  cinclude "SFML/Audio.h"
+  cinclude "SFML/Network.h"
+  cinclude "SFML/Window.h"
+  cinclude "SFML/Graphics.h"
+  
+  linklib "csfml-audio"
+  linklib "csfml-graphics"
+  linklib "csfml-network"
+  linklib "csfml-system"
+  linklib "csfml-window"
+]]
+global CSFML_VERSION_MAJOR: cint <cimport, nodecl, const>
+global CSFML_VERSION_MINOR: cint <cimport, nodecl, const>
+global CSFML_VERSION_PATCH: cint <cimport, nodecl, const>
+global CSFML_SYSTEM_WINDOWS: cint <cimport, nodecl, const>
+global CSFML_SYSTEM_LINUX: cint <cimport, nodecl, const>
+global CSFML_SYSTEM_MACOS: cint <cimport, nodecl, const>
+global CSFML_SYSTEM_FREEBSD: cint <cimport, nodecl, const>
+
+global sfBool: type <cimport, nodecl> = @cint
+global sfFalse: cint <cimport, nodecl, const>
+global sfTrue: cint <cimport, nodecl, const>
+
+global sfInt8: type <cimport, nodecl> = @cchar
+global sfUint8: type <cimport, nodecl> = @cuchar
+global sfInt16: type <cimport, nodecl> = @cshort
+global sfUint16: type <cimport, nodecl> = @cushort
+global sfInt32: type <cimport, nodecl> = @cint
+global sfUint32: type <cimport, nodecl> = @cuint
+global sfInt64: type <cimport, nodecl> = @clonglong
+global sfUint64: type <cimport, nodecl> = @culonglong
+
+--[[
+-- Inject C code (just as an example, could be an include)
+cinclude![[
+#include <stdio.h>
+typedef struct my_struct {
+  int x;
+} my_struct;
+
+void do_thing(my_struct* mst) {
+  printf("%d\n", mst->x);
+}
+
+
+local my_struct <cimport,nodecl> = @record{
+  x: integer
+}
+
+function my_struct:do_thing() <cimport,nodecl> end
+
+local mst: my_struct
+mst:do_thing()
+]]--
+
+global sfml.Time: type <cimport 'sfTime', nodecl> = @record {
+  microseconds: sfInt64
+}
+
+global sfml.Time.zero: sfml.Time <cimport 'sfTime_Zero', nodecl, const>
+
+function sfml.Time.asSeconds(self: sfml.Time): float32 <cimport 'sfTime_asSeconds', nodecl> end
+function sfml.Time.asMilliseconds(self: sfml.Time): sfInt32 <cimport 'sfTime_asMilliseconds', nodecl> end
+function sfml.Time.asMicroseconds(self: sfml.Time): sfInt64 <cimport 'sfTime_asMicroseconds', nodecl> end
+
+function sfml.Time.Seconds(amount: float32): sfml.Time <cimport 'sfSeconds', nodecl> end
+function sfml.Time.milliseconds(amount: sfInt32): sfml.Time <cimport 'sfMilliseconds', nodecl> end
+function sfml.Time.microseconds(amount: sfInt64): sfml.Time <cimport 'sfMicroseconds', nodecl> end

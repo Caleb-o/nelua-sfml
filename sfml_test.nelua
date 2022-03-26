@@ -1,0 +1,8 @@
+require 'sfml'
+
+do print '# Time'
+	local t: sfml.Time = sfml.Time.zero
+	local ms = t:asMilliseconds()
+	local sec = t:asSeconds()
+	print(ms, sec)
+end
