@@ -1320,6 +1320,7 @@ function sfml.Image.flipVertically(self: *sfml.Image): void <cimport 'sfImage_fl
 
 -- Shape: Circle
 function sfml.CircleShape.create(): *sfml.CircleShape <cimport 'sfCircleShape_create', nodecl> end
+
 function sfml.CircleShape.copy(self: *sfml.CircleShape <const>): *sfml.CircleShape <cimport 'sfCircleShape_copy', nodecl> end
 function sfml.CircleShape.destroy(self: *sfml.CircleShape): void <cimport 'sfCircleShape_destroy', nodecl> end
 function sfml.CircleShape.setPosition(self: *sfml.CircleShape, position: sfml.Vector2f): void <cimport 'sfCircleShape_setPosition', nodecl> end
@@ -1356,6 +1357,7 @@ function sfml.CircleShape.getGlobalBounds(self: *sfml.CircleShape <const>): sfml
 
 -- Shape: Convex
 function sfml.ConvexShape.create(): *sfml.ConvexShape <cimport 'sfConvexShape_create', nodecl> end
+
 function sfml.ConvexShape.copy(self: *sfml.ConvexShape <const>): *sfml.ConvexShape <cimport 'sfConvexShape_copy', nodecl> end
 function sfml.ConvexShape.destroy(self: *sfml.ConvexShape): void <cimport 'sfConvexShape_destroy', nodecl> end
 function sfml.ConvexShape.setPosition(self: *sfml.ConvexShape, position: sfml.Vector2f): void <cimport 'sfConvexShape_setPosition', nodecl> end
@@ -1392,6 +1394,7 @@ function sfml.ConvexShape.getGlobalBounds(self: *sfml.ConvexShape <const>): sfml
 
 -- Rectangle
 function sfml.RectangleShape.create(): *sfml.RectangleShape <cimport 'sfRectangleShape_create', nodecl> end
+
 function sfml.RectangleShape.copy(self: *sfml.RectangleShape <const>): *sfml.RectangleShape <cimport 'sfRectangleShape_copy', nodecl> end
 function sfml.RectangleShape.destroy(self: *sfml.RectangleShape): void <cimport 'sfRectangleShape_destroy', nodecl> end
 function sfml.RectangleShape.setPosition(self: *sfml.RectangleShape, position: sfml.Vector2f): void <cimport 'sfRectangleShape_setPosition', nodecl> end
@@ -1429,6 +1432,7 @@ function sfml.RectangleShape.getGlobalBounds(self: *sfml.RectangleShape <const>)
 -- Render Texture
 function sfml.RenderTexture.create(width: cuint, height: cuint, depthBuffer: sfBool): *sfml.RenderTexture <cimport 'sfRenderTexture_create', nodecl> end
 function sfml.RenderTexture.createWithSettings(width: cuint, height: cuint, settings: *sfml.ContextSettings <const>): *sfml.RenderTexture <cimport 'sfRenderTexture_createWithSettings', nodecl> end
+
 function sfml.RenderTexture.destroy(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_destroy', nodecl> end
 function sfml.RenderTexture.getSize(self: *sfml.RenderTexture <const>): sfml.Vector2u <cimport 'sfRenderTexture_getSize', nodecl> end
 function sfml.RenderTexture.setActive(self: *sfml.RenderTexture, active: sfBool): sfml.Vector2u <cimport 'sfRenderTexture_setActive', nodecl> end
@@ -1459,3 +1463,59 @@ function sfml.RenderTexture.isSmooth(self: *sfml.RenderTexture <const>): sfBool 
 function sfml.RenderTexture.setRepeated(self: *sfml.RenderTexture, repeated: sfBool): void <cimport 'sfRenderTexture_setRepeated', nodecl> end
 function sfml.RenderTexture.isRepeated(self: *sfml.RenderTexture <const>): sfBool <cimport 'sfRenderTexture_isRepeated', nodecl> end
 function sfml.RenderTexture.generateMipmap(self: *sfml.RenderTexture): sfBool <cimport 'sfRenderTexture_generateMipmap', nodecl> end
+
+
+-- Render Window
+function sfml.RenderWindow.create(mode: sfml.VideoMode, title: cstring <const>, style: sfUint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_create', nodecl> end
+function sfml.RenderWindow.createUnicode(mode: sfml.VideoMode, title: *sfUint32, style: sfUint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_createUnicode', nodecl> end
+function sfml.RenderWindow.createFromHandle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_createFromHandle', nodecl> end
+
+function sfml.RenderWindow.destroy(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_destroy', nodecl> end
+function sfml.RenderWindow.close(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_close', nodecl> end
+function sfml.RenderWindow.isOpen(self: *sfml.RenderWindow <const>): sfBool <cimport 'sfRenderWindow_isOpen', nodecl> end
+function sfml.RenderWindow.getSettings(self: *sfml.RenderWindow <const>): sfml.ContextSettings <cimport 'sfRenderWindow_getSettings', nodecl> end
+function sfml.RenderWindow.pollEvent(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_pollEvent', nodecl> end
+function sfml.RenderWindow.waitEvent(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_waitEvent', nodecl> end
+function sfml.RenderWindow.getPosition(self: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfRenderWindow_getPosition', nodecl> end
+function sfml.RenderWindow.setPosition(self: *sfml.RenderWindow, position: sfml.Vector2i): void <cimport 'sfRenderWindow_setPosition', nodecl> end
+function sfml.RenderWindow.getSize(self: *sfml.RenderWindow <const>): sfml.Vector2u <cimport 'sfRenderWindow_getSize', nodecl> end
+function sfml.RenderWindow.setSize(self: *sfml.RenderWindow, size: sfml.Vector2u): void <cimport 'sfRenderWindow_setSize', nodecl> end
+function sfml.RenderWindow.setUnicodeTitle(self: *sfml.RenderWindow, title: *sfUint32 <const>): void <cimport 'sfRenderWindow_setUnicodeTitle', nodecl> end
+function sfml.RenderWindow.setIcon(self: *sfml.RenderWindow, width: cuint, height: cuint, pixels: *[0]sfUint8 <const>): void <cimport 'sfRenderWindow_setIcon', nodecl> end
+function sfml.RenderWindow.setVisible(self: *sfml.RenderWindow, visible: sfBool): void <cimport 'sfRenderWindow_setVisible', nodecl> end
+function sfml.RenderWindow.setVerticalSyncEnabled(self: *sfml.RenderWindow, enabled: sfBool): void <cimport 'sfRenderWindow_setVerticalSyncEnabled', nodecl> end
+function sfml.RenderWindow.setMouseCursorVisible(self: *sfml.RenderWindow, show: sfBool): void <cimport 'sfRenderWindow_setMouseCursorVisible', nodecl> end
+function sfml.RenderWindow.setMouseCursorGrabbed(self: *sfml.RenderWindow, grabbed: sfBool): void <cimport 'sfRenderWindow_setMouseCursorGrabbed', nodecl> end
+function sfml.RenderWindow.setMouseCursor(self: *sfml.RenderWindow, cursor: *sfml.Cursor <const>): void <cimport 'sfRenderWindow_setMouseCursor', nodecl> end
+function sfml.RenderWindow.setKeyRepeatEnabled(self: *sfml.RenderWindow, enabled: sfBool): void <cimport 'sfRenderWindow_setKeyRepeatEnabled', nodecl> end
+function sfml.RenderWindow.setFramerateLimit(self: *sfml.RenderWindow, limit: cuint): void <cimport 'sfRenderWindow_setFramerateLimit', nodecl> end
+function sfml.RenderWindow.setJoystickThreshold(self: *sfml.RenderWindow, threshold: float32): void <cimport 'sfRenderWindow_setJoystickThreshold', nodecl> end
+function sfml.RenderWindow.setActive(self: *sfml.RenderWindow, active: sfBool): void <cimport 'sfRenderWindow_setActive', nodecl> end
+function sfml.RenderWindow.requestFocus(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_requestFocus', nodecl> end
+function sfml.RenderWindow.hasFocus(self: *sfml.RenderWindow <const>): sfBool <cimport 'sfRenderWindow_hasFocus', nodecl> end
+function sfml.RenderWindow.display(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_display', nodecl> end
+function sfml.RenderWindow.getSystemHandle(self: *sfml.RenderWindow <const>): sfml.WindowHandle <cimport 'sfRenderWindow_getSystemHandle', nodecl> end
+function sfml.RenderWindow.clear(self: *sfml.RenderWindow, color: sfml.Color): void <cimport 'sfRenderWindow_clear', nodecl> end
+function sfml.RenderWindow.setView(self: *sfml.RenderWindow, view: *sfml.View): void <cimport 'sfRenderWindow_setView', nodecl> end
+function sfml.RenderWindow.getView(self: *sfml.RenderWindow <const>): *sfml.View <cimport 'sfRenderWindow_getView', nodecl> end
+function sfml.RenderWindow.getDefaultView(self: *sfml.RenderWindow <const>): *sfml.View <cimport 'sfRenderWindow_getDefaultView', nodecl> end
+function sfml.RenderWindow.getViewport(self: *sfml.RenderWindow <const>, view: *sfml.View <const>): sfml.IntRect <cimport 'sfRenderWindow_getViewport', nodecl> end
+function sfml.RenderWindow.mapPixelToCoords(self: *sfml.RenderWindow <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f <cimport 'sfRenderWindow_mapPixelToCoords', nodecl> end
+function sfml.RenderWindow.mapCoordsToPixel(self: *sfml.RenderWindow <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i <cimport 'sfRenderWindow_mapCoordsToPixel', nodecl> end
+function sfml.RenderWindow.drawSprite(self: *sfml.RenderWindow, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawSprite', nodecl> end
+function sfml.RenderWindow.drawText(self: *sfml.RenderWindow, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawText', nodecl> end
+function sfml.RenderWindow.drawShape(self: *sfml.RenderWindow, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawShape', nodecl> end
+function sfml.RenderWindow.drawCircleShape(self: *sfml.RenderWindow, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawCircleShape', nodecl> end
+function sfml.RenderWindow.drawConvexShape(self: *sfml.RenderWindow, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawConvexShape', nodecl> end
+function sfml.RenderWindow.drawRectangleShape(self: *sfml.RenderWindow, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawRectangleShape', nodecl> end
+function sfml.RenderWindow.drawVertexArray(self: *sfml.RenderWindow, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawVertexArray', nodecl> end
+function sfml.RenderWindow.drawVertexBuffer(self: *sfml.RenderWindow, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawVertexBuffer', nodecl> end
+function sfml.RenderWindow.drawPrimitives(self: *sfml.RenderWindow, vertices: *sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawPrimitives', nodecl> end
+function sfml.RenderWindow.pushGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_pushGLStates', nodecl> end
+function sfml.RenderWindow.popGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_popGLStates', nodecl> end
+function sfml.RenderWindow.resetGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_resetGLStates', nodecl> end
+function sfml.RenderWindow.capture(self: *sfml.RenderWindow <const>): *sfml.Image <cimport 'sfRenderWindow_capture', nodecl> end
+
+function sfml.Mouse.getPostionRenderWindow(relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfMouse_getPositionRenderWindow', nodecl> end
+function sfml.Mouse.setPostionRenderWindow(position: sfml.Vector2i, relativeTo: *sfml.RenderWindow <const>): void <cimport 'sfMouse_setPositionRenderWindow', nodecl> end
+function sfml.Touch.getPostionRenderWindow(finger: cuint, relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfTouch_getPositionRenderWindow', nodecl> end
