@@ -1296,3 +1296,39 @@ function sfml.Font.getUnderlinePosition(self: *sfml.Font <const>, characterSize:
 function sfml.Font.getUnderlineThickness(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlineThickness', nodecl> end
 function sfml.Font.getTexture(self: *sfml.Font <const>, characterSize: cuint): *sfml.Texture <cimport 'sfFont_getTexture', nodecl> end
 function sfml.Font.getInfo(self: *sfml.Font <const>): sfml.FontInfo <cimport 'sfFont_getInfo', nodecl> end
+
+
+-- Shape: Circle
+function sfml.CircleShape.create(): *sfml.CircleShape <cimport 'sfCircleShape_create', nodecl> end
+function sfml.CircleShape.copy(self: *sfml.CircleShape <const>): *sfml.CircleShape <cimport 'sfCircleShape_copy', nodecl> end
+function sfml.CircleShape.destroy(self: *sfml.CircleShape): void <cimport 'sfCircleShape_destroy', nodecl> end
+function sfml.CircleShape.setPosition(self: *sfml.CircleShape, position: sfml.Vector2f): void <cimport 'sfCircleShape_setPosition', nodecl> end
+function sfml.CircleShape.setRotation(self: *sfml.CircleShape, angle: float32): void <cimport 'sfCircleShape_setRotation', nodecl> end
+function sfml.CircleShape.setScale(self: *sfml.CircleShape, scale: sfml.Vector2f): void <cimport 'sfCircleShape_setScale', nodecl> end
+function sfml.CircleShape.setOrigin(self: *sfml.CircleShape, origin: sfml.Vector2f): void <cimport 'sfCircleShape_setOrigin', nodecl> end
+function sfml.CircleShape.getPosition(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getPosition', nodecl> end
+function sfml.CircleShape.getRotation(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getRotation', nodecl> end
+function sfml.CircleShape.getScale(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getScale', nodecl> end
+function sfml.CircleShape.getOrigin(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getOrigin', nodecl> end
+function sfml.CircleShape.move(self: *sfml.CircleShape, offset: sfml.Vector2f): void <cimport 'sfCircleShape_move', nodecl> end
+function sfml.CircleShape.rotate(self: *sfml.CircleShape, angle: float32): void <cimport 'sfCircleShape_rotate', nodecl> end
+function sfml.CircleShape.scale(self: *sfml.CircleShape, factors: sfml.Vector2f): void <cimport 'sfCircleShape_scale', nodecl> end 
+function sfml.CircleShape.getTransform(self: *sfml.CircleShape <const>): sfml.Transform <cimport 'sfCircleShape_getTransform', nodecl> end
+function sfml.CircleShape.getInverseTransform(self: *sfml.CircleShape <const>): sfml.Transform <cimport 'sfCircleShape_getInverseTransform', nodecl> end
+function sfml.CircleShape.setTexture(self: *sfml.CircleShape, texture: *sfml.Texture <const>, resetRect: sfBool): void <cimport 'sfCircleShape_setTexture', nodecl> end
+function sfml.CircleShape.setTextureRect(self: *sfml.CircleShape, rect: sfml.IntRect): void <cimport 'sfCircleShape_setTextureRect', nodecl> end
+function sfml.CircleShape.setFillColor(self: *sfml.CircleShape, color: sfml.Color): void <cimport 'sfCircleShape_setFillColor', nodecl> end
+function sfml.CircleShape.setOutlineColor(self: *sfml.CircleShape, color: sfml.Color): void <cimport 'sfCircleShape_setOutlineColor', nodecl> end
+function sfml.CircleShape.setOutlineThickness(self: *sfml.CircleShape, thickness: float32): void <cimport 'sfCircleShape_setOutlineThickness', nodecl> end
+function sfml.CircleShape.getTexture(self: *sfml.CircleShape <const>): *sfml.Texture <cimport 'sfCircleShape_getTexture', nodecl> end
+function sfml.CircleShape.getTextureRect(self: *sfml.CircleShape <const>): sfml.IntRect <cimport 'sfCircleShape_getTextureRect', nodecl> end
+function sfml.CircleShape.getFillColor(self: *sfml.CircleShape <const>): sfml.Color <cimport 'sfCircleShape_getFillColor', nodecl> end
+function sfml.CircleShape.getOutlineColor(self: *sfml.CircleShape <const>): sfml.Color <cimport 'sfCircleShape_getOutlineColor', nodecl> end
+function sfml.CircleShape.getOutlineThickness(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getOutlineThickness', nodecl> end
+function sfml.CircleShape.getPointCount(self: *sfml.CircleShape <const>): csize <cimport 'sfCircleShape_getPointCount', nodecl> end
+function sfml.CircleShape.getPoint(self: *sfml.CircleShape <const>, index: csize): sfml.Vector2f <cimport 'sfCircleShape_getPoint', nodecl> end
+function sfml.CircleShape.setRadius(self: *sfml.CircleShape, radius: float32): void <cimport 'sfCircleShape_setRadius', nodecl> end
+function sfml.CircleShape.getRadius(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getRadius', nodecl> end
+function sfml.CircleShape.setPointCount(self: *sfml.CircleShape, count: csize): void <cimport 'sfCircleShape_setPointCount', nodecl> end
+function sfml.CircleShape.getLocalBounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getLocalBounds', nodecl> end
+function sfml.CircleShape.getGlobalBounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getGlobalBounds', nodecl> end
