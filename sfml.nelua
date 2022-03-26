@@ -1298,6 +1298,26 @@ function sfml.Font.getTexture(self: *sfml.Font <const>, characterSize: cuint): *
 function sfml.Font.getInfo(self: *sfml.Font <const>): sfml.FontInfo <cimport 'sfFont_getInfo', nodecl> end
 
 
+-- Image
+function sfml.Image.create(width: cuint, height: cuint): *sfml.Image <cimport 'sfImage_create', nodecl> end
+function sfml.Image.createFromColor(width: cuint, height: cuint, color: sfml.Color): *sfml.Image <cimport 'sfImage_createFromColor', nodecl> end
+function sfml.Image.createFromPixels(width: cuint, height: cuint, pixels: *[0]sfUint8): *sfml.Image <cimport 'sfImage_createFromPixels', nodecl> end
+function sfml.Image.createFromFile(filename: cstring <const>): *sfml.Image <cimport 'sfImage_createFromFile', nodecl> end
+function sfml.Image.createFromMemory(data: pointer <const>, size: csize): *sfml.Image <cimport 'sfImage_createFromMemory', nodecl> end
+function sfml.Image.createFromStream(stream: *sfml.InputStream): *sfml.Image <cimport 'sfImage_createFromStream', nodecl> end
+function sfml.Image.copy(self: *sfml.Image <const>): *sfml.Image <cimport 'sfImage_copy', nodecl> end
+function sfml.Image.destroy(self: *sfml.Image): void <cimport 'sfImage_destroy', nodecl> end
+function sfml.Image.saveToFile(self: *sfml.Image <const>, filename: cstring <const>): sfBool <cimport 'sfImage_saveToFile', nodecl> end
+function sfml.Image.getSize(self: *sfml.Image <const>): sfml.Vector2u <cimport 'sfImage_getSize', nodecl> end
+function sfml.Image.createMaskFromColor(self: *sfml.Image, color: sfml.Color, alpha: sfUint8): void <cimport 'sfImage_createMaskFromFile', nodecl> end
+function sfml.Image.copyImage(self: *sfml.Image, source: *sfml.Image <const>, destX: cuint, destY: cuint, sourceRect: sfml.IntRect, applyAlpha: sfBool): void <cimport 'sfImage_copyImage', nodecl> end
+function sfml.Image.setPixel(self: *sfml.Image, x: cuint, y: cuint, color: sfml.Color): void <cimport 'sfImage_setPixel', nodecl> end
+function sfml.Image.getPixel(self: *sfml.Image <const>, x: cuint, y: cuint): sfml.Color <cimport 'sfImage_getPixel', nodecl> end
+function sfml.Image.getPixelsPtr(self: *sfml.Image <const>): *[0]sfUint8 <cimport 'sfImage_getPixelsPtr', nodecl> end
+function sfml.Image.flipHorizontally(self: *sfml.Image): void <cimport 'sfImage_flipHorizontally', nodecl> end
+function sfml.Image.flipVertically(self: *sfml.Image): void <cimport 'sfImage_flipVertically', nodecl> end
+
+
 -- Shape: Circle
 function sfml.CircleShape.create(): *sfml.CircleShape <cimport 'sfCircleShape_create', nodecl> end
 function sfml.CircleShape.copy(self: *sfml.CircleShape <const>): *sfml.CircleShape <cimport 'sfCircleShape_copy', nodecl> end
@@ -1370,21 +1390,37 @@ function sfml.ConvexShape.getLocalBounds(self: *sfml.ConvexShape <const>): sfml.
 function sfml.ConvexShape.getGlobalBounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getGlobalBounds', nodecl> end
 
 
--- Image
-function sfml.Image.create(width: cuint, height: cuint): *sfml.Image <cimport 'sfImage_create', nodecl> end
-function sfml.Image.createFromColor(width: cuint, height: cuint, color: sfml.Color): *sfml.Image <cimport 'sfImage_createFromColor', nodecl> end
-function sfml.Image.createFromPixels(width: cuint, height: cuint, pixels: *[0]sfUint8): *sfml.Image <cimport 'sfImage_createFromPixels', nodecl> end
-function sfml.Image.createFromFile(filename: cstring <const>): *sfml.Image <cimport 'sfImage_createFromFile', nodecl> end
-function sfml.Image.createFromMemory(data: pointer <const>, size: csize): *sfml.Image <cimport 'sfImage_createFromMemory', nodecl> end
-function sfml.Image.createFromStream(stream: *sfml.InputStream): *sfml.Image <cimport 'sfImage_createFromStream', nodecl> end
-function sfml.Image.copy(self: *sfml.Image <const>): *sfml.Image <cimport 'sfImage_copy', nodecl> end
-function sfml.Image.destroy(self: *sfml.Image): void <cimport 'sfImage_destroy', nodecl> end
-function sfml.Image.saveToFile(self: *sfml.Image <const>, filename: cstring <const>): sfBool <cimport 'sfImage_saveToFile', nodecl> end
-function sfml.Image.getSize(self: *sfml.Image <const>): sfml.Vector2u <cimport 'sfImage_getSize', nodecl> end
-function sfml.Image.createMaskFromColor(self: *sfml.Image, color: sfml.Color, alpha: sfUint8): void <cimport 'sfImage_createMaskFromFile', nodecl> end
-function sfml.Image.copyImage(self: *sfml.Image, source: *sfml.Image <const>, destX: cuint, destY: cuint, sourceRect: sfml.IntRect, applyAlpha: sfBool): void <cimport 'sfImage_copyImage', nodecl> end
-function sfml.Image.setPixel(self: *sfml.Image, x: cuint, y: cuint, color: sfml.Color): void <cimport 'sfImage_setPixel', nodecl> end
-function sfml.Image.getPixel(self: *sfml.Image <const>, x: cuint, y: cuint): sfml.Color <cimport 'sfImage_getPixel', nodecl> end
-function sfml.Image.getPixelsPtr(self: *sfml.Image <const>): *[0]sfUint8 <cimport 'sfImage_getPixelsPtr', nodecl> end
-function sfml.Image.flipHorizontally(self: *sfml.Image): void <cimport 'sfImage_flipHorizontally', nodecl> end
-function sfml.Image.flipVertically(self: *sfml.Image): void <cimport 'sfImage_flipVertically', nodecl> end
+-- Rectangle
+function sfml.RectangleShape.create(): *sfml.RectangleShape <cimport 'sfRectangleShape_create', nodecl> end
+function sfml.RectangleShape.copy(self: *sfml.RectangleShape <const>): *sfml.RectangleShape <cimport 'sfRectangleShape_copy', nodecl> end
+function sfml.RectangleShape.destroy(self: *sfml.RectangleShape): void <cimport 'sfRectangleShape_destroy', nodecl> end
+function sfml.RectangleShape.setPosition(self: *sfml.RectangleShape, position: sfml.Vector2f): void <cimport 'sfRectangleShape_setPosition', nodecl> end
+function sfml.RectangleShape.setRotation(self: *sfml.RectangleShape, angle: float32): void <cimport 'sfRectangleShape_setRotation', nodecl> end
+function sfml.RectangleShape.setScale(self: *sfml.RectangleShape, scale: sfml.Vector2f): void <cimport 'sfRectangleShape_setScale', nodecl> end
+function sfml.RectangleShape.setOrigin(self: *sfml.RectangleShape, origin: sfml.Vector2f): void <cimport 'sfRectangleShape_setOrigin', nodecl> end
+function sfml.RectangleShape.getPosition(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getPosition', nodecl> end
+function sfml.RectangleShape.getRotation(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getRotation', nodecl> end
+function sfml.RectangleShape.getScale(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getScale', nodecl> end
+function sfml.RectangleShape.getOrigin(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getOrigin', nodecl> end
+function sfml.RectangleShape.move(self: *sfml.RectangleShape, offset: sfml.Vector2f): void <cimport 'sfRectangleShape_move', nodecl> end
+function sfml.RectangleShape.rotate(self: *sfml.RectangleShape, angle: float32): void <cimport 'sfRectangleShape_rotate', nodecl> end
+function sfml.RectangleShape.scale(self: *sfml.RectangleShape, factors: sfml.Vector2f): void <cimport 'sfRectangleShape_scale', nodecl> end
+function sfml.RectangleShape.getTransform(self: *sfml.RectangleShape <const>): sfml.Transform <cimport 'sfRectangleShape_getTransform', nodecl> end
+function sfml.RectangleShape.getInverseTransform(self: *sfml.RectangleShape <const>): sfml.Transform <cimport 'sfRectangleShape_getInverseTransform', nodecl> end
+function sfml.RectangleShape.setTexture(self: *sfml.RectangleShape, texture: *sfml.Texture <const>, resetRect: sfBool): void <cimport 'sfRectangleShape_setTexture', nodecl> end
+function sfml.RectangleShape.setTextureRect(self: *sfml.RectangleShape, rect: sfml.IntRect): void <cimport 'sfRectangleShape_setTextureRect', nodecl> end
+function sfml.RectangleShape.setFillColor(self: *sfml.RectangleShape, color: sfml.Color): void <cimport 'sfRectangleShape_setFillColor', nodecl> end
+function sfml.RectangleShape.setOutlineColor(self: *sfml.RectangleShape, color: sfml.Color): void <cimport 'sfRectangleShape_setOutlineColor', nodecl> end
+function sfml.RectangleShape.setOutlineThickness(self: *sfml.RectangleShape, thickness: float32): void <cimport 'sfRectangleShape_setOutlineThickness', nodecl> end
+function sfml.RectangleShape.getTexture(self: *sfml.RectangleShape <const>): *sfml.Texture <cimport 'sfRectangleShape_getTexture', nodecl> end
+function sfml.RectangleShape.getTextureRect(self: *sfml.RectangleShape <const>): sfml.IntRect <cimport 'sfRectangleShape_getTextureRect', nodecl> end
+function sfml.RectangleShape.getFillColor(self: *sfml.RectangleShape <const>): sfml.Color <cimport 'sfRectangleShape_getFillColor', nodecl> end
+function sfml.RectangleShape.getOutlineColor(self: *sfml.RectangleShape <const>): sfml.Color <cimport 'sfRectangleShape_getOutlineColor', nodecl> end
+function sfml.RectangleShape.getOutlineThickness(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getOutlineThickness', nodecl> end
+function sfml.RectangleShape.getPointCount(self: *sfml.RectangleShape <const>): csize <cimport 'sfRectangleShape_getPointCount', nodecl> end
+function sfml.RectangleShape.getPoint(self: *sfml.RectangleShape <const>, index: csize): sfml.Vector2f <cimport 'sfRectangleShape_getPoint', nodecl> end
+function sfml.RectangleShape.setSize(self: *sfml.RectangleShape, size: float32): void <cimport 'sfRectangleShape_setSize', nodecl> end
+function sfml.RectangleShape.getSize(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getSize', nodecl> end
+function sfml.RectangleShape.setPointCount(self: *sfml.RectangleShape, count: csize): void <cimport 'sfRectangleShape_setPointCount', nodecl> end
+function sfml.RectangleShape.getLocalBounds(self: *sfml.RectangleShape <const>): sfml.FloatRect <cimport 'sfRectangleShape_getLocalBounds', nodecl> end
+function sfml.RectangleShape.getGlobalBounds(self: *sfml.RectangleShape <const>): sfml.FloatRect <cimport 'sfRectangleShape_getGlobalBounds', nodecl> end
