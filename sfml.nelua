@@ -1262,3 +1262,22 @@ global sfml.GlslMat3: type <cimport 'sfGlslMat3', nodecl> = @record {
 global sfml.GlslMat4: type <cimport 'sfGlslMat4', nodecl> = @record {
   array: [16]float32
 }
+
+
+-- View
+function sfml.View.create(): *sfml.View <cimport 'sfView_create', nodecl> end
+function sfml.View.createFromRect(rectangle: sfml.FloatRect): *sfml.View <cimport 'sfView_createFromRect', nodecl> end
+function sfml.View.copy(self: *sfml.View <const>): *sfml.View <cimport 'sfView_copy', nodecl> end
+function sfml.View.destroy(self: *sfml.View): void <cimport 'sfView_destroy', nodecl> end
+function sfml.View.setCenter(self: *sfml.View, center: sfml.Vector2f): void <cimport 'sfView_setCenter', nodecl> end
+function sfml.View.setSize(self: *sfml.View, size: sfml.Vector2f): void <cimport 'sfView_setSize', nodecl> end
+function sfml.View.setRotation(self: *sfml.View, angle: float32): void <cimport 'sfView_setRotation', nodecl> end
+function sfml.View.setViewport(self: *sfml.View, viewport: sfml.FloatRect): void <cimport 'sfView_setViewport', nodecl> end
+function sfml.View.reset(self: *sfml.View, rectangle: sfml.FloatRect): void <cimport 'sfView_reset', nodecl> end
+function sfml.View.getCenter(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getCenter', nodecl> end
+function sfml.View.getSize(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getSize', nodecl> end
+function sfml.View.getRotation(self: *sfml.View <const>): float32 <cimport 'sfView_getRotation', nodecl> end
+function sfml.View.getViewport(self: *sfml.View <const>): sfml.FloatRect <cimport 'sfView_getViewport', nodecl> end
+function sfml.View.move(self: *sfml.View, offset: sfml.Vector2f): void <cimport 'sfView_move', nodecl> end
+function sfml.View.rotate(self: *sfml.View, angle: float32): void <cimport 'sfView_rotate', nodecl> end
+function sfml.View.zoom(self: *sfml.View, factor: float32): void <cimport 'sfView_zoom', nodecl> end
