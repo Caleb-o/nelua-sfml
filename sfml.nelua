@@ -541,3 +541,37 @@ function sfml.SoundRecorder.setDevice(self: *sfml.SoundRecorder, name: cstring <
 function sfml.SoundRecorder.getDevice(self: *sfml.SoundRecorder): cstring <cimport 'sfSoundRecorder_getDevice', nodecl> end
 function sfml.SoundRecorder.setChannelCount(self: *sfml.SoundRecorder, channelCount: cuint): void <cimport 'sfSoundRecorder_setChannelCount', nodecl> end
 function sfml.SoundRecorder.getChannelCount(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getChannelCount', nodecl> end
+
+
+-- Audio: SoundStream
+global sfml.SoundStreamChunk: type <cimport 'sfSoundStreamChunk', nodecl> = @record {
+  samples: *[0]sfInt16,
+  sampleCount: cuint
+}
+
+global sfml.SoundStreamGetDataCallback: type <cimport 'sfSoundStreamGetDataCallback', nodecl> = @function(*sfml.SoundStreamChunk, pointer): sfBool
+global sfml.SoundStreamSeekCallback: type <cimport 'sfSoundStreamSeekCallback', nodecl> = @function(sfml.Time, pointer): void
+
+function sfml.SoundStream.create(onGetData: sfml.SoundStreamGetDataCallback, onSeek: sfml.SoundStreamSeekCallback, channelCount: cuint, sampleRate: cuint, userData: pointer): *sfml.SoundStream <cimport 'sfSoundStream_create', nodecl> end
+function sfml.SoundStream.destroy(self: *sfml.SoundStream): void <cimport 'sfSoundStream_destroy', nodecl> end
+function sfml.SoundStream.play(self: *sfml.SoundStream): void <cimport 'sfSoundStream_play', nodecl> end
+function sfml.SoundStream.pause(self: *sfml.SoundStream): void <cimport 'sfSoundStream_pause', nodecl> end
+function sfml.SoundStream.stop(self: *sfml.SoundStream): void <cimport 'sfSoundStream_stop', nodecl> end
+function sfml.SoundStream.getStatus(self: *sfml.SoundStream <const>): sfml.SoundStatus <cimport 'sfSoundStream_getStatus', nodecl> end
+function sfml.SoundStream.getChannelCount(self: *sfml.SoundStream <const>): cuint <cimport 'sfSoundStream_getChannelCount', nodecl> end
+function sfml.SoundStream.setPitch(self: *sfml.SoundStream, pitch: float32): void <cimport 'sfSoundStream_setPitch', nodecl> end
+function sfml.SoundStream.setVolume(self: *sfml.SoundStream, volume: float32): void <cimport 'sfSoundStream_setVolume', nodecl> end
+function sfml.SoundStream.setPosition(self: *sfml.SoundStream, position: sfml.Vector3f): void <cimport 'sfSoundStream_setPosition', nodecl> end
+function sfml.SoundStream.setRelativeToListener(self: *sfml.SoundStream, relative: sfBool): void <cimport 'sfSoundStream_setRelativeToListener', nodecl> end
+function sfml.SoundStream.setMinDistance(self: *sfml.SoundStream, distance: float32): void <cimport 'sfSoundStream_setMinDistance', nodecl> end
+function sfml.SoundStream.setAttenuation(self: *sfml.SoundStream, attenuation: float32): void <cimport 'sfSoundStream_setAttenuation', nodecl> end
+function sfml.SoundStream.setPlayingOffset(self: *sfml.SoundStream, timeOffset: sfml.Time): void <cimport 'sfSoundStream_setPlayingOffset', nodecl> end
+function sfml.SoundStream.setLoop(self: *sfml.SoundStream, loop: sfBool): void <cimport 'sfSoundStream_setLoop', nodecl> end
+function sfml.SoundStream.getPitch(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getPitch', nodecl> end
+function sfml.SoundStream.getVolume(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getVolume', nodecl> end
+function sfml.SoundStream.getPosition(self: *sfml.SoundStream <const>): sfml.Vector3f <cimport 'sfSoundStream_getPosition', nodecl> end
+function sfml.SoundStream.isRelativeToListener(self: *sfml.SoundStream <const>): sfBool <cimport 'sfSoundStream_isRelativeToListener', nodecl> end
+function sfml.SoundStream.getMinDistance(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getMinDistance', nodecl> end
+function sfml.SoundStream.getAttenuation(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getAttenuation', nodecl> end
+function sfml.SoundStream.getLoop(self: *sfml.SoundStream <const>): sfBool <cimport 'sfSoundStream_getLoop', nodecl> end
+function sfml.SoundStream.getPlayingOffset(self: *sfml.SoundStream <const>): sfml.Time <cimport 'sfSoundStream_getPlayingOffset', nodecl> end
