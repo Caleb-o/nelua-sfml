@@ -7,7 +7,7 @@ do print '# Time'
 	print(ms, sec)
 end
 
-do print '## Clock'
+do print '\n## Clock'
 	local c: *sfml.Clock = sfml.Clock.create()
 	defer c:destroy() end
 
@@ -15,9 +15,9 @@ do print '## Clock'
 	print(c:getElapsedTime():asMilliseconds())
 end
 
-do print '# Threads'
+do print '\n# Threads'
 	local function thing(ptr: pointer)
-		for i=0, 100 do
+		for i=0, 20 do
 			print(i)
 		end
 	end
@@ -27,4 +27,18 @@ do print '# Threads'
 
 	t:launch()
 	t:wait()
+end
+
+do print '\n# Vectors'
+	local vi = sfml.Vector2i{1, 2}
+	print(vi.x, vi.y)
+	
+	local vu = sfml.Vector2u{1, 2}
+	print(vu.x, vu.y)
+
+	local vf = sfml.Vector2f{1, 2}
+	print(vf.x, vf.y)
+
+	local v3 = sfml.Vector3f{1, 2, 3}
+	print(v3.x, v3.y, v3.z)
 end

@@ -99,3 +99,151 @@ function sfml.Thread.destroy(self: *sfml.Thread): void <cimport 'sfThread_destro
 function sfml.Thread.launch(self: *sfml.Thread): void <cimport 'sfThread_launch', nodecl> end
 function sfml.Thread.wait(self: *sfml.Thread): void <cimport 'sfThread_wait', nodecl> end
 function sfml.Thread.terminate(self: *sfml.Thread): void <cimport 'sfThread_terminate', nodecl> end
+
+
+-- Vector
+global sfml.Vector2i: type <cimport 'sfVector2i', nodecl> = @record {
+  x: cint,
+  y: cint
+}
+
+global sfml.Vector2u: type <cimport 'sfVector2u', nodecl> = @record {
+  x: cuint,
+  y: cuint
+}
+
+global sfml.Vector2f: type <cimport 'sfVector2f', nodecl> = @record {
+  x: float32,
+  y: float32
+}
+
+global sfml.Vector3f: type <cimport 'sfVector3f', nodecl> = @record {
+  x: float32,
+  y: float32,
+  z: float32
+}
+
+
+-- Network
+global sfml.FtpDirectoryResponse: type <cimport 'sfFtpDirectoryResponse', nodecl, forwarddecl> = @record {}
+global sfml.FtpListingResponse: type <cimport 'sfFtpListingResponse', nodecl, forwarddecl> = @record {}
+global sfml.FtpResponse: type <cimport 'sfFtpResponse', nodecl, forwarddecl> = @record {}
+global sfml.Ftp: type <cimport 'sfFtp', nodecl, forwarddecl> = @record {}
+global sfml.HttpRequest: type <cimport 'sfHttpRequest', nodecl, forwarddecl> = @record {}
+global sfml.HttpResponse: type <cimport 'sfHttpResponse', nodecl, forwarddecl> = @record {}
+global sfml.Http: type <cimport 'sfHttp', nodecl, forwarddecl> = @record {}
+global sfml.Packet: type <cimport 'sfPacket', nodecl, forwarddecl> = @record {}
+global sfml.SocketSelector: type <cimport 'sfSocketSelector', nodecl, forwarddecl> = @record {}
+global sfml.TcpListener: type <cimport 'sfTcpListener', nodecl, forwarddecl> = @record {}
+global sfml.TcpSocket: type <cimport 'sfTcpSocket', nodecl, forwarddecl> = @record {}
+global sfml.UdpSocket: type <cimport 'sfUdpSocket', nodecl, forwarddecl> = @record {}
+
+
+-- Network: IpAddress
+global sfml.IpAddress: type <cimport 'sfIpAddress', nodecl> = @record {
+  address: [16]cchar
+}
+
+global sfml.IpAddress.None: sfml.IpAddress <cimport 'sfIpAddress_None', nodecl, const>
+global sfml.IpAddress.Any: sfml.IpAddress <cimport 'sfIpAddress_Any', nodecl, const>
+global sfml.IpAddress.LocalHost: sfml.IpAddress <cimport 'sfIpAddress_LocalHost', nodecl, const>
+global sfml.IpAddress.Broadcast: sfml.IpAddress <cimport 'sfIpAddress_Broadcast', nodecl, const>
+
+function sfml.IpAddress.fromString(address: cstring <const>): sfml.IpAddress <cimport 'sfIpAddress_fromString', nodecl> end
+function sfml.IpAddress.fromBytes(byte0: sfUint8, byte1: sfUint8, byte2: sfUint8, byte3: sfUint8): sfml.IpAddress <cimport 'sfIpAddress_fromBytes', nodecl> end
+function sfml.IpAddress.fromInteger(address: sfUint32): sfml.IpAddress <cimport 'sfIpAddress_fromInteger', nodecl> end
+function sfml.IpAddress.toString(self: sfml.IpAddress, string: cstring): void <cimport 'sfIpAddress_toString', nodecl> end
+function sfml.IpAddress.toInteger(self: sfml.IpAddress): sfUint32 <cimport 'sfIpAddress_toInteger', nodecl> end
+function sfml.IpAddress.getLocalAddress(): sfml.IpAddress <cimport 'sfIpAddress_getLocalAddress', nodecl> end
+function sfml.IpAddress.getPublicAddress(timeout: sfml.Time): sfml.IpAddress <cimport 'sfIpAddress_getPublicAddress', nodecl> end
+
+-- Network: FTP
+global sfml.FtpTransferMode: type <cimport 'sfFtpTransferMode', nodecl, using> = @enum(cint) {
+  FtpBinary = 0,
+  FtpAscii,
+  FtpEbcdic
+}
+
+global sfml.FtpStatus: type <cimport 'sfFtpStatus', nodecl, using> = @enum(cint) {
+  FtpRestartMarkerReply          = 110,
+  FtpServiceReadySoon            = 120,
+  FtpDataConnectionAlreadyOpened = 125,
+  FtpOpeningDataConnection       = 150,  
+  FtpOk                    = 200,
+  FtpPointlessCommand      = 202,
+  FtpSystemStatus          = 211,
+  FtpDirectoryStatus       = 212,
+  FtpFileStatus            = 213,
+  FtpHelpMessage           = 214,
+  FtpSystemType            = 215,
+  FtpServiceReady          = 220,
+  FtpClosingConnection     = 221,
+  FtpDataConnectionOpened  = 225,
+  FtpClosingDataConnection = 226,
+  FtpEnteringPassiveMode   = 227,
+  FtpLoggedIn              = 230,
+  FtpFileActionOk          = 250,
+  FtpDirectoryOk           = 257,
+  FtpNeedPassword       = 331,
+  FtpNeedAccountToLogIn = 332,
+  FtpNeedInformation    = 350,
+
+  FtpServiceUnavailable        = 421,
+  FtpDataConnectionUnavailable = 425,
+  FtpTransferAborted           = 426,
+  FtpFileActionAborted         = 450,
+  FtpLocalError                = 451,
+  FtpInsufficientStorageSpace  = 452,
+  FtpCommandUnknown          = 500,
+  FtpParametersUnknown       = 501,
+  FtpCommandNotImplemented   = 502,
+  FtpBadCommandSequence      = 503,
+  FtpParameterNotImplemented = 504,
+  FtpNotLoggedIn             = 530,
+  FtpNeedAccountToStore      = 532,
+  FtpFileUnavailable         = 550,
+  FtpPageTypeUnknown         = 551,
+  FtpNotEnoughMemory         = 552,
+  FtpFilenameNotAllowed      = 553,
+  FtpInvalidResponse  = 1000,
+  FtpConnectionFailed = 1001,
+  FtpConnectionClosed = 1002,
+  FtpInvalidFile      = 1003
+}
+
+function sfml.FtpListingResponse.destroy(self: *sfml.FtpListingResponse): void <cimport 'sfFtpListingResponse_destroy', nodecl> end
+function sfml.FtpListingResponse.isOk(self: *sfml.FtpListingResponse <const>): sfBool <cimport 'sfFtpListingResponse_isOk', nodecl> end
+function sfml.FtpListingResponse.getStatus(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus <cimport 'sfFtpListingResponse_getStatus', nodecl> end
+function sfml.FtpListingResponse.getMessage(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpListingResponse_getMessage', nodecl> end
+function sfml.FtpListingResponse.getCount(self: *sfml.FtpListingResponse <const>): csize <cimport 'sfFtpListingResponse_getCount', nodecl> end
+function sfml.FtpListingResponse.getName(self: *sfml.FtpListingResponse <const>, index: csize): cstring <cimport 'sfFtpListingResponse_getName', nodecl> end
+
+function sfml.FtpDirectoryResponse.destroy(self: *sfml.FtpListingResponse): void <cimport 'sfFtpDirectoryResponse_destroy', nodecl> end
+function sfml.FtpDirectoryResponse.isOk(self: *sfml.FtpListingResponse <const>): sfBool <cimport 'sfFtpDirectoryResponse_isOk', nodecl> end
+function sfml.FtpDirectoryResponse.getStatus(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus <cimport 'sfFtpDirectoryResponse_getStatus', nodecl> end
+function sfml.FtpDirectoryResponse.getMessage(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpDirectoryResponse_getMessage', nodecl> end
+function sfml.FtpDirectoryResponse.getDirectory(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpDirectoryResponse_getDirectory', nodecl> end
+
+function sfml.FtpResponse.destroy(self: *sfml.FtpResponse): void <cimport 'sfFtpResponse_destroy', nodecl> end
+function sfml.FtpResponse.isOk(self: *sfml.FtpResponse <const>): sfBool <cimport 'sfFtpResponse_isOk', nodecl> end
+function sfml.FtpResponse.getStatus(self: *sfml.FtpResponse <const>): sfml.FtpStatus <cimport 'sfFtpResponse_getStatus', nodecl> end
+function sfml.FtpResponse.getMessage(self: *sfml.FtpResponse <const>): cstring <cimport 'sfFtpResponse_getMessage', nodecl> end
+
+function sfml.Ftp.create(): *sfml.Ftp <cimport 'sfFtp_create', nodecl> end
+function sfml.Ftp.destroy(self: *sfml.Ftp): void <cimport 'sfFtp_destroy', nodecl> end
+function sfml.Ftp.connect(self: *sfml.Ftp, server: sfml.IpAddress, port: cushort, timeout: sfml.Time): *sfml.FtpResponse <cimport 'sfFtp_connect', nodecl> end
+function sfml.Ftp.loginAnonymous(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_loginAnonymous', nodecl> end
+function sfml.Ftp.login(self: *sfml.Ftp, name: cstring <const>, password: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_login', nodecl> end
+function sfml.Ftp.disconnect(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_disconnect', nodecl> end
+function sfml.Ftp.keepAlive(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_keepAlive', nodecl> end
+function sfml.Ftp.getWorkingDirectory(self: *sfml.Ftp): *sfml.FtpDirectoryResponse <cimport 'sfFtp_getWorkingDirectory', nodecl> end
+function sfml.Ftp.getDirectoryListing(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpListingResponse <cimport 'sfFtp_getDirectoryListing', nodecl> end
+function sfml.Ftp.changeDirectory(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_changeDirectory', nodecl> end
+function sfml.Ftp.parentDirectory(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_parentDirectory', nodecl> end
+function sfml.Ftp.createDirectory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_createDirectory', nodecl> end
+function sfml.Ftp.deleteDirectory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_deleteDirectory', nodecl> end
+function sfml.Ftp.renameFile(self: *sfml.Ftp, file: cstring <const>, newName: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_renameFile', nodecl> end
+function sfml.Ftp.deleteFile(self: *sfml.Ftp, file: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_deleteFile', nodecl> end
+function sfml.Ftp.download(self: *sfml.Ftp, remoteFile: cstring <const>, localPath: cstring <const>, mode: sfml.FtpTransferMode): *sfml.FtpResponse <cimport 'sfFtp_download', nodecl> end
+function sfml.Ftp.upload(self: *sfml.Ftp, localFile: cstring <const>, remotePath: cstring <const>, mode: sfml.FtpTransferMode, append: sfBool): *sfml.FtpResponse <cimport 'sfFtp_upload', nodecl> end
+function sfml.Ftp.sendCommand(self: *sfml.Ftp, command: cstring <const>, parameter: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_sendCommand', nodecl> end
