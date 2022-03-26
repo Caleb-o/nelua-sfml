@@ -520,3 +520,24 @@ function sfml.SoundBufferRecorder.getSampleRate(self: *sfml.SoundBufferRecorder 
 function sfml.SoundBufferRecorder.getBuffer(self: *sfml.SoundBufferRecorder <const>): *sfml.SoundBuffer <cimport 'sfSoundBufferRecorder_getBuffer', nodecl> end
 function sfml.SoundBufferRecorder.setDevice(self: *sfml.SoundBufferRecorder <const>, name: cstring <const>): sfBool <cimport 'sfSoundBufferRecorder_setDevice', nodecl> end
 function sfml.SoundBufferRecorder.getDevice(self: *sfml.SoundBufferRecorder): cstring <cimport 'sfSoundBufferRecorder_getDevice', nodecl> end
+
+
+global sfml.SoundRecorderStartCallback: type <cimport 'sfSoundRecorderStartCallback', nodecl> = @function(pointer): sfBool
+global sfml.SoundRecorderProcessCallback: type <cimport 'sfSoundRecorderProcessCallback', nodecl> = @function(*[0]sfInt16, csize, pointer): sfBool
+global sfml.SoundRecorderStopCallback: type <cimport 'sfSoundRecorderStopCallback', nodecl> = @function(pointer): void
+
+
+-- Audio: Sound Recorder
+function sfml.SoundRecorder.create(onStart: sfml.SoundRecorderStartCallback, onProcess: sfml.SoundRecorderProcessCallback, onStop: sfml.SoundRecorderStopCallback, userData: pointer): *sfml.SoundRecorder <cimport 'sfSoundRecorder_create', nodecl> end
+function sfml.SoundRecorder.destroy(self: *sfml.SoundRecorder): void <cimport 'sfSoundRecorder_destroy', nodecl> end
+function sfml.SoundRecorder.start(self: *sfml.SoundRecorder, sampleRate: cuint): sfBool <cimport 'sfSoundRecorder_start', nodecl> end
+function sfml.SoundRecorder.stop(self: *sfml.SoundRecorder): void <cimport 'sfSoundRecorder_stop', nodecl> end
+function sfml.SoundRecorder.getSampleRate(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getSampleRate', nodecl> end
+function sfml.SoundRecorder.isAvailable(): sfBool <cimport 'sfSoundRecorder_isAvailable', nodecl> end
+function sfml.SoundRecorder.setProcessingInterval(self: *sfml.SoundRecorder, interval: sfml.Time): void <cimport 'sfSoundRecorder_setProcessingInterval', nodecl> end
+function sfml.SoundRecorder.getAvailableDevices(count: csize): *[0]cstring <cimport 'sfSoundRecorder_getAvailableDevices', nodecl> end
+function sfml.SoundRecorder.getDefaultDevice(): cstring <cimport 'sfSoundRecorder_getDefaultDevice', nodecl> end
+function sfml.SoundRecorder.setDevice(self: *sfml.SoundRecorder, name: cstring <const>): sfBool <cimport 'sfSoundRecorder_setDevice', nodecl> end
+function sfml.SoundRecorder.getDevice(self: *sfml.SoundRecorder): cstring <cimport 'sfSoundRecorder_getDevice', nodecl> end
+function sfml.SoundRecorder.setChannelCount(self: *sfml.SoundRecorder, channelCount: cuint): void <cimport 'sfSoundRecorder_setChannelCount', nodecl> end
+function sfml.SoundRecorder.getChannelCount(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getChannelCount', nodecl> end
