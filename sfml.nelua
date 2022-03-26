@@ -608,7 +608,7 @@ function sfml.VideoMode.getFullscreenModes(count: *csize): *[0]sfml.VideoMode <c
 function sfml.VideoMode.isValid(mode: sfml.VideoMode): sfBool <cimport 'sfVideoMode_isValid', nodecl> end
 
 
--- Joystick
+-- Control: Joystick
 global sfml.JoystickIdentification: type <cimport 'sfJoystickIdentification', nodecl> = @record {
   name: cstring,
   vendorId: cuint,
@@ -638,3 +638,162 @@ function sfml.Joystick.isButtonPressed(joystick: cuint, button: cuint): sfBool <
 function sfml.Joystick.getAxisPosition(joystick: cuint, axis: sfml.JoystickAxis): float32 <cimport 'sfJoystick_getAxisPosition', nodecl> end
 function sfml.Joystick.getIdentification(joystick: cuint): sfml.JoystickIdentification <cimport 'sfJoystick_getIdentification', nodecl> end
 function sfml.Joystick.update(): void <cimport 'sfJoystick_update', nodecl> end
+
+
+-- Control: Key
+global sfml.KeyCode: type <cimport 'sfKeyCode', nodecl, using> = @enum(cint) {
+  KeyUnknown = -1,
+  KeyA,
+  KeyB,
+  KeyC,
+  KeyD,
+  KeyE,
+  KeyF,
+  KeyG,
+  KeyH,
+  KeyI,
+  KeyJ,
+  KeyK,
+  KeyL,
+  KeyM,
+  KeyN,
+  KeyO,
+  KeyP,
+  KeyQ,
+  KeyR,
+  KeyS,
+  KeyT,
+  KeyU,
+  KeyV,
+  KeyW,
+  KeyX,
+  KeyY,
+  KeyZ,
+  KeyNum0,
+  KeyNum1,
+  KeyNum2,
+  KeyNum3,
+  KeyNum4,
+  KeyNum5,
+  KeyNum6,
+  KeyNum7,
+  KeyNum8,
+  KeyNum9,
+  KeyEscape,
+  KeyLControl,
+  KeyLShift,
+  KeyLAlt,
+  KeyLSystem,
+  KeyRControl,
+  KeyRShift,
+  KeyRAlt,
+  KeyRSystem,
+  KeyMenu,
+  KeyLBracket,
+  KeyRBracket,
+  KeySemicolon,
+  KeyComma,
+  KeyPeriod,
+  KeyQuote,
+  KeySlash,
+  KeyBackslash,
+  KeyTilde,
+  KeyEqual,
+  KeyHyphen,
+  KeySpace,
+  KeyEnter,
+  KeyBackspace,
+  KeyTab,
+  KeyPageUp,
+  KeyPageDown,
+  KeyEnd,
+  KeyHome,
+  KeyInsert,
+  KeyDelete,
+  KeyAdd,
+  KeySubtract,
+  KeyMultiply,
+  KeyDivide,
+  KeyLeft,
+  KeyRight,
+  KeyUp,
+  KeyDown,
+  KeyNumpad0,
+  KeyNumpad1,
+  KeyNumpad2,
+  KeyNumpad3,
+  KeyNumpad4,
+  KeyNumpad5,
+  KeyNumpad6,
+  KeyNumpad7,
+  KeyNumpad8,
+  KeyNumpad9,
+  KeyF1,
+  KeyF2,
+  KeyF3,
+  KeyF4,
+  KeyF5,
+  KeyF6,
+  KeyF7,
+  KeyF8,
+  KeyF9,
+  KeyF10,
+  KeyF11,
+  KeyF12,
+  KeyF13,
+  KeyF14,
+  KeyF15,
+  KeyPause,
+  KeyCount
+}
+
+global sfml.KeyDash: cint <cimport 'sfKeyDash', nodecl, const>
+global sfml.KeyBack: cint <cimport 'sfKeyBack', nodecl, const>
+global sfml.KeyBackSlash: cint <cimport 'sfKeyBackSlash', nodecl, const>
+global sfml.KeySemiColon: cint <cimport 'sfKeySemiColon', nodecl, const>
+global sfml.KeyReturn: cint <cimport 'sfKeyReturn', nodecl, const>
+
+global sfml.Keyboard = @record{}
+function sfml.Keyboard.isKeyPressed(key: sfml.KeyCode): sfBool <cimport 'sfKeyboard_isKeyPressed', nodecl> end
+function sfml.Keyboard.setVirtualKeyboardVisible(visible: sfBool): void <cimport 'sfKeyboard_setVirtualKeyboardVisible', nodecl> end
+
+
+-- Control: Mouse
+global sfml.MouseButton: type <cimport 'sfMouseButton', nodecl, using> = @enum(cint) {
+  MouseLeft = 0,
+  MouseRight,
+  MouseMiddle,
+  MouseXButton1,
+  MouseXButton2,
+  MouseButtonCount,
+}
+
+global sfml.MouseWheel: type <cimport 'sfMouseWheel', nodecl, using> = @enum(cint) {
+  MouseVerticalWheel = 0,
+  MouseHorizontalWheel
+}
+
+global sfml.Mouse = @record{}
+function sfml.Mouse.isButtonPressed(button: sfml.MouseButton): sfBool <cimport 'sfMouse_isButtonPressed', nodecl> end
+function sfml.Mouse.getPosition(relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfMouse_getPosition', nodecl> end
+function sfml.Mouse.setPosition(position: sfml.Vector2i, relativeTo: *sfml.Window <const>): void <cimport 'sfMouse_setPosition', nodecl> end
+
+global sfml.CursorType: type <cimport 'sfCursorType', nodecl, using> = @enum(cint) {
+  CursorArrow = 0,
+  CursorArrowWait,
+  CursorWait,
+  CursorText,
+  CursorHand,
+  CursorSizeHorizontal,
+  CursorSizeVertical,
+  CursorSizeTopLeftBottomRight,
+  CursorSizeBottomLeftTopRight,
+  CursorSizeAll,
+  CursorCross,
+  CursorHelp,
+  CursorNotAllowed
+}
+
+function sfml.Cursor.createFromPixels(pixels: *[0]sfUint8 <const>, size: sfml.Vector2u, hotspot: sfml.Vector2u): *sfml.Cursor <cimport 'sfCursor_createFromPixels', nodecl> end
+function sfml.Cursor.createFromSystem(cursor_type: sfml.CursorType): *sfml.Cursor <cimport, nodecl> end
+function sfml.Cursor.destroy(cursor: *sfml.Cursor): void <cimport, nodecl> end
