@@ -129,9 +129,9 @@ global sfml.FtpDirectoryResponse: type <cimport 'sfFtpDirectoryResponse', nodecl
 global sfml.FtpListingResponse: type <cimport 'sfFtpListingResponse', nodecl, forwarddecl> = @record {}
 global sfml.FtpResponse: type <cimport 'sfFtpResponse', nodecl, forwarddecl> = @record {}
 global sfml.Ftp: type <cimport 'sfFtp', nodecl, forwarddecl> = @record {}
-global sfml.HttpRequest: type <cimport 'sfHttpRequest', nodecl, forwarddecl> = @record {}
-global sfml.HttpResponse: type <cimport 'sfHttpResponse', nodecl, forwarddecl> = @record {}
-global sfml.Http: type <cimport 'sfHttp', nodecl, forwarddecl> = @record {}
+global sfml.HttpRequest: type <cimport 'sfml.HttpRequest', nodecl, forwarddecl> = @record {}
+global sfml.HttpResponse: type <cimport 'sfml.HttpResponse', nodecl, forwarddecl> = @record {}
+global sfml.Http: type <cimport 'sfml.Http', nodecl, forwarddecl> = @record {}
 global sfml.Packet: type <cimport 'sfPacket', nodecl, forwarddecl> = @record {}
 global sfml.SocketSelector: type <cimport 'sfSocketSelector', nodecl, forwarddecl> = @record {}
 global sfml.TcpListener: type <cimport 'sfTcpListener', nodecl, forwarddecl> = @record {}
@@ -247,3 +247,63 @@ function sfml.Ftp.deleteFile(self: *sfml.Ftp, file: cstring <const>): *sfml.FtpR
 function sfml.Ftp.download(self: *sfml.Ftp, remoteFile: cstring <const>, localPath: cstring <const>, mode: sfml.FtpTransferMode): *sfml.FtpResponse <cimport 'sfFtp_download', nodecl> end
 function sfml.Ftp.upload(self: *sfml.Ftp, localFile: cstring <const>, remotePath: cstring <const>, mode: sfml.FtpTransferMode, append: sfBool): *sfml.FtpResponse <cimport 'sfFtp_upload', nodecl> end
 function sfml.Ftp.sendCommand(self: *sfml.Ftp, command: cstring <const>, parameter: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_sendCommand', nodecl> end
+
+
+-- Network: HTTP
+global sfml.HttpMethod: type <cimport 'sfml.HttpMethod', nodecl, using> = @enum(cint) {
+  HttpGet = 0,
+  HttpPost,
+  HttpHead,
+  HttpPut,
+  HttpDelete
+}
+
+global sfml.HttpStatus: type <cimport 'sfHttpStatus', nodecl, using> = @enum(cint) {
+  HttpOk             = 200,
+  HttpCreated        = 201,
+  HttpAccepted       = 202,
+  HttpNoContent      = 204,
+  HttpResetContent   = 205,
+  HttpPartialContent = 206,
+
+  HttpMultipleChoices  = 300,
+  HttpMovedPermanently = 301,
+  HttpMovedTemporarily = 302,
+  HttpNotModified      = 304,
+
+  HttpBadRequest          = 400,
+  HttpUnauthorized        = 401,
+  HttpForbidden           = 403,
+  HttpNotFound            = 404,
+  HttpRangeNotSatisfiable = 407,
+
+  HttpInternalServerError = 500,
+  HttpNotImplemented      = 501,
+  HttpBadGateway          = 502,
+  HttpServiceNotAvailable = 503,
+  HttpGatewayTimeout      = 504,
+  HttpVersionNotSupported = 505,
+
+  HttpInvalidResponse  = 1000,
+  HttpConnectionFailed = 1001
+}
+
+function sfml.HttpRequest.create(): *sfml.HttpRequest <cimport 'sfHttpRequest_create', nodecl> end
+function sfml.HttpRequest.destroy(self: *sfml.HttpRequest): void <cimport 'sfHttpRequest_destroy', nodecl> end
+function sfml.HttpRequest.setField(self: *sfml.HttpRequest, field: cstring <const>, value: cstring <const>): void <cimport 'sfHttpRequest_setField', nodecl> end
+function sfml.HttpRequest.setMethod(self: *sfml.HttpRequest, method: sfml.HttpMethod): void <cimport 'sfHttpRequest_setMethod', nodecl> end
+function sfml.HttpRequest.setUri(self: *sfml.HttpRequest, uri: cstring <const>): void <cimport 'sfHttpRequest_setUri', nodecl> end
+function sfml.HttpRequest.setHttpVersion(self: *sfml.HttpRequest, major: cuint, minor: cuint): void <cimport 'sfHttpRequest_setHttpVersion', nodecl> end
+function sfml.HttpRequest.setBody(self: *sfml.HttpRequest, body: cstring <const>): void <cimport 'sfHttpRequest_setBody', nodecl> end
+
+function sfml.HttpResponse.destroy(self: *sfml.HttpResponse): void <cimport 'sfHttpResponse_destroy', nodecl> end
+function sfml.HttpResponse.getField(self: *sfml.HttpResponse <const>, field: cstring <const>): cstring <cimport 'sfHttpResponse_getField', nodecl> end
+function sfml.HttpResponse.getStatus(self: *sfml.HttpResponse <const>): sfml.HttpStatus <cimport 'sfHttpResponse_getStatus', nodecl> end
+function sfml.HttpResponse.getMajorVersion(self: *sfml.HttpResponse <const>): cuint <cimport 'sfHttpResponse_getMajorVersion', nodecl> end
+function sfml.HttpResponse.getMinorVersion(self: *sfml.HttpResponse <const>): cuint <cimport 'sfHttpResponse_getMinorVersion', nodecl> end
+function sfml.HttpResponse.getBody(self: *sfml.HttpResponse <const>): cstring <cimport 'sfHttpResponse_getBody', nodecl> end
+
+function sfml.Http.create(): *sfml.Http <cimport 'sfHttp_create', nodecl> end
+function sfml.Http.destroy(http: *sfml.Http): void <cimport 'sfHttp_destroy', nodecl> end
+function sfml.Http.setHost(http: *sfml.Http, host: cstring <const>, port: cuint): void <cimport 'sfHttp_setHost', nodecl> end
+function sfml.Http.sendRequest(http: *sfml.Http, request: *sfml.HttpRequest <const>, timeout: sfml.Time): *sfml.HttpResponse <cimport 'sfHttp_sendRequest', nodecl> end
