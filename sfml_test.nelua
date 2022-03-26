@@ -14,3 +14,17 @@ do print '## Clock'
 	print(c:getElapsedTime():asSeconds())
 	print(c:getElapsedTime():asMilliseconds())
 end
+
+do print '# Threads'
+	local function thing(ptr: pointer)
+		for i=0, 100 do
+			print(i)
+		end
+	end
+
+	local t: *sfml.Thread = sfml.Thread.create(thing, nilptr)
+	defer t:destroy() end
+
+	t:launch()
+	t:wait()
+end
