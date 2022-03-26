@@ -1008,3 +1008,11 @@ function sfml.Window.requestFocus(self: *sfml.Window): void <cimport 'sfWindow_r
 function sfml.Window.hasFocus(self: *sfml.Window <const>): sfBool <cimport 'sfWindow_hasFocus', nodecl> end
 function sfml.Window.display(self: *sfml.Window): void <cimport 'sfWindow_display', nodecl> end
 function sfml.Window.getSystemHandle(self: *sfml.Window <const>): sfml.WindowHandle <cimport 'sfWindow_getSystemHandle', nodecl> end
+
+
+-- Context
+function sfml.Context.create(): *sfml.Context <cimport 'sfContext_create', nodecl> end
+function sfml.Context.destroy(self: *sfml.Context): void <cimport 'sfContext_destroy', nodecl> end
+function sfml.Context.setActive(self: *sfml.Context, active: sfBool): sfBool <cimport 'sfContext_setActive', nodecl> end
+function sfml.Context.getSettings(self: *sfml.Context <const>): sfml.ContextSettings <cimport 'sfContext_getSettings', nodecl> end
+function sfml.Context.getActiveContextId(): sfUint64 <cimport 'sfContext_getActiveContextId', nodecl> end
