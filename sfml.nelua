@@ -1174,3 +1174,22 @@ function sfml.VertexArray.append(self: *sfml.VertexArray, vertex: sfml.Vertex): 
 function sfml.VertexArray.setPrimitiveType(self: *sfml.VertexArray, type: sfml.PrimitiveType): void <cimport 'sfVertexArray_setPrimitiveType', nodecl> end
 function sfml.VertexArray.getPrimitiveType(self: *sfml.VertexArray): sfml.PrimitiveType <cimport 'sfVertexArray_getPrimitiveType', nodecl> end
 function sfml.VertexArray.getBounds(self: *sfml.VertexArray): sfml.FloatRect <cimport 'sfVertexArray_getBounds', nodecl> end
+
+
+-- Transformable
+function sfml.Transformable.create(): *sfml.Transformable <cimport 'sfTransformable_create', nodecl> end
+function sfml.Transformable.copy(self: *sfml.Transformable <const>): *sfml.Transformable <cimport 'sfTransformable_copy', nodecl> end
+function sfml.Transformable.destroy(self: *sfml.Transformable): void <cimport 'sfTransformable_destroy', nodecl> end
+function sfml.Transformable.setPosition(self: *sfml.Transformable, position: sfml.Vector2f): void <cimport 'sfTransformable_setPosition', nodecl> end
+function sfml.Transformable.setRotation(self: *sfml.Transformable, angle: float32): void <cimport 'sfTransformable_setRotation', nodecl> end
+function sfml.Transformable.setScale(self: *sfml.Transformable, scale: sfml.Vector2f): void <cimport 'sfTransformable_setScale', nodecl> end
+function sfml.Transformable.setOrigin(self: *sfml.Transformable, origin: sfml.Vector2f): void <cimport 'sfTransformable_setOrigin', nodecl> end
+function sfml.Transformable.getPosition(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getPosition', nodecl> end
+function sfml.Transformable.getRotation(self: *sfml.Transformable <const>): float32 <cimport 'sfTransformable_getRotation', nodecl> end
+function sfml.Transformable.getScale(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getScale', nodecl> end
+function sfml.Transformable.getOrigin(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getOrigin', nodecl> end
+function sfml.Transformable.move(self: *sfml.Transformable, offset: sfml.Vector2f): void <cimport 'sfTransformable_move', nodecl> end
+function sfml.Transformable.rotate(self: *sfml.Transformable, angle: float32): void <cimport 'sfTransformable_rotate', nodecl> end
+function sfml.Transformable.scale(self: *sfml.Transformable, factors: sfml.Vector2f): void <cimport 'sfTransformable_scale', nodecl> end
+function sfml.Transformable.getTransform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getTransform', nodecl> end
+function sfml.Transformable.getInverseTransform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getInverseTransform', nodecl> end
