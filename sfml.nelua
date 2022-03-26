@@ -1607,3 +1607,31 @@ function sfml.Shape.setPointCount(self: *sfml.Shape, count: csize): void <cimpor
 function sfml.Shape.getLocalBounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getLocalBounds', nodecl> end
 function sfml.Shape.getGlobalBounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getGlobalBounds', nodecl> end
 function sfml.Shape.update(self: *sfml.Shape): void <cimport 'sfShape_update', nodecl> end
+
+
+-- Sprite
+function sfml.Sprite.create(): *sfml.Sprite <cimport 'sfSprite_create', nodecl> end
+
+function sfml.Sprite.copy(self: *sfml.Sprite <const>): *sfml.Sprite <cimport 'sfSprite_copy', nodecl> end
+function sfml.Sprite.destroy(self: *sfml.Sprite): void <cimport 'sfSprite_destroy', nodecl> end
+function sfml.Sprite.setPosition(self: *sfml.Sprite, position: sfml.Vector2f): void <cimport 'sfSprite_setPosition', nodecl> end
+function sfml.Sprite.setRotation(self: *sfml.Sprite, angle: float32): void <cimport 'sfSprite_setRotation', nodecl> end
+function sfml.Sprite.setScale(self: *sfml.Sprite, scale: sfml.Vector2f): void <cimport 'sfSprite_setScale', nodecl> end
+function sfml.Sprite.setOrigin(self: *sfml.Sprite, origin: sfml.Vector2f): void <cimport 'sfSprite_setOrigin', nodecl> end
+function sfml.Sprite.getPosition(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getPosition', nodecl> end
+function sfml.Sprite.getRotation(self: *sfml.Sprite <const>): float32 <cimport 'sfSprite_getRotation', nodecl> end
+function sfml.Sprite.getScale(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getScale', nodecl> end
+function sfml.Sprite.getOrigin(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getOrigin', nodecl> end
+function sfml.Sprite.move(self: *sfml.Sprite, offset: sfml.Vector2f): void <cimport 'sfSprite_move', nodecl> end
+function sfml.Sprite.rotate(self: *sfml.Sprite, angle: float32): void <cimport 'sfSprite_rotate', nodecl> end
+function sfml.Sprite.scale(self: *sfml.Sprite, factors: sfml.Vector2f): void <cimport 'sfSprite_scale', nodecl> end
+function sfml.Sprite.getTransform(self: *sfml.Sprite <const>): sfml.Transform <cimport 'sfSprite_getTransform', nodecl> end
+function sfml.Sprite.getInverseTransform(self: *sfml.Sprite <const>): sfml.Transform <cimport 'sfSprite_getInverseTransform', nodecl> end
+function sfml.Sprite.setTexture(self: *sfml.Sprite, texture: *sfml.Texture, resetRect: sfBool): void <cimport 'sfSprite_setTexture', nodecl> end
+function sfml.Sprite.setTextureRect(self: *sfml.Sprite, rectangle: sfml.IntRect): void <cimport 'sfSprite_setTextureRect', nodecl> end
+function sfml.Sprite.setColor(self: *sfml.Sprite, color: sfml.Color): void <cimport 'sfSprite_setColor', nodecl> end
+function sfml.Sprite.getTexture(self: *sfml.Sprite <const>): *sfml.Texture <cimport 'sfSprite_getTexture', nodecl> end
+function sfml.Sprite.getTextureRect(self: *sfml.Sprite <const>): sfml.IntRect <cimport 'sfSprite_getTextureRect', nodecl> end
+function sfml.Sprite.getColor(self: *sfml.Sprite <const>): sfml.Color <cimport 'sfSprite_getColor', nodecl> end
+function sfml.Sprite.getLocalBounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getLocalBounds', nodecl> end
+function sfml.Sprite.getGlobalBounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getGlobalBounds', nodecl> end
