@@ -132,7 +132,7 @@ global sfml.Ftp: type <cimport 'sfFtp', nodecl, forwarddecl> = @record {}
 global sfml.HttpRequest: type <cimport 'sfml.HttpRequest', nodecl, forwarddecl> = @record {}
 global sfml.HttpResponse: type <cimport 'sfml.HttpResponse', nodecl, forwarddecl> = @record {}
 global sfml.Http: type <cimport 'sfml.Http', nodecl, forwarddecl> = @record {}
-global sfml.Packet: type <cimport 'sfPacket', nodecl, forwarddecl> = @record {}
+global sfml.Packet: type <cimport 'sfml.Packet', nodecl, forwarddecl> = @record {}
 global sfml.SocketSelector: type <cimport 'sfSocketSelector', nodecl, forwarddecl> = @record {}
 global sfml.TcpListener: type <cimport 'sfTcpListener', nodecl, forwarddecl> = @record {}
 global sfml.TcpSocket: type <cimport 'sfTcpSocket', nodecl, forwarddecl> = @record {}
@@ -307,3 +307,39 @@ function sfml.Http.create(): *sfml.Http <cimport 'sfHttp_create', nodecl> end
 function sfml.Http.destroy(http: *sfml.Http): void <cimport 'sfHttp_destroy', nodecl> end
 function sfml.Http.setHost(http: *sfml.Http, host: cstring <const>, port: cuint): void <cimport 'sfHttp_setHost', nodecl> end
 function sfml.Http.sendRequest(http: *sfml.Http, request: *sfml.HttpRequest <const>, timeout: sfml.Time): *sfml.HttpResponse <cimport 'sfHttp_sendRequest', nodecl> end
+
+
+ -- Network: Packet
+function sfml.Packet.create(): *sfml.Packet <cimport 'sfPacket_create', nodecl> end
+function sfml.Packet.copy(self: *sfml.Packet <const>): *sfml.Packet <cimport 'sfPacket_copy', nodecl> end
+function sfml.Packet.destroy(self: *sfml.Packet): void <cimport 'sfPacket_destroy', nodecl> end
+function sfml.Packet.append(self: *sfml.Packet, data: pointer, sizeInBytes: csize): void <cimport 'sfPacket_append', nodecl> end
+function sfml.Packet.clear(self: *sfml.Packet): void <cimport 'sfPacket_clear', nodecl> end
+function sfml.Packet.getData(self: *sfml.Packet <const>): pointer <cimport 'sfPacket_getData', nodecl> end
+function sfml.Packet.getDataSize(self: *sfml.Packet <const>): csize <cimport 'sfPacket_getDataSize', nodecl> end
+function sfml.Packet.endOfPacket(self: *sfml.Packet <const>): sfBool <cimport 'sfPacket_endOfPacket', nodecl> end
+function sfml.Packet.canRead(self: *sfml.Packet <const>): sfBool <cimport 'sfPacket_canRead', nodecl> end
+
+function sfml.Packet.readBool(self: *sfml.Packet): sfBool <cimport 'sfPacket_readBool', nodecl> end
+function sfml.Packet.readInt8(self: *sfml.Packet): sfInt8 <cimport 'sfPacket_readInt8', nodecl> end
+function sfml.Packet.readUint8(self: *sfml.Packet): sfUint8 <cimport 'sfPacket_readUint8', nodecl> end
+function sfml.Packet.readInt16(self: *sfml.Packet): sfInt16 <cimport 'sfPacket_readInt16', nodecl> end
+function sfml.Packet.readUint16(self: *sfml.Packet): sfUint16 <cimport 'sfPacket_readUint16', nodecl> end
+function sfml.Packet.readInt32(self: *sfml.Packet): sfInt32 <cimport 'sfPacket_readInt32', nodecl> end
+function sfml.Packet.readUint32(self: *sfml.Packet): sfUint32 <cimport 'sfPacket_readUint32', nodecl> end
+function sfml.Packet.readFloat(self: *sfml.Packet): float32 <cimport 'sfPacket_readFloat', nodecl> end
+function sfml.Packet.readDouble(self: *sfml.Packet): float64 <cimport 'sfPacket_readDouble', nodecl> end
+function sfml.Packet.readString(self: *sfml.Packet, str: cstring): void <cimport 'sfPacket_readString', nodecl> end
+function sfml.Packet.readWideString(self: *sfml.Packet, str: *[0]cint): void <cimport 'sfPacket_readWideString', nodecl> end
+
+function sfml.Packet.writeBool(self: *sfml.Packet, data: sfBool): void <cimport 'sfPacket_writeBool', nodecl> end
+function sfml.Packet.writeInt8(self: *sfml.Packet, data: sfInt8): void <cimport 'sfPacket_writeInt8', nodecl> end
+function sfml.Packet.writeUint8(self: *sfml.Packet, data: sfUint8): void <cimport 'sfPacket_writeUint8', nodecl> end
+function sfml.Packet.writeInt16(self: *sfml.Packet, data: sfInt16): void <cimport 'sfPacket_writeInt16', nodecl> end
+function sfml.Packet.writeUint16(self: *sfml.Packet, data: sfUint16): void <cimport 'sfPacket_writeUint16', nodecl> end
+function sfml.Packet.writeInt32(self: *sfml.Packet, data: sfInt32): void <cimport 'sfPacket_writeInt32', nodecl> end
+function sfml.Packet.writeUint32(self: *sfml.Packet, data: sfUint32): void <cimport 'sfPacket_writeUint32', nodecl> end
+function sfml.Packet.writeFloat(self: *sfml.Packet, data: float32): void <cimport 'sfPacket_writeFloat', nodecl> end
+function sfml.Packet.writeDouble(self: *sfml.Packet, data: float64): void <cimport 'sfPacket_writeDouble', nodecl> end
+function sfml.Packet.writeString(self: *sfml.Packet, data: cstring <const>): void <cimport 'sfPacket_writeString', nodecl> end
+function sfml.Packet.writeWideString(self: *sfml.Packet, data: *[0]cint): void <cimport 'sfPacket_writeWideString', nodecl> end
