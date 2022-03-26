@@ -1281,3 +1281,18 @@ function sfml.View.getViewport(self: *sfml.View <const>): sfml.FloatRect <cimpor
 function sfml.View.move(self: *sfml.View, offset: sfml.Vector2f): void <cimport 'sfView_move', nodecl> end
 function sfml.View.rotate(self: *sfml.View, angle: float32): void <cimport 'sfView_rotate', nodecl> end
 function sfml.View.zoom(self: *sfml.View, factor: float32): void <cimport 'sfView_zoom', nodecl> end
+
+
+-- Font
+function sfml.Font.createFromFile(filename: cstring <const>): *sfml.Font <cimport 'sfFont_createFromFile', nodecl> end
+function sfml.Font.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.Font <cimport 'sfFont_createFromMemory', nodecl> end
+function sfml.Font.createFromStream(stream: *sfml.InputStream): *sfml.Font <cimport 'sfFont_createFromStream', nodecl> end
+function sfml.Font.copy(self: *sfml.Font <const>): *sfml.Font <cimport 'sfFont_copy', nodecl> end
+function sfml.Font.destroy(self: *sfml.Font): void <cimport 'sfFont_destroy', nodecl> end
+function sfml.Font.getGlyph(self: *sfml.Font <const>, codePoint: sfUint32, characterSize: cuint, bold: sfBool, outlineThickness: float32): sfml.Glyph <cimport 'sfFont_getGlyph', nodecl> end
+function sfml.Font.getKerning(self: *sfml.Font <const>, first: sfUint32, second: sfUint32, characterSize: cuint): float32 <cimport 'sfFont_getKerning', nodecl> end
+function sfml.Font.getLineSpacing(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getLineSpacing', nodecl> end
+function sfml.Font.getUnderlinePosition(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlinePosition', nodecl> end
+function sfml.Font.getUnderlineThickness(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlineThickness', nodecl> end
+function sfml.Font.getTexture(self: *sfml.Font <const>, characterSize: cuint): *sfml.Texture <cimport 'sfFont_getTexture', nodecl> end
+function sfml.Font.getInfo(self: *sfml.Font <const>): sfml.FontInfo <cimport 'sfFont_getInfo', nodecl> end
