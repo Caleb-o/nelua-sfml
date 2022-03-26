@@ -1689,3 +1689,30 @@ function sfml.Text.getOutlineThickness(self: *sfml.Text <const>): float32 <cimpo
 function sfml.Text.findCharacterPos(text: cstring <const>, index: csize): sfml.Vector2f <cimport 'sfText_findCharacterPos', nodecl> end
 function sfml.Text.getLocalBounds(text: cstring <const>): sfml.FloatRect <cimport 'sfText_getLocalBounds', nodecl> end
 function sfml.Text.getGlobalBounds(text: cstring <const>): sfml.FloatRect <cimport '', nodecl> end
+
+
+-- Texture
+function sfml.Texture.create(width: cuint, height: cuint): *sfml.Texture <cimport 'sfTexture_create', nodecl> end
+function sfml.Texture.createFromFile(filename: cstring <const>, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromFile', nodecl> end
+function sfml.Texture.createFromMemory(data: pointer <const>, sizeInBytes: csize, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromMemory', nodecl> end
+function sfml.Texture.createFromStream(stream: *sfml.InputStream, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromStream', nodecl> end
+function sfml.Texture.createFromImage(image: *sfml.Image <const>, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromImage', nodecl> end
+
+function sfml.Texture.copy(self: *sfml.Texture <const>): *sfml.Texture <cimport 'sfTexture_copy', nodecl> end
+function sfml.Texture.destroy(self: *sfml.Texture): void <cimport 'sfTexture_destroy', nodecl> end
+function sfml.Texture.getSize(self: *sfml.Texture <const>): sfml.Vector2u <cimport 'sfTexture_getSize', nodecl> end
+function sfml.Texture.copyToImage(self: *sfml.Texture <const>): *sfml.Image <cimport 'sfTexture_copyToImage', nodecl> end
+function sfml.Texture.updateFromPixels(self: *sfml.Texture, pixels: *[0]sfUint8 <const>, width: cuint, height: cuint, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromPixels', nodecl> end
+function sfml.Texture.updateFromImage(self: *sfml.Texture, source: *sfml.Texture, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromImage', nodecl> end
+function sfml.Texture.updateFromWindow(self: *sfml.Texture, window: *sfml.Window <const>, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromWindow', nodecl> end
+function sfml.Texture.updateFromRenderWindow(self: *sfml.Texture, renderWindow: *sfml.RenderWindow <const>, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromRenderWindow', nodecl> end
+function sfml.Texture.setSmooth(self: *sfml.Texture, smooth: sfBool): void <cimport 'sfTexture_setSmooth', nodecl> end
+function sfml.Texture.isSmooth(self: *sfml.Texture <const>): sfBool <cimport 'sfTexture_isSmooth', nodecl> end
+function sfml.Texture.setSrgb(self: *sfml.Texture, sRgb: sfBool): void <cimport 'sfTexture_setSrgb', nodecl> end
+function sfml.Texture.isSrgb(self: *sfml.Texture <const>): sfBool <cimport 'sfTexture_isSrgb', nodecl> end
+function sfml.Texture.setRepeated(self: *sfml.Texture, repeated: sfBool): void <cimport 'sfTexture_setRepeated', nodecl> end
+function sfml.Texture.isRepeated(self: *sfml.Texture <const>): sfBool <cimport 'sfTexture_isRepeated', nodecl> end
+function sfml.Texture.generateMipmap(self: *sfml.Texture): sfBool <cimport 'sfTexture_generateMipmap', nodecl> end
+function sfml.Texture.swap(self: *sfml.Texture, right: *sfml.Texture): void <cimport 'sfTexture_swap', nodecl> end
+function sfml.Texture.getNativeHandle(self: *sfml.Texture <const>): cuint <cimport 'sfTexture_getNativeHandle', nodecl> end
+function sfml.Texture.getMaximumSize(): cuint <cimport 'sfTexture_getMaximumSize', nodecl> end
