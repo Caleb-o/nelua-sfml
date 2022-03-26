@@ -1193,3 +1193,19 @@ function sfml.Transformable.rotate(self: *sfml.Transformable, angle: float32): v
 function sfml.Transformable.scale(self: *sfml.Transformable, factors: sfml.Vector2f): void <cimport 'sfTransformable_scale', nodecl> end
 function sfml.Transformable.getTransform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getTransform', nodecl> end
 function sfml.Transformable.getInverseTransform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getInverseTransform', nodecl> end
+
+
+-- Transform
+global sfml.Transform_Identity: sfml.Transform <cimport 'sfTransform_Identity', nodecl, const>
+function sfml.Transform.fromMatrix(a00: float32, a01: float32, a02: float32, a10: float32, a11: float32, a12: float32, a20: float32, a21: float32, a22: float32): sfml.Transform <cimport 'sfTransform_fromMatrix', nodecl> end
+function sfml.Transform.getMatrix(self: *sfml.Transform <const>, matrix: *[0]float32): void <cimport 'sfTransform_getMatrix', nodecl> end
+function sfml.Transform.getInverse(self: *sfml.Transform <const>): sfml.Transform <cimport 'sfTransform_getInverse', nodecl> end
+function sfml.Transform.transformPoint(self: *sfml.Transform <const>, point: sfml.Vector2f): sfml.Vector2f <cimport 'sfTransform_transformPoint', nodecl> end
+function sfml.Transform.transformRect(self: *sfml.Transform <const>, rectangle: sfml.FloatRect): sfml.FloatRect <cimport 'sfTransform_transformRect', nodecl> end
+function sfml.Transform.combine(self: *sfml.Transform, other: *sfml.Transform <const>): sfml.FloatRect <cimport 'sfTransform_combine', nodecl> end
+function sfml.Transform.translate(self: *sfml.Transform, x: float32, y: float32): void <cimport 'sfTransform_translate', nodecl> end
+function sfml.Transform.rotate(self: *sfml.Transform, angle: float32): void <cimport 'sfTransform_rotate', nodecl> end
+function sfml.Transform.rotateWithCenter(self: *sfml.Transform, angle: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_rotateWithCenter', nodecl> end
+function sfml.Transform.scale(self: *sfml.Transform, scaleX: float32, scaleY: float32): void <cimport 'sfTransform_scale', nodecl> end
+function sfml.Transform.scaleWithCenter(self: *sfml.Transform, scaleX: float32, scaleY: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_scaleWithCenter', nodecl> end
+function sfml.Transform.equal(self: *sfml.Transform, right: *sfml.Transform): sfBool <cimport 'sfTransform_equal', nodecl> end
