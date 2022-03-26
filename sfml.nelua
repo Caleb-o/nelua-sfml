@@ -1635,3 +1635,57 @@ function sfml.Sprite.getTextureRect(self: *sfml.Sprite <const>): sfml.IntRect <c
 function sfml.Sprite.getColor(self: *sfml.Sprite <const>): sfml.Color <cimport 'sfSprite_getColor', nodecl> end
 function sfml.Sprite.getLocalBounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getLocalBounds', nodecl> end
 function sfml.Sprite.getGlobalBounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getGlobalBounds', nodecl> end
+
+
+-- Text
+global sfml.TextStyle: type <cimport 'sfTextStyle', nodecl, using> = @enum(cint) {
+  Regular       = 0,
+  Bold          = 1 << 0,
+  Italic        = 1 << 1,
+  Underlined    = 1 << 2,
+  StrikeThrough = 1 << 3
+}
+
+function sfml.Text.create(): *sfml.Text <cimport 'sfText_create', nodecl> end
+
+function sfml.Text.copy(self: *sfml.Text <const>): *sfml.Text <cimport 'sfText_copy', nodecl> end
+function sfml.Text.destroy(self: *sfml.Text): void <cimport 'sfText_destroy', nodecl> end
+function sfml.Text.setPosition(self: *sfml.Text, position: sfml.Vector2f): void <cimport 'sfText_setPosition', nodecl> end
+function sfml.Text.setRotation(self: *sfml.Text, angle: float32): void <cimport 'sfText_setRotation', nodecl> end
+function sfml.Text.setScale(self: *sfml.Text, scale: sfml.Vector2f): void <cimport 'sfText_setScale', nodecl> end
+function sfml.Text.setOrigin(self: *sfml.Text, origin: sfml.Vector2f): void <cimport 'sfText_setOrigin', nodecl> end
+function sfml.Text.getPosition(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getPosition', nodecl> end
+function sfml.Text.getRotation(self: *sfml.Text <const>): float32 <cimport 'sfText_getRotation', nodecl> end
+function sfml.Text.getScale(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getScale', nodecl> end
+function sfml.Text.getOrigin(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getOrigin', nodecl> end
+function sfml.Text.move(self: *sfml.Text, offset: sfml.Vector2f): void <cimport 'sfText_move', nodecl> end
+function sfml.Text.rotate(self: *sfml.Text, angle: float32): void <cimport 'sfText_rotate', nodecl> end
+function sfml.Text.scale(self: *sfml.Text, factors: sfml.Vector2f): void <cimport 'sfText_scale', nodecl> end
+function sfml.Text.getTransform(self: *sfml.Text <const>): sfml.Transform <cimport 'sfText_getTransform', nodecl> end
+function sfml.Text.getInverseTransform(self: *sfml.Text <const>): sfml.Transform <cimport 'sfText_getInverseTransform', nodecl> end
+function sfml.Text.setString(self: *sfml.Text, string: cstring <const>): void <cimport 'sfText_setString', nodecl> end
+function sfml.Text.setUnicodeString(self: *sfml.Text, string: *sfUint32 <const>): void <cimport 'sfText_setUnicodeString', nodecl> end
+function sfml.Text.setFont(self: *sfml.Text, font: *sfml.Font <const>): void <cimport 'sfText_setFont', nodecl> end
+function sfml.Text.setCharacterSize(self: *sfml.Text, size: cuint): void <cimport 'sfText_setCharacterSize', nodecl> end
+function sfml.Text.setLineSpacing(self: *sfml.Text, spacingFactor: float32): void <cimport 'sfText_setLineSpacing', nodecl> end
+function sfml.Text.setLetterSpacing(self: *sfml.Text, spacingFactor: float32): void <cimport 'sfText_setLetterSpacing', nodecl> end
+function sfml.Text.setStyle(self: *sfml.Text, style: sfUint32): void <cimport 'sfText_setStyle', nodecl> end
+function sfml.Text.setColor(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setColor', nodecl> end
+function sfml.Text.setFillColor(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setFillColor', nodecl> end
+function sfml.Text.setOutlineColor(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setOutlineColor', nodecl> end
+function sfml.Text.setOutlineThickness(self: *sfml.Text, thickness: float32): void <cimport 'sfText_setOutlineThickness', nodecl> end
+function sfml.Text.getString(self: *sfml.Text <const>): cstring <cimport 'sfText_getString', nodecl> end
+function sfml.Text.getUnicodeString(self: *sfml.Text <const>): *sfUint32 <cimport 'sfText_getUnicodeString', nodecl> end
+function sfml.Text.getFont(self: *sfml.Text <const>): *sfml.Font <cimport 'sfText_getFont', nodecl> end
+function sfml.Text.getCharacterSize(self: *sfml.Text <const>): cuint <cimport 'sfText_getCharacterSize', nodecl> end
+function sfml.Text.getLineSpacing(self: *sfml.Text <const>): float32 <cimport 'sfText_getLineSpacing', nodecl> end
+function sfml.Text.getLetterSpacing(self: *sfml.Text <const>): float32 <cimport 'sfText_getLetterSpacing', nodecl> end
+function sfml.Text.getStyle(self: *sfml.Text <const>): sfUint32 <cimport 'sfText_getStyle', nodecl> end
+function sfml.Text.getColor(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getColor', nodecl> end
+function sfml.Text.getFillColor(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getFillColor', nodecl> end
+function sfml.Text.getOutlineColor(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getOutlineColor', nodecl> end
+function sfml.Text.getOutlineThickness(self: *sfml.Text <const>): float32 <cimport 'sfText_getOutlineThickness', nodecl> end
+
+function sfml.Text.findCharacterPos(text: cstring <const>, index: csize): sfml.Vector2f <cimport 'sfText_findCharacterPos', nodecl> end
+function sfml.Text.getLocalBounds(text: cstring <const>): sfml.FloatRect <cimport 'sfText_getLocalBounds', nodecl> end
+function sfml.Text.getGlobalBounds(text: cstring <const>): sfml.FloatRect <cimport '', nodecl> end
