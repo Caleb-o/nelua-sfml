@@ -1084,6 +1084,13 @@ global sfml.IntRect: type <cimport 'sfIntRect', nodecl> = @record {
   height: cint
 }
 
+
+function sfml.FloatRect.contains(self: *sfml.FloatRect <const>, x: float32, y: float32): sfBool <cimport 'sfFloatRect_contains', nodecl> end
+function sfml.IntRect.contains(self: *sfml.IntRect <const>, x: cint, y: cint): sfBool <cimport 'sfIntRect_contains', nodecl> end
+function sfml.FloatRect.intersects(self: *sfml.FloatRect <const>, rect2: *sfml.FloatRect <const>, intersection: *sfml.FloatRect): sfBool <cimport 'sfFloatRect_intersects', nodecl> end
+function sfml.IntRect.intersects(self: *sfml.IntRect <const>, rect2: *sfml.IntRect <const>, intersection: *sfml.IntRect): sfBool <cimport 'sfIntRect_intersects', nodecl> end
+
+
 global sfml.Color: type <cimport 'sfColor', nodecl> = @record {
   r: sfUint8,
   g: sfUint8,
@@ -1131,3 +1138,39 @@ global sfml.RenderStates: type <cimport 'sfRenderStates', nodecl> = @record {
 global sfml.FontInfo: type <cimport 'sfFontInfo', nodecl> = @record {
   family: cstring
 }
+
+
+-- Color: Constants
+global sfml.Black: sfml.Color <cimport 'sfBlack', nodecl, const>
+global sfml.White: sfml.Color <cimport 'sfWhite', nodecl, const>
+global sfml.Red: sfml.Color <cimport 'sfRed', nodecl, const>
+global sfml.Green: sfml.Color <cimport 'sfGreen', nodecl, const>
+global sfml.Blue: sfml.Color <cimport 'sfBlue', nodecl, const>
+global sfml.Yellow: sfml.Color <cimport 'sfYellow', nodecl, const>
+global sfml.Magenta: sfml.Color <cimport 'sfMagenta', nodecl, const>
+global sfml.Cyan: sfml.Color <cimport 'sfCyan', nodecl, const>
+global sfml.Transparent: sfml.Color <cimport 'sfTransparent', nodecl, const>
+
+
+-- Color
+function sfml.Color.fromRGB(red: sfUint8, green: sfUint8, blue: sfUint8): sfml.Color <cimport 'sfColor_fromRGB', nodecl> end
+function sfml.Color.fromRGBA(red: sfUint8, green: sfUint8, blue: sfUint8, alpha: sfUint8): sfml.Color <cimport 'sfColor_fromRGBA', nodecl> end
+function sfml.Color.fromInteger(color: sfUint32): sfml.Color <cimport 'sfColor_fromInteger', nodecl> end
+function sfml.Color.toInteger(color: sfml.Color): sfUint32 <cimport 'sfColor_toInteger', nodecl> end
+function sfml.Color.add(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_add', nodecl> end
+function sfml.Color.subtract(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_subtract', nodecl> end
+function sfml.Color.modulate(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_modulate', nodecl> end
+
+
+-- Vertex Array
+function sfml.VertexArray.create(): *sfml.VertexArray <cimport 'sfVertexArray_create', nodecl> end
+function sfml.VertexArray.copy(self: *sfml.VertexArray <const>): *sfml.VertexArray <cimport 'sfVertexArray_copy', nodecl> end
+function sfml.VertexArray.destroy(self: *sfml.VertexArray): void <cimport 'sfVertexArray_destroy', nodecl> end
+function sfml.VertexArray.getVertexCount(self: *sfml.VertexArray <const>): csize <cimport 'sfVertexArray_getVertexCount', nodecl> end
+function sfml.VertexArray.getVertex(self: *sfml.VertexArray, index: csize): *sfml.Vertex <cimport 'sfVertexArray_getVertex', nodecl> end
+function sfml.VertexArray.clear(self: *sfml.VertexArray): void <cimport 'sfVertexArray_clear', nodecl> end
+function sfml.VertexArray.resize(self: *sfml.VertexArray, vertexCount: csize): void <cimport 'sfVertexArray_resize', nodecl> end
+function sfml.VertexArray.append(self: *sfml.VertexArray, vertex: sfml.Vertex): void <cimport 'sfVertexArray_append', nodecl> end
+function sfml.VertexArray.setPrimitiveType(self: *sfml.VertexArray, type: sfml.PrimitiveType): void <cimport 'sfVertexArray_setPrimitiveType', nodecl> end
+function sfml.VertexArray.getPrimitiveType(self: *sfml.VertexArray): sfml.PrimitiveType <cimport 'sfVertexArray_getPrimitiveType', nodecl> end
+function sfml.VertexArray.getBounds(self: *sfml.VertexArray): sfml.FloatRect <cimport 'sfVertexArray_getBounds', nodecl> end
