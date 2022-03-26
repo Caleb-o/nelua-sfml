@@ -1567,3 +1567,43 @@ function sfml.Shader.bind(self: *sfml.Shader <const>): void <cimport 'sfShader_b
 
 function sfml.Shader.isAvailable(): sfBool <cimport 'sfShader_isAvailable', nodecl> end
 function sfml.Shader.isGeometryAvailable(): sfBool <cimport 'sfShader_isGeometryAvailable', nodecl> end
+
+
+-- Shape
+global sfml.ShapeGetPointCountCallback: type <cimport 'sfShapeGetPointCountCallback', nodecl> = @function(pointer): csize
+global sfml.ShapeGetPointCallback: type <cimport 'sfShapeGetPointCallback', nodecl> = @function(csize, pointer): sfml.Vector2f
+
+function sfml.Shape.create(getPointCount: sfml.ShapeGetPointCountCallback, getPoint: sfml.ShapeGetPointCallback, userData: pointer): *sfml.Shape <cimport 'sfShape_create', nodecl> end
+
+function sfml.Shape.destroy(self: *sfml.Shape): void <cimport 'sfShape_destroy', nodecl> end
+function sfml.Shape.setPosition(self: *sfml.Shape, position: sfml.Vector2f): void <cimport 'sfShape_setPosition', nodecl> end
+function sfml.Shape.setRotation(self: *sfml.Shape, angle: float32): void <cimport 'sfShape_setRotation', nodecl> end
+function sfml.Shape.setScale(self: *sfml.Shape, scale: sfml.Vector2f): void <cimport 'sfShape_setScale', nodecl> end
+function sfml.Shape.setOrigin(self: *sfml.Shape, origin: sfml.Vector2f): void <cimport 'sfShape_setOrigin', nodecl> end
+function sfml.Shape.getPosition(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getPosition', nodecl> end
+function sfml.Shape.getRotation(self: *sfml.Shape <const>): float32 <cimport 'sfShape_getRotation', nodecl> end
+function sfml.Shape.getScale(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getScale', nodecl> end
+function sfml.Shape.getOrigin(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getOrigin', nodecl> end
+function sfml.Shape.move(self: *sfml.Shape, offset: sfml.Vector2f): void <cimport 'sfShape_move', nodecl> end
+function sfml.Shape.rotate(self: *sfml.Shape, angle: float32): void <cimport 'sfShape_rotate', nodecl> end
+function sfml.Shape.scale(self: *sfml.Shape, factors: sfml.Vector2f): void <cimport 'sfShape_scale', nodecl> end
+function sfml.Shape.getTransform(self: *sfml.Shape <const>): sfml.Transform <cimport 'sfShape_getTransform', nodecl> end
+function sfml.Shape.getInverseTransform(self: *sfml.Shape <const>): sfml.Transform <cimport 'sfShape_getInverseTransform', nodecl> end
+function sfml.Shape.setTexture(self: *sfml.Shape, texture: *sfml.Texture <const>, resetRect: sfBool): void <cimport 'sfShape_setTexture', nodecl> end
+function sfml.Shape.setTextureRect(self: *sfml.Shape, rect: sfml.IntRect): void <cimport 'sfShape_setTextureRect', nodecl> end
+function sfml.Shape.setFillColor(self: *sfml.Shape, color: sfml.Color): void <cimport 'sfShape_setFillColor', nodecl> end
+function sfml.Shape.setOutlineColor(self: *sfml.Shape, color: sfml.Color): void <cimport 'sfShape_setOutlineColor', nodecl> end
+function sfml.Shape.setOutlineThickness(self: *sfml.Shape, thickness: float32): void <cimport 'sfShape_setOutlineThickness', nodecl> end
+function sfml.Shape.getTexture(self: *sfml.Shape <const>): *sfml.Texture <cimport 'sfShape_getTexture', nodecl> end
+function sfml.Shape.getTextureRect(self: *sfml.Shape <const>): sfml.IntRect <cimport 'sfShape_getTextureRect', nodecl> end
+function sfml.Shape.getFillColor(self: *sfml.Shape <const>): sfml.Color <cimport 'sfShape_getFillColor', nodecl> end
+function sfml.Shape.getOutlineColor(self: *sfml.Shape <const>): sfml.Color <cimport 'sfShape_getOutlineColor', nodecl> end
+function sfml.Shape.getOutlineThickness(self: *sfml.Shape <const>): float32 <cimport 'sfShape_getOutlineThickness', nodecl> end
+function sfml.Shape.getPointCount(self: *sfml.Shape <const>): csize <cimport 'sfShape_getPointCount', nodecl> end
+function sfml.Shape.getPoint(self: *sfml.Shape <const>, index: csize): sfml.Vector2f <cimport 'sfShape_getPoint', nodecl> end
+function sfml.Shape.setSize(self: *sfml.Shape, size: float32): void <cimport 'sfShape_setSize', nodecl> end
+function sfml.Shape.getSize(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getSize', nodecl> end
+function sfml.Shape.setPointCount(self: *sfml.Shape, count: csize): void <cimport 'sfShape_setPointCount', nodecl> end
+function sfml.Shape.getLocalBounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getLocalBounds', nodecl> end
+function sfml.Shape.getGlobalBounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getGlobalBounds', nodecl> end
+function sfml.Shape.update(self: *sfml.Shape): void <cimport 'sfShape_update', nodecl> end
