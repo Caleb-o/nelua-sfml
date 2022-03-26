@@ -15,6 +15,8 @@ global sfml = @record{}
   linklib "csfml-system"
   linklib "csfml-window"
 ]]
+
+-- Global Information
 global CSFML_VERSION_MAJOR: cint <cimport, nodecl, const>
 global CSFML_VERSION_MINOR: cint <cimport, nodecl, const>
 global CSFML_VERSION_PATCH: cint <cimport, nodecl, const>
@@ -23,6 +25,8 @@ global CSFML_SYSTEM_LINUX: cint <cimport, nodecl, const>
 global CSFML_SYSTEM_MACOS: cint <cimport, nodecl, const>
 global CSFML_SYSTEM_FREEBSD: cint <cimport, nodecl, const>
 
+
+-- Types
 global sfBool: type <cimport, nodecl> = @cint
 global sfFalse: cint <cimport, nodecl, const>
 global sfTrue: cint <cimport, nodecl, const>
@@ -36,29 +40,8 @@ global sfUint32: type <cimport, nodecl> = @cuint
 global sfInt64: type <cimport, nodecl> = @clonglong
 global sfUint64: type <cimport, nodecl> = @culonglong
 
---[[
--- Inject C code (just as an example, could be an include)
-cinclude![[
-#include <stdio.h>
-typedef struct my_struct {
-  int x;
-} my_struct;
 
-void do_thing(my_struct* mst) {
-  printf("%d\n", mst->x);
-}
-
-
-local my_struct <cimport,nodecl> = @record{
-  x: integer
-}
-
-function my_struct:do_thing() <cimport,nodecl> end
-
-local mst: my_struct
-mst:do_thing()
-]]--
-
+-- Time
 global sfml.Time: type <cimport 'sfTime', nodecl> = @record {
   microseconds: sfInt64
 }
@@ -72,3 +55,14 @@ function sfml.Time.asMicroseconds(self: sfml.Time): sfInt64 <cimport 'sfTime_asM
 function sfml.Time.Seconds(amount: float32): sfml.Time <cimport 'sfSeconds', nodecl> end
 function sfml.Time.milliseconds(amount: sfInt32): sfml.Time <cimport 'sfMilliseconds', nodecl> end
 function sfml.Time.microseconds(amount: sfInt64): sfml.Time <cimport 'sfMicroseconds', nodecl> end
+
+
+global sfml.Clock: type <cimport 'sfClock', nodecl, forwarddecl> = @record {}
+global sfml.Mutex: type <cimport 'sfMutex', nodecl, forwarddecl> = @record {}
+global sfml.Thread: type <cimport 'sfThread', nodecl, forwarddecl> = @record {}
+
+function sfml.Clock.create(): *sfml.Clock <cimport 'sfClock_create', nodecl> end
+function sfml.Clock.copy(self: *sfml.Clock <const>): *sfml.Clock <cimport 'sfClock_copy', nodecl> end
+function sfml.Clock.destroy(self: *sfml.Clock): void <cimport 'sfClock_destroy', nodecl> end
+function sfml.Clock.getElapsedTime(self: *sfml.Clock <const>): sfml.Time <cimport 'sfClock_getElapsedTime', nodecl> end
+function sfml.Clock.restart(self: *sfml.Clock): sfml.Time <cimport 'sfClock_restart', nodecl> end
