@@ -977,3 +977,34 @@ global sfml.ContextSettings: type <cimport 'sfContextSettings', nodecl> = @recor
   attributeFlags: sfUint32,
   sRgbCapable: sfBool,
 }
+
+
+-- Window
+function sfml.Window.create(mode: sfml.VideoMode, title: cstring <const>, style: sfUint32, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_create', nodecl> end
+function sfml.Window.createUnicode(mode: sfml.VideoMode, title: *[0]sfUint32 <const>, style: sfUint32, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_createUnicode', nodecl> end
+function sfml.Window.createFromHandle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_createFromHandle', nodecl> end
+function sfml.Window.destroy(self: *sfml.Window): void <cimport 'sfWindow_destroy', nodecl> end
+function sfml.Window.close(self: *sfml.Window): void <cimport 'sfWindow_close', nodecl> end
+function sfml.Window.isOpen(self: *sfml.Window <const>): sfBool <cimport 'sfWindow_isOpen', nodecl> end
+function sfml.Window.getSettings(self: *sfml.Window <const>): sfml.ContextSettings <cimport 'sfWindow_getSettings', nodecl> end
+function sfml.Window.pollEvent(self: *sfml.Window, event: *sfml.Event): sfBool <cimport 'sfWindow_pollEvent', nodecl> end
+function sfml.Window.waitEvent(self: *sfml.Window, event: *sfml.Event): sfBool <cimport 'sfWindow_waitEvent', nodecl> end
+function sfml.Window.getPosition(self: *sfml.Window <const>): sfml.Vector2i <cimport 'sfWindow_getPosition', nodecl> end
+function sfml.Window.setPosition(self: *sfml.Window, position: sfml.Vector2i): void <cimport 'sfWindow_setPosition', nodecl> end
+function sfml.Window.getSize(self: *sfml.Window <const>): sfml.Vector2u <cimport 'sfWindow_getSize', nodecl> end
+function sfml.Window.setSize(self: *sfml.Window, size: sfml.Vector2u): void <cimport 'sfWindow_setSize', nodecl> end
+function sfml.Window.setTitle(self: *sfml.Window, title: cstring <const>): void <cimport 'sfWindow_setTitle', nodecl> end
+function sfml.Window.setUnicodeTitle(self: *sfml.Window, title: *[0]sfUint32 <const>): void <cimport 'sfWindow_setUnicodeTitle', nodecl> end
+function sfml.Window.setIcon(self: *sfml.Window, width: cuint, height: cuint, pixels: *[0]sfUint8): void <cimport 'sfWindow_setIcon', nodecl> end
+function sfml.Window.setVisible(self: *sfml.Window, visible: sfBool): void <cimport 'sfWindow_setVisible', nodecl> end
+function sfml.Window.setVerticalSyncEnabled(self: *sfml.Window, enabled: sfBool): void <cimport 'sfWindow_setVerticalSyncEnabled', nodecl> end
+function sfml.Window.setMouseCursorVisible(self: *sfml.Window, visible: sfBool): void <cimport 'sfWindow_setMouseCursorVisible', nodecl> end
+function sfml.Window.setMouseCursorGrabbed(self: *sfml.Window, grabbed: sfBool): void <cimport 'sfWindow_setMouseCursorGrabbed', nodecl> end
+function sfml.Window.setMouseCursor(self: *sfml.Window, cursor: *sfml.Cursor <const>): void <cimport 'sfWindow_setMouseCursor', nodecl> end
+function sfml.Window.setKeyRepeatEnabled(self: *sfml.Window, enabled: sfBool): void <cimport 'sfWindow_setKeyRepeatEnabled', nodecl> end
+function sfml.Window.setFramerateLimit(self: *sfml.Window, threshold: float32): void <cimport 'sfWindow_setFramerateLimit', nodecl> end
+function sfml.Window.setActive(self: *sfml.Window, active: sfBool): void <cimport 'sfWindow_setActive', nodecl> end
+function sfml.Window.requestFocus(self: *sfml.Window): void <cimport 'sfWindow_requestFocus', nodecl> end
+function sfml.Window.hasFocus(self: *sfml.Window <const>): sfBool <cimport 'sfWindow_hasFocus', nodecl> end
+function sfml.Window.display(self: *sfml.Window): void <cimport 'sfWindow_display', nodecl> end
+function sfml.Window.getSystemHandle(self: *sfml.Window <const>): sfml.WindowHandle <cimport 'sfWindow_getSystemHandle', nodecl> end
