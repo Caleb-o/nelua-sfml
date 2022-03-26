@@ -1209,3 +1209,56 @@ function sfml.Transform.rotateWithCenter(self: *sfml.Transform, angle: float32, 
 function sfml.Transform.scale(self: *sfml.Transform, scaleX: float32, scaleY: float32): void <cimport 'sfTransform_scale', nodecl> end
 function sfml.Transform.scaleWithCenter(self: *sfml.Transform, scaleX: float32, scaleY: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_scaleWithCenter', nodecl> end
 function sfml.Transform.equal(self: *sfml.Transform, right: *sfml.Transform): sfBool <cimport 'sfTransform_equal', nodecl> end
+
+
+-- OpenGL
+global sfml.GlslVec2: type <cimport 'sfGlslVec2', nodecl> = @sfml.Vector2f
+global sfml.GlslIvec2: type <cimport 'sfGlslIvec2', nodecl> = @sfml.Vector2i
+
+global sfml.GlslBvec2: type <cimport 'sfGlslBvec2', nodecl> = @record {
+  x: sfBool,
+  y: sfBool
+}
+
+global sfml.GlslVec3: type <cimport 'sfGlslVec3', nodecl> = @sfml.Vector3f
+
+global sfml.GlslIvec3: type <cimport 'sfGlslIvec3', nodecl> = @record {
+  x: cint,
+  y: cint,
+  z: cint
+}
+
+global sfml.GlslBvec3: type <cimport 'sfGlslBvec3', nodecl> = @record {
+  x: sfBool,
+  y: sfBool,
+  z: sfBool
+}
+
+global sfml.GlslVec4: type <cimport 'sfGlslVec4', nodecl> = @record {
+  x: float32,
+  y: float32,
+  z: float32,
+  w: float32
+}
+
+global sfml.GlslIvec4: type <cimport 'sfGlslIvec4', nodecl> = @record {
+  x: cint,
+  y: cint,
+  z: cint,
+  w: cint
+}
+
+global sfml.GlslBvec4: type <cimport 'sfGlslBvec4', nodecl> = @record {
+  x: sfBool,
+  y: sfBool,
+  z: sfBool,
+  w: sfBool
+}
+
+global sfml.GlslMat3: type <cimport 'sfGlslMat3', nodecl> = @record {
+  array: [9]float32
+}
+
+global sfml.GlslMat4: type <cimport 'sfGlslMat4', nodecl> = @record {
+  array: [16]float32
+}
