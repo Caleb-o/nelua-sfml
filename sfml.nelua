@@ -1516,6 +1516,54 @@ function sfml.RenderWindow.popGLStates(self: *sfml.RenderWindow): void <cimport 
 function sfml.RenderWindow.resetGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_resetGLStates', nodecl> end
 function sfml.RenderWindow.capture(self: *sfml.RenderWindow <const>): *sfml.Image <cimport 'sfRenderWindow_capture', nodecl> end
 
+
+-- Render Window: Mouse
 function sfml.Mouse.getPostionRenderWindow(relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfMouse_getPositionRenderWindow', nodecl> end
 function sfml.Mouse.setPostionRenderWindow(position: sfml.Vector2i, relativeTo: *sfml.RenderWindow <const>): void <cimport 'sfMouse_setPositionRenderWindow', nodecl> end
 function sfml.Touch.getPostionRenderWindow(finger: cuint, relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfTouch_getPositionRenderWindow', nodecl> end
+
+
+-- Shader
+function sfml.Shader.createFromFile(vertexShaderFilename: cstring <const>, geometryShaderFilename: cstring <const>, fragmentShaderFilename: cstring <const>): *sfml.Shader <cimport 'sfShader_createFromFile', nodecl> end
+function sfml.Shader.createFromMemory(vertexShader: cstring <const>, geometryShader: cstring <const>, fragmentShader: cstring <const>): *sfml.Shader <cimport 'sfShader_createFromMemory', nodecl> end
+function sfml.Shader.createFromStream(vertexShader: *sfml.InputStream, geometryShader: *sfml.InputStream, fragmentShader: *sfml.InputStream): *sfml.Shader <cimport 'sfShader_createFromStream', nodecl> end
+
+function sfml.Shader.destroy(self: *sfml.Shader): void <cimport 'sfShader_destroy', nodecl> end
+function sfml.Shader.setFloatUniform(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatUniform', nodecl> end
+function sfml.Shader.setVec3Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec3): void <cimport 'sfShader_setVec3Uniform', nodecl> end
+function sfml.Shader.setVec4Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec4): void <cimport 'sfShader_setVec4Uniform', nodecl> end
+function sfml.Shader.setColorUniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setColorUniform', nodecl> end
+function sfml.Shader.setIntUniform(self: *sfml.Shader, name: cstring <const>, x: cint): void <cimport 'sfShader_setIntUniform', nodecl> end
+function sfml.Shader.setIvec2Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec2): void <cimport 'sfShader_setIvec2Uniform', nodecl> end
+function sfml.Shader.setIvec3Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec3): void <cimport 'sfShader_setIvec3Uniform', nodecl> end
+function sfml.Shader.setIvec4Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec4): void <cimport 'sfShader_setIvec4Uniform', nodecl> end
+function sfml.Shader.setIntColorUniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setIntColorUniform', nodecl> end
+function sfml.Shader.setBoolUniform(self: *sfml.Shader, name: cstring <const>, x: sfBool): void <cimport 'sfShader_setBoolUniform', nodecl> end
+function sfml.Shader.setBvec2Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec2): void <cimport 'sfShader_setBvec2Uniform', nodecl> end
+function sfml.Shader.setBvec3Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec3): void <cimport 'sfShader_setBvec3Uniform', nodecl> end
+function sfml.Shader.setBvec4Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec4): void <cimport 'sfShader_setBvec4Uniform', nodecl> end
+function sfml.Shader.setMat3Uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat3 <const>): void <cimport 'sfShader_setMat3Uniform', nodecl> end
+function sfml.Shader.setMat4Uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat4 <const>): void <cimport 'sfShader_setMat4Uniform', nodecl> end
+function sfml.Shader.setTextureUniform(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void <cimport 'sfShader_setTextureUniform', nodecl> end
+function sfml.Shader.setCurrentTextureUniform(self: *sfml.Shader, name: cstring <const>): void <cimport 'sfShader_setCurrentTextureUniform', nodecl> end
+function sfml.Shader.setFloatUniformArray(self: *sfml.Shader, name: cstring <const>, scalarArray: *[0]float32, length: csize): void <cimport 'sfShader_setFloatUniformArray', nodecl> end
+function sfml.Shader.setVec2UniformArray(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec2, length: csize): void <cimport 'sfShader_setVec2UniformArray', nodecl> end
+function sfml.Shader.setVec3UniformArray(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec3, length: csize): void <cimport 'sfShader_setVec3UniformArray', nodecl> end
+function sfml.Shader.setVec4UniformArray(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec4, length: csize): void <cimport 'sfShader_setVec4UniformArray', nodecl> end
+function sfml.Shader.setMat3UniformArray(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat3, length: csize): void <cimport 'sfShader_setMat3UniformArray', nodecl> end
+function sfml.Shader.setMat4UniformArray(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat4, length: csize): void <cimport 'sfShader_setMat4UniformArray', nodecl> end
+function sfml.Shader.setFloatParameter(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatParameter', nodecl> end
+function sfml.Shader.setFloat2Parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32): void <cimport 'sfShader_setFloat2Parameter', nodecl> end
+function sfml.Shader.setFloat3Parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32): void <cimport 'sfShader_setFloat3Parameter', nodecl> end
+function sfml.Shader.setFloat4Parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32, w: float32): void <cimport 'sfShader_setFloat4Parameter', nodecl> end
+function sfml.Shader.setVector2Parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector2f): void <cimport 'sfShader_setVector2Parameter', nodecl> end
+function sfml.Shader.setVector3Parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector3f): void <cimport 'sfShader_setVector3Parameter', nodecl> end
+function sfml.Shader.setColorParameter(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setColorParameter', nodecl> end
+function sfml.Shader.setTransformParameter(self: *sfml.Shader, name: cstring <const>, transform: sfml.Transform): void <cimport 'sfShader_setTransformParameter', nodecl> end
+function sfml.Shader.setTextureParameter(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void <cimport 'sfShader_setTextureParameter', nodecl> end
+function sfml.Shader.setCurrentTextureParameter(self: *sfml.Shader, name: cstring <const>): void <cimport 'sfShader_setCurrentTextureParameter', nodecl> end
+function sfml.Shader.getNativeHandle(self: *sfml.Shader <const>): cuint <cimport 'sfShader_getNativeHandle', nodecl> end
+function sfml.Shader.bind(self: *sfml.Shader <const>): void <cimport 'sfShader_bind', nodecl> end
+
+function sfml.Shader.isAvailable(): sfBool <cimport 'sfShader_isAvailable', nodecl> end
+function sfml.Shader.isGeometryAvailable(): sfBool <cimport 'sfShader_isGeometryAvailable', nodecl> end
