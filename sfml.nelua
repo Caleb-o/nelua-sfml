@@ -797,3 +797,23 @@ global sfml.CursorType: type <cimport 'sfCursorType', nodecl, using> = @enum(cin
 function sfml.Cursor.createFromPixels(pixels: *[0]sfUint8 <const>, size: sfml.Vector2u, hotspot: sfml.Vector2u): *sfml.Cursor <cimport 'sfCursor_createFromPixels', nodecl> end
 function sfml.Cursor.createFromSystem(cursor_type: sfml.CursorType): *sfml.Cursor <cimport, nodecl> end
 function sfml.Cursor.destroy(cursor: *sfml.Cursor): void <cimport, nodecl> end
+
+
+-- Contol: Sensor
+global sfml.SensorType: type <cimport 'sfSensorType', nodecl, using> = @enum(cint) {
+  SensorAccelerometer = 0,
+  SensorGyroscope,
+  SensorMagnetometer,
+  SensorGravity,
+  SensorOrientation,
+  SensorCount
+}
+
+global sfml.Sensor = @record{}
+function sfml.Sensor.isAvailable(sensor: sfml.SensorType): sfBool <cimport 'sfSensor_isAvailable', nodecl> end
+function sfml.Sensor.setEnabled(sensor: sfml.SensorType, enabled: sfBool): void <cimport 'sfSensor_setEnabled', nodecl> end
+function sfml.Sensor.getValue(sensor: sfml.SensorType): sfml.Vector3f <cimport 'sfSensor_getValue', nodecl> end
+
+global sfml.Touch = @record{}
+function sfml.Touch.isDown(finger: cuint): sfBool <cimport 'sfTouch_isDown', nodecl> end
+function sfml.Touch.getPosition(finger: cuint, relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfTouch_getPosition', nodecl> end
