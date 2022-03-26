@@ -1716,3 +1716,28 @@ function sfml.Texture.generateMipmap(self: *sfml.Texture): sfBool <cimport 'sfTe
 function sfml.Texture.swap(self: *sfml.Texture, right: *sfml.Texture): void <cimport 'sfTexture_swap', nodecl> end
 function sfml.Texture.getNativeHandle(self: *sfml.Texture <const>): cuint <cimport 'sfTexture_getNativeHandle', nodecl> end
 function sfml.Texture.getMaximumSize(): cuint <cimport 'sfTexture_getMaximumSize', nodecl> end
+
+
+-- Vertex Buffer
+global sfml.VertexBufferUsage: type <cimport 'sfVertexBufferUsage', nodecl, using> = @enum(cint) {
+  Stream = 0,
+  Dynamic,
+  Static
+}
+
+function sfml.VertexBuffer.create(vertexCount: cuint, type: sfml.PrimitiveType, usage: sfml.VertexBufferUsage): *sfml.VertexBuffer <cimport 'sfVertexBuffer_create', nodecl> end
+
+function sfml.VertexBuffer.copy(self: *sfml.VertexBuffer <const>): *sfml.VertexBuffer <cimport 'sfVertexBuffer_copy', nodecl> end
+function sfml.VertexBuffer.destroy(self: *sfml.VertexBuffer): void <cimport 'sfVertexBuffer_destroy', nodecl> end
+function sfml.VertexBuffer.getVertexCount(self: *sfml.VertexBuffer <const>): cuint <cimport 'sfVertexBuffer_getVertexCount', nodecl> end
+function sfml.VertexBuffer.update(self: *sfml.VertexBuffer , vertices: *[0]sfml.Vertex <const>, vertexCount: cuint, offset: cuint): sfBool <cimport 'sfVertexBuffer_update', nodecl> end
+function sfml.VertexBuffer.updateFromVertexBuffer(self: *sfml.VertexBuffer, other: *sfml.VertexBuffer <const>): sfBool <cimport 'sfVertexBuffer_updateFromVertexBuffer', nodecl> end
+function sfml.VertexBuffer.swap(self: *sfml.VertexBuffer, right: *sfml.VertexBuffer): void <cimport 'sfVertexBuffer_swap', nodecl> end
+function sfml.VertexBuffer.getNativeHandle(self: *sfml.VertexBuffer): cuint <cimport 'sfVertexBuffer_getNativeHandle', nodecl> end
+function sfml.VertexBuffer.setPrimitiveType(self: *sfml.VertexBuffer, type: sfml.PrimitiveType): void <cimport 'sfVertexBuffer_setPrimitiveType', nodecl> end
+function sfml.VertexBuffer.getPrimitiveType(self: *sfml.VertexBuffer <const>): sfml.PrimitiveType <cimport 'sfVertexBuffer_getPrimitiveType', nodecl> end
+function sfml.VertexBuffer.setUsage(self: *sfml.VertexBuffer, usage: sfml.VertexBufferUsage): void <cimport 'sfVertexBuffer_setUsage', nodecl> end
+function sfml.VertexBuffer.getUsage(self: *sfml.VertexBuffer <const>): sfml.VertexBufferUsage <cimport 'sfVertexBuffer_getUsage', nodecl> end
+function sfml.VertexBuffer.bind(self: *sfml.VertexBuffer <const>): void <cimport 'sfVertexBuffer_bind', nodecl> end
+
+function sfml.VertexBuffer.isAvailable(): sfBool <cimport 'sfVertexBuffer_isAvailable', nodecl> end
