@@ -582,6 +582,7 @@ global sfml.Context: type <cimport 'sfContext', nodecl, forwarddecl> = @record {
 global sfml.Cursor: type <cimport 'sfCursor', nodecl, forwarddecl> = @record {}
 global sfml.Window: type <cimport 'sfWindow', nodecl, forwarddecl> = @record {}
 
+global sfml.Clipboard = @record{}
 function sfml.Clipboard.getString(): cstring <cimport 'sfClipboard_getString', nodecl> end
 function sfml.Clipboard.getUnicodeString(): *[0]sfUint32 <cimport 'sfClipboard_getUnicodeString', nodecl> end
 function sfml.Clipboard.setString(text: cstring <const>): void <cimport 'sfClipboard_setString', nodecl> end
@@ -604,4 +605,36 @@ global sfml.VideoMode: type <cimport 'sfVideoMode', nodecl> = @record {
 
 function sfml.VideoMode.getDesktopMode(): sfml.VideoMode <cimport 'sfVideoMode_getDesktopMode', nodecl> end
 function sfml.VideoMode.getFullscreenModes(count: *csize): *[0]sfml.VideoMode <cimport 'sfVideoMode_getFullscreenModes', nodecl> end
-function sfml.VideoMode.isValid(mode: sfVideoMode): sfBool <cimport 'sfVideoMode_isValid', nodecl> end
+function sfml.VideoMode.isValid(mode: sfml.VideoMode): sfBool <cimport 'sfVideoMode_isValid', nodecl> end
+
+
+-- Joystick
+global sfml.JoystickIdentification: type <cimport 'sfJoystickIdentification', nodecl> = @record {
+  name: cstring,
+  vendorId: cuint,
+  productId: cuint
+}
+
+global sfml.JoystickCount: cint <cimport 'sfJoystickCount', nodecl, const>
+global sfml.JoystickButtonCount: cint <cimport 'sfJoystickButtonCount', nodecl, const>
+global sfml.JoystickAxisCount: cint <cimport 'sfJoystickAxisCount', nodecl, const>
+
+global sfml.JoystickAxis: type <cimport 'sfJoystickAxis', nodecl, using> = @enum(cint) {
+  JoystickX = 0,
+  JoystickY,
+  JoystickZ,
+  JoystickR,
+  JoystickU,
+  JoystickV,
+  JoystickPovX,
+  JoystickPovY
+}
+
+global sfml.Joystick = @record{}
+function sfml.Joystick.isConnected(joystick: cuint): sfBool <cimport 'sfJoystick_isConnected', nodecl> end
+function sfml.Joystick.getButtonCount(joystick: cuint): cuint <cimport 'sfJoystick_getButtonCount', nodecl> end
+function sfml.Joystick.hasAxis(joystick: cuint, axis: sfml.JoystickAxis): sfBool <cimport 'sfJoystick_hasAxis', nodecl> end
+function sfml.Joystick.isButtonPressed(joystick: cuint, button: cuint): sfBool <cimport 'sfJoystick_isButtonPressed', nodecl> end
+function sfml.Joystick.getAxisPosition(joystick: cuint, axis: sfml.JoystickAxis): float32 <cimport 'sfJoystick_getAxisPosition', nodecl> end
+function sfml.Joystick.getIdentification(joystick: cuint): sfml.JoystickIdentification <cimport 'sfJoystick_getIdentification', nodecl> end
+function sfml.Joystick.update(): void <cimport 'sfJoystick_update', nodecl> end
