@@ -1332,3 +1332,39 @@ function sfml.CircleShape.getRadius(self: *sfml.CircleShape <const>): float32 <c
 function sfml.CircleShape.setPointCount(self: *sfml.CircleShape, count: csize): void <cimport 'sfCircleShape_setPointCount', nodecl> end
 function sfml.CircleShape.getLocalBounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getLocalBounds', nodecl> end
 function sfml.CircleShape.getGlobalBounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getGlobalBounds', nodecl> end
+
+
+-- Shape: Convex
+function sfml.ConvexShape.create(): *sfml.ConvexShape <cimport 'sfConvexShape_create', nodecl> end
+function sfml.ConvexShape.copy(self: *sfml.ConvexShape <const>): *sfml.ConvexShape <cimport 'sfConvexShape_copy', nodecl> end
+function sfml.ConvexShape.destroy(self: *sfml.ConvexShape): void <cimport 'sfConvexShape_destroy', nodecl> end
+function sfml.ConvexShape.setPosition(self: *sfml.ConvexShape, position: sfml.Vector2f): void <cimport 'sfConvexShape_setPosition', nodecl> end
+function sfml.ConvexShape.setRotation(self: *sfml.ConvexShape, angle: float32): void <cimport 'sfConvexShape_setRotation', nodecl> end
+function sfml.ConvexShape.setScale(self: *sfml.ConvexShape, scale: sfml.Vector2f): void <cimport 'sfConvexShape_setScale', nodecl> end
+function sfml.ConvexShape.setOrigin(self: *sfml.ConvexShape, origin: sfml.Vector2f): void <cimport 'sfConvexShape_setOrigin', nodecl> end
+function sfml.ConvexShape.getPosition(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getPosition', nodecl> end
+function sfml.ConvexShape.getRotation(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getRotation', nodecl> end
+function sfml.ConvexShape.getScale(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getScale', nodecl> end
+function sfml.ConvexShape.getOrigin(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getOrigin', nodecl> end
+function sfml.ConvexShape.move(self: *sfml.ConvexShape, offset: sfml.Vector2f): void <cimport 'sfConvexShape_move', nodecl> end
+function sfml.ConvexShape.rotate(self: *sfml.ConvexShape, angle: float32): void <cimport 'sfConvexShape_rotate', nodecl> end
+function sfml.ConvexShape.scale(self: *sfml.ConvexShape, factors: sfml.Vector2f): void <cimport 'sfConvexShape_scale', nodecl> end
+function sfml.ConvexShape.getTransform(self: *sfml.ConvexShape <const>): sfml.Transform <cimport 'sfConvexShape_getTransform', nodecl> end
+function sfml.ConvexShape.getInverseTransform(self: *sfml.ConvexShape <const>): sfml.Transform <cimport 'sfConvexShape_getInverseTransform', nodecl> end
+function sfml.ConvexShape.setTexture(self: *sfml.ConvexShape, texture: *sfml.Texture <const>, resetRect: sfBool): void <cimport 'sfConvexShape_setTexture', nodecl> end
+function sfml.ConvexShape.setTextureRect(self: *sfml.ConvexShape, rect: sfml.IntRect): void <cimport 'sfConvexShape_setTextureRect', nodecl> end
+function sfml.ConvexShape.setFillColor(self: *sfml.ConvexShape, color: sfml.Color): void <cimport 'sfConvexShape_setFillColor', nodecl> end
+function sfml.ConvexShape.setOutlineColor(self: *sfml.ConvexShape, color: sfml.Color): void <cimport 'sfConvexShape_setOutlineColor', nodecl> end
+function sfml.ConvexShape.setOutlineThickness(self: *sfml.ConvexShape, thickness: float32): void <cimport 'sfConvexShape_setOutlineThickness', nodecl> end
+function sfml.ConvexShape.getTexture(self: *sfml.ConvexShape <const>): *sfml.Texture <cimport 'sfConvexShape_getTexture', nodecl> end
+function sfml.ConvexShape.getTextureRect(self: *sfml.ConvexShape <const>): sfml.IntRect <cimport 'sfConvexShape_getTextureRect', nodecl> end
+function sfml.ConvexShape.getFillColor(self: *sfml.ConvexShape <const>): sfml.Color <cimport 'sfConvexShape_getFillColor', nodecl> end
+function sfml.ConvexShape.getOutlineColor(self: *sfml.ConvexShape <const>): sfml.Color <cimport 'sfConvexShape_getOutlineColor', nodecl> end
+function sfml.ConvexShape.getOutlineThickness(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getOutlineThickness', nodecl> end
+function sfml.ConvexShape.getPointCount(self: *sfml.ConvexShape <const>): csize <cimport 'sfConvexShape_getPointCount', nodecl> end
+function sfml.ConvexShape.getPoint(self: *sfml.ConvexShape <const>, index: csize): sfml.Vector2f <cimport 'sfConvexShape_getPoint', nodecl> end
+function sfml.ConvexShape.setRadius(self: *sfml.ConvexShape, radius: float32): void <cimport 'sfConvexShape_setRadius', nodecl> end
+function sfml.ConvexShape.getRadius(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getRadius', nodecl> end
+function sfml.ConvexShape.setPointCount(self: *sfml.ConvexShape, count: csize): void <cimport 'sfConvexShape_setPointCount', nodecl> end
+function sfml.ConvexShape.getLocalBounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getLocalBounds', nodecl> end
+function sfml.ConvexShape.getGlobalBounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getGlobalBounds', nodecl> end
