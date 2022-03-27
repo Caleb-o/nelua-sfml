@@ -2,7 +2,7 @@ require 'sfml'
 
 do print '# Creating and displaying RenderWindow'
 	-- Create a new render window
-	local rw = sfml.RenderWindow.create((@sfml.VideoMode){720, 480, 32}, "Hello, World!", sfml.DefaultStyle, nilptr)
+	local rw = sfml.RenderWindow.create((@sfml.VideoMode){720, 480, 32}, 'Hello, World!', sfml.DefaultStyle, nilptr)
 	rw:set_framerate_limit(30)
 
 	-- Assert if the window failed

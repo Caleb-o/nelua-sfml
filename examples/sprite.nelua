@@ -1,0 +1,40 @@
+require 'sfml'
+
+do print '# Sprites'
+	-- Create a new render window
+	local rw = sfml.RenderWindow.create((@sfml.VideoMode){720, 480, 32}, 'Sprites', sfml.DefaultStyle, nilptr)
+	rw:set_framerate_limit(30)
+
+	-- Assert if the window failed
+	assert(rw ~= nilptr)
+	defer rw:destroy() end
+
+	-- Load a texture
+	local tex_size = (@sfml.IntRect){0, 0, 64, 64}
+	local tex = sfml.Texture.create_from_file('assets/nelua_logo.png', tex_size)
+
+	-- Create and setup a sprite
+	local sprite = sfml.Sprite.create()
+	sprite:set_texture(tex, true)
+	sprite:set_origin((@sfml.Vector2f){tex_size.width/2, tex_size.height/2})
+	sprite:set_position((@sfml.Vector2f){360, 240})
+		
+	local evt: sfml.Event
+
+	while rw:is_open() do
+		while rw:poll_event(&evt) do
+			if evt.type == sfml.EventType.Closed then
+				rw:close()
+			end
+		end
+
+		rw:clear(sfml.Black)
+
+		-- Draw our sprite
+		rw:draw_sprite(sprite, nilptr)
+
+		rw:display()
+	end
+
+	print 'Done!'
+end
