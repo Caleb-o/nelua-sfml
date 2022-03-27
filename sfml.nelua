@@ -27,18 +27,18 @@ global sfml.SYSTEM_FREEBSD: cint <cimport 'CSFML_SYSTEM_FREEBSD', nodecl, const>
 
 
 -- Types
-global sfml.Bool: type <cimport 'sfBool', nodecl> = @cint
-global sfml.False: cint <cimport 'sfFalse', nodecl, const>
-global sfml.True: cint <cimport 'sfTrue', nodecl, const>
+global sfml.Bool: type <cimport 'sfBool', nodecl> = @boolean
+global sfml.False: boolean <cimport 'sfFalse', nodecl, const>
+global sfml.True: boolean <cimport 'sfTrue', nodecl, const>
 
-global sfml.Int8: type <cimport 'sfInt8', nodecl> = @cchar
-global sfml.Uint8: type <cimport 'sfUint8', nodecl> = @cuchar
-global sfml.Int16: type <cimport 'sfInt16', nodecl> = @cshort
-global sfml.Uint16: type <cimport 'sfUint16', nodecl> = @cushort
-global sfml.Int32: type <cimport 'sfInt32', nodecl> = @cint
-global sfml.Uint32: type <cimport 'sfUint32', nodecl> = @cuint
-global sfml.Int64: type <cimport 'sfInt64', nodecl> = @clonglong
-global sfml.Uint64: type <cimport 'sfUint64', nodecl> = @culonglong
+global sfml.Int8: type <cimport 'sfInt8', nodecl> = @int8
+global sfml.Uint8: type <cimport 'sfUint8', nodecl> = @byte
+global sfml.Int16: type <cimport 'sfInt16', nodecl> = @int16
+global sfml.Uint16: type <cimport 'sfUint16', nodecl> = @uint16
+global sfml.Int32: type <cimport 'sfInt32', nodecl> = @integer
+global sfml.Uint32: type <cimport 'sfUint32', nodecl> = @uinteger
+global sfml.Int64: type <cimport 'sfInt64', nodecl> = @int64
+global sfml.Uint64: type <cimport 'sfUint64', nodecl> = @uint64
 
 
 -- Time

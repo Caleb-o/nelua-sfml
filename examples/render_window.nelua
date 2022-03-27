@@ -10,8 +10,8 @@ do print '# Creating and displaying RenderWindow'
 		
 	local evt: sfml.Event
 
-	while rw:is_open() == 1 do
-		while rw:poll_event(&evt) == 1 do
+	while rw:is_open() do
+		while rw:poll_event(&evt) do
 			if evt.type == sfml.EventType.Closed then
 				rw:close()
 			end
