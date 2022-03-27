@@ -159,56 +159,56 @@ function sfml.IpAddress.get_public_address(timeout: sfml.Time): sfml.IpAddress <
 
 -- Network: FTP
 global sfml.FtpTransferMode: type <cimport 'sfFtpTransferMode', nodecl, using> = @enum(cint) {
-  FtpBinary = 0,
-  FtpAscii,
-  FtpEbcdic
+  Binary = 0,
+  Ascii,
+  Ebcdic
 }
 
 global sfml.FtpStatus: type <cimport 'sfFtpStatus', nodecl, using> = @enum(cint) {
-  FtpRestartMarkerReply          = 110,
-  FtpServiceReadySoon            = 120,
-  FtpDataConnectionAlreadyOpened = 125,
-  FtpOpeningDataConnection       = 150,  
-  FtpOk                    = 200,
-  FtpPointlessCommand      = 202,
-  FtpSystemStatus          = 211,
-  FtpDirectoryStatus       = 212,
-  FtpFileStatus            = 213,
-  FtpHelpMessage           = 214,
-  FtpSystemType            = 215,
-  FtpServiceReady          = 220,
-  FtpClosingConnection     = 221,
-  FtpDataConnectionOpened  = 225,
-  FtpClosingDataConnection = 226,
-  FtpEnteringPassiveMode   = 227,
-  FtpLoggedIn              = 230,
-  FtpFileActionOk          = 250,
-  FtpDirectoryOk           = 257,
-  FtpNeedPassword       = 331,
-  FtpNeedAccountToLogIn = 332,
-  FtpNeedInformation    = 350,
+  RestartMarkerReply          = 110,
+  ServiceReadySoon            = 120,
+  DataConnectionAlreadyOpened = 125,
+  OpeningDataConnection       = 150,  
+  Ok                    = 200,
+  PointlessCommand      = 202,
+  SystemStatus          = 211,
+  DirectoryStatus       = 212,
+  FileStatus            = 213,
+  HelpMessage           = 214,
+  SystemType            = 215,
+  ServiceReady          = 220,
+  ClosingConnection     = 221,
+  DataConnectionOpened  = 225,
+  ClosingDataConnection = 226,
+  EnteringPassiveMode   = 227,
+  LoggedIn              = 230,
+  FileActionOk          = 250,
+  DirectoryOk           = 257,
+  NeedPassword       = 331,
+  NeedAccountToLogIn = 332,
+  NeedInformation    = 350,
 
-  FtpServiceUnavailable        = 421,
-  FtpDataConnectionUnavailable = 425,
-  FtpTransferAborted           = 426,
-  FtpFileActionAborted         = 450,
-  FtpLocalError                = 451,
-  FtpInsufficientStorageSpace  = 452,
-  FtpCommandUnknown          = 500,
-  FtpParametersUnknown       = 501,
-  FtpCommandNotImplemented   = 502,
-  FtpBadCommandSequence      = 503,
-  FtpParameterNotImplemented = 504,
-  FtpNotLoggedIn             = 530,
-  FtpNeedAccountToStore      = 532,
-  FtpFileUnavailable         = 550,
-  FtpPageTypeUnknown         = 551,
-  FtpNotEnoughMemory         = 552,
-  FtpFilenameNotAllowed      = 553,
-  FtpInvalidResponse  = 1000,
-  FtpConnectionFailed = 1001,
-  FtpConnectionClosed = 1002,
-  FtpInvalidFile      = 1003
+  ServiceUnavailable        = 421,
+  DataConnectionUnavailable = 425,
+  TransferAborted           = 426,
+  FileActionAborted         = 450,
+  LocalError                = 451,
+  InsufficientStorageSpace  = 452,
+  CommandUnknown          = 500,
+  ParametersUnknown       = 501,
+  CommandNotImplemented   = 502,
+  BadCommandSequence      = 503,
+  ParameterNotImplemented = 504,
+  NotLoggedIn             = 530,
+  NeedAccountToStore      = 532,
+  FileUnavailable         = 550,
+  PageTypeUnknown         = 551,
+  NotEnoughMemory         = 552,
+  FilenameNotAllowed      = 553,
+  InvalidResponse  = 1000,
+  ConnectionFailed = 1001,
+  ConnectionClosed = 1002,
+  InvalidFile      = 1003
 }
 
 function sfml.FtpListingResponse.destroy(self: *sfml.FtpListingResponse): void <cimport 'sfFtpListingResponse_destroy', nodecl> end
@@ -621,14 +621,14 @@ global sfml.JoystickButtonCount: cint <cimport 'sfJoystickButtonCount', nodecl, 
 global sfml.JoystickAxisCount: cint <cimport 'sfJoystickAxisCount', nodecl, const>
 
 global sfml.JoystickAxis: type <cimport 'sfJoystickAxis', nodecl, using> = @enum(cint) {
-  JoystickX = 0,
-  JoystickY,
-  JoystickZ,
-  JoystickR,
-  JoystickU,
-  JoystickV,
-  JoystickPovX,
-  JoystickPovY
+  X = 0,
+  Y,
+  Z,
+  R,
+  U,
+  V,
+  PovX,
+  PovY
 }
 
 global sfml.Joystick = @record{}
@@ -770,8 +770,8 @@ global sfml.MouseButton: type <cimport 'sfMouseButton', nodecl, using> = @enum(c
 }
 
 global sfml.MouseWheel: type <cimport 'sfMouseWheel', nodecl, using> = @enum(cint) {
-  MouseVerticalWheel = 0,
-  MouseHorizontalWheel
+  VerticalWheel = 0,
+  HorizontalWheel
 }
 
 global sfml.Mouse = @record{}
@@ -802,12 +802,12 @@ function sfml.Cursor.destroy(cursor: *sfml.Cursor): void <cimport, nodecl> end
 
 -- Contol: Sensor
 global sfml.SensorType: type <cimport 'sfSensorType', nodecl, using> = @enum(cint) {
-  SensorAccelerometer = 0,
-  SensorGyroscope,
-  SensorMagnetometer,
-  SensorGravity,
-  SensorOrientation,
-  SensorCount
+  Accelerometer = 0,
+  Gyroscope,
+  Magnetometer,
+  Gravity,
+  Orientation,
+  Count
 }
 
 global sfml.Sensor = @record{}

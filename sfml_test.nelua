@@ -46,4 +46,11 @@ end
 do print '# Window'
 	local window = sfml.Window.create((@sfml.VideoMode){720, 480, 32}, "Hello", sfml.DefaultStyle, nilptr)
 	defer window:destroy() end
+
+	print('Open?', window:is_open())
+end
+
+do print '# Misc'
+	local m = sfml.MouseButton.Left
+	print(m)
 end
