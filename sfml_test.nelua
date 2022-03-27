@@ -42,3 +42,8 @@ do print '\n# Vectors'
 	local v3 = sfml.Vector3f{1, 2, 3}
 	print(v3.x, v3.y, v3.z)
 end
+
+do print '# Window'
+	local window = sfml.Window.create((@sfml.VideoMode){720, 480, 32}, "Hello", sfml.DefaultStyle, nilptr)
+	defer window:destroy() end
+end

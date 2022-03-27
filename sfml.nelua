@@ -48,11 +48,11 @@ global sfml.Time: type <cimport 'sfTime', nodecl> = @record {
 
 global sfml.Time.zero: sfml.Time <cimport 'sfTime_Zero', nodecl, const>
 
-function sfml.Time.asSeconds(self: sfml.Time): float32 <cimport 'sfTime_asSeconds', nodecl> end
-function sfml.Time.asMilliseconds(self: sfml.Time): sfml.Int32 <cimport 'sfTime_asMilliseconds', nodecl> end
-function sfml.Time.asMicroseconds(self: sfml.Time): sfml.Int64 <cimport 'sfTime_asMicroseconds', nodecl> end
+function sfml.Time.as_seconds(self: sfml.Time): float32 <cimport 'sfTime_asSeconds', nodecl> end
+function sfml.Time.as_milliseconds(self: sfml.Time): sfml.Int32 <cimport 'sfTime_asMilliseconds', nodecl> end
+function sfml.Time.as_microseconds(self: sfml.Time): sfml.Int64 <cimport 'sfTime_asMicroseconds', nodecl> end
 
-function sfml.Time.Seconds(amount: float32): sfml.Time <cimport 'sfSeconds', nodecl> end
+function sfml.Time.seconds(amount: float32): sfml.Time <cimport 'sfSeconds', nodecl> end
 function sfml.Time.milliseconds(amount: sfml.Int32): sfml.Time <cimport 'sfMilliseconds', nodecl> end
 function sfml.Time.microseconds(amount: sfml.Int64): sfml.Time <cimport 'sfMicroseconds', nodecl> end
 
@@ -63,7 +63,7 @@ global sfml.Clock: type <cimport 'sfClock', nodecl, forwarddecl> = @record {}
 function sfml.Clock.create(): *sfml.Clock <cimport 'sfClock_create', nodecl> end
 function sfml.Clock.copy(self: *sfml.Clock <const>): *sfml.Clock <cimport 'sfClock_copy', nodecl> end
 function sfml.Clock.destroy(self: *sfml.Clock): void <cimport 'sfClock_destroy', nodecl> end
-function sfml.Clock.getElapsedTime(self: *sfml.Clock <const>): sfml.Time <cimport 'sfClock_getElapsedTime', nodecl> end
+function sfml.Clock.get_elapsed_time(self: *sfml.Clock <const>): sfml.Time <cimport 'sfClock_getElapsedTime', nodecl> end
 function sfml.Clock.restart(self: *sfml.Clock): sfml.Time <cimport 'sfClock_restart', nodecl> end
 
 
@@ -149,13 +149,13 @@ global sfml.IpAddress.Any: sfml.IpAddress <cimport 'sfIpAddress_Any', nodecl, co
 global sfml.IpAddress.LocalHost: sfml.IpAddress <cimport 'sfIpAddress_LocalHost', nodecl, const>
 global sfml.IpAddress.Broadcast: sfml.IpAddress <cimport 'sfIpAddress_Broadcast', nodecl, const>
 
-function sfml.IpAddress.fromString(address: cstring <const>): sfml.IpAddress <cimport 'sfIpAddress_fromString', nodecl> end
-function sfml.IpAddress.fromBytes(byte0: sfml.Uint8, byte1: sfml.Uint8, byte2: sfml.Uint8, byte3: sfml.Uint8): sfml.IpAddress <cimport 'sfIpAddress_fromBytes', nodecl> end
-function sfml.IpAddress.fromInteger(address: sfml.Uint32): sfml.IpAddress <cimport 'sfIpAddress_fromInteger', nodecl> end
-function sfml.IpAddress.toString(self: sfml.IpAddress, string: cstring): void <cimport 'sfIpAddress_toString', nodecl> end
-function sfml.IpAddress.toInteger(self: sfml.IpAddress): sfml.Uint32 <cimport 'sfIpAddress_toInteger', nodecl> end
-function sfml.IpAddress.getLocalAddress(): sfml.IpAddress <cimport 'sfIpAddress_getLocalAddress', nodecl> end
-function sfml.IpAddress.getPublicAddress(timeout: sfml.Time): sfml.IpAddress <cimport 'sfIpAddress_getPublicAddress', nodecl> end
+function sfml.IpAddress.from_string(address: cstring <const>): sfml.IpAddress <cimport 'sfIpAddress_fromString', nodecl> end
+function sfml.IpAddress.from_bytes(byte0: sfml.Uint8, byte1: sfml.Uint8, byte2: sfml.Uint8, byte3: sfml.Uint8): sfml.IpAddress <cimport 'sfIpAddress_fromBytes', nodecl> end
+function sfml.IpAddress.from_integer(address: sfml.Uint32): sfml.IpAddress <cimport 'sfIpAddress_fromInteger', nodecl> end
+function sfml.IpAddress.to_string(self: sfml.IpAddress, string: cstring): void <cimport 'sfIpAddress_toString', nodecl> end
+function sfml.IpAddress.to_integer(self: sfml.IpAddress): sfml.Uint32 <cimport 'sfIpAddress_toInteger', nodecl> end
+function sfml.IpAddress.get_local_address(): sfml.IpAddress <cimport 'sfIpAddress_getLocalAddress', nodecl> end
+function sfml.IpAddress.get_public_address(timeout: sfml.Time): sfml.IpAddress <cimport 'sfIpAddress_getPublicAddress', nodecl> end
 
 -- Network: FTP
 global sfml.FtpTransferMode: type <cimport 'sfFtpTransferMode', nodecl, using> = @enum(cint) {
@@ -212,41 +212,41 @@ global sfml.FtpStatus: type <cimport 'sfFtpStatus', nodecl, using> = @enum(cint)
 }
 
 function sfml.FtpListingResponse.destroy(self: *sfml.FtpListingResponse): void <cimport 'sfFtpListingResponse_destroy', nodecl> end
-function sfml.FtpListingResponse.isOk(self: *sfml.FtpListingResponse <const>): sfml.Bool <cimport 'sfFtpListingResponse_isOk', nodecl> end
-function sfml.FtpListingResponse.getStatus(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus <cimport 'sfFtpListingResponse_getStatus', nodecl> end
-function sfml.FtpListingResponse.getMessage(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpListingResponse_getMessage', nodecl> end
-function sfml.FtpListingResponse.getCount(self: *sfml.FtpListingResponse <const>): csize <cimport 'sfFtpListingResponse_getCount', nodecl> end
-function sfml.FtpListingResponse.getName(self: *sfml.FtpListingResponse <const>, index: csize): cstring <cimport 'sfFtpListingResponse_getName', nodecl> end
+function sfml.FtpListingResponse.is_ok(self: *sfml.FtpListingResponse <const>): sfml.Bool <cimport 'sfFtpListingResponse_isOk', nodecl> end
+function sfml.FtpListingResponse.get_status(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus <cimport 'sfFtpListingResponse_getStatus', nodecl> end
+function sfml.FtpListingResponse.get_message(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpListingResponse_getMessage', nodecl> end
+function sfml.FtpListingResponse.get_count(self: *sfml.FtpListingResponse <const>): csize <cimport 'sfFtpListingResponse_getCount', nodecl> end
+function sfml.FtpListingResponse.get_name(self: *sfml.FtpListingResponse <const>, index: csize): cstring <cimport 'sfFtpListingResponse_getName', nodecl> end
 
 function sfml.FtpDirectoryResponse.destroy(self: *sfml.FtpListingResponse): void <cimport 'sfFtpDirectoryResponse_destroy', nodecl> end
-function sfml.FtpDirectoryResponse.isOk(self: *sfml.FtpListingResponse <const>): sfml.Bool <cimport 'sfFtpDirectoryResponse_isOk', nodecl> end
-function sfml.FtpDirectoryResponse.getStatus(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus <cimport 'sfFtpDirectoryResponse_getStatus', nodecl> end
-function sfml.FtpDirectoryResponse.getMessage(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpDirectoryResponse_getMessage', nodecl> end
-function sfml.FtpDirectoryResponse.getDirectory(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpDirectoryResponse_getDirectory', nodecl> end
+function sfml.FtpDirectoryResponse.is_ok(self: *sfml.FtpListingResponse <const>): sfml.Bool <cimport 'sfFtpDirectoryResponse_isOk', nodecl> end
+function sfml.FtpDirectoryResponse.get_status(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus <cimport 'sfFtpDirectoryResponse_getStatus', nodecl> end
+function sfml.FtpDirectoryResponse.get_message(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpDirectoryResponse_getMessage', nodecl> end
+function sfml.FtpDirectoryResponse.get_directory(self: *sfml.FtpListingResponse <const>): cstring <cimport 'sfFtpDirectoryResponse_getDirectory', nodecl> end
 
 function sfml.FtpResponse.destroy(self: *sfml.FtpResponse): void <cimport 'sfFtpResponse_destroy', nodecl> end
-function sfml.FtpResponse.isOk(self: *sfml.FtpResponse <const>): sfml.Bool <cimport 'sfFtpResponse_isOk', nodecl> end
-function sfml.FtpResponse.getStatus(self: *sfml.FtpResponse <const>): sfml.FtpStatus <cimport 'sfFtpResponse_getStatus', nodecl> end
-function sfml.FtpResponse.getMessage(self: *sfml.FtpResponse <const>): cstring <cimport 'sfFtpResponse_getMessage', nodecl> end
+function sfml.FtpResponse.is_ok(self: *sfml.FtpResponse <const>): sfml.Bool <cimport 'sfFtpResponse_isOk', nodecl> end
+function sfml.FtpResponse.get_status(self: *sfml.FtpResponse <const>): sfml.FtpStatus <cimport 'sfFtpResponse_getStatus', nodecl> end
+function sfml.FtpResponse.get_message(self: *sfml.FtpResponse <const>): cstring <cimport 'sfFtpResponse_getMessage', nodecl> end
 
 function sfml.Ftp.create(): *sfml.Ftp <cimport 'sfFtp_create', nodecl> end
 function sfml.Ftp.destroy(self: *sfml.Ftp): void <cimport 'sfFtp_destroy', nodecl> end
 function sfml.Ftp.connect(self: *sfml.Ftp, server: sfml.IpAddress, port: cushort, timeout: sfml.Time): *sfml.FtpResponse <cimport 'sfFtp_connect', nodecl> end
-function sfml.Ftp.loginAnonymous(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_loginAnonymous', nodecl> end
+function sfml.Ftp.login_anonymous(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_loginAnonymous', nodecl> end
 function sfml.Ftp.login(self: *sfml.Ftp, name: cstring <const>, password: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_login', nodecl> end
 function sfml.Ftp.disconnect(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_disconnect', nodecl> end
-function sfml.Ftp.keepAlive(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_keepAlive', nodecl> end
-function sfml.Ftp.getWorkingDirectory(self: *sfml.Ftp): *sfml.FtpDirectoryResponse <cimport 'sfFtp_getWorkingDirectory', nodecl> end
-function sfml.Ftp.getDirectoryListing(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpListingResponse <cimport 'sfFtp_getDirectoryListing', nodecl> end
-function sfml.Ftp.changeDirectory(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_changeDirectory', nodecl> end
-function sfml.Ftp.parentDirectory(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_parentDirectory', nodecl> end
-function sfml.Ftp.createDirectory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_createDirectory', nodecl> end
-function sfml.Ftp.deleteDirectory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_deleteDirectory', nodecl> end
-function sfml.Ftp.renameFile(self: *sfml.Ftp, file: cstring <const>, newName: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_renameFile', nodecl> end
-function sfml.Ftp.deleteFile(self: *sfml.Ftp, file: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_deleteFile', nodecl> end
+function sfml.Ftp.keep_alive(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_keepAlive', nodecl> end
+function sfml.Ftp.get_working_directory(self: *sfml.Ftp): *sfml.FtpDirectoryResponse <cimport 'sfFtp_getWorkingDirectory', nodecl> end
+function sfml.Ftp.get_directory_listing(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpListingResponse <cimport 'sfFtp_getDirectoryListing', nodecl> end
+function sfml.Ftp.change_directory(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_changeDirectory', nodecl> end
+function sfml.Ftp.parent_directory(self: *sfml.Ftp): *sfml.FtpResponse <cimport 'sfFtp_parentDirectory', nodecl> end
+function sfml.Ftp.create_directory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_createDirectory', nodecl> end
+function sfml.Ftp.delete_directory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_deleteDirectory', nodecl> end
+function sfml.Ftp.rename_file(self: *sfml.Ftp, file: cstring <const>, newName: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_renameFile', nodecl> end
+function sfml.Ftp.delete_file(self: *sfml.Ftp, file: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_deleteFile', nodecl> end
 function sfml.Ftp.download(self: *sfml.Ftp, remoteFile: cstring <const>, localPath: cstring <const>, mode: sfml.FtpTransferMode): *sfml.FtpResponse <cimport 'sfFtp_download', nodecl> end
 function sfml.Ftp.upload(self: *sfml.Ftp, localFile: cstring <const>, remotePath: cstring <const>, mode: sfml.FtpTransferMode, append: sfml.Bool): *sfml.FtpResponse <cimport 'sfFtp_upload', nodecl> end
-function sfml.Ftp.sendCommand(self: *sfml.Ftp, command: cstring <const>, parameter: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_sendCommand', nodecl> end
+function sfml.Ftp.send_command(self: *sfml.Ftp, command: cstring <const>, parameter: cstring <const>): *sfml.FtpResponse <cimport 'sfFtp_sendCommand', nodecl> end
 
 
 -- Network: HTTP
@@ -290,23 +290,23 @@ global sfml.HttpStatus: type <cimport 'sfHttpStatus', nodecl, using> = @enum(cin
 
 function sfml.HttpRequest.create(): *sfml.HttpRequest <cimport 'sfHttpRequest_create', nodecl> end
 function sfml.HttpRequest.destroy(self: *sfml.HttpRequest): void <cimport 'sfHttpRequest_destroy', nodecl> end
-function sfml.HttpRequest.setField(self: *sfml.HttpRequest, field: cstring <const>, value: cstring <const>): void <cimport 'sfHttpRequest_setField', nodecl> end
-function sfml.HttpRequest.setMethod(self: *sfml.HttpRequest, method: sfml.HttpMethod): void <cimport 'sfHttpRequest_setMethod', nodecl> end
-function sfml.HttpRequest.setUri(self: *sfml.HttpRequest, uri: cstring <const>): void <cimport 'sfHttpRequest_setUri', nodecl> end
-function sfml.HttpRequest.setHttpVersion(self: *sfml.HttpRequest, major: cuint, minor: cuint): void <cimport 'sfHttpRequest_setHttpVersion', nodecl> end
-function sfml.HttpRequest.setBody(self: *sfml.HttpRequest, body: cstring <const>): void <cimport 'sfHttpRequest_setBody', nodecl> end
+function sfml.HttpRequest.set_field(self: *sfml.HttpRequest, field: cstring <const>, value: cstring <const>): void <cimport 'sfHttpRequest_setField', nodecl> end
+function sfml.HttpRequest.set_method(self: *sfml.HttpRequest, method: sfml.HttpMethod): void <cimport 'sfHttpRequest_setMethod', nodecl> end
+function sfml.HttpRequest.set_uri(self: *sfml.HttpRequest, uri: cstring <const>): void <cimport 'sfHttpRequest_setUri', nodecl> end
+function sfml.HttpRequest.set_http_version(self: *sfml.HttpRequest, major: cuint, minor: cuint): void <cimport 'sfHttpRequest_setHttpVersion', nodecl> end
+function sfml.HttpRequest.set_body(self: *sfml.HttpRequest, body: cstring <const>): void <cimport 'sfHttpRequest_setBody', nodecl> end
 
 function sfml.HttpResponse.destroy(self: *sfml.HttpResponse): void <cimport 'sfHttpResponse_destroy', nodecl> end
-function sfml.HttpResponse.getField(self: *sfml.HttpResponse <const>, field: cstring <const>): cstring <cimport 'sfHttpResponse_getField', nodecl> end
-function sfml.HttpResponse.getStatus(self: *sfml.HttpResponse <const>): sfml.HttpStatus <cimport 'sfHttpResponse_getStatus', nodecl> end
-function sfml.HttpResponse.getMajorVersion(self: *sfml.HttpResponse <const>): cuint <cimport 'sfHttpResponse_getMajorVersion', nodecl> end
-function sfml.HttpResponse.getMinorVersion(self: *sfml.HttpResponse <const>): cuint <cimport 'sfHttpResponse_getMinorVersion', nodecl> end
-function sfml.HttpResponse.getBody(self: *sfml.HttpResponse <const>): cstring <cimport 'sfHttpResponse_getBody', nodecl> end
+function sfml.HttpResponse.get_field(self: *sfml.HttpResponse <const>, field: cstring <const>): cstring <cimport 'sfHttpResponse_getField', nodecl> end
+function sfml.HttpResponse.get_status(self: *sfml.HttpResponse <const>): sfml.HttpStatus <cimport 'sfHttpResponse_getStatus', nodecl> end
+function sfml.HttpResponse.get_major_version(self: *sfml.HttpResponse <const>): cuint <cimport 'sfHttpResponse_getMajorVersion', nodecl> end
+function sfml.HttpResponse.get_minor_version(self: *sfml.HttpResponse <const>): cuint <cimport 'sfHttpResponse_getMinorVersion', nodecl> end
+function sfml.HttpResponse.get_body(self: *sfml.HttpResponse <const>): cstring <cimport 'sfHttpResponse_getBody', nodecl> end
 
 function sfml.Http.create(): *sfml.Http <cimport 'sfHttp_create', nodecl> end
 function sfml.Http.destroy(http: *sfml.Http): void <cimport 'sfHttp_destroy', nodecl> end
-function sfml.Http.setHost(http: *sfml.Http, host: cstring <const>, port: cuint): void <cimport 'sfHttp_setHost', nodecl> end
-function sfml.Http.sendRequest(http: *sfml.Http, request: *sfml.HttpRequest <const>, timeout: sfml.Time): *sfml.HttpResponse <cimport 'sfHttp_sendRequest', nodecl> end
+function sfml.Http.set_host(http: *sfml.Http, host: cstring <const>, port: cuint): void <cimport 'sfHttp_setHost', nodecl> end
+function sfml.Http.send_request(http: *sfml.Http, request: *sfml.HttpRequest <const>, timeout: sfml.Time): *sfml.HttpResponse <cimport 'sfHttp_sendRequest', nodecl> end
 
 
  -- Network: Packet
@@ -315,34 +315,34 @@ function sfml.Packet.copy(self: *sfml.Packet <const>): *sfml.Packet <cimport 'sf
 function sfml.Packet.destroy(self: *sfml.Packet): void <cimport 'sfPacket_destroy', nodecl> end
 function sfml.Packet.append(self: *sfml.Packet, data: pointer, sizeInBytes: csize): void <cimport 'sfPacket_append', nodecl> end
 function sfml.Packet.clear(self: *sfml.Packet): void <cimport 'sfPacket_clear', nodecl> end
-function sfml.Packet.getData(self: *sfml.Packet <const>): pointer <cimport 'sfPacket_getData', nodecl> end
-function sfml.Packet.getDataSize(self: *sfml.Packet <const>): csize <cimport 'sfPacket_getDataSize', nodecl> end
-function sfml.Packet.endOfPacket(self: *sfml.Packet <const>): sfml.Bool <cimport 'sfPacket_endOfPacket', nodecl> end
-function sfml.Packet.canRead(self: *sfml.Packet <const>): sfml.Bool <cimport 'sfPacket_canRead', nodecl> end
+function sfml.Packet.get_data(self: *sfml.Packet <const>): pointer <cimport 'sfPacket_getData', nodecl> end
+function sfml.Packet.get_data_size(self: *sfml.Packet <const>): csize <cimport 'sfPacket_getDataSize', nodecl> end
+function sfml.Packet.end_of_packet(self: *sfml.Packet <const>): sfml.Bool <cimport 'sfPacket_endOfPacket', nodecl> end
+function sfml.Packet.can_read(self: *sfml.Packet <const>): sfml.Bool <cimport 'sfPacket_canRead', nodecl> end
 
-function sfml.Packet.readBool(self: *sfml.Packet): sfml.Bool <cimport 'sfPacket_readBool', nodecl> end
-function sfml.Packet.readInt8(self: *sfml.Packet): sfml.Int8 <cimport 'sfPacket_readInt8', nodecl> end
-function sfml.Packet.readUint8(self: *sfml.Packet): sfml.Uint8 <cimport 'sfPacket_readUint8', nodecl> end
-function sfml.Packet.readInt16(self: *sfml.Packet): sfml.Int16 <cimport 'sfPacket_readInt16', nodecl> end
-function sfml.Packet.readUint16(self: *sfml.Packet): sfml.Uint16 <cimport 'sfPacket_readUint16', nodecl> end
-function sfml.Packet.readInt32(self: *sfml.Packet): sfml.Int32 <cimport 'sfPacket_readInt32', nodecl> end
-function sfml.Packet.readUint32(self: *sfml.Packet): sfml.Uint32 <cimport 'sfPacket_readUint32', nodecl> end
-function sfml.Packet.readFloat(self: *sfml.Packet): float32 <cimport 'sfPacket_readFloat', nodecl> end
-function sfml.Packet.readDouble(self: *sfml.Packet): float64 <cimport 'sfPacket_readDouble', nodecl> end
-function sfml.Packet.readString(self: *sfml.Packet, str: cstring): void <cimport 'sfPacket_readString', nodecl> end
-function sfml.Packet.readWideString(self: *sfml.Packet, str: *[0]cint): void <cimport 'sfPacket_readWideString', nodecl> end
+function sfml.Packet.read_bool(self: *sfml.Packet): sfml.Bool <cimport 'sfPacket_readBool', nodecl> end
+function sfml.Packet.read_int8(self: *sfml.Packet): sfml.Int8 <cimport 'sfPacket_readInt8', nodecl> end
+function sfml.Packet.read_uint8(self: *sfml.Packet): sfml.Uint8 <cimport 'sfPacket_readUint8', nodecl> end
+function sfml.Packet.read_int16(self: *sfml.Packet): sfml.Int16 <cimport 'sfPacket_readInt16', nodecl> end
+function sfml.Packet.read_uint16(self: *sfml.Packet): sfml.Uint16 <cimport 'sfPacket_readUint16', nodecl> end
+function sfml.Packet.read_int32(self: *sfml.Packet): sfml.Int32 <cimport 'sfPacket_readInt32', nodecl> end
+function sfml.Packet.read_uint32(self: *sfml.Packet): sfml.Uint32 <cimport 'sfPacket_readUint32', nodecl> end
+function sfml.Packet.read_float(self: *sfml.Packet): float32 <cimport 'sfPacket_readFloat', nodecl> end
+function sfml.Packet.read_double(self: *sfml.Packet): float64 <cimport 'sfPacket_readDouble', nodecl> end
+function sfml.Packet.read_string(self: *sfml.Packet, str: cstring): void <cimport 'sfPacket_readString', nodecl> end
+function sfml.Packet.read_wide_string(self: *sfml.Packet, str: *[0]cint): void <cimport 'sfPacket_readWideString', nodecl> end
 
-function sfml.Packet.writeBool(self: *sfml.Packet, data: sfml.Bool): void <cimport 'sfPacket_writeBool', nodecl> end
-function sfml.Packet.writeInt8(self: *sfml.Packet, data: sfml.Int8): void <cimport 'sfPacket_writeInt8', nodecl> end
-function sfml.Packet.writeUint8(self: *sfml.Packet, data: sfml.Uint8): void <cimport 'sfPacket_writeUint8', nodecl> end
-function sfml.Packet.writeInt16(self: *sfml.Packet, data: sfml.Int16): void <cimport 'sfPacket_writeInt16', nodecl> end
-function sfml.Packet.writeUint16(self: *sfml.Packet, data: sfml.Uint16): void <cimport 'sfPacket_writeUint16', nodecl> end
-function sfml.Packet.writeInt32(self: *sfml.Packet, data: sfml.Int32): void <cimport 'sfPacket_writeInt32', nodecl> end
-function sfml.Packet.writeUint32(self: *sfml.Packet, data: sfml.Uint32): void <cimport 'sfPacket_writeUint32', nodecl> end
-function sfml.Packet.writeFloat(self: *sfml.Packet, data: float32): void <cimport 'sfPacket_writeFloat', nodecl> end
-function sfml.Packet.writeDouble(self: *sfml.Packet, data: float64): void <cimport 'sfPacket_writeDouble', nodecl> end
-function sfml.Packet.writeString(self: *sfml.Packet, data: cstring <const>): void <cimport 'sfPacket_writeString', nodecl> end
-function sfml.Packet.writeWideString(self: *sfml.Packet, data: *[0]cint): void <cimport 'sfPacket_writeWideString', nodecl> end
+function sfml.Packet.write_bool(self: *sfml.Packet, data: sfml.Bool): void <cimport 'sfPacket_writeBool', nodecl> end
+function sfml.Packet.write_int8(self: *sfml.Packet, data: sfml.Int8): void <cimport 'sfPacket_writeInt8', nodecl> end
+function sfml.Packet.write_uint8(self: *sfml.Packet, data: sfml.Uint8): void <cimport 'sfPacket_writeUint8', nodecl> end
+function sfml.Packet.write_int16(self: *sfml.Packet, data: sfml.Int16): void <cimport 'sfPacket_writeInt16', nodecl> end
+function sfml.Packet.write_uint16(self: *sfml.Packet, data: sfml.Uint16): void <cimport 'sfPacket_writeUint16', nodecl> end
+function sfml.Packet.write_int32(self: *sfml.Packet, data: sfml.Int32): void <cimport 'sfPacket_writeInt32', nodecl> end
+function sfml.Packet.write_uint32(self: *sfml.Packet, data: sfml.Uint32): void <cimport 'sfPacket_writeUint32', nodecl> end
+function sfml.Packet.write_float(self: *sfml.Packet, data: float32): void <cimport 'sfPacket_writeFloat', nodecl> end
+function sfml.Packet.write_double(self: *sfml.Packet, data: float64): void <cimport 'sfPacket_writeDouble', nodecl> end
+function sfml.Packet.write_string(self: *sfml.Packet, data: cstring <const>): void <cimport 'sfPacket_writeString', nodecl> end
+function sfml.Packet.write_wide_string(self: *sfml.Packet, data: *[0]cint): void <cimport 'sfPacket_writeWideString', nodecl> end
 
 
 -- Network: Selector
@@ -357,63 +357,53 @@ global sfml.SocketStatus: type <cimport 'sfSocketStatus', nodecl, using> = @enum
 function sfml.SocketSelector.create(): *sfml.SocketSelector <cimport 'sfSocketSelector_create', nodecl> end
 function sfml.SocketSelector.copy(self: *sfml.SocketSelector <const>): *sfml.SocketSelector <cimport 'sfSocketSelector_copy', nodecl> end
 function sfml.SocketSelector.destroy(self: *sfml.SocketSelector): void <cimport 'sfSocketSelector_destroy', nodecl> end
-function sfml.SocketSelector.addTcpListener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_addTcpListener', nodecl> end
-function sfml.SocketSelector.addTcpSocket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_addTcpSocket', nodecl> end
-function sfml.SocketSelector.addUdpSocket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_addUdpSocket', nodecl> end
-function sfml.SocketSelector.removeTcpListener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_removeTcpListener', nodecl> end
-function sfml.SocketSelector.removeTcpSocket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_removeTcpSocket', nodecl> end
-function sfml.SocketSelector.removeUdpSocket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_removeUdpSocket', nodecl> end
+function sfml.SocketSelector.add_tcp_listener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_addTcpListener', nodecl> end
+function sfml.SocketSelector.add_tcp_socket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_addTcpSocket', nodecl> end
+function sfml.SocketSelector.add_udp_socket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_addUdpSocket', nodecl> end
+function sfml.SocketSelector.remove_tcp_listener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_removeTcpListener', nodecl> end
+function sfml.SocketSelector.remove_tcp_socket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_removeTcpSocket', nodecl> end
+function sfml.SocketSelector.remove_udp_socket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_removeUdpSocket', nodecl> end
 function sfml.SocketSelector.clear(self: *sfml.SocketSelector): void <cimport 'sfSocketSelector_clear', nodecl> end
 function sfml.SocketSelector.wait(self: *sfml.SocketSelector, timeout: sfml.Time): sfml.Bool <cimport 'sfSocketSelector_wait', nodecl> end
-function sfml.SocketSelector.isTcpListenerReady(self: *sfml.SocketSelector <const>, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_isTcpListenerReady', nodecl> end
-function sfml.SocketSelector.isTcpSocketReady(self: *sfml.SocketSelector <const>, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_isTcpSocketReady', nodecl> end
-function sfml.SocketSelector.isUdpSocketReady(self: *sfml.SocketSelector <const>, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_isUdpSocketReady', nodecl> end
+function sfml.SocketSelector.is_tcp_listener_ready(self: *sfml.SocketSelector <const>, socket: *sfml.TcpListener): void <cimport 'sfSocketSelector_isTcpListenerReady', nodecl> end
+function sfml.SocketSelector.is_tcp_socket_ready(self: *sfml.SocketSelector <const>, socket: *sfml.TcpSocket): void <cimport 'sfSocketSelector_isTcpSocketReady', nodecl> end
+function sfml.SocketSelector.is_udp_socket_ready(self: *sfml.SocketSelector <const>, socket: *sfml.UdpSocket): void <cimport 'sfSocketSelector_isUdpSocketReady', nodecl> end
 
 function sfml.TcpListener.create(): *sfml.TcpListener <cimport 'sfTcpListener_create', nodecl> end
 function sfml.TcpListener.destroy(self: *sfml.TcpListener): void <cimport 'sfTcpListener_destroy', nodecl> end
-function sfml.TcpListener.setBlocking(self: *sfml.TcpListener, blocking: sfml.Bool): void <cimport 'sfTcpListener_setBlocking', nodecl> end
-function sfml.TcpListener.isBlocking(self: *sfml.TcpListener <const>): sfml.Bool <cimport 'sfTcpListener_isBlocking', nodecl> end
-function sfml.TcpListener.getLocalPort(self: *sfml.TcpListener <const>): cushort <cimport 'sfTcpListener_getLocalPort', nodecl> end
+function sfml.TcpListener.set_blocking(self: *sfml.TcpListener, blocking: sfml.Bool): void <cimport 'sfTcpListener_setBlocking', nodecl> end
+function sfml.TcpListener.is_blocking(self: *sfml.TcpListener <const>): sfml.Bool <cimport 'sfTcpListener_isBlocking', nodecl> end
+function sfml.TcpListener.get_local_port(self: *sfml.TcpListener <const>): cushort <cimport 'sfTcpListener_getLocalPort', nodecl> end
 function sfml.TcpListener.listen(self: *sfml.TcpListener <const>, port: cushort, address: sfml.IpAddress): sfml.SocketStatus <cimport 'sfTcpListener_listen', nodecl> end
 function sfml.TcpListener.accept(self: *sfml.TcpListener <const>, connected: *[0]*sfml.TcpSocket): sfml.SocketStatus <cimport 'sfTcpListener_accept', nodecl> end
 
 function sfml.TcpSocket.create(): *sfml.TcpSocket <cimport 'sfTcpSocket_create', nodecl> end
 function sfml.TcpSocket.destroy(self: *sfml.TcpSocket): void <cimport 'sfTcpSocket_destroy', nodecl> end
-function sfml.TcpSocket.setBlocking(self: *sfml.TcpSocket, blocking: sfml.Bool): void <cimport 'sfTcpSocket_setBlocking', nodecl> end
-function sfml.TcpSocket.isBlocking(self: *sfml.TcpSocket <const>): sfml.Bool <cimport 'sfTcpSocket_isBlocking', nodecl> end
-function sfml.TcpSocket.getLocalPort(self: *sfml.TcpSocket <const>): cushort <cimport 'sfTcpSocket_getLocalPort', nodecl> end
-function sfml.TcpSocket.getRemoteAddress(self: *sfml.TcpSocket <const>): sfml.IpAddress <cimport 'sfTcpSocket_getRemoteAddress', nodecl> end
-function sfml.TcpSocket.getRemotePort(self: *sfml.TcpSocket <const>): cushort <cimport 'sfTcpSocket_getRemotePort', nodecl> end
+function sfml.TcpSocket.set_blocking(self: *sfml.TcpSocket, blocking: sfml.Bool): void <cimport 'sfTcpSocket_setBlocking', nodecl> end
+function sfml.TcpSocket.is_blocking(self: *sfml.TcpSocket <const>): sfml.Bool <cimport 'sfTcpSocket_isBlocking', nodecl> end
+function sfml.TcpSocket.get_local_port(self: *sfml.TcpSocket <const>): cushort <cimport 'sfTcpSocket_getLocalPort', nodecl> end
+function sfml.TcpSocket.get_remote_address(self: *sfml.TcpSocket <const>): sfml.IpAddress <cimport 'sfTcpSocket_getRemoteAddress', nodecl> end
+function sfml.TcpSocket.get_remote_port(self: *sfml.TcpSocket <const>): cushort <cimport 'sfTcpSocket_getRemotePort', nodecl> end
 function sfml.TcpSocket.connect(self: *sfml.TcpSocket, remoteAddress: sfml.IpAddress, remotePort: cushort, timeout: sfml.Time): sfml.SocketStatus <cimport 'sfTcpSocket_connect', nodecl> end
 function sfml.TcpSocket.disconnect(self: *sfml.TcpSocket): void <cimport 'sfTcpSocket_disconnect', nodecl> end
 function sfml.TcpSocket.send(self: *sfml.TcpSocket, data: pointer <const>, size: csize): sfml.SocketStatus <cimport 'sfTcpSocket_send', nodecl> end
-function sfml.TcpSocket.sendPartial(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus <cimport 'sfTcpSocket_sendPartial', nodecl> end
+function sfml.TcpSocket.send_partial(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus <cimport 'sfTcpSocket_sendPartial', nodecl> end
 function sfml.TcpSocket.receive(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus <cimport 'sfTcpSocket_receive', nodecl> end
-function sfml.TcpSocket.sendPacket(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus <cimport 'sfTcpSocket_sendPacket', nodecl> end
-function sfml.TcpSocket.receivePacket(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus <cimport 'sfTcpSocket_receivePacket', nodecl> end
+function sfml.TcpSocket.send_packet(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus <cimport 'sfTcpSocket_sendPacket', nodecl> end
+function sfml.TcpSocket.receive_packet(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus <cimport 'sfTcpSocket_receivePacket', nodecl> end
 
 function sfml.UdpSocket.create(): *sfml.UdpSocket <cimport 'sfUdpSocket_create', nodecl> end
 function sfml.UdpSocket.destroy(self: *sfml.UdpSocket): void <cimport 'sfUdpSocket_destroy', nodecl> end
-function sfml.UdpSocket.setBlocking(self: *sfml.UdpSocket, blocking: sfml.Bool): void <cimport 'sfUdpSocket_setBlocking', nodecl> end
-function sfml.UdpSocket.isBlocking(self: *sfml.UdpSocket <const>): sfml.Bool <cimport 'sfUdpSocket_isBlocking', nodecl> end
-function sfml.UdpSocket.getLocalPort(self: *sfml.UdpSocket <const>): cushort <cimport 'sfUdpSocket_getLocalPort', nodecl> end
+function sfml.UdpSocket.set_blocking(self: *sfml.UdpSocket, blocking: sfml.Bool): void <cimport 'sfUdpSocket_setBlocking', nodecl> end
+function sfml.UdpSocket.is_blocking(self: *sfml.UdpSocket <const>): sfml.Bool <cimport 'sfUdpSocket_isBlocking', nodecl> end
+function sfml.UdpSocket.get_local_port(self: *sfml.UdpSocket <const>): cushort <cimport 'sfUdpSocket_getLocalPort', nodecl> end
 function sfml.UdpSocket.bind(self: *sfml.UdpSocket <const>, port: cushort, address: sfml.IpAddress): sfml.SocketStatus <cimport 'sfUdpSocket_bind', nodecl> end
 function sfml.UdpSocket.unbind(self: *sfml.UdpSocket): void <cimport 'sfUdpSocket_unbind', nodecl> end
 function sfml.UdpSocket.send(self: *sfml.UdpSocket, data: pointer<const>, size: csize, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus <cimport 'sfUdpSocket_send', nodecl> end
 function sfml.UdpSocket.receive(self: *sfml.UdpSocket, data: pointer, size: csize, received: *csize, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus <cimport 'sfUdpSocket_receive', nodecl> end
-function sfml.UdpSocket.sendPacket(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus <cimport 'sfUdpSocket_sendPacket', nodecl> end
-function sfml.UdpSocket.receivePacket(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus <cimport 'sfUdpSocket_receivePacket', nodecl> end
-function sfml.UdpSocket.maxDatagramSize(): cuint <cimport 'sfUdpSocket_maxDatagramSize', nodecl> end
-
-global sfml.Listener = @record{}
-function sfml.Listener.setGlobalVolume(volume: float32): void <cimport 'sfListener_setGlobalVolume', nodecl> end
-function sfml.Listener.getGlobalVolume(): float32 <cimport 'sfListener_getGlobalVolume', nodecl> end
-function sfml.Listener.setPosition(position: sfml.Vector3f): void <cimport 'sfListener_setPosition', nodecl> end
-function sfml.Listener.getPosition(): sfml.Vector3f <cimport 'sfListener_getPosition', nodecl> end
-function sfml.Listener.setDirection(direction: sfml.Vector3f): void <cimport 'sfListener_setDirection', nodecl> end
-function sfml.Listener.getDirection(): sfml.Vector3f <cimport 'sfListener_getDirection', nodecl> end
-function sfml.Listener.setUpVector(upVector: sfml.Vector3f): void <cimport 'sfListener_setUpVector', nodecl> end
-function sfml.Listener.getUpVector(): sfml.Vector3f <cimport 'sfListener_getUpVector', nodecl> end
+function sfml.UdpSocket.send_packet(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus <cimport 'sfUdpSocket_sendPacket', nodecl> end
+function sfml.UdpSocket.receive_packet(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus <cimport 'sfUdpSocket_receivePacket', nodecl> end
+function sfml.UdpSocket.max_datagram_size(): cuint <cimport 'sfUdpSocket_maxDatagramSize', nodecl> end
 
 
 -- Audio
@@ -423,6 +413,24 @@ global sfml.SoundStatus: type <cimport 'sfSoundStatus', nodecl, using> = @enum(c
   Playing
 }
 
+global sfml.TimeSpan: type <cimport 'sfTimeSpan', nodecl> = @record {
+  offset: sfml.Time,
+  length: sfml.Time
+}
+
+-- Audio: Listener
+global sfml.Listener = @record{}
+function sfml.Listener.set_global_volume(volume: float32): void <cimport 'sfListener_setGlobalVolume', nodecl> end
+function sfml.Listener.get_global_volume(): float32 <cimport 'sfListener_getGlobalVolume', nodecl> end
+function sfml.Listener.set_position(position: sfml.Vector3f): void <cimport 'sfListener_setPosition', nodecl> end
+function sfml.Listener.get_position(): sfml.Vector3f <cimport 'sfListener_getPosition', nodecl> end
+function sfml.Listener.set_direction(direction: sfml.Vector3f): void <cimport 'sfListener_setDirection', nodecl> end
+function sfml.Listener.get_direction(): sfml.Vector3f <cimport 'sfListener_getDirection', nodecl> end
+function sfml.Listener.set_up_vector(upVector: sfml.Vector3f): void <cimport 'sfListener_setUpVector', nodecl> end
+function sfml.Listener.get_up_vector(): sfml.Vector3f <cimport 'sfListener_getUpVector', nodecl> end
+
+
+-- Audio: Music
 global sfml.Music: type <cimport 'sfMusic', nodecl, forwarddecl> = @record {}
 global sfml.Sound: type <cimport 'sfSound', nodecl, forwarddecl> = @record {}
 global sfml.SoundBuffer: type <cimport 'sfSoundBuffer', nodecl, forwarddecl> = @record {}
@@ -430,42 +438,35 @@ global sfml.SoundBufferRecorder: type <cimport 'sfSoundBufferRecorder', nodecl, 
 global sfml.SoundRecorder: type <cimport 'sfSoundRecorder', nodecl, forwarddecl> = @record {}
 global sfml.SoundStream: type <cimport 'sfSoundStream', nodecl, forwarddecl> = @record {}
 
-global sfml.TimeSpan: type <cimport 'sfTimeSpan', nodecl> = @record {
-  offset: sfml.Time,
-  length: sfml.Time
-}
-
-
--- Audio: Music
-function sfml.Music.createFromFile(filename: cstring <const>): *sfml.Music <cimport 'sfMusic_createFromFile', nodecl> end
-function sfml.Music.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.Music <cimport 'sfMusic_createFromMemory', nodecl> end
-function sfml.Music.createFromStream(stream: *sfml.InputStream): *sfml.Music <cimport 'sfMusic_createFromStream', nodecl> end
+function sfml.Music.create_from_file(filename: cstring <const>): *sfml.Music <cimport 'sfMusic_createFromFile', nodecl> end
+function sfml.Music.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.Music <cimport 'sfMusic_createFromMemory', nodecl> end
+function sfml.Music.create_from_stream(stream: *sfml.InputStream): *sfml.Music <cimport 'sfMusic_createFromStream', nodecl> end
 function sfml.Music.destroy(self: *sfml.Music): void <cimport 'sfMusic_destroy', nodecl> end
-function sfml.Music.setLoop(self: *sfml.Music, loop: sfml.Bool): void <cimport 'sfMusic_setLoop', nodecl> end
-function sfml.Music.getLoop(self: *sfml.Music <const>): sfml.Bool <cimport 'sfMusic_getLoop', nodecl> end
-function sfml.Music.getDuration(self: *sfml.Music <const>): sfml.Time <cimport 'sfMusic_getDuration', nodecl> end
-function sfml.Music.getLoopPoints(self: *sfml.Music <const>): sfml.TimeSpan <cimport 'sfMusic_getLoopPoints', nodecl> end
-function sfml.Music.setLoopPoints(self: *sfml.Music, timePoints: sfml.TimeSpan): void <cimport 'sfMusic_setLoopPoints', nodecl> end
+function sfml.Music.get_loop(self: *sfml.Music <const>): sfml.Bool <cimport 'sfMusic_getLoop', nodecl> end
+function sfml.Music.set_loop(self: *sfml.Music, loop: sfml.Bool): void <cimport 'sfMusic_setLoop', nodecl> end
+function sfml.Music.get_duration(self: *sfml.Music <const>): sfml.Time <cimport 'sfMusic_getDuration', nodecl> end
+function sfml.Music.get_loop_points(self: *sfml.Music <const>): sfml.TimeSpan <cimport 'sfMusic_getLoopPoints', nodecl> end
+function sfml.Music.set_loop_points(self: *sfml.Music, timePoints: sfml.TimeSpan): void <cimport 'sfMusic_setLoopPoints', nodecl> end
 function sfml.Music.play(self: *sfml.Music): void <cimport 'sfMusic_play', nodecl> end
 function sfml.Music.pause(self: *sfml.Music): void <cimport 'sfMusic_pause', nodecl> end
 function sfml.Music.stop(self: *sfml.Music): void <cimport 'sfMusic_stop', nodecl> end
-function sfml.Music.getChannelCount(self: *sfml.Music <const>): cuint <cimport 'sfMusic_getChannelCount', nodecl> end
-function sfml.Music.getSampleRate(self: *sfml.Music <const>): cuint <cimport 'sfMusic_getSampleRate', nodecl> end
-function sfml.Music.getStatus(self: *sfml.Music <const>): sfml.SoundStatus <cimport 'sfMusic_getStatus', nodecl> end
-function sfml.Music.getPlayingOffset(self: *sfml.Music <const>): sfml.Time <cimport 'sfMusic_getPlayingOffset', nodecl> end
-function sfml.Music.setPitch(self: *sfml.Music, pitch: float32): void <cimport 'sfMusic_setPitch', nodecl> end
-function sfml.Music.setVolume(self: *sfml.Music, volume: float32): void <cimport 'sfMusic_setVolume', nodecl> end
-function sfml.Music.setPosition(self: *sfml.Music, position: sfml.Vector3f): void <cimport 'sfMusic_setPosition', nodecl> end
-function sfml.Music.setRelativeToListener(music: *sfml.Music, relative: sfml.Bool): void <cimport 'sfMusic_setRelativeToListener', nodecl> end
-function sfml.Music.setMinDistance(self: *sfml.Music, distance: float32): void <cimport 'sfMusic_setMinDistance', nodecl> end
-function sfml.Music.setAttenuation(self: *sfml.Music, attenuation: float32): void <cimport 'sfMusic_setAttenuation', nodecl> end
-function sfml.Music.setPlayingOffset(self: *sfml.Music, timeOffset: sfml.Time): void <cimport 'sfMusic_setPlayingOffset', nodecl> end
-function sfml.Music.getPitch(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getPitch', nodecl> end
-function sfml.Music.getVolume(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getVolume', nodecl> end
-function sfml.Music.getPosition(self: *sfml.Music <const>): sfml.Vector3f <cimport 'sfMusic_getPosition', nodecl> end
-function sfml.Music.isRelativeToListener(self: *sfml.Music <const>): sfml.Bool <cimport 'sfMusic_isRelativeToListener', nodecl> end
-function sfml.Music.getMinDistance(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getMinDistance', nodecl> end
-function sfml.Music.getAttenuation(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getAttenuation', nodecl> end
+function sfml.Music.get_channel_count(self: *sfml.Music <const>): cuint <cimport 'sfMusic_getChannelCount', nodecl> end
+function sfml.Music.get_sample_rate(self: *sfml.Music <const>): cuint <cimport 'sfMusic_getSampleRate', nodecl> end
+function sfml.Music.get_status(self: *sfml.Music <const>): sfml.SoundStatus <cimport 'sfMusic_getStatus', nodecl> end
+function sfml.Music.get_playing_offset(self: *sfml.Music <const>): sfml.Time <cimport 'sfMusic_getPlayingOffset', nodecl> end
+function sfml.Music.set_playing_offset(self: *sfml.Music, timeOffset: sfml.Time): void <cimport 'sfMusic_setPlayingOffset', nodecl> end
+function sfml.Music.get_pitch(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getPitch', nodecl> end
+function sfml.Music.set_pitch(self: *sfml.Music, pitch: float32): void <cimport 'sfMusic_setPitch', nodecl> end
+function sfml.Music.get_volume(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getVolume', nodecl> end
+function sfml.Music.set_volume(self: *sfml.Music, volume: float32): void <cimport 'sfMusic_setVolume', nodecl> end
+function sfml.Music.get_position(self: *sfml.Music <const>): sfml.Vector3f <cimport 'sfMusic_getPosition', nodecl> end
+function sfml.Music.set_position(self: *sfml.Music, position: sfml.Vector3f): void <cimport 'sfMusic_setPosition', nodecl> end
+function sfml.Music.set_relative_to_listener(music: *sfml.Music, relative: sfml.Bool): void <cimport 'sfMusic_setRelativeToListener', nodecl> end
+function sfml.Music.get_min_distance(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getMinDistance', nodecl> end
+function sfml.Music.set_min_distance(self: *sfml.Music, distance: float32): void <cimport 'sfMusic_setMinDistance', nodecl> end
+function sfml.Music.get_attenuation(self: *sfml.Music <const>): float32 <cimport 'sfMusic_getAttenuation', nodecl> end
+function sfml.Music.set_attenuation(self: *sfml.Music, attenuation: float32): void <cimport 'sfMusic_setAttenuation', nodecl> end
+function sfml.Music.is_relative_to_listener(self: *sfml.Music <const>): sfml.Bool <cimport 'sfMusic_isRelativeToListener', nodecl> end
 
 
 -- Audio: Sound
@@ -475,25 +476,25 @@ function sfml.Sound.destroy(self: *sfml.Sound): void <cimport 'sfSound_destroy',
 function sfml.Sound.play(self: *sfml.Sound): void <cimport 'sfSound_play', nodecl> end
 function sfml.Sound.pause(self: *sfml.Sound): void <cimport 'sfSound_pause', nodecl> end
 function sfml.Sound.stop(self: *sfml.Sound): void <cimport 'sfSound_stop', nodecl> end
-function sfml.Sound.setBuffer(self: *sfml.Sound, buffer: *sfml.SoundBuffer <const>): void <cimport 'sfSound_setBuffer', nodecl> end
-function sfml.Sound.getBuffer(self: *sfml.Sound <const>): *sfml.SoundBuffer <cimport 'sfSound_getBuffer', nodecl> end
-function sfml.Sound.setLoop(self: *sfml.Sound, loop: sfml.Bool): void <cimport 'sfSound_setLoop', nodecl> end
-function sfml.Sound.getLoop(self: *sfml.Sound <const>): sfml.Bool <cimport 'sfSound_getLoop', nodecl> end
-function sfml.Sound.getStatus(self: *sfml.Sound <const>): sfml.SoundStatus <cimport 'sfSound_getStatus', nodecl> end
-function sfml.Sound.setPitch(self: *sfml.Sound, pitch: float32): void <cimport 'sfSound_setPitch', nodecl> end
-function sfml.Sound.setVolume(self: *sfml.Sound, volume: float32): void <cimport 'sfSound_setVolume', nodecl> end
-function sfml.Sound.setPosition(self: *sfml.Sound, position: sfml.Vector3f): void <cimport 'sfSound_setPosition', nodecl> end
-function sfml.Sound.setRelativeToListener(self: *sfml.Sound, relative: sfml.Bool): void <cimport 'sfSound_setRelativeToListener', nodecl> end
-function sfml.Sound.setMinDistance(self: *sfml.Sound, distance: float32): void <cimport 'sfSound_setMinDistance', nodecl> end
-function sfml.Sound.setAttenuation(self: *sfml.Sound, attenuation: float32): void <cimport 'sfSound_setAttenuation', nodecl> end
-function sfml.Sound.setPlayingOffset(self: *sfml.Sound, timeOffset: sfml.Time): void <cimport 'sfSound_setPlayingOffset', nodecl> end
-function sfml.Sound.getPitch(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getPitch', nodecl> end
-function sfml.Sound.getVolume(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getVolume', nodecl> end
-function sfml.Sound.getPosition(self: *sfml.Sound <const>): sfml.Vector3f <cimport 'sfSound_getPosition', nodecl> end
-function sfml.Sound.isRelativeToListener(self: *sfml.Sound <const>): sfml.Bool <cimport 'sfSound_isRelativeToListener', nodecl> end
-function sfml.Sound.getMinDistance(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getMinDistance', nodecl> end
-function sfml.Sound.getAttenuation(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getAttenuation', nodecl> end
-function sfml.Sound.getPlayingOffset(self: *sfml.Sound <const>): sfml.Time <cimport 'sfSound_getPlayingOffset', nodecl> end
+function sfml.Sound.get_buffer(self: *sfml.Sound <const>): *sfml.SoundBuffer <cimport 'sfSound_getBuffer', nodecl> end
+function sfml.Sound.set_buffer(self: *sfml.Sound, buffer: *sfml.SoundBuffer <const>): void <cimport 'sfSound_setBuffer', nodecl> end
+function sfml.Sound.set_loop(self: *sfml.Sound, loop: sfml.Bool): void <cimport 'sfSound_setLoop', nodecl> end
+function sfml.Sound.get_loop(self: *sfml.Sound <const>): sfml.Bool <cimport 'sfSound_getLoop', nodecl> end
+function sfml.Sound.get_status(self: *sfml.Sound <const>): sfml.SoundStatus <cimport 'sfSound_getStatus', nodecl> end
+function sfml.Sound.get_pitch(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getPitch', nodecl> end
+function sfml.Sound.set_pitch(self: *sfml.Sound, pitch: float32): void <cimport 'sfSound_setPitch', nodecl> end
+function sfml.Sound.get_volume(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getVolume', nodecl> end
+function sfml.Sound.set_volume(self: *sfml.Sound, volume: float32): void <cimport 'sfSound_setVolume', nodecl> end
+function sfml.Sound.get_position(self: *sfml.Sound <const>): sfml.Vector3f <cimport 'sfSound_getPosition', nodecl> end
+function sfml.Sound.set_position(self: *sfml.Sound, position: sfml.Vector3f): void <cimport 'sfSound_setPosition', nodecl> end
+function sfml.Sound.get_min_distance(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getMinDistance', nodecl> end
+function sfml.Sound.set_min_distance(self: *sfml.Sound, distance: float32): void <cimport 'sfSound_setMinDistance', nodecl> end
+function sfml.Sound.get_attenuation(self: *sfml.Sound <const>): float32 <cimport 'sfSound_getAttenuation', nodecl> end
+function sfml.Sound.set_attenuation(self: *sfml.Sound, attenuation: float32): void <cimport 'sfSound_setAttenuation', nodecl> end
+function sfml.Sound.get_playing_offset(self: *sfml.Sound <const>): sfml.Time <cimport 'sfSound_getPlayingOffset', nodecl> end
+function sfml.Sound.set_playing_offset(self: *sfml.Sound, timeOffset: sfml.Time): void <cimport 'sfSound_setPlayingOffset', nodecl> end
+function sfml.Sound.set_relative_to_listener(self: *sfml.Sound, relative: sfml.Bool): void <cimport 'sfSound_setRelativeToListener', nodecl> end
+function sfml.Sound.is_relative_to_listener(self: *sfml.Sound <const>): sfml.Bool <cimport 'sfSound_isRelativeToListener', nodecl> end
 
 
 -- Audio: Sound Buffer
