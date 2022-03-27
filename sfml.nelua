@@ -1157,6 +1157,7 @@ global sfml.Transparent: sfml.Color <cimport 'sfTransparent', nodecl, const>
 function sfml.Color.from_rgb(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8): sfml.Color <cimport 'sfColor_fromRGB', nodecl> end
 function sfml.Color.from_rgba(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8, alpha: sfml.Uint8): sfml.Color <cimport 'sfColor_fromRGBA', nodecl> end
 function sfml.Color.from_integer(color: sfml.Uint32): sfml.Color <cimport 'sfColor_fromInteger', nodecl> end
+
 function sfml.Color.to_integer(color: sfml.Color): sfml.Uint32 <cimport 'sfColor_toInteger', nodecl> end
 function sfml.Color.add(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_add', nodecl> end
 function sfml.Color.subtract(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_subtract', nodecl> end
@@ -1165,6 +1166,7 @@ function sfml.Color.modulate(color1: sfml.Color, color2: sfml.Color): sfml.Color
 
 -- Vertex Array
 function sfml.VertexArray.create(): *sfml.VertexArray <cimport 'sfVertexArray_create', nodecl> end
+
 function sfml.VertexArray.copy(self: *sfml.VertexArray <const>): *sfml.VertexArray <cimport 'sfVertexArray_copy', nodecl> end
 function sfml.VertexArray.destroy(self: *sfml.VertexArray): void <cimport 'sfVertexArray_destroy', nodecl> end
 function sfml.VertexArray.get_vertex_count(self: *sfml.VertexArray <const>): csize <cimport 'sfVertexArray_getVertexCount', nodecl> end
@@ -1179,6 +1181,7 @@ function sfml.VertexArray.get_bounds(self: *sfml.VertexArray): sfml.FloatRect <c
 
 -- Transformable
 function sfml.Transformable.create(): *sfml.Transformable <cimport 'sfTransformable_create', nodecl> end
+
 function sfml.Transformable.copy(self: *sfml.Transformable <const>): *sfml.Transformable <cimport 'sfTransformable_copy', nodecl> end
 function sfml.Transformable.destroy(self: *sfml.Transformable): void <cimport 'sfTransformable_destroy', nodecl> end
 function sfml.Transformable.get_position(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getPosition', nodecl> end
@@ -1268,6 +1271,7 @@ global sfml.GlslMat4: type <cimport 'sfGlslMat4', nodecl> = @record {
 -- View
 function sfml.View.create(): *sfml.View <cimport 'sfView_create', nodecl> end
 function sfml.View.create_from_rect(rectangle: sfml.FloatRect): *sfml.View <cimport 'sfView_createFromRect', nodecl> end
+
 function sfml.View.copy(self: *sfml.View <const>): *sfml.View <cimport 'sfView_copy', nodecl> end
 function sfml.View.destroy(self: *sfml.View): void <cimport 'sfView_destroy', nodecl> end
 function sfml.View.get_center(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getCenter', nodecl> end
@@ -1288,6 +1292,7 @@ function sfml.View.zoom(self: *sfml.View, factor: float32): void <cimport 'sfVie
 function sfml.Font.create_from_file(filename: cstring <const>): *sfml.Font <cimport 'sfFont_createFromFile', nodecl> end
 function sfml.Font.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.Font <cimport 'sfFont_createFromMemory', nodecl> end
 function sfml.Font.create_from_stream(stream: *sfml.InputStream): *sfml.Font <cimport 'sfFont_createFromStream', nodecl> end
+
 function sfml.Font.copy(self: *sfml.Font <const>): *sfml.Font <cimport 'sfFont_copy', nodecl> end
 function sfml.Font.destroy(self: *sfml.Font): void <cimport 'sfFont_destroy', nodecl> end
 function sfml.Font.get_glyph(self: *sfml.Font <const>, codePoint: sfml.Uint32, characterSize: cuint, bold: sfml.Bool, outlineThickness: float32): sfml.Glyph <cimport 'sfFont_getGlyph', nodecl> end
@@ -1306,6 +1311,7 @@ function sfml.Image.create_from_pixels(width: cuint, height: cuint, pixels: *[0]
 function sfml.Image.create_from_file(filename: cstring <const>): *sfml.Image <cimport 'sfImage_createFromFile', nodecl> end
 function sfml.Image.create_from_memory(data: pointer <const>, size: csize): *sfml.Image <cimport 'sfImage_createFromMemory', nodecl> end
 function sfml.Image.create_from_stream(stream: *sfml.InputStream): *sfml.Image <cimport 'sfImage_createFromStream', nodecl> end
+
 function sfml.Image.copy(self: *sfml.Image <const>): *sfml.Image <cimport 'sfImage_copy', nodecl> end
 function sfml.Image.destroy(self: *sfml.Image): void <cimport 'sfImage_destroy', nodecl> end
 function sfml.Image.save_to_file(self: *sfml.Image <const>, filename: cstring <const>): sfml.Bool <cimport 'sfImage_saveToFile', nodecl> end
@@ -1361,36 +1367,36 @@ function sfml.ConvexShape.create(): *sfml.ConvexShape <cimport 'sfConvexShape_cr
 
 function sfml.ConvexShape.copy(self: *sfml.ConvexShape <const>): *sfml.ConvexShape <cimport 'sfConvexShape_copy', nodecl> end
 function sfml.ConvexShape.destroy(self: *sfml.ConvexShape): void <cimport 'sfConvexShape_destroy', nodecl> end
-function sfml.ConvexShape.setPosition(self: *sfml.ConvexShape, position: sfml.Vector2f): void <cimport 'sfConvexShape_setPosition', nodecl> end
-function sfml.ConvexShape.setRotation(self: *sfml.ConvexShape, angle: float32): void <cimport 'sfConvexShape_setRotation', nodecl> end
-function sfml.ConvexShape.setScale(self: *sfml.ConvexShape, scale: sfml.Vector2f): void <cimport 'sfConvexShape_setScale', nodecl> end
-function sfml.ConvexShape.setOrigin(self: *sfml.ConvexShape, origin: sfml.Vector2f): void <cimport 'sfConvexShape_setOrigin', nodecl> end
-function sfml.ConvexShape.getPosition(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getPosition', nodecl> end
-function sfml.ConvexShape.getRotation(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getRotation', nodecl> end
-function sfml.ConvexShape.getScale(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getScale', nodecl> end
-function sfml.ConvexShape.getOrigin(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getOrigin', nodecl> end
+function sfml.ConvexShape.get_position(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getPosition', nodecl> end
+function sfml.ConvexShape.set_position(self: *sfml.ConvexShape, position: sfml.Vector2f): void <cimport 'sfConvexShape_setPosition', nodecl> end
+function sfml.ConvexShape.get_rotation(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getRotation', nodecl> end
+function sfml.ConvexShape.set_rotation(self: *sfml.ConvexShape, angle: float32): void <cimport 'sfConvexShape_setRotation', nodecl> end
+function sfml.ConvexShape.get_scale(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getScale', nodecl> end
+function sfml.ConvexShape.set_scale(self: *sfml.ConvexShape, scale: sfml.Vector2f): void <cimport 'sfConvexShape_setScale', nodecl> end
+function sfml.ConvexShape.get_origin(self: *sfml.ConvexShape <const>): sfml.Vector2f <cimport 'sfConvexShape_getOrigin', nodecl> end
+function sfml.ConvexShape.set_origin(self: *sfml.ConvexShape, origin: sfml.Vector2f): void <cimport 'sfConvexShape_setOrigin', nodecl> end
+function sfml.ConvexShape.get_texture(self: *sfml.ConvexShape <const>): *sfml.Texture <cimport 'sfConvexShape_getTexture', nodecl> end
+function sfml.ConvexShape.set_texture(self: *sfml.ConvexShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfConvexShape_setTexture', nodecl> end
+function sfml.ConvexShape.get_fill_color(self: *sfml.ConvexShape <const>): sfml.Color <cimport 'sfConvexShape_getFillColor', nodecl> end
+function sfml.ConvexShape.set_fill_color(self: *sfml.ConvexShape, color: sfml.Color): void <cimport 'sfConvexShape_setFillColor', nodecl> end
+function sfml.ConvexShape.get_outline_color(self: *sfml.ConvexShape <const>): sfml.Color <cimport 'sfConvexShape_getOutlineColor', nodecl> end
+function sfml.ConvexShape.set_outline_color(self: *sfml.ConvexShape, color: sfml.Color): void <cimport 'sfConvexShape_setOutlineColor', nodecl> end
+function sfml.ConvexShape.get_outline_thickness(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getOutlineThickness', nodecl> end
+function sfml.ConvexShape.set_outline_thickness(self: *sfml.ConvexShape, thickness: float32): void <cimport 'sfConvexShape_setOutlineThickness', nodecl> end
+function sfml.ConvexShape.get_texture_rect(self: *sfml.ConvexShape <const>): sfml.IntRect <cimport 'sfConvexShape_getTextureRect', nodecl> end
+function sfml.ConvexShape.set_texture_rect(self: *sfml.ConvexShape, rect: sfml.IntRect): void <cimport 'sfConvexShape_setTextureRect', nodecl> end
+function sfml.ConvexShape.get_radius(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getRadius', nodecl> end
+function sfml.ConvexShape.set_radius(self: *sfml.ConvexShape, radius: float32): void <cimport 'sfConvexShape_setRadius', nodecl> end
+function sfml.ConvexShape.get_point_count(self: *sfml.ConvexShape <const>): csize <cimport 'sfConvexShape_getPointCount', nodecl> end
+function sfml.ConvexShape.set_point_count(self: *sfml.ConvexShape, count: csize): void <cimport 'sfConvexShape_setPointCount', nodecl> end
+function sfml.ConvexShape.get_transform(self: *sfml.ConvexShape <const>): sfml.Transform <cimport 'sfConvexShape_getTransform', nodecl> end
+function sfml.ConvexShape.get_inverse_transform(self: *sfml.ConvexShape <const>): sfml.Transform <cimport 'sfConvexShape_getInverseTransform', nodecl> end
 function sfml.ConvexShape.move(self: *sfml.ConvexShape, offset: sfml.Vector2f): void <cimport 'sfConvexShape_move', nodecl> end
 function sfml.ConvexShape.rotate(self: *sfml.ConvexShape, angle: float32): void <cimport 'sfConvexShape_rotate', nodecl> end
 function sfml.ConvexShape.scale(self: *sfml.ConvexShape, factors: sfml.Vector2f): void <cimport 'sfConvexShape_scale', nodecl> end
-function sfml.ConvexShape.getTransform(self: *sfml.ConvexShape <const>): sfml.Transform <cimport 'sfConvexShape_getTransform', nodecl> end
-function sfml.ConvexShape.getInverseTransform(self: *sfml.ConvexShape <const>): sfml.Transform <cimport 'sfConvexShape_getInverseTransform', nodecl> end
-function sfml.ConvexShape.setTexture(self: *sfml.ConvexShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfConvexShape_setTexture', nodecl> end
-function sfml.ConvexShape.setTextureRect(self: *sfml.ConvexShape, rect: sfml.IntRect): void <cimport 'sfConvexShape_setTextureRect', nodecl> end
-function sfml.ConvexShape.setFillColor(self: *sfml.ConvexShape, color: sfml.Color): void <cimport 'sfConvexShape_setFillColor', nodecl> end
-function sfml.ConvexShape.setOutlineColor(self: *sfml.ConvexShape, color: sfml.Color): void <cimport 'sfConvexShape_setOutlineColor', nodecl> end
-function sfml.ConvexShape.setOutlineThickness(self: *sfml.ConvexShape, thickness: float32): void <cimport 'sfConvexShape_setOutlineThickness', nodecl> end
-function sfml.ConvexShape.getTexture(self: *sfml.ConvexShape <const>): *sfml.Texture <cimport 'sfConvexShape_getTexture', nodecl> end
-function sfml.ConvexShape.getTextureRect(self: *sfml.ConvexShape <const>): sfml.IntRect <cimport 'sfConvexShape_getTextureRect', nodecl> end
-function sfml.ConvexShape.getFillColor(self: *sfml.ConvexShape <const>): sfml.Color <cimport 'sfConvexShape_getFillColor', nodecl> end
-function sfml.ConvexShape.getOutlineColor(self: *sfml.ConvexShape <const>): sfml.Color <cimport 'sfConvexShape_getOutlineColor', nodecl> end
-function sfml.ConvexShape.getOutlineThickness(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getOutlineThickness', nodecl> end
-function sfml.ConvexShape.getPointCount(self: *sfml.ConvexShape <const>): csize <cimport 'sfConvexShape_getPointCount', nodecl> end
-function sfml.ConvexShape.getPoint(self: *sfml.ConvexShape <const>, index: csize): sfml.Vector2f <cimport 'sfConvexShape_getPoint', nodecl> end
-function sfml.ConvexShape.setRadius(self: *sfml.ConvexShape, radius: float32): void <cimport 'sfConvexShape_setRadius', nodecl> end
-function sfml.ConvexShape.getRadius(self: *sfml.ConvexShape <const>): float32 <cimport 'sfConvexShape_getRadius', nodecl> end
-function sfml.ConvexShape.setPointCount(self: *sfml.ConvexShape, count: csize): void <cimport 'sfConvexShape_setPointCount', nodecl> end
-function sfml.ConvexShape.getLocalBounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getLocalBounds', nodecl> end
-function sfml.ConvexShape.getGlobalBounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getGlobalBounds', nodecl> end
+function sfml.ConvexShape.get_point(self: *sfml.ConvexShape <const>, index: csize): sfml.Vector2f <cimport 'sfConvexShape_getPoint', nodecl> end
+function sfml.ConvexShape.get_local_bounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getLocalBounds', nodecl> end
+function sfml.ConvexShape.get_global_bounds(self: *sfml.ConvexShape <const>): sfml.FloatRect <cimport 'sfConvexShape_getGlobalBounds', nodecl> end
 
 
 -- Rectangle
@@ -1398,136 +1404,136 @@ function sfml.RectangleShape.create(): *sfml.RectangleShape <cimport 'sfRectangl
 
 function sfml.RectangleShape.copy(self: *sfml.RectangleShape <const>): *sfml.RectangleShape <cimport 'sfRectangleShape_copy', nodecl> end
 function sfml.RectangleShape.destroy(self: *sfml.RectangleShape): void <cimport 'sfRectangleShape_destroy', nodecl> end
-function sfml.RectangleShape.setPosition(self: *sfml.RectangleShape, position: sfml.Vector2f): void <cimport 'sfRectangleShape_setPosition', nodecl> end
-function sfml.RectangleShape.setRotation(self: *sfml.RectangleShape, angle: float32): void <cimport 'sfRectangleShape_setRotation', nodecl> end
-function sfml.RectangleShape.setScale(self: *sfml.RectangleShape, scale: sfml.Vector2f): void <cimport 'sfRectangleShape_setScale', nodecl> end
-function sfml.RectangleShape.setOrigin(self: *sfml.RectangleShape, origin: sfml.Vector2f): void <cimport 'sfRectangleShape_setOrigin', nodecl> end
-function sfml.RectangleShape.getPosition(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getPosition', nodecl> end
-function sfml.RectangleShape.getRotation(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getRotation', nodecl> end
-function sfml.RectangleShape.getScale(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getScale', nodecl> end
-function sfml.RectangleShape.getOrigin(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getOrigin', nodecl> end
+function sfml.RectangleShape.get_position(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getPosition', nodecl> end
+function sfml.RectangleShape.set_position(self: *sfml.RectangleShape, position: sfml.Vector2f): void <cimport 'sfRectangleShape_setPosition', nodecl> end
+function sfml.RectangleShape.get_rotation(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getRotation', nodecl> end
+function sfml.RectangleShape.set_rotation(self: *sfml.RectangleShape, angle: float32): void <cimport 'sfRectangleShape_setRotation', nodecl> end
+function sfml.RectangleShape.get_scale(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getScale', nodecl> end
+function sfml.RectangleShape.set_scale(self: *sfml.RectangleShape, scale: sfml.Vector2f): void <cimport 'sfRectangleShape_setScale', nodecl> end
+function sfml.RectangleShape.get_origin(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getOrigin', nodecl> end
+function sfml.RectangleShape.set_origin(self: *sfml.RectangleShape, origin: sfml.Vector2f): void <cimport 'sfRectangleShape_setOrigin', nodecl> end
+function sfml.RectangleShape.get_texture(self: *sfml.RectangleShape <const>): *sfml.Texture <cimport 'sfRectangleShape_getTexture', nodecl> end
+function sfml.RectangleShape.set_texture(self: *sfml.RectangleShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfRectangleShape_setTexture', nodecl> end
+function sfml.RectangleShape.get_texture_rect(self: *sfml.RectangleShape <const>): sfml.IntRect <cimport 'sfRectangleShape_getTextureRect', nodecl> end
+function sfml.RectangleShape.set_texture_rect(self: *sfml.RectangleShape, rect: sfml.IntRect): void <cimport 'sfRectangleShape_setTextureRect', nodecl> end
+function sfml.RectangleShape.get_fill_color(self: *sfml.RectangleShape <const>): sfml.Color <cimport 'sfRectangleShape_getFillColor', nodecl> end
+function sfml.RectangleShape.set_fill_color(self: *sfml.RectangleShape, color: sfml.Color): void <cimport 'sfRectangleShape_setFillColor', nodecl> end
+function sfml.RectangleShape.get_outline_color(self: *sfml.RectangleShape <const>): sfml.Color <cimport 'sfRectangleShape_getOutlineColor', nodecl> end
+function sfml.RectangleShape.set_outline_color(self: *sfml.RectangleShape, color: sfml.Color): void <cimport 'sfRectangleShape_setOutlineColor', nodecl> end
+function sfml.RectangleShape.get_outline_thickness(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getOutlineThickness', nodecl> end
+function sfml.RectangleShape.set_outline_thickness(self: *sfml.RectangleShape, thickness: float32): void <cimport 'sfRectangleShape_setOutlineThickness', nodecl> end
+function sfml.RectangleShape.get_size(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getSize', nodecl> end
+function sfml.RectangleShape.set_size(self: *sfml.RectangleShape, size: float32): void <cimport 'sfRectangleShape_setSize', nodecl> end
+function sfml.RectangleShape.get_point_count(self: *sfml.RectangleShape <const>): csize <cimport 'sfRectangleShape_getPointCount', nodecl> end
+function sfml.RectangleShape.set_point_count(self: *sfml.RectangleShape, count: csize): void <cimport 'sfRectangleShape_setPointCount', nodecl> end
 function sfml.RectangleShape.move(self: *sfml.RectangleShape, offset: sfml.Vector2f): void <cimport 'sfRectangleShape_move', nodecl> end
 function sfml.RectangleShape.rotate(self: *sfml.RectangleShape, angle: float32): void <cimport 'sfRectangleShape_rotate', nodecl> end
 function sfml.RectangleShape.scale(self: *sfml.RectangleShape, factors: sfml.Vector2f): void <cimport 'sfRectangleShape_scale', nodecl> end
-function sfml.RectangleShape.getTransform(self: *sfml.RectangleShape <const>): sfml.Transform <cimport 'sfRectangleShape_getTransform', nodecl> end
-function sfml.RectangleShape.getInverseTransform(self: *sfml.RectangleShape <const>): sfml.Transform <cimport 'sfRectangleShape_getInverseTransform', nodecl> end
-function sfml.RectangleShape.setTexture(self: *sfml.RectangleShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfRectangleShape_setTexture', nodecl> end
-function sfml.RectangleShape.setTextureRect(self: *sfml.RectangleShape, rect: sfml.IntRect): void <cimport 'sfRectangleShape_setTextureRect', nodecl> end
-function sfml.RectangleShape.setFillColor(self: *sfml.RectangleShape, color: sfml.Color): void <cimport 'sfRectangleShape_setFillColor', nodecl> end
-function sfml.RectangleShape.setOutlineColor(self: *sfml.RectangleShape, color: sfml.Color): void <cimport 'sfRectangleShape_setOutlineColor', nodecl> end
-function sfml.RectangleShape.setOutlineThickness(self: *sfml.RectangleShape, thickness: float32): void <cimport 'sfRectangleShape_setOutlineThickness', nodecl> end
-function sfml.RectangleShape.getTexture(self: *sfml.RectangleShape <const>): *sfml.Texture <cimport 'sfRectangleShape_getTexture', nodecl> end
-function sfml.RectangleShape.getTextureRect(self: *sfml.RectangleShape <const>): sfml.IntRect <cimport 'sfRectangleShape_getTextureRect', nodecl> end
-function sfml.RectangleShape.getFillColor(self: *sfml.RectangleShape <const>): sfml.Color <cimport 'sfRectangleShape_getFillColor', nodecl> end
-function sfml.RectangleShape.getOutlineColor(self: *sfml.RectangleShape <const>): sfml.Color <cimport 'sfRectangleShape_getOutlineColor', nodecl> end
-function sfml.RectangleShape.getOutlineThickness(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getOutlineThickness', nodecl> end
-function sfml.RectangleShape.getPointCount(self: *sfml.RectangleShape <const>): csize <cimport 'sfRectangleShape_getPointCount', nodecl> end
-function sfml.RectangleShape.getPoint(self: *sfml.RectangleShape <const>, index: csize): sfml.Vector2f <cimport 'sfRectangleShape_getPoint', nodecl> end
-function sfml.RectangleShape.setSize(self: *sfml.RectangleShape, size: float32): void <cimport 'sfRectangleShape_setSize', nodecl> end
-function sfml.RectangleShape.getSize(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getSize', nodecl> end
-function sfml.RectangleShape.setPointCount(self: *sfml.RectangleShape, count: csize): void <cimport 'sfRectangleShape_setPointCount', nodecl> end
-function sfml.RectangleShape.getLocalBounds(self: *sfml.RectangleShape <const>): sfml.FloatRect <cimport 'sfRectangleShape_getLocalBounds', nodecl> end
-function sfml.RectangleShape.getGlobalBounds(self: *sfml.RectangleShape <const>): sfml.FloatRect <cimport 'sfRectangleShape_getGlobalBounds', nodecl> end
+function sfml.RectangleShape.get_transform(self: *sfml.RectangleShape <const>): sfml.Transform <cimport 'sfRectangleShape_getTransform', nodecl> end
+function sfml.RectangleShape.get_inverse_transform(self: *sfml.RectangleShape <const>): sfml.Transform <cimport 'sfRectangleShape_getInverseTransform', nodecl> end
+function sfml.RectangleShape.get_point(self: *sfml.RectangleShape <const>, index: csize): sfml.Vector2f <cimport 'sfRectangleShape_getPoint', nodecl> end
+function sfml.RectangleShape.get_local_bounds(self: *sfml.RectangleShape <const>): sfml.FloatRect <cimport 'sfRectangleShape_getLocalBounds', nodecl> end
+function sfml.RectangleShape.get_global_bounds(self: *sfml.RectangleShape <const>): sfml.FloatRect <cimport 'sfRectangleShape_getGlobalBounds', nodecl> end
 
 
 -- Render Texture
 function sfml.RenderTexture.create(width: cuint, height: cuint, depthBuffer: sfml.Bool): *sfml.RenderTexture <cimport 'sfRenderTexture_create', nodecl> end
-function sfml.RenderTexture.createWithSettings(width: cuint, height: cuint, settings: *sfml.ContextSettings <const>): *sfml.RenderTexture <cimport 'sfRenderTexture_createWithSettings', nodecl> end
+function sfml.RenderTexture.create_with_settings(width: cuint, height: cuint, settings: *sfml.ContextSettings <const>): *sfml.RenderTexture <cimport 'sfRenderTexture_createWithSettings', nodecl> end
 
 function sfml.RenderTexture.destroy(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_destroy', nodecl> end
-function sfml.RenderTexture.getSize(self: *sfml.RenderTexture <const>): sfml.Vector2u <cimport 'sfRenderTexture_getSize', nodecl> end
-function sfml.RenderTexture.setActive(self: *sfml.RenderTexture, active: sfml.Bool): sfml.Vector2u <cimport 'sfRenderTexture_setActive', nodecl> end
+function sfml.RenderTexture.get_size(self: *sfml.RenderTexture <const>): sfml.Vector2u <cimport 'sfRenderTexture_getSize', nodecl> end
+function sfml.RenderTexture.set_active(self: *sfml.RenderTexture, active: sfml.Bool): sfml.Vector2u <cimport 'sfRenderTexture_setActive', nodecl> end
 function sfml.RenderTexture.display(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_display', nodecl> end
 function sfml.RenderTexture.clear(self: *sfml.RenderTexture, color: sfml.Color): void <cimport 'sfRenderTexture_clear', nodecl> end
-function sfml.RenderTexture.setView(self: *sfml.RenderTexture, view: *sfml.View <const>): void <cimport 'sfRenderTexture_setView', nodecl> end
-function sfml.RenderTexture.getView(self: *sfml.RenderTexture <const>): *sfml.View <cimport 'sfRenderTexture_getView', nodecl> end
-function sfml.RenderTexture.getDefaultView(self: *sfml.RenderTexture <const>): *sfml.View <cimport 'sfRenderTexture_getDefaultView', nodecl> end
-function sfml.RenderTexture.getViewport(self: *sfml.RenderTexture <const>, view: *sfml.View <const>): sfml.IntRect <cimport 'sfRenderTexture_getViewport', nodecl> end
-function sfml.RenderTexture.mapPixelToCoords(self: *sfml.RenderTexture <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f <cimport 'sfRenderTexture_mapPixelToCoords', nodecl> end
-function sfml.RenderTexture.mapCoordsToPixel(self: *sfml.RenderTexture <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i <cimport 'sfRenderTexture_mapCoordsToPixel', nodecl> end
-function sfml.RenderTexture.drawSprite(self: *sfml.RenderTexture, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawSprite', nodecl> end
-function sfml.RenderTexture.drawText(self: *sfml.RenderTexture, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawText', nodecl> end
-function sfml.RenderTexture.drawShape(self: *sfml.RenderTexture, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawCircleShape', nodecl> end
-function sfml.RenderTexture.drawCircleShape(self: *sfml.RenderTexture, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawCircleShape', nodecl> end
-function sfml.RenderTexture.drawConvexShape(self: *sfml.RenderTexture, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawConvexShape', nodecl> end
-function sfml.RenderTexture.drawRectangleShape(self: *sfml.RenderTexture, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawRectangleShape', nodecl> end
-function sfml.RenderTexture.drawVertexArray(self: *sfml.RenderTexture, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawVertexArray', nodecl> end
-function sfml.RenderTexture.drawVertexBuffer(self: *sfml.RenderTexture, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawVertexBuffer', nodecl> end
-function sfml.RenderTexture.drawPrimitives(self: *sfml.RenderTexture, vertices: *[0]sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawPrimitives', nodecl> end
-function sfml.RenderTexture.pushGLStates(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_pushGLStates', nodecl> end
-function sfml.RenderTexture.popGLStates(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_popGLStates', nodecl> end
-function sfml.RenderTexture.resetGLStates(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_resetGLStates', nodecl> end
-function sfml.RenderTexture.getTexture(self: *sfml.RenderTexture <const>): *sfml.Texture <cimport 'sfRenderTexture_getTexture', nodecl> end
-function sfml.RenderTexture.getMaximumAntialiasingLevel(): cuint <cimport 'sfRenderTexture_getMaximumAntialiasingLevel', nodecl> end
-function sfml.RenderTexture.setSmooth(self: *sfml.RenderTexture, smooth: sfml.Bool): void <cimport 'sfRenderTexture_setSmooth', nodecl> end
-function sfml.RenderTexture.isSmooth(self: *sfml.RenderTexture <const>): sfml.Bool <cimport 'sfRenderTexture_isSmooth', nodecl> end
-function sfml.RenderTexture.setRepeated(self: *sfml.RenderTexture, repeated: sfml.Bool): void <cimport 'sfRenderTexture_setRepeated', nodecl> end
-function sfml.RenderTexture.isRepeated(self: *sfml.RenderTexture <const>): sfml.Bool <cimport 'sfRenderTexture_isRepeated', nodecl> end
-function sfml.RenderTexture.generateMipmap(self: *sfml.RenderTexture): sfml.Bool <cimport 'sfRenderTexture_generateMipmap', nodecl> end
+function sfml.RenderTexture.get_view(self: *sfml.RenderTexture <const>): *sfml.View <cimport 'sfRenderTexture_getView', nodecl> end
+function sfml.RenderTexture.set_view(self: *sfml.RenderTexture, view: *sfml.View <const>): void <cimport 'sfRenderTexture_setView', nodecl> end
+function sfml.RenderTexture.get_default_view(self: *sfml.RenderTexture <const>): *sfml.View <cimport 'sfRenderTexture_getDefaultView', nodecl> end
+function sfml.RenderTexture.get_viewport(self: *sfml.RenderTexture <const>, view: *sfml.View <const>): sfml.IntRect <cimport 'sfRenderTexture_getViewport', nodecl> end
+function sfml.RenderTexture.map_pixel_to_coords(self: *sfml.RenderTexture <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f <cimport 'sfRenderTexture_mapPixelToCoords', nodecl> end
+function sfml.RenderTexture.map_coords_to_pixel(self: *sfml.RenderTexture <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i <cimport 'sfRenderTexture_mapCoordsToPixel', nodecl> end
+function sfml.RenderTexture.draw_sprite(self: *sfml.RenderTexture, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawSprite', nodecl> end
+function sfml.RenderTexture.draw_text(self: *sfml.RenderTexture, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawText', nodecl> end
+function sfml.RenderTexture.draw_shape(self: *sfml.RenderTexture, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawCircleShape', nodecl> end
+function sfml.RenderTexture.draw_circle_shape(self: *sfml.RenderTexture, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawCircleShape', nodecl> end
+function sfml.RenderTexture.draw_convex_shape(self: *sfml.RenderTexture, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawConvexShape', nodecl> end
+function sfml.RenderTexture.draw_rectangle_shape(self: *sfml.RenderTexture, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawRectangleShape', nodecl> end
+function sfml.RenderTexture.draw_vertex_array(self: *sfml.RenderTexture, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawVertexArray', nodecl> end
+function sfml.RenderTexture.draw_vertex_buffer(self: *sfml.RenderTexture, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawVertexBuffer', nodecl> end
+function sfml.RenderTexture.draw_primitives(self: *sfml.RenderTexture, vertices: *[0]sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void <cimport 'sfRenderTexture_drawPrimitives', nodecl> end
+function sfml.RenderTexture.push_gl_states(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_pushGLStates', nodecl> end
+function sfml.RenderTexture.pop_gl_states(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_popGLStates', nodecl> end
+function sfml.RenderTexture.reset_gl_states(self: *sfml.RenderTexture): void <cimport 'sfRenderTexture_resetGLStates', nodecl> end
+function sfml.RenderTexture.get_texture(self: *sfml.RenderTexture <const>): *sfml.Texture <cimport 'sfRenderTexture_getTexture', nodecl> end
+function sfml.RenderTexture.get_maximum_antialiasing_level(): cuint <cimport 'sfRenderTexture_getMaximumAntialiasingLevel', nodecl> end
+function sfml.RenderTexture.is_smooth(self: *sfml.RenderTexture <const>): sfml.Bool <cimport 'sfRenderTexture_isSmooth', nodecl> end
+function sfml.RenderTexture.set_smooth(self: *sfml.RenderTexture, smooth: sfml.Bool): void <cimport 'sfRenderTexture_setSmooth', nodecl> end
+function sfml.RenderTexture.is_repeated(self: *sfml.RenderTexture <const>): sfml.Bool <cimport 'sfRenderTexture_isRepeated', nodecl> end
+function sfml.RenderTexture.set_repeated(self: *sfml.RenderTexture, repeated: sfml.Bool): void <cimport 'sfRenderTexture_setRepeated', nodecl> end
+function sfml.RenderTexture.generate_mipmap(self: *sfml.RenderTexture): sfml.Bool <cimport 'sfRenderTexture_generateMipmap', nodecl> end
 
 
 -- Render Window
 function sfml.RenderWindow.create(mode: sfml.VideoMode, title: cstring <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_create', nodecl> end
-function sfml.RenderWindow.createUnicode(mode: sfml.VideoMode, title: *sfml.Uint32, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_createUnicode', nodecl> end
-function sfml.RenderWindow.createFromHandle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_createFromHandle', nodecl> end
+function sfml.RenderWindow.create_unicode(mode: sfml.VideoMode, title: *sfml.Uint32, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_createUnicode', nodecl> end
+function sfml.RenderWindow.create_from_handle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow <cimport 'sfRenderWindow_createFromHandle', nodecl> end
 
 function sfml.RenderWindow.destroy(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_destroy', nodecl> end
 function sfml.RenderWindow.close(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_close', nodecl> end
-function sfml.RenderWindow.isOpen(self: *sfml.RenderWindow <const>): sfml.Bool <cimport 'sfRenderWindow_isOpen', nodecl> end
-function sfml.RenderWindow.getSettings(self: *sfml.RenderWindow <const>): sfml.ContextSettings <cimport 'sfRenderWindow_getSettings', nodecl> end
-function sfml.RenderWindow.pollEvent(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_pollEvent', nodecl> end
-function sfml.RenderWindow.waitEvent(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_waitEvent', nodecl> end
-function sfml.RenderWindow.getPosition(self: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfRenderWindow_getPosition', nodecl> end
-function sfml.RenderWindow.setPosition(self: *sfml.RenderWindow, position: sfml.Vector2i): void <cimport 'sfRenderWindow_setPosition', nodecl> end
-function sfml.RenderWindow.getSize(self: *sfml.RenderWindow <const>): sfml.Vector2u <cimport 'sfRenderWindow_getSize', nodecl> end
-function sfml.RenderWindow.setSize(self: *sfml.RenderWindow, size: sfml.Vector2u): void <cimport 'sfRenderWindow_setSize', nodecl> end
-function sfml.RenderWindow.setUnicodeTitle(self: *sfml.RenderWindow, title: *sfml.Uint32 <const>): void <cimport 'sfRenderWindow_setUnicodeTitle', nodecl> end
-function sfml.RenderWindow.setIcon(self: *sfml.RenderWindow, width: cuint, height: cuint, pixels: *[0]sfml.Uint8 <const>): void <cimport 'sfRenderWindow_setIcon', nodecl> end
-function sfml.RenderWindow.setVisible(self: *sfml.RenderWindow, visible: sfml.Bool): void <cimport 'sfRenderWindow_setVisible', nodecl> end
-function sfml.RenderWindow.setVerticalSyncEnabled(self: *sfml.RenderWindow, enabled: sfml.Bool): void <cimport 'sfRenderWindow_setVerticalSyncEnabled', nodecl> end
-function sfml.RenderWindow.setMouseCursorVisible(self: *sfml.RenderWindow, show: sfml.Bool): void <cimport 'sfRenderWindow_setMouseCursorVisible', nodecl> end
-function sfml.RenderWindow.setMouseCursorGrabbed(self: *sfml.RenderWindow, grabbed: sfml.Bool): void <cimport 'sfRenderWindow_setMouseCursorGrabbed', nodecl> end
-function sfml.RenderWindow.setMouseCursor(self: *sfml.RenderWindow, cursor: *sfml.Cursor <const>): void <cimport 'sfRenderWindow_setMouseCursor', nodecl> end
-function sfml.RenderWindow.setKeyRepeatEnabled(self: *sfml.RenderWindow, enabled: sfml.Bool): void <cimport 'sfRenderWindow_setKeyRepeatEnabled', nodecl> end
-function sfml.RenderWindow.setFramerateLimit(self: *sfml.RenderWindow, limit: cuint): void <cimport 'sfRenderWindow_setFramerateLimit', nodecl> end
-function sfml.RenderWindow.setJoystickThreshold(self: *sfml.RenderWindow, threshold: float32): void <cimport 'sfRenderWindow_setJoystickThreshold', nodecl> end
-function sfml.RenderWindow.setActive(self: *sfml.RenderWindow, active: sfml.Bool): void <cimport 'sfRenderWindow_setActive', nodecl> end
-function sfml.RenderWindow.requestFocus(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_requestFocus', nodecl> end
-function sfml.RenderWindow.hasFocus(self: *sfml.RenderWindow <const>): sfml.Bool <cimport 'sfRenderWindow_hasFocus', nodecl> end
+function sfml.RenderWindow.is_open(self: *sfml.RenderWindow <const>): sfml.Bool <cimport 'sfRenderWindow_isOpen', nodecl> end
+function sfml.RenderWindow.get_settings(self: *sfml.RenderWindow <const>): sfml.ContextSettings <cimport 'sfRenderWindow_getSettings', nodecl> end
+function sfml.RenderWindow.poll_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_pollEvent', nodecl> end
+function sfml.RenderWindow.wait_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_waitEvent', nodecl> end
+function sfml.RenderWindow.get_position(self: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfRenderWindow_getPosition', nodecl> end
+function sfml.RenderWindow.set_position(self: *sfml.RenderWindow, position: sfml.Vector2i): void <cimport 'sfRenderWindow_setPosition', nodecl> end
+function sfml.RenderWindow.get_size(self: *sfml.RenderWindow <const>): sfml.Vector2u <cimport 'sfRenderWindow_getSize', nodecl> end
+function sfml.RenderWindow.set_size(self: *sfml.RenderWindow, size: sfml.Vector2u): void <cimport 'sfRenderWindow_setSize', nodecl> end
+function sfml.RenderWindow.set_unicode_title(self: *sfml.RenderWindow, title: *sfml.Uint32 <const>): void <cimport 'sfRenderWindow_setUnicodeTitle', nodecl> end
+function sfml.RenderWindow.set_icon(self: *sfml.RenderWindow, width: cuint, height: cuint, pixels: *[0]sfml.Uint8 <const>): void <cimport 'sfRenderWindow_setIcon', nodecl> end
+function sfml.RenderWindow.set_visible(self: *sfml.RenderWindow, visible: sfml.Bool): void <cimport 'sfRenderWindow_setVisible', nodecl> end
+function sfml.RenderWindow.set_vsync_enabled(self: *sfml.RenderWindow, enabled: sfml.Bool): void <cimport 'sfRenderWindow_setVerticalSyncEnabled', nodecl> end
+function sfml.RenderWindow.set_mouse_cursor_visible(self: *sfml.RenderWindow, show: sfml.Bool): void <cimport 'sfRenderWindow_setMouseCursorVisible', nodecl> end
+function sfml.RenderWindow.set_mouse_cursor_grabbed(self: *sfml.RenderWindow, grabbed: sfml.Bool): void <cimport 'sfRenderWindow_setMouseCursorGrabbed', nodecl> end
+function sfml.RenderWindow.set_mouse_cursor(self: *sfml.RenderWindow, cursor: *sfml.Cursor <const>): void <cimport 'sfRenderWindow_setMouseCursor', nodecl> end
+function sfml.RenderWindow.set_key_repeat_enabled(self: *sfml.RenderWindow, enabled: sfml.Bool): void <cimport 'sfRenderWindow_setKeyRepeatEnabled', nodecl> end
+function sfml.RenderWindow.set_framerate_limit(self: *sfml.RenderWindow, limit: cuint): void <cimport 'sfRenderWindow_setFramerateLimit', nodecl> end
+function sfml.RenderWindow.set_joystick_threshold(self: *sfml.RenderWindow, threshold: float32): void <cimport 'sfRenderWindow_setJoystickThreshold', nodecl> end
+function sfml.RenderWindow.set_active(self: *sfml.RenderWindow, active: sfml.Bool): void <cimport 'sfRenderWindow_setActive', nodecl> end
+function sfml.RenderWindow.has_focus(self: *sfml.RenderWindow <const>): sfml.Bool <cimport 'sfRenderWindow_hasFocus', nodecl> end
+function sfml.RenderWindow.request_focus(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_requestFocus', nodecl> end
 function sfml.RenderWindow.display(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_display', nodecl> end
-function sfml.RenderWindow.getSystemHandle(self: *sfml.RenderWindow <const>): sfml.WindowHandle <cimport 'sfRenderWindow_getSystemHandle', nodecl> end
+function sfml.RenderWindow.get_system_handle(self: *sfml.RenderWindow <const>): sfml.WindowHandle <cimport 'sfRenderWindow_getSystemHandle', nodecl> end
 function sfml.RenderWindow.clear(self: *sfml.RenderWindow, color: sfml.Color): void <cimport 'sfRenderWindow_clear', nodecl> end
-function sfml.RenderWindow.setView(self: *sfml.RenderWindow, view: *sfml.View): void <cimport 'sfRenderWindow_setView', nodecl> end
-function sfml.RenderWindow.getView(self: *sfml.RenderWindow <const>): *sfml.View <cimport 'sfRenderWindow_getView', nodecl> end
-function sfml.RenderWindow.getDefaultView(self: *sfml.RenderWindow <const>): *sfml.View <cimport 'sfRenderWindow_getDefaultView', nodecl> end
-function sfml.RenderWindow.getViewport(self: *sfml.RenderWindow <const>, view: *sfml.View <const>): sfml.IntRect <cimport 'sfRenderWindow_getViewport', nodecl> end
-function sfml.RenderWindow.mapPixelToCoords(self: *sfml.RenderWindow <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f <cimport 'sfRenderWindow_mapPixelToCoords', nodecl> end
-function sfml.RenderWindow.mapCoordsToPixel(self: *sfml.RenderWindow <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i <cimport 'sfRenderWindow_mapCoordsToPixel', nodecl> end
-function sfml.RenderWindow.drawSprite(self: *sfml.RenderWindow, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawSprite', nodecl> end
-function sfml.RenderWindow.drawText(self: *sfml.RenderWindow, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawText', nodecl> end
-function sfml.RenderWindow.drawShape(self: *sfml.RenderWindow, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawShape', nodecl> end
-function sfml.RenderWindow.drawCircleShape(self: *sfml.RenderWindow, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawCircleShape', nodecl> end
-function sfml.RenderWindow.drawConvexShape(self: *sfml.RenderWindow, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawConvexShape', nodecl> end
-function sfml.RenderWindow.drawRectangleShape(self: *sfml.RenderWindow, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawRectangleShape', nodecl> end
-function sfml.RenderWindow.drawVertexArray(self: *sfml.RenderWindow, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawVertexArray', nodecl> end
-function sfml.RenderWindow.drawVertexBuffer(self: *sfml.RenderWindow, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawVertexBuffer', nodecl> end
-function sfml.RenderWindow.drawPrimitives(self: *sfml.RenderWindow, vertices: *sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawPrimitives', nodecl> end
-function sfml.RenderWindow.pushGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_pushGLStates', nodecl> end
-function sfml.RenderWindow.popGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_popGLStates', nodecl> end
-function sfml.RenderWindow.resetGLStates(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_resetGLStates', nodecl> end
+function sfml.RenderWindow.get_view(self: *sfml.RenderWindow <const>): *sfml.View <cimport 'sfRenderWindow_getView', nodecl> end
+function sfml.RenderWindow.set_view(self: *sfml.RenderWindow, view: *sfml.View): void <cimport 'sfRenderWindow_setView', nodecl> end
+function sfml.RenderWindow.get_default_view(self: *sfml.RenderWindow <const>): *sfml.View <cimport 'sfRenderWindow_getDefaultView', nodecl> end
+function sfml.RenderWindow.get_viewport(self: *sfml.RenderWindow <const>, view: *sfml.View <const>): sfml.IntRect <cimport 'sfRenderWindow_getViewport', nodecl> end
+function sfml.RenderWindow.map_pixel_to_coords(self: *sfml.RenderWindow <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f <cimport 'sfRenderWindow_mapPixelToCoords', nodecl> end
+function sfml.RenderWindow.map_coords_to_pixel(self: *sfml.RenderWindow <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i <cimport 'sfRenderWindow_mapCoordsToPixel', nodecl> end
+function sfml.RenderWindow.draw_sprite(self: *sfml.RenderWindow, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawSprite', nodecl> end
+function sfml.RenderWindow.draw_text(self: *sfml.RenderWindow, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawText', nodecl> end
+function sfml.RenderWindow.draw_shape(self: *sfml.RenderWindow, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawShape', nodecl> end
+function sfml.RenderWindow.draw_circle_shape(self: *sfml.RenderWindow, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawCircleShape', nodecl> end
+function sfml.RenderWindow.draw_convex_shape(self: *sfml.RenderWindow, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawConvexShape', nodecl> end
+function sfml.RenderWindow.draw_rectangle_shape(self: *sfml.RenderWindow, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawRectangleShape', nodecl> end
+function sfml.RenderWindow.draw_vertex_array(self: *sfml.RenderWindow, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawVertexArray', nodecl> end
+function sfml.RenderWindow.draw_vertex_buffer(self: *sfml.RenderWindow, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawVertexBuffer', nodecl> end
+function sfml.RenderWindow.draw_primitives(self: *sfml.RenderWindow, vertices: *sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void <cimport 'sfRenderWindow_drawPrimitives', nodecl> end
+function sfml.RenderWindow.push_gl_states(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_pushGLStates', nodecl> end
+function sfml.RenderWindow.pop_gl_states(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_popGLStates', nodecl> end
+function sfml.RenderWindow.reset_gl_states(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_resetGLStates', nodecl> end
 function sfml.RenderWindow.capture(self: *sfml.RenderWindow <const>): *sfml.Image <cimport 'sfRenderWindow_capture', nodecl> end
 
 
 -- Render Window: Mouse
-function sfml.Mouse.getPostionRenderWindow(relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfMouse_getPositionRenderWindow', nodecl> end
-function sfml.Mouse.setPostionRenderWindow(position: sfml.Vector2i, relativeTo: *sfml.RenderWindow <const>): void <cimport 'sfMouse_setPositionRenderWindow', nodecl> end
-function sfml.Touch.getPostionRenderWindow(finger: cuint, relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfTouch_getPositionRenderWindow', nodecl> end
+function sfml.Mouse.get_position_render_window(relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfMouse_getPositionRenderWindow', nodecl> end
+function sfml.Mouse.set_position_render_window(position: sfml.Vector2i, relativeTo: *sfml.RenderWindow <const>): void <cimport 'sfMouse_setPositionRenderWindow', nodecl> end
+function sfml.Touch.get_position_render_window(finger: cuint, relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfTouch_getPositionRenderWindow', nodecl> end
 
 
 -- Shader
-function sfml.Shader.createFromFile(vertexShaderFilename: cstring <const>, geometryShaderFilename: cstring <const>, fragmentShaderFilename: cstring <const>): *sfml.Shader <cimport 'sfShader_createFromFile', nodecl> end
-function sfml.Shader.createFromMemory(vertexShader: cstring <const>, geometryShader: cstring <const>, fragmentShader: cstring <const>): *sfml.Shader <cimport 'sfShader_createFromMemory', nodecl> end
-function sfml.Shader.createFromStream(vertexShader: *sfml.InputStream, geometryShader: *sfml.InputStream, fragmentShader: *sfml.InputStream): *sfml.Shader <cimport 'sfShader_createFromStream', nodecl> end
+function sfml.Shader.create_from_file(vertexShaderFilename: cstring <const>, geometryShaderFilename: cstring <const>, fragmentShaderFilename: cstring <const>): *sfml.Shader <cimport 'sfShader_createFromFile', nodecl> end
+function sfml.Shader.create_from_memory(vertexShader: cstring <const>, geometryShader: cstring <const>, fragmentShader: cstring <const>): *sfml.Shader <cimport 'sfShader_createFromMemory', nodecl> end
+function sfml.Shader.create_from_stream(vertexShader: *sfml.InputStream, geometryShader: *sfml.InputStream, fragmentShader: *sfml.InputStream): *sfml.Shader <cimport 'sfShader_createFromStream', nodecl> end
 
 function sfml.Shader.destroy(self: *sfml.Shader): void <cimport 'sfShader_destroy', nodecl> end
 function sfml.Shader.setFloatUniform(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatUniform', nodecl> end
