@@ -498,18 +498,18 @@ function sfml.Sound.is_relative_to_listener(self: *sfml.Sound <const>): sfml.Boo
 
 
 -- Audio: Sound Buffer
-function sfml.SoundBuffer.createFromFile(filename: cstring <const>): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromFile', nodecl> end
-function sfml.SoundBuffer.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromMemory', nodecl> end
-function sfml.SoundBuffer.createFromStream(stream: *sfml.InputStream): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromStream', nodecl> end
-function sfml.SoundBuffer.createFromSamples(samples: *[0]sfml.Int16, sampleCount: sfml.Uint64, channelCount: cuint, sampleRate: cuint): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromSamples', nodecl> end
+function sfml.SoundBuffer.create_from_file(filename: cstring <const>): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromFile', nodecl> end
+function sfml.SoundBuffer.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromMemory', nodecl> end
+function sfml.SoundBuffer.create_from_stream(stream: *sfml.InputStream): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromStream', nodecl> end
+function sfml.SoundBuffer.create_from_samples(samples: *[0]sfml.Int16, sampleCount: sfml.Uint64, channelCount: cuint, sampleRate: cuint): *sfml.SoundBuffer <cimport 'sfSoundBuffer_createFromSamples', nodecl> end
 function sfml.SoundBuffer.copy(self: *sfml.SoundBuffer <const>): *sfml.SoundBuffer <cimport 'sfSoundBuffer_copy', nodecl> end
 function sfml.SoundBuffer.destroy(self: *sfml.SoundBuffer): void <cimport 'sfSoundBuffer_destroy', nodecl> end
-function sfml.SoundBuffer.saveToFile(self: *sfml.SoundBuffer <const>, filename: cstring <const>): sfml.Bool <cimport 'sfSoundBuffer_saveToFile', nodecl> end
-function sfml.SoundBuffer.getSamples(self: *sfml.SoundBuffer <const>): *[0]sfml.Int16 <cimport 'sfSoundBuffer_getSamples', nodecl> end
-function sfml.SoundBuffer.getSampleCount(self: *sfml.SoundBuffer <const>): sfml.Uint64 <cimport 'sfSoundBuffer_getSampleCount', nodecl> end
-function sfml.SoundBuffer.getSampleRate(self: *sfml.SoundBuffer <const>): cuint <cimport 'sfSoundBuffer_getSampleRate', nodecl> end
-function sfml.SoundBuffer.getChannelCount(self: *sfml.SoundBuffer <const>): cuint <cimport 'sfSoundBuffer_getChannelCount', nodecl> end
-function sfml.SoundBuffer.getDuration(self: *sfml.SoundBuffer <const>): sfml.Time <cimport 'sfSoundBuffer_getDuration', nodecl> end
+function sfml.SoundBuffer.save_to_file(self: *sfml.SoundBuffer <const>, filename: cstring <const>): sfml.Bool <cimport 'sfSoundBuffer_saveToFile', nodecl> end
+function sfml.SoundBuffer.get_samples(self: *sfml.SoundBuffer <const>): *[0]sfml.Int16 <cimport 'sfSoundBuffer_getSamples', nodecl> end
+function sfml.SoundBuffer.get_sample_count(self: *sfml.SoundBuffer <const>): sfml.Uint64 <cimport 'sfSoundBuffer_getSampleCount', nodecl> end
+function sfml.SoundBuffer.get_sample_rate(self: *sfml.SoundBuffer <const>): cuint <cimport 'sfSoundBuffer_getSampleRate', nodecl> end
+function sfml.SoundBuffer.get_channel_count(self: *sfml.SoundBuffer <const>): cuint <cimport 'sfSoundBuffer_getChannelCount', nodecl> end
+function sfml.SoundBuffer.get_duration(self: *sfml.SoundBuffer <const>): sfml.Time <cimport 'sfSoundBuffer_getDuration', nodecl> end
 
 
 -- Audio: Sound Buffer Recorder
@@ -517,10 +517,10 @@ function sfml.SoundBufferRecorder.create(): *sfml.SoundBufferRecorder <cimport '
 function sfml.SoundBufferRecorder.destroy(self: *sfml.SoundBufferRecorder): void <cimport 'sfSoundBufferRecorder_destroy', nodecl> end
 function sfml.SoundBufferRecorder.start(self: *sfml.SoundBufferRecorder, sampleRate: cuint): sfml.Bool <cimport 'sfSoundBufferRecorder_start', nodecl> end
 function sfml.SoundBufferRecorder.stop(self: *sfml.SoundBufferRecorder): void <cimport 'sfSoundBufferRecorder_stop', nodecl> end
-function sfml.SoundBufferRecorder.getSampleRate(self: *sfml.SoundBufferRecorder <const>): cuint <cimport 'sfSoundBufferRecorder_getSampleRate', nodecl> end
-function sfml.SoundBufferRecorder.getBuffer(self: *sfml.SoundBufferRecorder <const>): *sfml.SoundBuffer <cimport 'sfSoundBufferRecorder_getBuffer', nodecl> end
-function sfml.SoundBufferRecorder.setDevice(self: *sfml.SoundBufferRecorder <const>, name: cstring <const>): sfml.Bool <cimport 'sfSoundBufferRecorder_setDevice', nodecl> end
-function sfml.SoundBufferRecorder.getDevice(self: *sfml.SoundBufferRecorder): cstring <cimport 'sfSoundBufferRecorder_getDevice', nodecl> end
+function sfml.SoundBufferRecorder.get_sample_rate(self: *sfml.SoundBufferRecorder <const>): cuint <cimport 'sfSoundBufferRecorder_getSampleRate', nodecl> end
+function sfml.SoundBufferRecorder.get_buffer(self: *sfml.SoundBufferRecorder <const>): *sfml.SoundBuffer <cimport 'sfSoundBufferRecorder_getBuffer', nodecl> end
+function sfml.SoundBufferRecorder.set_device(self: *sfml.SoundBufferRecorder <const>, name: cstring <const>): sfml.Bool <cimport 'sfSoundBufferRecorder_setDevice', nodecl> end
+function sfml.SoundBufferRecorder.get_device(self: *sfml.SoundBufferRecorder): cstring <cimport 'sfSoundBufferRecorder_getDevice', nodecl> end
 
 
 global sfml.SoundRecorderStartCallback: type <cimport 'sfSoundRecorderStartCallback', nodecl> = @function(pointer): sfml.Bool
@@ -533,15 +533,15 @@ function sfml.SoundRecorder.create(onStart: sfml.SoundRecorderStartCallback, onP
 function sfml.SoundRecorder.destroy(self: *sfml.SoundRecorder): void <cimport 'sfSoundRecorder_destroy', nodecl> end
 function sfml.SoundRecorder.start(self: *sfml.SoundRecorder, sampleRate: cuint): sfml.Bool <cimport 'sfSoundRecorder_start', nodecl> end
 function sfml.SoundRecorder.stop(self: *sfml.SoundRecorder): void <cimport 'sfSoundRecorder_stop', nodecl> end
-function sfml.SoundRecorder.getSampleRate(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getSampleRate', nodecl> end
-function sfml.SoundRecorder.isAvailable(): sfml.Bool <cimport 'sfSoundRecorder_isAvailable', nodecl> end
-function sfml.SoundRecorder.setProcessingInterval(self: *sfml.SoundRecorder, interval: sfml.Time): void <cimport 'sfSoundRecorder_setProcessingInterval', nodecl> end
-function sfml.SoundRecorder.getAvailableDevices(count: csize): *[0]cstring <cimport 'sfSoundRecorder_getAvailableDevices', nodecl> end
-function sfml.SoundRecorder.getDefaultDevice(): cstring <cimport 'sfSoundRecorder_getDefaultDevice', nodecl> end
-function sfml.SoundRecorder.setDevice(self: *sfml.SoundRecorder, name: cstring <const>): sfml.Bool <cimport 'sfSoundRecorder_setDevice', nodecl> end
-function sfml.SoundRecorder.getDevice(self: *sfml.SoundRecorder): cstring <cimport 'sfSoundRecorder_getDevice', nodecl> end
-function sfml.SoundRecorder.setChannelCount(self: *sfml.SoundRecorder, channelCount: cuint): void <cimport 'sfSoundRecorder_setChannelCount', nodecl> end
-function sfml.SoundRecorder.getChannelCount(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getChannelCount', nodecl> end
+function sfml.SoundRecorder.get_sample_rate(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getSampleRate', nodecl> end
+function sfml.SoundRecorder.is_available(): sfml.Bool <cimport 'sfSoundRecorder_isAvailable', nodecl> end
+function sfml.SoundRecorder.set_processing_interval(self: *sfml.SoundRecorder, interval: sfml.Time): void <cimport 'sfSoundRecorder_setProcessingInterval', nodecl> end
+function sfml.SoundRecorder.get_available_devices(count: csize): *[0]cstring <cimport 'sfSoundRecorder_getAvailableDevices', nodecl> end
+function sfml.SoundRecorder.get_default_device(): cstring <cimport 'sfSoundRecorder_getDefaultDevice', nodecl> end
+function sfml.SoundRecorder.get_device(self: *sfml.SoundRecorder): cstring <cimport 'sfSoundRecorder_getDevice', nodecl> end
+function sfml.SoundRecorder.set_device(self: *sfml.SoundRecorder, name: cstring <const>): sfml.Bool <cimport 'sfSoundRecorder_setDevice', nodecl> end
+function sfml.SoundRecorder.get_channel_count(self: *sfml.SoundRecorder <const>): cuint <cimport 'sfSoundRecorder_getChannelCount', nodecl> end
+function sfml.SoundRecorder.set_channel_count(self: *sfml.SoundRecorder, channelCount: cuint): void <cimport 'sfSoundRecorder_setChannelCount', nodecl> end
 
 
 -- Audio: SoundStream
@@ -558,24 +558,24 @@ function sfml.SoundStream.destroy(self: *sfml.SoundStream): void <cimport 'sfSou
 function sfml.SoundStream.play(self: *sfml.SoundStream): void <cimport 'sfSoundStream_play', nodecl> end
 function sfml.SoundStream.pause(self: *sfml.SoundStream): void <cimport 'sfSoundStream_pause', nodecl> end
 function sfml.SoundStream.stop(self: *sfml.SoundStream): void <cimport 'sfSoundStream_stop', nodecl> end
-function sfml.SoundStream.getStatus(self: *sfml.SoundStream <const>): sfml.SoundStatus <cimport 'sfSoundStream_getStatus', nodecl> end
-function sfml.SoundStream.getChannelCount(self: *sfml.SoundStream <const>): cuint <cimport 'sfSoundStream_getChannelCount', nodecl> end
-function sfml.SoundStream.setPitch(self: *sfml.SoundStream, pitch: float32): void <cimport 'sfSoundStream_setPitch', nodecl> end
-function sfml.SoundStream.setVolume(self: *sfml.SoundStream, volume: float32): void <cimport 'sfSoundStream_setVolume', nodecl> end
-function sfml.SoundStream.setPosition(self: *sfml.SoundStream, position: sfml.Vector3f): void <cimport 'sfSoundStream_setPosition', nodecl> end
-function sfml.SoundStream.setRelativeToListener(self: *sfml.SoundStream, relative: sfml.Bool): void <cimport 'sfSoundStream_setRelativeToListener', nodecl> end
-function sfml.SoundStream.setMinDistance(self: *sfml.SoundStream, distance: float32): void <cimport 'sfSoundStream_setMinDistance', nodecl> end
-function sfml.SoundStream.setAttenuation(self: *sfml.SoundStream, attenuation: float32): void <cimport 'sfSoundStream_setAttenuation', nodecl> end
-function sfml.SoundStream.setPlayingOffset(self: *sfml.SoundStream, timeOffset: sfml.Time): void <cimport 'sfSoundStream_setPlayingOffset', nodecl> end
-function sfml.SoundStream.setLoop(self: *sfml.SoundStream, loop: sfml.Bool): void <cimport 'sfSoundStream_setLoop', nodecl> end
-function sfml.SoundStream.getPitch(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getPitch', nodecl> end
-function sfml.SoundStream.getVolume(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getVolume', nodecl> end
-function sfml.SoundStream.getPosition(self: *sfml.SoundStream <const>): sfml.Vector3f <cimport 'sfSoundStream_getPosition', nodecl> end
-function sfml.SoundStream.isRelativeToListener(self: *sfml.SoundStream <const>): sfml.Bool <cimport 'sfSoundStream_isRelativeToListener', nodecl> end
-function sfml.SoundStream.getMinDistance(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getMinDistance', nodecl> end
-function sfml.SoundStream.getAttenuation(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getAttenuation', nodecl> end
-function sfml.SoundStream.getLoop(self: *sfml.SoundStream <const>): sfml.Bool <cimport 'sfSoundStream_getLoop', nodecl> end
-function sfml.SoundStream.getPlayingOffset(self: *sfml.SoundStream <const>): sfml.Time <cimport 'sfSoundStream_getPlayingOffset', nodecl> end
+function sfml.SoundStream.get_status(self: *sfml.SoundStream <const>): sfml.SoundStatus <cimport 'sfSoundStream_getStatus', nodecl> end
+function sfml.SoundStream.get_channel_count(self: *sfml.SoundStream <const>): cuint <cimport 'sfSoundStream_getChannelCount', nodecl> end
+function sfml.SoundStream.get_pitch(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getPitch', nodecl> end
+function sfml.SoundStream.set_pitch(self: *sfml.SoundStream, pitch: float32): void <cimport 'sfSoundStream_setPitch', nodecl> end
+function sfml.SoundStream.get_volume(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getVolume', nodecl> end
+function sfml.SoundStream.set_volume(self: *sfml.SoundStream, volume: float32): void <cimport 'sfSoundStream_setVolume', nodecl> end
+function sfml.SoundStream.get_position(self: *sfml.SoundStream <const>): sfml.Vector3f <cimport 'sfSoundStream_getPosition', nodecl> end
+function sfml.SoundStream.set_position(self: *sfml.SoundStream, position: sfml.Vector3f): void <cimport 'sfSoundStream_setPosition', nodecl> end
+function sfml.SoundStream.get_min_distance(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getMinDistance', nodecl> end
+function sfml.SoundStream.set_min_distance(self: *sfml.SoundStream, distance: float32): void <cimport 'sfSoundStream_setMinDistance', nodecl> end
+function sfml.SoundStream.get_playing_offset(self: *sfml.SoundStream <const>): sfml.Time <cimport 'sfSoundStream_getPlayingOffset', nodecl> end
+function sfml.SoundStream.set_playing_offset(self: *sfml.SoundStream, timeOffset: sfml.Time): void <cimport 'sfSoundStream_setPlayingOffset', nodecl> end
+function sfml.SoundStream.get_loop(self: *sfml.SoundStream <const>): sfml.Bool <cimport 'sfSoundStream_getLoop', nodecl> end
+function sfml.SoundStream.set_loop(self: *sfml.SoundStream, loop: sfml.Bool): void <cimport 'sfSoundStream_setLoop', nodecl> end
+function sfml.SoundStream.get_attenuation(self: *sfml.SoundStream <const>): float32 <cimport 'sfSoundStream_getAttenuation', nodecl> end
+function sfml.SoundStream.set_attenuation(self: *sfml.SoundStream, attenuation: float32): void <cimport 'sfSoundStream_setAttenuation', nodecl> end
+function sfml.SoundStream.is_relative_to_listener(self: *sfml.SoundStream <const>): sfml.Bool <cimport 'sfSoundStream_isRelativeToListener', nodecl> end
+function sfml.SoundStream.set_relative_to_listener(self: *sfml.SoundStream, relative: sfml.Bool): void <cimport 'sfSoundStream_setRelativeToListener', nodecl> end
 
 
 -- Clipboard
@@ -584,10 +584,10 @@ global sfml.Cursor: type <cimport 'sfCursor', nodecl, forwarddecl> = @record {}
 global sfml.Window: type <cimport 'sfWindow', nodecl, forwarddecl> = @record {}
 
 global sfml.Clipboard = @record{}
-function sfml.Clipboard.getString(): cstring <cimport 'sfClipboard_getString', nodecl> end
-function sfml.Clipboard.getUnicodeString(): *[0]sfml.Uint32 <cimport 'sfClipboard_getUnicodeString', nodecl> end
-function sfml.Clipboard.setString(text: cstring <const>): void <cimport 'sfClipboard_setString', nodecl> end
-function sfml.Clipboard.setUnicodeString(text: *[0]sfml.Uint32): void <cimport 'sfClipboard_setUnicodeString', nodecl> end
+function sfml.Clipboard.get_string(): cstring <cimport 'sfClipboard_getString', nodecl> end
+function sfml.Clipboard.get_unicode_string(): *[0]sfml.Uint32 <cimport 'sfClipboard_getUnicodeString', nodecl> end
+function sfml.Clipboard.set_string(text: cstring <const>): void <cimport 'sfClipboard_setString', nodecl> end
+function sfml.Clipboard.set_unicode_string(text: *[0]sfml.Uint32): void <cimport 'sfClipboard_setUnicodeString', nodecl> end
 
 
 ## if ccinfo.is_apple then
@@ -604,9 +604,9 @@ global sfml.VideoMode: type <cimport 'sfVideoMode', nodecl> = @record {
   bitsPerPixel: cuint
 }
 
-function sfml.VideoMode.getDesktopMode(): sfml.VideoMode <cimport 'sfVideoMode_getDesktopMode', nodecl> end
-function sfml.VideoMode.getFullscreenModes(count: *csize): *[0]sfml.VideoMode <cimport 'sfVideoMode_getFullscreenModes', nodecl> end
-function sfml.VideoMode.isValid(mode: sfml.VideoMode): sfml.Bool <cimport 'sfVideoMode_isValid', nodecl> end
+function sfml.VideoMode.get_desktop_mode(): sfml.VideoMode <cimport 'sfVideoMode_getDesktopMode', nodecl> end
+function sfml.VideoMode.get_fullscreen_modes(count: *csize): *[0]sfml.VideoMode <cimport 'sfVideoMode_getFullscreenModes', nodecl> end
+function sfml.VideoMode.is_valid(mode: sfml.VideoMode): sfml.Bool <cimport 'sfVideoMode_isValid', nodecl> end
 
 
 -- Control: Joystick
@@ -632,12 +632,12 @@ global sfml.JoystickAxis: type <cimport 'sfJoystickAxis', nodecl, using> = @enum
 }
 
 global sfml.Joystick = @record{}
-function sfml.Joystick.isConnected(joystick: cuint): sfml.Bool <cimport 'sfJoystick_isConnected', nodecl> end
-function sfml.Joystick.getButtonCount(joystick: cuint): cuint <cimport 'sfJoystick_getButtonCount', nodecl> end
-function sfml.Joystick.hasAxis(joystick: cuint, axis: sfml.JoystickAxis): sfml.Bool <cimport 'sfJoystick_hasAxis', nodecl> end
-function sfml.Joystick.isButtonPressed(joystick: cuint, button: cuint): sfml.Bool <cimport 'sfJoystick_isButtonPressed', nodecl> end
-function sfml.Joystick.getAxisPosition(joystick: cuint, axis: sfml.JoystickAxis): float32 <cimport 'sfJoystick_getAxisPosition', nodecl> end
-function sfml.Joystick.getIdentification(joystick: cuint): sfml.JoystickIdentification <cimport 'sfJoystick_getIdentification', nodecl> end
+function sfml.Joystick.is_connected(joystick: cuint): sfml.Bool <cimport 'sfJoystick_isConnected', nodecl> end
+function sfml.Joystick.get_button_count(joystick: cuint): cuint <cimport 'sfJoystick_getButtonCount', nodecl> end
+function sfml.Joystick.has_axis(joystick: cuint, axis: sfml.JoystickAxis): sfml.Bool <cimport 'sfJoystick_hasAxis', nodecl> end
+function sfml.Joystick.is_button_pressed(joystick: cuint, button: cuint): sfml.Bool <cimport 'sfJoystick_isButtonPressed', nodecl> end
+function sfml.Joystick.get_axis_position(joystick: cuint, axis: sfml.JoystickAxis): float32 <cimport 'sfJoystick_getAxisPosition', nodecl> end
+function sfml.Joystick.get_identification(joystick: cuint): sfml.JoystickIdentification <cimport 'sfJoystick_getIdentification', nodecl> end
 function sfml.Joystick.update(): void <cimport 'sfJoystick_update', nodecl> end
 
 
@@ -755,8 +755,8 @@ global sfml.KeySemiColon: cint <cimport 'sfKeySemiColon', nodecl, const>
 global sfml.KeyReturn: cint <cimport 'sfKeyReturn', nodecl, const>
 
 global sfml.Keyboard = @record{}
-function sfml.Keyboard.isKeyPressed(key: sfml.KeyCode): sfml.Bool <cimport 'sfKeyboard_isKeyPressed', nodecl> end
-function sfml.Keyboard.setVirtualKeyboardVisible(visible: sfml.Bool): void <cimport 'sfKeyboard_setVirtualKeyboardVisible', nodecl> end
+function sfml.Keyboard.is_key_pressed(key: sfml.KeyCode): sfml.Bool <cimport 'sfKeyboard_isKeyPressed', nodecl> end
+function sfml.Keyboard.set_virtual_keyboard_visible(visible: sfml.Bool): void <cimport 'sfKeyboard_setVirtualKeyboardVisible', nodecl> end
 
 
 -- Control: Mouse
@@ -775,9 +775,9 @@ global sfml.MouseWheel: type <cimport 'sfMouseWheel', nodecl, using> = @enum(cin
 }
 
 global sfml.Mouse = @record{}
-function sfml.Mouse.isButtonPressed(button: sfml.MouseButton): sfml.Bool <cimport 'sfMouse_isButtonPressed', nodecl> end
-function sfml.Mouse.getPosition(relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfMouse_getPosition', nodecl> end
-function sfml.Mouse.setPosition(position: sfml.Vector2i, relativeTo: *sfml.Window <const>): void <cimport 'sfMouse_setPosition', nodecl> end
+function sfml.Mouse.is_button_pressed(button: sfml.MouseButton): sfml.Bool <cimport 'sfMouse_isButtonPressed', nodecl> end
+function sfml.Mouse.get_position(relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfMouse_getPosition', nodecl> end
+function sfml.Mouse.set_position(position: sfml.Vector2i, relativeTo: *sfml.Window <const>): void <cimport 'sfMouse_setPosition', nodecl> end
 
 global sfml.CursorType: type <cimport 'sfCursorType', nodecl, using> = @enum(cint) {
   Arrow = 0,
@@ -795,8 +795,8 @@ global sfml.CursorType: type <cimport 'sfCursorType', nodecl, using> = @enum(cin
   NotAllowed
 }
 
-function sfml.Cursor.createFromPixels(pixels: *[0]sfml.Uint8 <const>, size: sfml.Vector2u, hotspot: sfml.Vector2u): *sfml.Cursor <cimport 'sfCursor_createFromPixels', nodecl> end
-function sfml.Cursor.createFromSystem(cursor_type: sfml.CursorType): *sfml.Cursor <cimport, nodecl> end
+function sfml.Cursor.create_from_pixels(pixels: *[0]sfml.Uint8 <const>, size: sfml.Vector2u, hotspot: sfml.Vector2u): *sfml.Cursor <cimport 'sfCursor_createFromPixels', nodecl> end
+function sfml.Cursor.create_from_system(cursor_type: sfml.CursorType): *sfml.Cursor <cimport, nodecl> end
 function sfml.Cursor.destroy(cursor: *sfml.Cursor): void <cimport, nodecl> end
 
 
@@ -811,13 +811,13 @@ global sfml.SensorType: type <cimport 'sfSensorType', nodecl, using> = @enum(cin
 }
 
 global sfml.Sensor = @record{}
-function sfml.Sensor.isAvailable(sensor: sfml.SensorType): sfml.Bool <cimport 'sfSensor_isAvailable', nodecl> end
-function sfml.Sensor.setEnabled(sensor: sfml.SensorType, enabled: sfml.Bool): void <cimport 'sfSensor_setEnabled', nodecl> end
-function sfml.Sensor.getValue(sensor: sfml.SensorType): sfml.Vector3f <cimport 'sfSensor_getValue', nodecl> end
+function sfml.Sensor.is_available(sensor: sfml.SensorType): sfml.Bool <cimport 'sfSensor_isAvailable', nodecl> end
+function sfml.Sensor.set_enabled(sensor: sfml.SensorType, enabled: sfml.Bool): void <cimport 'sfSensor_setEnabled', nodecl> end
+function sfml.Sensor.get_value(sensor: sfml.SensorType): sfml.Vector3f <cimport 'sfSensor_getValue', nodecl> end
 
 global sfml.Touch = @record{}
-function sfml.Touch.isDown(finger: cuint): sfml.Bool <cimport 'sfTouch_isDown', nodecl> end
-function sfml.Touch.getPosition(finger: cuint, relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfTouch_getPosition', nodecl> end
+function sfml.Touch.is_down(finger: cuint): sfml.Bool <cimport 'sfTouch_isDown', nodecl> end
+function sfml.Touch.get_position(finger: cuint, relativeTo: *sfml.Window <const>): sfml.Vector2i <cimport 'sfTouch_getPosition', nodecl> end
 
 
 -- Event
@@ -982,41 +982,41 @@ global sfml.ContextSettings: type <cimport 'sfContextSettings', nodecl> = @recor
 
 -- Window
 function sfml.Window.create(mode: sfml.VideoMode, title: cstring <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_create', nodecl> end
-function sfml.Window.createUnicode(mode: sfml.VideoMode, title: *[0]sfml.Uint32 <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_createUnicode', nodecl> end
-function sfml.Window.createFromHandle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_createFromHandle', nodecl> end
+function sfml.Window.create_unicode(mode: sfml.VideoMode, title: *[0]sfml.Uint32 <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_createUnicode', nodecl> end
+function sfml.Window.create_from_handle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.Window <cimport 'sfWindow_createFromHandle', nodecl> end
 function sfml.Window.destroy(self: *sfml.Window): void <cimport 'sfWindow_destroy', nodecl> end
 function sfml.Window.close(self: *sfml.Window): void <cimport 'sfWindow_close', nodecl> end
-function sfml.Window.isOpen(self: *sfml.Window <const>): sfml.Bool <cimport 'sfWindow_isOpen', nodecl> end
-function sfml.Window.getSettings(self: *sfml.Window <const>): sfml.ContextSettings <cimport 'sfWindow_getSettings', nodecl> end
-function sfml.Window.pollEvent(self: *sfml.Window, event: *sfml.Event): sfml.Bool <cimport 'sfWindow_pollEvent', nodecl> end
-function sfml.Window.waitEvent(self: *sfml.Window, event: *sfml.Event): sfml.Bool <cimport 'sfWindow_waitEvent', nodecl> end
-function sfml.Window.getPosition(self: *sfml.Window <const>): sfml.Vector2i <cimport 'sfWindow_getPosition', nodecl> end
-function sfml.Window.setPosition(self: *sfml.Window, position: sfml.Vector2i): void <cimport 'sfWindow_setPosition', nodecl> end
-function sfml.Window.getSize(self: *sfml.Window <const>): sfml.Vector2u <cimport 'sfWindow_getSize', nodecl> end
-function sfml.Window.setSize(self: *sfml.Window, size: sfml.Vector2u): void <cimport 'sfWindow_setSize', nodecl> end
-function sfml.Window.setTitle(self: *sfml.Window, title: cstring <const>): void <cimport 'sfWindow_setTitle', nodecl> end
-function sfml.Window.setUnicodeTitle(self: *sfml.Window, title: *[0]sfml.Uint32 <const>): void <cimport 'sfWindow_setUnicodeTitle', nodecl> end
-function sfml.Window.setIcon(self: *sfml.Window, width: cuint, height: cuint, pixels: *[0]sfml.Uint8): void <cimport 'sfWindow_setIcon', nodecl> end
-function sfml.Window.setVisible(self: *sfml.Window, visible: sfml.Bool): void <cimport 'sfWindow_setVisible', nodecl> end
-function sfml.Window.setVerticalSyncEnabled(self: *sfml.Window, enabled: sfml.Bool): void <cimport 'sfWindow_setVerticalSyncEnabled', nodecl> end
-function sfml.Window.setMouseCursorVisible(self: *sfml.Window, visible: sfml.Bool): void <cimport 'sfWindow_setMouseCursorVisible', nodecl> end
-function sfml.Window.setMouseCursorGrabbed(self: *sfml.Window, grabbed: sfml.Bool): void <cimport 'sfWindow_setMouseCursorGrabbed', nodecl> end
-function sfml.Window.setMouseCursor(self: *sfml.Window, cursor: *sfml.Cursor <const>): void <cimport 'sfWindow_setMouseCursor', nodecl> end
-function sfml.Window.setKeyRepeatEnabled(self: *sfml.Window, enabled: sfml.Bool): void <cimport 'sfWindow_setKeyRepeatEnabled', nodecl> end
-function sfml.Window.setFramerateLimit(self: *sfml.Window, threshold: float32): void <cimport 'sfWindow_setFramerateLimit', nodecl> end
-function sfml.Window.setActive(self: *sfml.Window, active: sfml.Bool): void <cimport 'sfWindow_setActive', nodecl> end
-function sfml.Window.requestFocus(self: *sfml.Window): void <cimport 'sfWindow_requestFocus', nodecl> end
-function sfml.Window.hasFocus(self: *sfml.Window <const>): sfml.Bool <cimport 'sfWindow_hasFocus', nodecl> end
+function sfml.Window.is_open(self: *sfml.Window <const>): sfml.Bool <cimport 'sfWindow_isOpen', nodecl> end
+function sfml.Window.get_settings(self: *sfml.Window <const>): sfml.ContextSettings <cimport 'sfWindow_getSettings', nodecl> end
+function sfml.Window.poll_event(self: *sfml.Window, event: *sfml.Event): sfml.Bool <cimport 'sfWindow_pollEvent', nodecl> end
+function sfml.Window.wait_event(self: *sfml.Window, event: *sfml.Event): sfml.Bool <cimport 'sfWindow_waitEvent', nodecl> end
+function sfml.Window.get_position(self: *sfml.Window <const>): sfml.Vector2i <cimport 'sfWindow_getPosition', nodecl> end
+function sfml.Window.set_position(self: *sfml.Window, position: sfml.Vector2i): void <cimport 'sfWindow_setPosition', nodecl> end
+function sfml.Window.get_size(self: *sfml.Window <const>): sfml.Vector2u <cimport 'sfWindow_getSize', nodecl> end
+function sfml.Window.set_size(self: *sfml.Window, size: sfml.Vector2u): void <cimport 'sfWindow_setSize', nodecl> end
+function sfml.Window.set_title(self: *sfml.Window, title: cstring <const>): void <cimport 'sfWindow_setTitle', nodecl> end
+function sfml.Window.set_unicode_title(self: *sfml.Window, title: *[0]sfml.Uint32 <const>): void <cimport 'sfWindow_setUnicodeTitle', nodecl> end
+function sfml.Window.set_icon(self: *sfml.Window, width: cuint, height: cuint, pixels: *[0]sfml.Uint8): void <cimport 'sfWindow_setIcon', nodecl> end
+function sfml.Window.set_visible(self: *sfml.Window, visible: sfml.Bool): void <cimport 'sfWindow_setVisible', nodecl> end
+function sfml.Window.set_vsync_enabled(self: *sfml.Window, enabled: sfml.Bool): void <cimport 'sfWindow_setVerticalSyncEnabled', nodecl> end
+function sfml.Window.set_mouse_cursor_visible(self: *sfml.Window, visible: sfml.Bool): void <cimport 'sfWindow_setMouseCursorVisible', nodecl> end
+function sfml.Window.set_mouse_cursor_grabbed(self: *sfml.Window, grabbed: sfml.Bool): void <cimport 'sfWindow_setMouseCursorGrabbed', nodecl> end
+function sfml.Window.set_mouse_cursor(self: *sfml.Window, cursor: *sfml.Cursor <const>): void <cimport 'sfWindow_setMouseCursor', nodecl> end
+function sfml.Window.set_key_repeat_enabled(self: *sfml.Window, enabled: sfml.Bool): void <cimport 'sfWindow_setKeyRepeatEnabled', nodecl> end
+function sfml.Window.set_framerate_limit(self: *sfml.Window, threshold: float32): void <cimport 'sfWindow_setFramerateLimit', nodecl> end
+function sfml.Window.set_active(self: *sfml.Window, active: sfml.Bool): void <cimport 'sfWindow_setActive', nodecl> end
+function sfml.Window.request_focus(self: *sfml.Window): void <cimport 'sfWindow_requestFocus', nodecl> end
+function sfml.Window.has_focus(self: *sfml.Window <const>): sfml.Bool <cimport 'sfWindow_hasFocus', nodecl> end
 function sfml.Window.display(self: *sfml.Window): void <cimport 'sfWindow_display', nodecl> end
-function sfml.Window.getSystemHandle(self: *sfml.Window <const>): sfml.WindowHandle <cimport 'sfWindow_getSystemHandle', nodecl> end
+function sfml.Window.get_system_handle(self: *sfml.Window <const>): sfml.WindowHandle <cimport 'sfWindow_getSystemHandle', nodecl> end
 
 
 -- Context
 function sfml.Context.create(): *sfml.Context <cimport 'sfContext_create', nodecl> end
 function sfml.Context.destroy(self: *sfml.Context): void <cimport 'sfContext_destroy', nodecl> end
-function sfml.Context.setActive(self: *sfml.Context, active: sfml.Bool): sfml.Bool <cimport 'sfContext_setActive', nodecl> end
-function sfml.Context.getSettings(self: *sfml.Context <const>): sfml.ContextSettings <cimport 'sfContext_getSettings', nodecl> end
-function sfml.Context.getActiveContextId(): sfml.Uint64 <cimport 'sfContext_getActiveContextId', nodecl> end
+function sfml.Context.set_active(self: *sfml.Context, active: sfml.Bool): sfml.Bool <cimport 'sfContext_setActive', nodecl> end
+function sfml.Context.get_settings(self: *sfml.Context <const>): sfml.ContextSettings <cimport 'sfContext_getSettings', nodecl> end
+function sfml.Context.get_active_context_id(): sfml.Uint64 <cimport 'sfContext_getActiveContextId', nodecl> end
 
 
 -- Graphics
@@ -1154,10 +1154,10 @@ global sfml.Transparent: sfml.Color <cimport 'sfTransparent', nodecl, const>
 
 
 -- Color
-function sfml.Color.fromRGB(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8): sfml.Color <cimport 'sfColor_fromRGB', nodecl> end
-function sfml.Color.fromRGBA(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8, alpha: sfml.Uint8): sfml.Color <cimport 'sfColor_fromRGBA', nodecl> end
-function sfml.Color.fromInteger(color: sfml.Uint32): sfml.Color <cimport 'sfColor_fromInteger', nodecl> end
-function sfml.Color.toInteger(color: sfml.Color): sfml.Uint32 <cimport 'sfColor_toInteger', nodecl> end
+function sfml.Color.from_rgb(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8): sfml.Color <cimport 'sfColor_fromRGB', nodecl> end
+function sfml.Color.from_rgba(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8, alpha: sfml.Uint8): sfml.Color <cimport 'sfColor_fromRGBA', nodecl> end
+function sfml.Color.from_integer(color: sfml.Uint32): sfml.Color <cimport 'sfColor_fromInteger', nodecl> end
+function sfml.Color.to_integer(color: sfml.Color): sfml.Uint32 <cimport 'sfColor_toInteger', nodecl> end
 function sfml.Color.add(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_add', nodecl> end
 function sfml.Color.subtract(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_subtract', nodecl> end
 function sfml.Color.modulate(color1: sfml.Color, color2: sfml.Color): sfml.Color <cimport 'sfColor_modulate', nodecl> end
@@ -1167,48 +1167,48 @@ function sfml.Color.modulate(color1: sfml.Color, color2: sfml.Color): sfml.Color
 function sfml.VertexArray.create(): *sfml.VertexArray <cimport 'sfVertexArray_create', nodecl> end
 function sfml.VertexArray.copy(self: *sfml.VertexArray <const>): *sfml.VertexArray <cimport 'sfVertexArray_copy', nodecl> end
 function sfml.VertexArray.destroy(self: *sfml.VertexArray): void <cimport 'sfVertexArray_destroy', nodecl> end
-function sfml.VertexArray.getVertexCount(self: *sfml.VertexArray <const>): csize <cimport 'sfVertexArray_getVertexCount', nodecl> end
-function sfml.VertexArray.getVertex(self: *sfml.VertexArray, index: csize): *sfml.Vertex <cimport 'sfVertexArray_getVertex', nodecl> end
+function sfml.VertexArray.get_vertex_count(self: *sfml.VertexArray <const>): csize <cimport 'sfVertexArray_getVertexCount', nodecl> end
+function sfml.VertexArray.get_vertex(self: *sfml.VertexArray, index: csize): *sfml.Vertex <cimport 'sfVertexArray_getVertex', nodecl> end
 function sfml.VertexArray.clear(self: *sfml.VertexArray): void <cimport 'sfVertexArray_clear', nodecl> end
 function sfml.VertexArray.resize(self: *sfml.VertexArray, vertexCount: csize): void <cimport 'sfVertexArray_resize', nodecl> end
 function sfml.VertexArray.append(self: *sfml.VertexArray, vertex: sfml.Vertex): void <cimport 'sfVertexArray_append', nodecl> end
-function sfml.VertexArray.setPrimitiveType(self: *sfml.VertexArray, type: sfml.PrimitiveType): void <cimport 'sfVertexArray_setPrimitiveType', nodecl> end
-function sfml.VertexArray.getPrimitiveType(self: *sfml.VertexArray): sfml.PrimitiveType <cimport 'sfVertexArray_getPrimitiveType', nodecl> end
-function sfml.VertexArray.getBounds(self: *sfml.VertexArray): sfml.FloatRect <cimport 'sfVertexArray_getBounds', nodecl> end
+function sfml.VertexArray.get_primitive_type(self: *sfml.VertexArray): sfml.PrimitiveType <cimport 'sfVertexArray_getPrimitiveType', nodecl> end
+function sfml.VertexArray.set_primitive_type(self: *sfml.VertexArray, type: sfml.PrimitiveType): void <cimport 'sfVertexArray_setPrimitiveType', nodecl> end
+function sfml.VertexArray.get_bounds(self: *sfml.VertexArray): sfml.FloatRect <cimport 'sfVertexArray_getBounds', nodecl> end
 
 
 -- Transformable
 function sfml.Transformable.create(): *sfml.Transformable <cimport 'sfTransformable_create', nodecl> end
 function sfml.Transformable.copy(self: *sfml.Transformable <const>): *sfml.Transformable <cimport 'sfTransformable_copy', nodecl> end
 function sfml.Transformable.destroy(self: *sfml.Transformable): void <cimport 'sfTransformable_destroy', nodecl> end
-function sfml.Transformable.setPosition(self: *sfml.Transformable, position: sfml.Vector2f): void <cimport 'sfTransformable_setPosition', nodecl> end
-function sfml.Transformable.setRotation(self: *sfml.Transformable, angle: float32): void <cimport 'sfTransformable_setRotation', nodecl> end
-function sfml.Transformable.setScale(self: *sfml.Transformable, scale: sfml.Vector2f): void <cimport 'sfTransformable_setScale', nodecl> end
-function sfml.Transformable.setOrigin(self: *sfml.Transformable, origin: sfml.Vector2f): void <cimport 'sfTransformable_setOrigin', nodecl> end
-function sfml.Transformable.getPosition(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getPosition', nodecl> end
-function sfml.Transformable.getRotation(self: *sfml.Transformable <const>): float32 <cimport 'sfTransformable_getRotation', nodecl> end
-function sfml.Transformable.getScale(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getScale', nodecl> end
-function sfml.Transformable.getOrigin(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getOrigin', nodecl> end
+function sfml.Transformable.get_position(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getPosition', nodecl> end
+function sfml.Transformable.set_position(self: *sfml.Transformable, position: sfml.Vector2f): void <cimport 'sfTransformable_setPosition', nodecl> end
+function sfml.Transformable.get_rotation(self: *sfml.Transformable <const>): float32 <cimport 'sfTransformable_getRotation', nodecl> end
+function sfml.Transformable.set_rotation(self: *sfml.Transformable, angle: float32): void <cimport 'sfTransformable_setRotation', nodecl> end
+function sfml.Transformable.get_scale(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getScale', nodecl> end
+function sfml.Transformable.set_scale(self: *sfml.Transformable, scale: sfml.Vector2f): void <cimport 'sfTransformable_setScale', nodecl> end
+function sfml.Transformable.get_origin(self: *sfml.Transformable <const>): sfml.Vector2f <cimport 'sfTransformable_getOrigin', nodecl> end
+function sfml.Transformable.set_origin(self: *sfml.Transformable, origin: sfml.Vector2f): void <cimport 'sfTransformable_setOrigin', nodecl> end
 function sfml.Transformable.move(self: *sfml.Transformable, offset: sfml.Vector2f): void <cimport 'sfTransformable_move', nodecl> end
 function sfml.Transformable.rotate(self: *sfml.Transformable, angle: float32): void <cimport 'sfTransformable_rotate', nodecl> end
 function sfml.Transformable.scale(self: *sfml.Transformable, factors: sfml.Vector2f): void <cimport 'sfTransformable_scale', nodecl> end
-function sfml.Transformable.getTransform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getTransform', nodecl> end
-function sfml.Transformable.getInverseTransform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getInverseTransform', nodecl> end
+function sfml.Transformable.get_transform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getTransform', nodecl> end
+function sfml.Transformable.get_inverse_transform(self: *sfml.Transformable <const>): sfml.Transform <cimport 'sfTransformable_getInverseTransform', nodecl> end
 
 
 -- Transform
 global sfml.Transform_Identity: sfml.Transform <cimport 'sfTransform_Identity', nodecl, const>
-function sfml.Transform.fromMatrix(a00: float32, a01: float32, a02: float32, a10: float32, a11: float32, a12: float32, a20: float32, a21: float32, a22: float32): sfml.Transform <cimport 'sfTransform_fromMatrix', nodecl> end
-function sfml.Transform.getMatrix(self: *sfml.Transform <const>, matrix: *[0]float32): void <cimport 'sfTransform_getMatrix', nodecl> end
-function sfml.Transform.getInverse(self: *sfml.Transform <const>): sfml.Transform <cimport 'sfTransform_getInverse', nodecl> end
-function sfml.Transform.transformPoint(self: *sfml.Transform <const>, point: sfml.Vector2f): sfml.Vector2f <cimport 'sfTransform_transformPoint', nodecl> end
-function sfml.Transform.transformRect(self: *sfml.Transform <const>, rectangle: sfml.FloatRect): sfml.FloatRect <cimport 'sfTransform_transformRect', nodecl> end
+function sfml.Transform.from_matrix(a00: float32, a01: float32, a02: float32, a10: float32, a11: float32, a12: float32, a20: float32, a21: float32, a22: float32): sfml.Transform <cimport 'sfTransform_fromMatrix', nodecl> end
+function sfml.Transform.get_matrix(self: *sfml.Transform <const>, matrix: *[0]float32): void <cimport 'sfTransform_getMatrix', nodecl> end
+function sfml.Transform.get_inverse(self: *sfml.Transform <const>): sfml.Transform <cimport 'sfTransform_getInverse', nodecl> end
+function sfml.Transform.transform_point(self: *sfml.Transform <const>, point: sfml.Vector2f): sfml.Vector2f <cimport 'sfTransform_transformPoint', nodecl> end
+function sfml.Transform.transform_rect(self: *sfml.Transform <const>, rectangle: sfml.FloatRect): sfml.FloatRect <cimport 'sfTransform_transformRect', nodecl> end
 function sfml.Transform.combine(self: *sfml.Transform, other: *sfml.Transform <const>): sfml.FloatRect <cimport 'sfTransform_combine', nodecl> end
 function sfml.Transform.translate(self: *sfml.Transform, x: float32, y: float32): void <cimport 'sfTransform_translate', nodecl> end
 function sfml.Transform.rotate(self: *sfml.Transform, angle: float32): void <cimport 'sfTransform_rotate', nodecl> end
-function sfml.Transform.rotateWithCenter(self: *sfml.Transform, angle: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_rotateWithCenter', nodecl> end
+function sfml.Transform.rotate_with_center(self: *sfml.Transform, angle: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_rotateWithCenter', nodecl> end
 function sfml.Transform.scale(self: *sfml.Transform, scaleX: float32, scaleY: float32): void <cimport 'sfTransform_scale', nodecl> end
-function sfml.Transform.scaleWithCenter(self: *sfml.Transform, scaleX: float32, scaleY: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_scaleWithCenter', nodecl> end
+function sfml.Transform.scale_with_center(self: *sfml.Transform, scaleX: float32, scaleY: float32, centerX: float32, centerY: float32): void <cimport 'sfTransform_scaleWithCenter', nodecl> end
 function sfml.Transform.equal(self: *sfml.Transform, right: *sfml.Transform): sfml.Bool <cimport 'sfTransform_equal', nodecl> end
 
 
@@ -1267,56 +1267,56 @@ global sfml.GlslMat4: type <cimport 'sfGlslMat4', nodecl> = @record {
 
 -- View
 function sfml.View.create(): *sfml.View <cimport 'sfView_create', nodecl> end
-function sfml.View.createFromRect(rectangle: sfml.FloatRect): *sfml.View <cimport 'sfView_createFromRect', nodecl> end
+function sfml.View.create_from_rect(rectangle: sfml.FloatRect): *sfml.View <cimport 'sfView_createFromRect', nodecl> end
 function sfml.View.copy(self: *sfml.View <const>): *sfml.View <cimport 'sfView_copy', nodecl> end
 function sfml.View.destroy(self: *sfml.View): void <cimport 'sfView_destroy', nodecl> end
-function sfml.View.setCenter(self: *sfml.View, center: sfml.Vector2f): void <cimport 'sfView_setCenter', nodecl> end
-function sfml.View.setSize(self: *sfml.View, size: sfml.Vector2f): void <cimport 'sfView_setSize', nodecl> end
-function sfml.View.setRotation(self: *sfml.View, angle: float32): void <cimport 'sfView_setRotation', nodecl> end
-function sfml.View.setViewport(self: *sfml.View, viewport: sfml.FloatRect): void <cimport 'sfView_setViewport', nodecl> end
+function sfml.View.get_center(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getCenter', nodecl> end
+function sfml.View.set_center(self: *sfml.View, center: sfml.Vector2f): void <cimport 'sfView_setCenter', nodecl> end
+function sfml.View.get_size(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getSize', nodecl> end
+function sfml.View.set_size(self: *sfml.View, size: sfml.Vector2f): void <cimport 'sfView_setSize', nodecl> end
+function sfml.View.get_rotation(self: *sfml.View <const>): float32 <cimport 'sfView_getRotation', nodecl> end
+function sfml.View.set_rotation(self: *sfml.View, angle: float32): void <cimport 'sfView_setRotation', nodecl> end
+function sfml.View.get_viewport(self: *sfml.View <const>): sfml.FloatRect <cimport 'sfView_getViewport', nodecl> end
+function sfml.View.set_viewport(self: *sfml.View, viewport: sfml.FloatRect): void <cimport 'sfView_setViewport', nodecl> end
 function sfml.View.reset(self: *sfml.View, rectangle: sfml.FloatRect): void <cimport 'sfView_reset', nodecl> end
-function sfml.View.getCenter(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getCenter', nodecl> end
-function sfml.View.getSize(self: *sfml.View <const>): sfml.Vector2f <cimport 'sfView_getSize', nodecl> end
-function sfml.View.getRotation(self: *sfml.View <const>): float32 <cimport 'sfView_getRotation', nodecl> end
-function sfml.View.getViewport(self: *sfml.View <const>): sfml.FloatRect <cimport 'sfView_getViewport', nodecl> end
 function sfml.View.move(self: *sfml.View, offset: sfml.Vector2f): void <cimport 'sfView_move', nodecl> end
 function sfml.View.rotate(self: *sfml.View, angle: float32): void <cimport 'sfView_rotate', nodecl> end
 function sfml.View.zoom(self: *sfml.View, factor: float32): void <cimport 'sfView_zoom', nodecl> end
 
 
 -- Font
-function sfml.Font.createFromFile(filename: cstring <const>): *sfml.Font <cimport 'sfFont_createFromFile', nodecl> end
-function sfml.Font.createFromMemory(data: pointer <const>, sizeInBytes: csize): *sfml.Font <cimport 'sfFont_createFromMemory', nodecl> end
-function sfml.Font.createFromStream(stream: *sfml.InputStream): *sfml.Font <cimport 'sfFont_createFromStream', nodecl> end
+function sfml.Font.create_from_file(filename: cstring <const>): *sfml.Font <cimport 'sfFont_createFromFile', nodecl> end
+function sfml.Font.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.Font <cimport 'sfFont_createFromMemory', nodecl> end
+function sfml.Font.create_from_stream(stream: *sfml.InputStream): *sfml.Font <cimport 'sfFont_createFromStream', nodecl> end
 function sfml.Font.copy(self: *sfml.Font <const>): *sfml.Font <cimport 'sfFont_copy', nodecl> end
 function sfml.Font.destroy(self: *sfml.Font): void <cimport 'sfFont_destroy', nodecl> end
-function sfml.Font.getGlyph(self: *sfml.Font <const>, codePoint: sfml.Uint32, characterSize: cuint, bold: sfml.Bool, outlineThickness: float32): sfml.Glyph <cimport 'sfFont_getGlyph', nodecl> end
-function sfml.Font.getKerning(self: *sfml.Font <const>, first: sfml.Uint32, second: sfml.Uint32, characterSize: cuint): float32 <cimport 'sfFont_getKerning', nodecl> end
-function sfml.Font.getLineSpacing(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getLineSpacing', nodecl> end
-function sfml.Font.getUnderlinePosition(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlinePosition', nodecl> end
-function sfml.Font.getUnderlineThickness(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlineThickness', nodecl> end
-function sfml.Font.getTexture(self: *sfml.Font <const>, characterSize: cuint): *sfml.Texture <cimport 'sfFont_getTexture', nodecl> end
-function sfml.Font.getInfo(self: *sfml.Font <const>): sfml.FontInfo <cimport 'sfFont_getInfo', nodecl> end
+function sfml.Font.get_glyph(self: *sfml.Font <const>, codePoint: sfml.Uint32, characterSize: cuint, bold: sfml.Bool, outlineThickness: float32): sfml.Glyph <cimport 'sfFont_getGlyph', nodecl> end
+function sfml.Font.get_kerning(self: *sfml.Font <const>, first: sfml.Uint32, second: sfml.Uint32, characterSize: cuint): float32 <cimport 'sfFont_getKerning', nodecl> end
+function sfml.Font.get_line_spacing(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getLineSpacing', nodecl> end
+function sfml.Font.get_underline_position(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlinePosition', nodecl> end
+function sfml.Font.get_underline_thickness(self: *sfml.Font <const>, characterSize: cuint): float32 <cimport 'sfFont_getUnderlineThickness', nodecl> end
+function sfml.Font.get_texture(self: *sfml.Font <const>, characterSize: cuint): *sfml.Texture <cimport 'sfFont_getTexture', nodecl> end
+function sfml.Font.get_info(self: *sfml.Font <const>): sfml.FontInfo <cimport 'sfFont_getInfo', nodecl> end
 
 
 -- Image
 function sfml.Image.create(width: cuint, height: cuint): *sfml.Image <cimport 'sfImage_create', nodecl> end
-function sfml.Image.createFromColor(width: cuint, height: cuint, color: sfml.Color): *sfml.Image <cimport 'sfImage_createFromColor', nodecl> end
-function sfml.Image.createFromPixels(width: cuint, height: cuint, pixels: *[0]sfml.Uint8): *sfml.Image <cimport 'sfImage_createFromPixels', nodecl> end
-function sfml.Image.createFromFile(filename: cstring <const>): *sfml.Image <cimport 'sfImage_createFromFile', nodecl> end
-function sfml.Image.createFromMemory(data: pointer <const>, size: csize): *sfml.Image <cimport 'sfImage_createFromMemory', nodecl> end
-function sfml.Image.createFromStream(stream: *sfml.InputStream): *sfml.Image <cimport 'sfImage_createFromStream', nodecl> end
+function sfml.Image.create_from_color(width: cuint, height: cuint, color: sfml.Color): *sfml.Image <cimport 'sfImage_createFromColor', nodecl> end
+function sfml.Image.create_from_pixels(width: cuint, height: cuint, pixels: *[0]sfml.Uint8): *sfml.Image <cimport 'sfImage_createFromPixels', nodecl> end
+function sfml.Image.create_from_file(filename: cstring <const>): *sfml.Image <cimport 'sfImage_createFromFile', nodecl> end
+function sfml.Image.create_from_memory(data: pointer <const>, size: csize): *sfml.Image <cimport 'sfImage_createFromMemory', nodecl> end
+function sfml.Image.create_from_stream(stream: *sfml.InputStream): *sfml.Image <cimport 'sfImage_createFromStream', nodecl> end
 function sfml.Image.copy(self: *sfml.Image <const>): *sfml.Image <cimport 'sfImage_copy', nodecl> end
 function sfml.Image.destroy(self: *sfml.Image): void <cimport 'sfImage_destroy', nodecl> end
-function sfml.Image.saveToFile(self: *sfml.Image <const>, filename: cstring <const>): sfml.Bool <cimport 'sfImage_saveToFile', nodecl> end
-function sfml.Image.getSize(self: *sfml.Image <const>): sfml.Vector2u <cimport 'sfImage_getSize', nodecl> end
-function sfml.Image.createMaskFromColor(self: *sfml.Image, color: sfml.Color, alpha: sfml.Uint8): void <cimport 'sfImage_createMaskFromFile', nodecl> end
-function sfml.Image.copyImage(self: *sfml.Image, source: *sfml.Image <const>, destX: cuint, destY: cuint, sourceRect: sfml.IntRect, applyAlpha: sfml.Bool): void <cimport 'sfImage_copyImage', nodecl> end
-function sfml.Image.setPixel(self: *sfml.Image, x: cuint, y: cuint, color: sfml.Color): void <cimport 'sfImage_setPixel', nodecl> end
-function sfml.Image.getPixel(self: *sfml.Image <const>, x: cuint, y: cuint): sfml.Color <cimport 'sfImage_getPixel', nodecl> end
-function sfml.Image.getPixelsPtr(self: *sfml.Image <const>): *[0]sfml.Uint8 <cimport 'sfImage_getPixelsPtr', nodecl> end
-function sfml.Image.flipHorizontally(self: *sfml.Image): void <cimport 'sfImage_flipHorizontally', nodecl> end
-function sfml.Image.flipVertically(self: *sfml.Image): void <cimport 'sfImage_flipVertically', nodecl> end
+function sfml.Image.save_to_file(self: *sfml.Image <const>, filename: cstring <const>): sfml.Bool <cimport 'sfImage_saveToFile', nodecl> end
+function sfml.Image.get_size(self: *sfml.Image <const>): sfml.Vector2u <cimport 'sfImage_getSize', nodecl> end
+function sfml.Image.create_mask_from_color(self: *sfml.Image, color: sfml.Color, alpha: sfml.Uint8): void <cimport 'sfImage_createMaskFromFile', nodecl> end
+function sfml.Image.copy_image(self: *sfml.Image, source: *sfml.Image <const>, destX: cuint, destY: cuint, sourceRect: sfml.IntRect, applyAlpha: sfml.Bool): void <cimport 'sfImage_copyImage', nodecl> end
+function sfml.Image.get_pixel(self: *sfml.Image <const>, x: cuint, y: cuint): sfml.Color <cimport 'sfImage_getPixel', nodecl> end
+function sfml.Image.set_pixel(self: *sfml.Image, x: cuint, y: cuint, color: sfml.Color): void <cimport 'sfImage_setPixel', nodecl> end
+function sfml.Image.get_pixels_ptr(self: *sfml.Image <const>): *[0]sfml.Uint8 <cimport 'sfImage_getPixelsPtr', nodecl> end
+function sfml.Image.flip_horizontally(self: *sfml.Image): void <cimport 'sfImage_flipHorizontally', nodecl> end
+function sfml.Image.flip_vertically(self: *sfml.Image): void <cimport 'sfImage_flipVertically', nodecl> end
 
 
 -- Shape: Circle
@@ -1324,36 +1324,36 @@ function sfml.CircleShape.create(): *sfml.CircleShape <cimport 'sfCircleShape_cr
 
 function sfml.CircleShape.copy(self: *sfml.CircleShape <const>): *sfml.CircleShape <cimport 'sfCircleShape_copy', nodecl> end
 function sfml.CircleShape.destroy(self: *sfml.CircleShape): void <cimport 'sfCircleShape_destroy', nodecl> end
-function sfml.CircleShape.setPosition(self: *sfml.CircleShape, position: sfml.Vector2f): void <cimport 'sfCircleShape_setPosition', nodecl> end
-function sfml.CircleShape.setRotation(self: *sfml.CircleShape, angle: float32): void <cimport 'sfCircleShape_setRotation', nodecl> end
-function sfml.CircleShape.setScale(self: *sfml.CircleShape, scale: sfml.Vector2f): void <cimport 'sfCircleShape_setScale', nodecl> end
-function sfml.CircleShape.setOrigin(self: *sfml.CircleShape, origin: sfml.Vector2f): void <cimport 'sfCircleShape_setOrigin', nodecl> end
-function sfml.CircleShape.getPosition(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getPosition', nodecl> end
-function sfml.CircleShape.getRotation(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getRotation', nodecl> end
-function sfml.CircleShape.getScale(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getScale', nodecl> end
-function sfml.CircleShape.getOrigin(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getOrigin', nodecl> end
+function sfml.CircleShape.get_position(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getPosition', nodecl> end
+function sfml.CircleShape.set_position(self: *sfml.CircleShape, position: sfml.Vector2f): void <cimport 'sfCircleShape_setPosition', nodecl> end
+function sfml.CircleShape.get_rotation(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getRotation', nodecl> end
+function sfml.CircleShape.set_rotation(self: *sfml.CircleShape, angle: float32): void <cimport 'sfCircleShape_setRotation', nodecl> end
+function sfml.CircleShape.get_scale(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getScale', nodecl> end
+function sfml.CircleShape.set_scale(self: *sfml.CircleShape, scale: sfml.Vector2f): void <cimport 'sfCircleShape_setScale', nodecl> end
+function sfml.CircleShape.get_origin(self: *sfml.CircleShape <const>): sfml.Vector2f <cimport 'sfCircleShape_getOrigin', nodecl> end
+function sfml.CircleShape.set_origin(self: *sfml.CircleShape, origin: sfml.Vector2f): void <cimport 'sfCircleShape_setOrigin', nodecl> end
+function sfml.CircleShape.get_transform(self: *sfml.CircleShape <const>): sfml.Transform <cimport 'sfCircleShape_getTransform', nodecl> end
+function sfml.CircleShape.get_inverse_transform(self: *sfml.CircleShape <const>): sfml.Transform <cimport 'sfCircleShape_getInverseTransform', nodecl> end
+function sfml.CircleShape.get_texture(self: *sfml.CircleShape <const>): *sfml.Texture <cimport 'sfCircleShape_getTexture', nodecl> end
+function sfml.CircleShape.set_texture(self: *sfml.CircleShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfCircleShape_setTexture', nodecl> end
+function sfml.CircleShape.get_texture_rect(self: *sfml.CircleShape <const>): sfml.IntRect <cimport 'sfCircleShape_getTextureRect', nodecl> end
+function sfml.CircleShape.set_texture_rect(self: *sfml.CircleShape, rect: sfml.IntRect): void <cimport 'sfCircleShape_setTextureRect', nodecl> end
+function sfml.CircleShape.get_fill_color(self: *sfml.CircleShape <const>): sfml.Color <cimport 'sfCircleShape_getFillColor', nodecl> end
+function sfml.CircleShape.set_fill_color(self: *sfml.CircleShape, color: sfml.Color): void <cimport 'sfCircleShape_setFillColor', nodecl> end
+function sfml.CircleShape.get_radius(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getRadius', nodecl> end
+function sfml.CircleShape.set_radius(self: *sfml.CircleShape, radius: float32): void <cimport 'sfCircleShape_setRadius', nodecl> end
 function sfml.CircleShape.move(self: *sfml.CircleShape, offset: sfml.Vector2f): void <cimport 'sfCircleShape_move', nodecl> end
 function sfml.CircleShape.rotate(self: *sfml.CircleShape, angle: float32): void <cimport 'sfCircleShape_rotate', nodecl> end
 function sfml.CircleShape.scale(self: *sfml.CircleShape, factors: sfml.Vector2f): void <cimport 'sfCircleShape_scale', nodecl> end 
-function sfml.CircleShape.getTransform(self: *sfml.CircleShape <const>): sfml.Transform <cimport 'sfCircleShape_getTransform', nodecl> end
-function sfml.CircleShape.getInverseTransform(self: *sfml.CircleShape <const>): sfml.Transform <cimport 'sfCircleShape_getInverseTransform', nodecl> end
-function sfml.CircleShape.setTexture(self: *sfml.CircleShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfCircleShape_setTexture', nodecl> end
-function sfml.CircleShape.setTextureRect(self: *sfml.CircleShape, rect: sfml.IntRect): void <cimport 'sfCircleShape_setTextureRect', nodecl> end
-function sfml.CircleShape.setFillColor(self: *sfml.CircleShape, color: sfml.Color): void <cimport 'sfCircleShape_setFillColor', nodecl> end
-function sfml.CircleShape.setOutlineColor(self: *sfml.CircleShape, color: sfml.Color): void <cimport 'sfCircleShape_setOutlineColor', nodecl> end
-function sfml.CircleShape.setOutlineThickness(self: *sfml.CircleShape, thickness: float32): void <cimport 'sfCircleShape_setOutlineThickness', nodecl> end
-function sfml.CircleShape.getTexture(self: *sfml.CircleShape <const>): *sfml.Texture <cimport 'sfCircleShape_getTexture', nodecl> end
-function sfml.CircleShape.getTextureRect(self: *sfml.CircleShape <const>): sfml.IntRect <cimport 'sfCircleShape_getTextureRect', nodecl> end
-function sfml.CircleShape.getFillColor(self: *sfml.CircleShape <const>): sfml.Color <cimport 'sfCircleShape_getFillColor', nodecl> end
-function sfml.CircleShape.getOutlineColor(self: *sfml.CircleShape <const>): sfml.Color <cimport 'sfCircleShape_getOutlineColor', nodecl> end
-function sfml.CircleShape.getOutlineThickness(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getOutlineThickness', nodecl> end
-function sfml.CircleShape.getPointCount(self: *sfml.CircleShape <const>): csize <cimport 'sfCircleShape_getPointCount', nodecl> end
-function sfml.CircleShape.getPoint(self: *sfml.CircleShape <const>, index: csize): sfml.Vector2f <cimport 'sfCircleShape_getPoint', nodecl> end
-function sfml.CircleShape.setRadius(self: *sfml.CircleShape, radius: float32): void <cimport 'sfCircleShape_setRadius', nodecl> end
-function sfml.CircleShape.getRadius(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getRadius', nodecl> end
-function sfml.CircleShape.setPointCount(self: *sfml.CircleShape, count: csize): void <cimport 'sfCircleShape_setPointCount', nodecl> end
-function sfml.CircleShape.getLocalBounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getLocalBounds', nodecl> end
-function sfml.CircleShape.getGlobalBounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getGlobalBounds', nodecl> end
+function sfml.CircleShape.set_outline_color(self: *sfml.CircleShape, color: sfml.Color): void <cimport 'sfCircleShape_setOutlineColor', nodecl> end
+function sfml.CircleShape.set_outline_thickness(self: *sfml.CircleShape, thickness: float32): void <cimport 'sfCircleShape_setOutlineThickness', nodecl> end
+function sfml.CircleShape.get_outline_color(self: *sfml.CircleShape <const>): sfml.Color <cimport 'sfCircleShape_getOutlineColor', nodecl> end
+function sfml.CircleShape.get_outline_thickness(self: *sfml.CircleShape <const>): float32 <cimport 'sfCircleShape_getOutlineThickness', nodecl> end
+function sfml.CircleShape.get_point_count(self: *sfml.CircleShape <const>): csize <cimport 'sfCircleShape_getPointCount', nodecl> end
+function sfml.CircleShape.get_point(self: *sfml.CircleShape <const>, index: csize): sfml.Vector2f <cimport 'sfCircleShape_getPoint', nodecl> end
+function sfml.CircleShape.set_point_count(self: *sfml.CircleShape, count: csize): void <cimport 'sfCircleShape_setPointCount', nodecl> end
+function sfml.CircleShape.get_local_bounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getLocalBounds', nodecl> end
+function sfml.CircleShape.get_global_bounds(self: *sfml.CircleShape <const>): sfml.FloatRect <cimport 'sfCircleShape_getGlobalBounds', nodecl> end
 
 
 -- Shape: Convex
