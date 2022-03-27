@@ -883,8 +883,9 @@ global sfml.MouseButtonEvent: type <cimport 'sfMouseButtonEvent', nodecl> = @rec
   y: cint
 }
 
-global sfml.MouseWheelEvent: type <cimport 'sfMouseWheelEvent', nodecl> = @record {
+global sfml.MouseWheelScrollEvent: type <cimport 'sfMouseWheelScrollEvent', nodecl> = @record {
   type: sfml.EventType,
+  wheel: sfml.MouseWheel,
   delta: cint,
   x: cint,
   y: cint
