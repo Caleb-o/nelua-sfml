@@ -12,3 +12,9 @@ CSFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, in
 ## Requirements
 * CSFML 2.5.1
 * Nelua (Currently tested with latest main)
+
+## Examples
+* [Render Window](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/render_window.nelua)
+* [Sprite Drawing](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/sprite.nelua)
+* [TCP Client](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/tcp_client.nelua)
+* [TCP Server](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/tcp_server.nelua)
