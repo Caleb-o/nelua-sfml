@@ -1,7 +1,7 @@
 # nelua-sfml
-SFML binding for the Nelua language. This uses Nelua's record methods, instead of the standard C calling conventions.
+SFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, instead of the standard C calling conventions.
 
-This project is based on the existing [(C)SFML](https://github.com/Rabios/nelua-fun/tree/main/csfml) version.
+**Note:** This project is based on the existing [(C)SFML](https://github.com/Rabios/nelua-fun/tree/main/csfml) library written in Nelua.
 
 ## Differences
 * Record Methods and funtions instead of vanilla functions taking pointers etc
