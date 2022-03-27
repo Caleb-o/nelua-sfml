@@ -1481,8 +1481,8 @@ function sfml.RenderWindow.destroy(self: *sfml.RenderWindow): void <cimport 'sfR
 function sfml.RenderWindow.close(self: *sfml.RenderWindow): void <cimport 'sfRenderWindow_close', nodecl> end
 function sfml.RenderWindow.is_open(self: *sfml.RenderWindow <const>): sfml.Bool <cimport 'sfRenderWindow_isOpen', nodecl> end
 function sfml.RenderWindow.get_settings(self: *sfml.RenderWindow <const>): sfml.ContextSettings <cimport 'sfRenderWindow_getSettings', nodecl> end
-function sfml.RenderWindow.poll_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_pollEvent', nodecl> end
-function sfml.RenderWindow.wait_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.ContextSettings <cimport 'sfRenderWindow_waitEvent', nodecl> end
+function sfml.RenderWindow.poll_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.Bool <cimport 'sfRenderWindow_pollEvent', nodecl> end
+function sfml.RenderWindow.wait_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.Bool <cimport 'sfRenderWindow_waitEvent', nodecl> end
 function sfml.RenderWindow.get_position(self: *sfml.RenderWindow <const>): sfml.Vector2i <cimport 'sfRenderWindow_getPosition', nodecl> end
 function sfml.RenderWindow.set_position(self: *sfml.RenderWindow, position: sfml.Vector2i): void <cimport 'sfRenderWindow_setPosition', nodecl> end
 function sfml.RenderWindow.get_size(self: *sfml.RenderWindow <const>): sfml.Vector2u <cimport 'sfRenderWindow_getSize', nodecl> end
