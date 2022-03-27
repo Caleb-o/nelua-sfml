@@ -251,41 +251,41 @@ function sfml.Ftp.send_command(self: *sfml.Ftp, command: cstring <const>, parame
 
 -- Network: HTTP
 global sfml.HttpMethod: type <cimport 'sfml.HttpMethod', nodecl, using> = @enum(cint) {
-  HttpGet = 0,
-  HttpPost,
-  HttpHead,
-  HttpPut,
-  HttpDelete
+  Get = 0,
+  Post,
+  Head,
+  Put,
+  Delete
 }
 
 global sfml.HttpStatus: type <cimport 'sfHttpStatus', nodecl, using> = @enum(cint) {
-  HttpOk             = 200,
-  HttpCreated        = 201,
-  HttpAccepted       = 202,
-  HttpNoContent      = 204,
-  HttpResetContent   = 205,
-  HttpPartialContent = 206,
+  Ok             = 200,
+  Created        = 201,
+  Accepted       = 202,
+  NoContent      = 204,
+  ResetContent   = 205,
+  PartialContent = 206,
 
-  HttpMultipleChoices  = 300,
-  HttpMovedPermanently = 301,
-  HttpMovedTemporarily = 302,
-  HttpNotModified      = 304,
+  MultipleChoices  = 300,
+  MovedPermanently = 301,
+  MovedTemporarily = 302,
+  NotModified      = 304,
 
-  HttpBadRequest          = 400,
-  HttpUnauthorized        = 401,
-  HttpForbidden           = 403,
-  HttpNotFound            = 404,
-  HttpRangeNotSatisfiable = 407,
+  BadRequest          = 400,
+  Unauthorized        = 401,
+  Forbidden           = 403,
+  NotFound            = 404,
+  RangeNotSatisfiable = 407,
 
-  HttpInternalServerError = 500,
-  HttpNotImplemented      = 501,
-  HttpBadGateway          = 502,
-  HttpServiceNotAvailable = 503,
-  HttpGatewayTimeout      = 504,
-  HttpVersionNotSupported = 505,
+  InternalServerError = 500,
+  NotImplemented      = 501,
+  BadGateway          = 502,
+  ServiceNotAvailable = 503,
+  GatewayTimeout      = 504,
+  VersionNotSupported = 505,
 
-  HttpInvalidResponse  = 1000,
-  HttpConnectionFailed = 1001
+  InvalidResponse  = 1000,
+  ConnectionFailed = 1001
 }
 
 function sfml.HttpRequest.create(): *sfml.HttpRequest <cimport 'sfHttpRequest_create', nodecl> end
@@ -347,11 +347,11 @@ function sfml.Packet.write_wide_string(self: *sfml.Packet, data: *[0]cint): void
 
 -- Network: Selector
 global sfml.SocketStatus: type <cimport 'sfSocketStatus', nodecl, using> = @enum(cint) {
-  SocketDone = 0,
-  SocketNotReady,
-  SocketPartial,
-  SocketDisconnected,
-  SocketError
+  Done = 0,
+  NotReady,
+  Partial,
+  Disconnected,
+  Error
 }
 
 function sfml.SocketSelector.create(): *sfml.SocketSelector <cimport 'sfSocketSelector_create', nodecl> end
@@ -1536,44 +1536,44 @@ function sfml.Shader.create_from_memory(vertexShader: cstring <const>, geometryS
 function sfml.Shader.create_from_stream(vertexShader: *sfml.InputStream, geometryShader: *sfml.InputStream, fragmentShader: *sfml.InputStream): *sfml.Shader <cimport 'sfShader_createFromStream', nodecl> end
 
 function sfml.Shader.destroy(self: *sfml.Shader): void <cimport 'sfShader_destroy', nodecl> end
-function sfml.Shader.setFloatUniform(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatUniform', nodecl> end
-function sfml.Shader.setVec3Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec3): void <cimport 'sfShader_setVec3Uniform', nodecl> end
-function sfml.Shader.setVec4Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec4): void <cimport 'sfShader_setVec4Uniform', nodecl> end
-function sfml.Shader.setColorUniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setColorUniform', nodecl> end
-function sfml.Shader.setIntUniform(self: *sfml.Shader, name: cstring <const>, x: cint): void <cimport 'sfShader_setIntUniform', nodecl> end
-function sfml.Shader.setIvec2Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec2): void <cimport 'sfShader_setIvec2Uniform', nodecl> end
-function sfml.Shader.setIvec3Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec3): void <cimport 'sfShader_setIvec3Uniform', nodecl> end
-function sfml.Shader.setIvec4Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec4): void <cimport 'sfShader_setIvec4Uniform', nodecl> end
-function sfml.Shader.setIntColorUniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setIntColorUniform', nodecl> end
-function sfml.Shader.setBoolUniform(self: *sfml.Shader, name: cstring <const>, x: sfml.Bool): void <cimport 'sfShader_setBoolUniform', nodecl> end
-function sfml.Shader.setBvec2Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec2): void <cimport 'sfShader_setBvec2Uniform', nodecl> end
-function sfml.Shader.setBvec3Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec3): void <cimport 'sfShader_setBvec3Uniform', nodecl> end
-function sfml.Shader.setBvec4Uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec4): void <cimport 'sfShader_setBvec4Uniform', nodecl> end
-function sfml.Shader.setMat3Uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat3 <const>): void <cimport 'sfShader_setMat3Uniform', nodecl> end
-function sfml.Shader.setMat4Uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat4 <const>): void <cimport 'sfShader_setMat4Uniform', nodecl> end
-function sfml.Shader.setTextureUniform(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void <cimport 'sfShader_setTextureUniform', nodecl> end
-function sfml.Shader.setCurrentTextureUniform(self: *sfml.Shader, name: cstring <const>): void <cimport 'sfShader_setCurrentTextureUniform', nodecl> end
-function sfml.Shader.setFloatUniformArray(self: *sfml.Shader, name: cstring <const>, scalarArray: *[0]float32, length: csize): void <cimport 'sfShader_setFloatUniformArray', nodecl> end
-function sfml.Shader.setVec2UniformArray(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec2, length: csize): void <cimport 'sfShader_setVec2UniformArray', nodecl> end
-function sfml.Shader.setVec3UniformArray(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec3, length: csize): void <cimport 'sfShader_setVec3UniformArray', nodecl> end
-function sfml.Shader.setVec4UniformArray(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec4, length: csize): void <cimport 'sfShader_setVec4UniformArray', nodecl> end
-function sfml.Shader.setMat3UniformArray(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat3, length: csize): void <cimport 'sfShader_setMat3UniformArray', nodecl> end
-function sfml.Shader.setMat4UniformArray(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat4, length: csize): void <cimport 'sfShader_setMat4UniformArray', nodecl> end
-function sfml.Shader.setFloatParameter(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatParameter', nodecl> end
-function sfml.Shader.setFloat2Parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32): void <cimport 'sfShader_setFloat2Parameter', nodecl> end
-function sfml.Shader.setFloat3Parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32): void <cimport 'sfShader_setFloat3Parameter', nodecl> end
-function sfml.Shader.setFloat4Parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32, w: float32): void <cimport 'sfShader_setFloat4Parameter', nodecl> end
-function sfml.Shader.setVector2Parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector2f): void <cimport 'sfShader_setVector2Parameter', nodecl> end
-function sfml.Shader.setVector3Parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector3f): void <cimport 'sfShader_setVector3Parameter', nodecl> end
-function sfml.Shader.setColorParameter(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setColorParameter', nodecl> end
-function sfml.Shader.setTransformParameter(self: *sfml.Shader, name: cstring <const>, transform: sfml.Transform): void <cimport 'sfShader_setTransformParameter', nodecl> end
-function sfml.Shader.setTextureParameter(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void <cimport 'sfShader_setTextureParameter', nodecl> end
-function sfml.Shader.setCurrentTextureParameter(self: *sfml.Shader, name: cstring <const>): void <cimport 'sfShader_setCurrentTextureParameter', nodecl> end
-function sfml.Shader.getNativeHandle(self: *sfml.Shader <const>): cuint <cimport 'sfShader_getNativeHandle', nodecl> end
+function sfml.Shader.set_float_uniform(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatUniform', nodecl> end
+function sfml.Shader.set_vec3_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec3): void <cimport 'sfShader_setVec3Uniform', nodecl> end
+function sfml.Shader.set_vec4_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec4): void <cimport 'sfShader_setVec4Uniform', nodecl> end
+function sfml.Shader.set_color_uniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setColorUniform', nodecl> end
+function sfml.Shader.set_int_uniform(self: *sfml.Shader, name: cstring <const>, x: cint): void <cimport 'sfShader_setIntUniform', nodecl> end
+function sfml.Shader.set_ivec2_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec2): void <cimport 'sfShader_setIvec2Uniform', nodecl> end
+function sfml.Shader.set_ivec3_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec3): void <cimport 'sfShader_setIvec3Uniform', nodecl> end
+function sfml.Shader.set_ivec4_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec4): void <cimport 'sfShader_setIvec4Uniform', nodecl> end
+function sfml.Shader.set_int_color_uniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setIntColorUniform', nodecl> end
+function sfml.Shader.set_bool_uniform(self: *sfml.Shader, name: cstring <const>, x: sfml.Bool): void <cimport 'sfShader_setBoolUniform', nodecl> end
+function sfml.Shader.set_bvec2_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec2): void <cimport 'sfShader_setBvec2Uniform', nodecl> end
+function sfml.Shader.set_bvec3_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec3): void <cimport 'sfShader_setBvec3Uniform', nodecl> end
+function sfml.Shader.set_bvec4_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec4): void <cimport 'sfShader_setBvec4Uniform', nodecl> end
+function sfml.Shader.set_mat3_uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat3 <const>): void <cimport 'sfShader_setMat3Uniform', nodecl> end
+function sfml.Shader.set_mat4_uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat4 <const>): void <cimport 'sfShader_setMat4Uniform', nodecl> end
+function sfml.Shader.set_texture_uniform(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void <cimport 'sfShader_setTextureUniform', nodecl> end
+function sfml.Shader.set_current_texture_uniform(self: *sfml.Shader, name: cstring <const>): void <cimport 'sfShader_setCurrentTextureUniform', nodecl> end
+function sfml.Shader.set_float_uniform_array(self: *sfml.Shader, name: cstring <const>, scalarArray: *[0]float32, length: csize): void <cimport 'sfShader_setFloatUniformArray', nodecl> end
+function sfml.Shader.set_vec2_uniform_array(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec2, length: csize): void <cimport 'sfShader_setVec2UniformArray', nodecl> end
+function sfml.Shader.set_vec3_uniform_array(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec3, length: csize): void <cimport 'sfShader_setVec3UniformArray', nodecl> end
+function sfml.Shader.set_vec4_uniform_array(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec4, length: csize): void <cimport 'sfShader_setVec4UniformArray', nodecl> end
+function sfml.Shader.set_mat3_uniform_array(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat3, length: csize): void <cimport 'sfShader_setMat3UniformArray', nodecl> end
+function sfml.Shader.set_mat4_uniform_array(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat4, length: csize): void <cimport 'sfShader_setMat4UniformArray', nodecl> end
+function sfml.Shader.set_float_parameter(self: *sfml.Shader, name: cstring <const>, x: float32): void <cimport 'sfShader_setFloatParameter', nodecl> end
+function sfml.Shader.set_float2_parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32): void <cimport 'sfShader_setFloat2Parameter', nodecl> end
+function sfml.Shader.set_float3_parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32): void <cimport 'sfShader_setFloat3Parameter', nodecl> end
+function sfml.Shader.set_float4_parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32, w: float32): void <cimport 'sfShader_setFloat4Parameter', nodecl> end
+function sfml.Shader.set_vector2_parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector2f): void <cimport 'sfShader_setVector2Parameter', nodecl> end
+function sfml.Shader.set_vector3_parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector3f): void <cimport 'sfShader_setVector3Parameter', nodecl> end
+function sfml.Shader.set_color_parameter(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void <cimport 'sfShader_setColorParameter', nodecl> end
+function sfml.Shader.set_transform_parameter(self: *sfml.Shader, name: cstring <const>, transform: sfml.Transform): void <cimport 'sfShader_setTransformParameter', nodecl> end
+function sfml.Shader.set_texture_parameter(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void <cimport 'sfShader_setTextureParameter', nodecl> end
+function sfml.Shader.set_current_texture_parameter(self: *sfml.Shader, name: cstring <const>): void <cimport 'sfShader_setCurrentTextureParameter', nodecl> end
+function sfml.Shader.get_native_handle(self: *sfml.Shader <const>): cuint <cimport 'sfShader_getNativeHandle', nodecl> end
 function sfml.Shader.bind(self: *sfml.Shader <const>): void <cimport 'sfShader_bind', nodecl> end
 
-function sfml.Shader.isAvailable(): sfml.Bool <cimport 'sfShader_isAvailable', nodecl> end
-function sfml.Shader.isGeometryAvailable(): sfml.Bool <cimport 'sfShader_isGeometryAvailable', nodecl> end
+function sfml.Shader.is_available(): sfml.Bool <cimport 'sfShader_isAvailable', nodecl> end
+function sfml.Shader.is_geometry_available(): sfml.Bool <cimport 'sfShader_isGeometryAvailable', nodecl> end
 
 
 -- Shape
@@ -1583,36 +1583,36 @@ global sfml.ShapeGetPointCallback: type <cimport 'sfShapeGetPointCallback', node
 function sfml.Shape.create(getPointCount: sfml.ShapeGetPointCountCallback, getPoint: sfml.ShapeGetPointCallback, userData: pointer): *sfml.Shape <cimport 'sfShape_create', nodecl> end
 
 function sfml.Shape.destroy(self: *sfml.Shape): void <cimport 'sfShape_destroy', nodecl> end
-function sfml.Shape.setPosition(self: *sfml.Shape, position: sfml.Vector2f): void <cimport 'sfShape_setPosition', nodecl> end
-function sfml.Shape.setRotation(self: *sfml.Shape, angle: float32): void <cimport 'sfShape_setRotation', nodecl> end
-function sfml.Shape.setScale(self: *sfml.Shape, scale: sfml.Vector2f): void <cimport 'sfShape_setScale', nodecl> end
-function sfml.Shape.setOrigin(self: *sfml.Shape, origin: sfml.Vector2f): void <cimport 'sfShape_setOrigin', nodecl> end
-function sfml.Shape.getPosition(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getPosition', nodecl> end
-function sfml.Shape.getRotation(self: *sfml.Shape <const>): float32 <cimport 'sfShape_getRotation', nodecl> end
-function sfml.Shape.getScale(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getScale', nodecl> end
-function sfml.Shape.getOrigin(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getOrigin', nodecl> end
+function sfml.Shape.get_position(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getPosition', nodecl> end
+function sfml.Shape.set_position(self: *sfml.Shape, position: sfml.Vector2f): void <cimport 'sfShape_setPosition', nodecl> end
+function sfml.Shape.get_rotation(self: *sfml.Shape <const>): float32 <cimport 'sfShape_getRotation', nodecl> end
+function sfml.Shape.set_rotation(self: *sfml.Shape, angle: float32): void <cimport 'sfShape_setRotation', nodecl> end
+function sfml.Shape.get_scale(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getScale', nodecl> end
+function sfml.Shape.set_scale(self: *sfml.Shape, scale: sfml.Vector2f): void <cimport 'sfShape_setScale', nodecl> end
+function sfml.Shape.get_origin(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getOrigin', nodecl> end
+function sfml.Shape.set_origin(self: *sfml.Shape, origin: sfml.Vector2f): void <cimport 'sfShape_setOrigin', nodecl> end
+function sfml.Shape.get_size(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getSize', nodecl> end
+function sfml.Shape.set_size(self: *sfml.Shape, size: float32): void <cimport 'sfShape_setSize', nodecl> end
+function sfml.Shape.get_texture(self: *sfml.Shape <const>): *sfml.Texture <cimport 'sfShape_getTexture', nodecl> end
+function sfml.Shape.set_texture(self: *sfml.Shape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfShape_setTexture', nodecl> end
+function sfml.Shape.get_texture_rect(self: *sfml.Shape <const>): sfml.IntRect <cimport 'sfShape_getTextureRect', nodecl> end
+function sfml.Shape.set_texture_rect(self: *sfml.Shape, rect: sfml.IntRect): void <cimport 'sfShape_setTextureRect', nodecl> end
+function sfml.Shape.get_fill_color(self: *sfml.Shape <const>): sfml.Color <cimport 'sfShape_getFillColor', nodecl> end
+function sfml.Shape.set_fill_color(self: *sfml.Shape, color: sfml.Color): void <cimport 'sfShape_setFillColor', nodecl> end
+function sfml.Shape.get_outline_color(self: *sfml.Shape <const>): sfml.Color <cimport 'sfShape_getOutlineColor', nodecl> end
+function sfml.Shape.set_outline_color(self: *sfml.Shape, color: sfml.Color): void <cimport 'sfShape_setOutlineColor', nodecl> end
+function sfml.Shape.get_outline_thickness(self: *sfml.Shape <const>): float32 <cimport 'sfShape_getOutlineThickness', nodecl> end
+function sfml.Shape.set_outline_thickness(self: *sfml.Shape, thickness: float32): void <cimport 'sfShape_setOutlineThickness', nodecl> end
+function sfml.Shape.get_point_count(self: *sfml.Shape <const>): csize <cimport 'sfShape_getPointCount', nodecl> end
+function sfml.Shape.set_point_count(self: *sfml.Shape, count: csize): void <cimport 'sfShape_setPointCount', nodecl> end
 function sfml.Shape.move(self: *sfml.Shape, offset: sfml.Vector2f): void <cimport 'sfShape_move', nodecl> end
 function sfml.Shape.rotate(self: *sfml.Shape, angle: float32): void <cimport 'sfShape_rotate', nodecl> end
 function sfml.Shape.scale(self: *sfml.Shape, factors: sfml.Vector2f): void <cimport 'sfShape_scale', nodecl> end
-function sfml.Shape.getTransform(self: *sfml.Shape <const>): sfml.Transform <cimport 'sfShape_getTransform', nodecl> end
-function sfml.Shape.getInverseTransform(self: *sfml.Shape <const>): sfml.Transform <cimport 'sfShape_getInverseTransform', nodecl> end
-function sfml.Shape.setTexture(self: *sfml.Shape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void <cimport 'sfShape_setTexture', nodecl> end
-function sfml.Shape.setTextureRect(self: *sfml.Shape, rect: sfml.IntRect): void <cimport 'sfShape_setTextureRect', nodecl> end
-function sfml.Shape.setFillColor(self: *sfml.Shape, color: sfml.Color): void <cimport 'sfShape_setFillColor', nodecl> end
-function sfml.Shape.setOutlineColor(self: *sfml.Shape, color: sfml.Color): void <cimport 'sfShape_setOutlineColor', nodecl> end
-function sfml.Shape.setOutlineThickness(self: *sfml.Shape, thickness: float32): void <cimport 'sfShape_setOutlineThickness', nodecl> end
-function sfml.Shape.getTexture(self: *sfml.Shape <const>): *sfml.Texture <cimport 'sfShape_getTexture', nodecl> end
-function sfml.Shape.getTextureRect(self: *sfml.Shape <const>): sfml.IntRect <cimport 'sfShape_getTextureRect', nodecl> end
-function sfml.Shape.getFillColor(self: *sfml.Shape <const>): sfml.Color <cimport 'sfShape_getFillColor', nodecl> end
-function sfml.Shape.getOutlineColor(self: *sfml.Shape <const>): sfml.Color <cimport 'sfShape_getOutlineColor', nodecl> end
-function sfml.Shape.getOutlineThickness(self: *sfml.Shape <const>): float32 <cimport 'sfShape_getOutlineThickness', nodecl> end
-function sfml.Shape.getPointCount(self: *sfml.Shape <const>): csize <cimport 'sfShape_getPointCount', nodecl> end
-function sfml.Shape.getPoint(self: *sfml.Shape <const>, index: csize): sfml.Vector2f <cimport 'sfShape_getPoint', nodecl> end
-function sfml.Shape.setSize(self: *sfml.Shape, size: float32): void <cimport 'sfShape_setSize', nodecl> end
-function sfml.Shape.getSize(self: *sfml.Shape <const>): sfml.Vector2f <cimport 'sfShape_getSize', nodecl> end
-function sfml.Shape.setPointCount(self: *sfml.Shape, count: csize): void <cimport 'sfShape_setPointCount', nodecl> end
-function sfml.Shape.getLocalBounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getLocalBounds', nodecl> end
-function sfml.Shape.getGlobalBounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getGlobalBounds', nodecl> end
+function sfml.Shape.get_transform(self: *sfml.Shape <const>): sfml.Transform <cimport 'sfShape_getTransform', nodecl> end
+function sfml.Shape.get_inverse_transform(self: *sfml.Shape <const>): sfml.Transform <cimport 'sfShape_getInverseTransform', nodecl> end
+function sfml.Shape.get_point(self: *sfml.Shape <const>, index: csize): sfml.Vector2f <cimport 'sfShape_getPoint', nodecl> end
+function sfml.Shape.get_local_bounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getLocalBounds', nodecl> end
+function sfml.Shape.get_global_bounds(self: *sfml.Shape <const>): sfml.FloatRect <cimport 'sfShape_getGlobalBounds', nodecl> end
 function sfml.Shape.update(self: *sfml.Shape): void <cimport 'sfShape_update', nodecl> end
 
 
@@ -1621,27 +1621,27 @@ function sfml.Sprite.create(): *sfml.Sprite <cimport 'sfSprite_create', nodecl> 
 
 function sfml.Sprite.copy(self: *sfml.Sprite <const>): *sfml.Sprite <cimport 'sfSprite_copy', nodecl> end
 function sfml.Sprite.destroy(self: *sfml.Sprite): void <cimport 'sfSprite_destroy', nodecl> end
-function sfml.Sprite.setPosition(self: *sfml.Sprite, position: sfml.Vector2f): void <cimport 'sfSprite_setPosition', nodecl> end
-function sfml.Sprite.setRotation(self: *sfml.Sprite, angle: float32): void <cimport 'sfSprite_setRotation', nodecl> end
-function sfml.Sprite.setScale(self: *sfml.Sprite, scale: sfml.Vector2f): void <cimport 'sfSprite_setScale', nodecl> end
-function sfml.Sprite.setOrigin(self: *sfml.Sprite, origin: sfml.Vector2f): void <cimport 'sfSprite_setOrigin', nodecl> end
-function sfml.Sprite.getPosition(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getPosition', nodecl> end
-function sfml.Sprite.getRotation(self: *sfml.Sprite <const>): float32 <cimport 'sfSprite_getRotation', nodecl> end
-function sfml.Sprite.getScale(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getScale', nodecl> end
-function sfml.Sprite.getOrigin(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getOrigin', nodecl> end
+function sfml.Sprite.get_position(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getPosition', nodecl> end
+function sfml.Sprite.set_position(self: *sfml.Sprite, position: sfml.Vector2f): void <cimport 'sfSprite_setPosition', nodecl> end
+function sfml.Sprite.get_rotation(self: *sfml.Sprite <const>): float32 <cimport 'sfSprite_getRotation', nodecl> end
+function sfml.Sprite.set_rotation(self: *sfml.Sprite, angle: float32): void <cimport 'sfSprite_setRotation', nodecl> end
+function sfml.Sprite.get_scale(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getScale', nodecl> end
+function sfml.Sprite.set_scale(self: *sfml.Sprite, scale: sfml.Vector2f): void <cimport 'sfSprite_setScale', nodecl> end
+function sfml.Sprite.get_origin(self: *sfml.Sprite <const>): sfml.Vector2f <cimport 'sfSprite_getOrigin', nodecl> end
+function sfml.Sprite.set_origin(self: *sfml.Sprite, origin: sfml.Vector2f): void <cimport 'sfSprite_setOrigin', nodecl> end
+function sfml.Sprite.get_texture(self: *sfml.Sprite <const>): *sfml.Texture <cimport 'sfSprite_getTexture', nodecl> end
+function sfml.Sprite.set_texture(self: *sfml.Sprite, texture: *sfml.Texture, resetRect: sfml.Bool): void <cimport 'sfSprite_setTexture', nodecl> end
+function sfml.Sprite.get_texture_rect(self: *sfml.Sprite <const>): sfml.IntRect <cimport 'sfSprite_getTextureRect', nodecl> end
+function sfml.Sprite.set_texture_rect(self: *sfml.Sprite, rectangle: sfml.IntRect): void <cimport 'sfSprite_setTextureRect', nodecl> end
+function sfml.Sprite.get_color(self: *sfml.Sprite <const>): sfml.Color <cimport 'sfSprite_getColor', nodecl> end
+function sfml.Sprite.set_color(self: *sfml.Sprite, color: sfml.Color): void <cimport 'sfSprite_setColor', nodecl> end
 function sfml.Sprite.move(self: *sfml.Sprite, offset: sfml.Vector2f): void <cimport 'sfSprite_move', nodecl> end
 function sfml.Sprite.rotate(self: *sfml.Sprite, angle: float32): void <cimport 'sfSprite_rotate', nodecl> end
 function sfml.Sprite.scale(self: *sfml.Sprite, factors: sfml.Vector2f): void <cimport 'sfSprite_scale', nodecl> end
-function sfml.Sprite.getTransform(self: *sfml.Sprite <const>): sfml.Transform <cimport 'sfSprite_getTransform', nodecl> end
-function sfml.Sprite.getInverseTransform(self: *sfml.Sprite <const>): sfml.Transform <cimport 'sfSprite_getInverseTransform', nodecl> end
-function sfml.Sprite.setTexture(self: *sfml.Sprite, texture: *sfml.Texture, resetRect: sfml.Bool): void <cimport 'sfSprite_setTexture', nodecl> end
-function sfml.Sprite.setTextureRect(self: *sfml.Sprite, rectangle: sfml.IntRect): void <cimport 'sfSprite_setTextureRect', nodecl> end
-function sfml.Sprite.setColor(self: *sfml.Sprite, color: sfml.Color): void <cimport 'sfSprite_setColor', nodecl> end
-function sfml.Sprite.getTexture(self: *sfml.Sprite <const>): *sfml.Texture <cimport 'sfSprite_getTexture', nodecl> end
-function sfml.Sprite.getTextureRect(self: *sfml.Sprite <const>): sfml.IntRect <cimport 'sfSprite_getTextureRect', nodecl> end
-function sfml.Sprite.getColor(self: *sfml.Sprite <const>): sfml.Color <cimport 'sfSprite_getColor', nodecl> end
-function sfml.Sprite.getLocalBounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getLocalBounds', nodecl> end
-function sfml.Sprite.getGlobalBounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getGlobalBounds', nodecl> end
+function sfml.Sprite.get_transform(self: *sfml.Sprite <const>): sfml.Transform <cimport 'sfSprite_getTransform', nodecl> end
+function sfml.Sprite.get_inverse_transform(self: *sfml.Sprite <const>): sfml.Transform <cimport 'sfSprite_getInverseTransform', nodecl> end
+function sfml.Sprite.get_local_bounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getLocalBounds', nodecl> end
+function sfml.Sprite.get_global_bounds(self: *sfml.Sprite <const>): sfml.FloatRect <cimport 'sfSprite_getGlobalBounds', nodecl> end
 
 
 -- Text
@@ -1657,72 +1657,72 @@ function sfml.Text.create(): *sfml.Text <cimport 'sfText_create', nodecl> end
 
 function sfml.Text.copy(self: *sfml.Text <const>): *sfml.Text <cimport 'sfText_copy', nodecl> end
 function sfml.Text.destroy(self: *sfml.Text): void <cimport 'sfText_destroy', nodecl> end
-function sfml.Text.setPosition(self: *sfml.Text, position: sfml.Vector2f): void <cimport 'sfText_setPosition', nodecl> end
-function sfml.Text.setRotation(self: *sfml.Text, angle: float32): void <cimport 'sfText_setRotation', nodecl> end
-function sfml.Text.setScale(self: *sfml.Text, scale: sfml.Vector2f): void <cimport 'sfText_setScale', nodecl> end
-function sfml.Text.setOrigin(self: *sfml.Text, origin: sfml.Vector2f): void <cimport 'sfText_setOrigin', nodecl> end
-function sfml.Text.getPosition(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getPosition', nodecl> end
-function sfml.Text.getRotation(self: *sfml.Text <const>): float32 <cimport 'sfText_getRotation', nodecl> end
-function sfml.Text.getScale(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getScale', nodecl> end
-function sfml.Text.getOrigin(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getOrigin', nodecl> end
+function sfml.Text.get_position(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getPosition', nodecl> end
+function sfml.Text.set_position(self: *sfml.Text, position: sfml.Vector2f): void <cimport 'sfText_setPosition', nodecl> end
+function sfml.Text.get_rotation(self: *sfml.Text <const>): float32 <cimport 'sfText_getRotation', nodecl> end
+function sfml.Text.set_rotation(self: *sfml.Text, angle: float32): void <cimport 'sfText_setRotation', nodecl> end
+function sfml.Text.get_scale(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getScale', nodecl> end
+function sfml.Text.set_scale(self: *sfml.Text, scale: sfml.Vector2f): void <cimport 'sfText_setScale', nodecl> end
+function sfml.Text.get_origin(self: *sfml.Text <const>): sfml.Vector2f <cimport 'sfText_getOrigin', nodecl> end
+function sfml.Text.set_origin(self: *sfml.Text, origin: sfml.Vector2f): void <cimport 'sfText_setOrigin', nodecl> end
+function sfml.Text.get_string(self: *sfml.Text <const>): cstring <cimport 'sfText_getString', nodecl> end
+function sfml.Text.set_string(self: *sfml.Text, string: cstring <const>): void <cimport 'sfText_setString', nodecl> end
+function sfml.Text.get_unicod_string(self: *sfml.Text <const>): *sfml.Uint32 <cimport 'sfText_getUnicodeString', nodecl> end
+function sfml.Text.set_unicod_string(self: *sfml.Text, string: *sfml.Uint32 <const>): void <cimport 'sfText_setUnicodeString', nodecl> end
+function sfml.Text.get_font(self: *sfml.Text <const>): *sfml.Font <cimport 'sfText_getFont', nodecl> end
+function sfml.Text.set_font(self: *sfml.Text, font: *sfml.Font <const>): void <cimport 'sfText_setFont', nodecl> end
+function sfml.Text.get_character_size(self: *sfml.Text <const>): cuint <cimport 'sfText_getCharacterSize', nodecl> end
+function sfml.Text.set_character_size(self: *sfml.Text, size: cuint): void <cimport 'sfText_setCharacterSize', nodecl> end
+function sfml.Text.get_line_spacing(self: *sfml.Text <const>): float32 <cimport 'sfText_getLineSpacing', nodecl> end
+function sfml.Text.set_line_spacing(self: *sfml.Text, spacingFactor: float32): void <cimport 'sfText_setLineSpacing', nodecl> end
+function sfml.Text.get_letter_spacing(self: *sfml.Text <const>): float32 <cimport 'sfText_getLetterSpacing', nodecl> end
+function sfml.Text.set_letter_spacing(self: *sfml.Text, spacingFactor: float32): void <cimport 'sfText_setLetterSpacing', nodecl> end
+function sfml.Text.get_style(self: *sfml.Text <const>): sfml.Uint32 <cimport 'sfText_getStyle', nodecl> end
+function sfml.Text.set_style(self: *sfml.Text, style: sfml.Uint32): void <cimport 'sfText_setStyle', nodecl> end
+function sfml.Text.get_color(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getColor', nodecl> end
+function sfml.Text.set_color(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setColor', nodecl> end
+function sfml.Text.get_fill_color(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getFillColor', nodecl> end
+function sfml.Text.set_fill_color(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setFillColor', nodecl> end
+function sfml.Text.get_outline_color(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getOutlineColor', nodecl> end
+function sfml.Text.set_outline_color(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setOutlineColor', nodecl> end
+function sfml.Text.get_outline_thickness(self: *sfml.Text <const>): float32 <cimport 'sfText_getOutlineThickness', nodecl> end
+function sfml.Text.set_outline_thickness(self: *sfml.Text, thickness: float32): void <cimport 'sfText_setOutlineThickness', nodecl> end
 function sfml.Text.move(self: *sfml.Text, offset: sfml.Vector2f): void <cimport 'sfText_move', nodecl> end
 function sfml.Text.rotate(self: *sfml.Text, angle: float32): void <cimport 'sfText_rotate', nodecl> end
 function sfml.Text.scale(self: *sfml.Text, factors: sfml.Vector2f): void <cimport 'sfText_scale', nodecl> end
-function sfml.Text.getTransform(self: *sfml.Text <const>): sfml.Transform <cimport 'sfText_getTransform', nodecl> end
-function sfml.Text.getInverseTransform(self: *sfml.Text <const>): sfml.Transform <cimport 'sfText_getInverseTransform', nodecl> end
-function sfml.Text.setString(self: *sfml.Text, string: cstring <const>): void <cimport 'sfText_setString', nodecl> end
-function sfml.Text.setUnicodeString(self: *sfml.Text, string: *sfml.Uint32 <const>): void <cimport 'sfText_setUnicodeString', nodecl> end
-function sfml.Text.setFont(self: *sfml.Text, font: *sfml.Font <const>): void <cimport 'sfText_setFont', nodecl> end
-function sfml.Text.setCharacterSize(self: *sfml.Text, size: cuint): void <cimport 'sfText_setCharacterSize', nodecl> end
-function sfml.Text.setLineSpacing(self: *sfml.Text, spacingFactor: float32): void <cimport 'sfText_setLineSpacing', nodecl> end
-function sfml.Text.setLetterSpacing(self: *sfml.Text, spacingFactor: float32): void <cimport 'sfText_setLetterSpacing', nodecl> end
-function sfml.Text.setStyle(self: *sfml.Text, style: sfml.Uint32): void <cimport 'sfText_setStyle', nodecl> end
-function sfml.Text.setColor(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setColor', nodecl> end
-function sfml.Text.setFillColor(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setFillColor', nodecl> end
-function sfml.Text.setOutlineColor(self: *sfml.Text, color: sfml.Color): void <cimport 'sfText_setOutlineColor', nodecl> end
-function sfml.Text.setOutlineThickness(self: *sfml.Text, thickness: float32): void <cimport 'sfText_setOutlineThickness', nodecl> end
-function sfml.Text.getString(self: *sfml.Text <const>): cstring <cimport 'sfText_getString', nodecl> end
-function sfml.Text.getUnicodeString(self: *sfml.Text <const>): *sfml.Uint32 <cimport 'sfText_getUnicodeString', nodecl> end
-function sfml.Text.getFont(self: *sfml.Text <const>): *sfml.Font <cimport 'sfText_getFont', nodecl> end
-function sfml.Text.getCharacterSize(self: *sfml.Text <const>): cuint <cimport 'sfText_getCharacterSize', nodecl> end
-function sfml.Text.getLineSpacing(self: *sfml.Text <const>): float32 <cimport 'sfText_getLineSpacing', nodecl> end
-function sfml.Text.getLetterSpacing(self: *sfml.Text <const>): float32 <cimport 'sfText_getLetterSpacing', nodecl> end
-function sfml.Text.getStyle(self: *sfml.Text <const>): sfml.Uint32 <cimport 'sfText_getStyle', nodecl> end
-function sfml.Text.getColor(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getColor', nodecl> end
-function sfml.Text.getFillColor(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getFillColor', nodecl> end
-function sfml.Text.getOutlineColor(self: *sfml.Text <const>): sfml.Color <cimport 'sfText_getOutlineColor', nodecl> end
-function sfml.Text.getOutlineThickness(self: *sfml.Text <const>): float32 <cimport 'sfText_getOutlineThickness', nodecl> end
+function sfml.Text.get_transform(self: *sfml.Text <const>): sfml.Transform <cimport 'sfText_getTransform', nodecl> end
+function sfml.Text.get_inverse_transform(self: *sfml.Text <const>): sfml.Transform <cimport 'sfText_getInverseTransform', nodecl> end
 
-function sfml.Text.findCharacterPos(text: cstring <const>, index: csize): sfml.Vector2f <cimport 'sfText_findCharacterPos', nodecl> end
-function sfml.Text.getLocalBounds(text: cstring <const>): sfml.FloatRect <cimport 'sfText_getLocalBounds', nodecl> end
-function sfml.Text.getGlobalBounds(text: cstring <const>): sfml.FloatRect <cimport '', nodecl> end
+function sfml.Text.find_character_pos(text: cstring <const>, index: csize): sfml.Vector2f <cimport 'sfText_findCharacterPos', nodecl> end
+function sfml.Text.get_local_bounds(text: cstring <const>): sfml.FloatRect <cimport 'sfText_getLocalBounds', nodecl> end
+function sfml.Text.get_global_bounds(text: cstring <const>): sfml.FloatRect <cimport '', nodecl> end
 
 
 -- Texture
 function sfml.Texture.create(width: cuint, height: cuint): *sfml.Texture <cimport 'sfTexture_create', nodecl> end
-function sfml.Texture.createFromFile(filename: cstring <const>, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromFile', nodecl> end
-function sfml.Texture.createFromMemory(data: pointer <const>, sizeInBytes: csize, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromMemory', nodecl> end
-function sfml.Texture.createFromStream(stream: *sfml.InputStream, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromStream', nodecl> end
-function sfml.Texture.createFromImage(image: *sfml.Image <const>, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromImage', nodecl> end
+function sfml.Texture.create_from_file(filename: cstring <const>, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromFile', nodecl> end
+function sfml.Texture.create_from_memory(data: pointer <const>, sizeInBytes: csize, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromMemory', nodecl> end
+function sfml.Texture.create_from_stream(stream: *sfml.InputStream, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromStream', nodecl> end
+function sfml.Texture.create_from_image(image: *sfml.Image <const>, area: *sfml.IntRect <const>): *sfml.Texture <cimport 'sfTexture_createFromImage', nodecl> end
 
 function sfml.Texture.copy(self: *sfml.Texture <const>): *sfml.Texture <cimport 'sfTexture_copy', nodecl> end
 function sfml.Texture.destroy(self: *sfml.Texture): void <cimport 'sfTexture_destroy', nodecl> end
 function sfml.Texture.getSize(self: *sfml.Texture <const>): sfml.Vector2u <cimport 'sfTexture_getSize', nodecl> end
-function sfml.Texture.copyToImage(self: *sfml.Texture <const>): *sfml.Image <cimport 'sfTexture_copyToImage', nodecl> end
-function sfml.Texture.updateFromPixels(self: *sfml.Texture, pixels: *[0]sfml.Uint8 <const>, width: cuint, height: cuint, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromPixels', nodecl> end
-function sfml.Texture.updateFromImage(self: *sfml.Texture, source: *sfml.Texture, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromImage', nodecl> end
-function sfml.Texture.updateFromWindow(self: *sfml.Texture, window: *sfml.Window <const>, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromWindow', nodecl> end
-function sfml.Texture.updateFromRenderWindow(self: *sfml.Texture, renderWindow: *sfml.RenderWindow <const>, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromRenderWindow', nodecl> end
-function sfml.Texture.setSmooth(self: *sfml.Texture, smooth: sfml.Bool): void <cimport 'sfTexture_setSmooth', nodecl> end
-function sfml.Texture.isSmooth(self: *sfml.Texture <const>): sfml.Bool <cimport 'sfTexture_isSmooth', nodecl> end
-function sfml.Texture.setSrgb(self: *sfml.Texture, sRgb: sfml.Bool): void <cimport 'sfTexture_setSrgb', nodecl> end
-function sfml.Texture.isSrgb(self: *sfml.Texture <const>): sfml.Bool <cimport 'sfTexture_isSrgb', nodecl> end
-function sfml.Texture.setRepeated(self: *sfml.Texture, repeated: sfml.Bool): void <cimport 'sfTexture_setRepeated', nodecl> end
-function sfml.Texture.isRepeated(self: *sfml.Texture <const>): sfml.Bool <cimport 'sfTexture_isRepeated', nodecl> end
-function sfml.Texture.generateMipmap(self: *sfml.Texture): sfml.Bool <cimport 'sfTexture_generateMipmap', nodecl> end
+function sfml.Texture.copy_to_image(self: *sfml.Texture <const>): *sfml.Image <cimport 'sfTexture_copyToImage', nodecl> end
+function sfml.Texture.update_from_pixels(self: *sfml.Texture, pixels: *[0]sfml.Uint8 <const>, width: cuint, height: cuint, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromPixels', nodecl> end
+function sfml.Texture.update_from_image(self: *sfml.Texture, source: *sfml.Texture, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromImage', nodecl> end
+function sfml.Texture.update_from_window(self: *sfml.Texture, window: *sfml.Window <const>, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromWindow', nodecl> end
+function sfml.Texture.update_from_render_window(self: *sfml.Texture, renderWindow: *sfml.RenderWindow <const>, x: cuint, y: cuint): void <cimport 'sfTexture_updateFromRenderWindow', nodecl> end
+function sfml.Texture.is_smooth(self: *sfml.Texture <const>): sfml.Bool <cimport 'sfTexture_isSmooth', nodecl> end
+function sfml.Texture.set_smooth(self: *sfml.Texture, smooth: sfml.Bool): void <cimport 'sfTexture_setSmooth', nodecl> end
+function sfml.Texture.is_srgb(self: *sfml.Texture <const>): sfml.Bool <cimport 'sfTexture_isSrgb', nodecl> end
+function sfml.Texture.set_srgb(self: *sfml.Texture, sRgb: sfml.Bool): void <cimport 'sfTexture_setSrgb', nodecl> end
+function sfml.Texture.is_repeated(self: *sfml.Texture <const>): sfml.Bool <cimport 'sfTexture_isRepeated', nodecl> end
+function sfml.Texture.set_repeated(self: *sfml.Texture, repeated: sfml.Bool): void <cimport 'sfTexture_setRepeated', nodecl> end
+function sfml.Texture.generate_mipmap(self: *sfml.Texture): sfml.Bool <cimport 'sfTexture_generateMipmap', nodecl> end
 function sfml.Texture.swap(self: *sfml.Texture, right: *sfml.Texture): void <cimport 'sfTexture_swap', nodecl> end
-function sfml.Texture.getNativeHandle(self: *sfml.Texture <const>): cuint <cimport 'sfTexture_getNativeHandle', nodecl> end
-function sfml.Texture.getMaximumSize(): cuint <cimport 'sfTexture_getMaximumSize', nodecl> end
+function sfml.Texture.get_native_handle(self: *sfml.Texture <const>): cuint <cimport 'sfTexture_getNativeHandle', nodecl> end
+function sfml.Texture.get_maximum_size(): cuint <cimport 'sfTexture_getMaximumSize', nodecl> end
 
 
 -- Vertex Buffer
@@ -1736,15 +1736,15 @@ function sfml.VertexBuffer.create(vertexCount: cuint, type: sfml.PrimitiveType, 
 
 function sfml.VertexBuffer.copy(self: *sfml.VertexBuffer <const>): *sfml.VertexBuffer <cimport 'sfVertexBuffer_copy', nodecl> end
 function sfml.VertexBuffer.destroy(self: *sfml.VertexBuffer): void <cimport 'sfVertexBuffer_destroy', nodecl> end
-function sfml.VertexBuffer.getVertexCount(self: *sfml.VertexBuffer <const>): cuint <cimport 'sfVertexBuffer_getVertexCount', nodecl> end
+function sfml.VertexBuffer.get_vertex_count(self: *sfml.VertexBuffer <const>): cuint <cimport 'sfVertexBuffer_getVertexCount', nodecl> end
 function sfml.VertexBuffer.update(self: *sfml.VertexBuffer , vertices: *[0]sfml.Vertex <const>, vertexCount: cuint, offset: cuint): sfml.Bool <cimport 'sfVertexBuffer_update', nodecl> end
-function sfml.VertexBuffer.updateFromVertexBuffer(self: *sfml.VertexBuffer, other: *sfml.VertexBuffer <const>): sfml.Bool <cimport 'sfVertexBuffer_updateFromVertexBuffer', nodecl> end
+function sfml.VertexBuffer.update_from_vertex_buffer(self: *sfml.VertexBuffer, other: *sfml.VertexBuffer <const>): sfml.Bool <cimport 'sfVertexBuffer_updateFromVertexBuffer', nodecl> end
 function sfml.VertexBuffer.swap(self: *sfml.VertexBuffer, right: *sfml.VertexBuffer): void <cimport 'sfVertexBuffer_swap', nodecl> end
-function sfml.VertexBuffer.getNativeHandle(self: *sfml.VertexBuffer): cuint <cimport 'sfVertexBuffer_getNativeHandle', nodecl> end
-function sfml.VertexBuffer.setPrimitiveType(self: *sfml.VertexBuffer, type: sfml.PrimitiveType): void <cimport 'sfVertexBuffer_setPrimitiveType', nodecl> end
-function sfml.VertexBuffer.getPrimitiveType(self: *sfml.VertexBuffer <const>): sfml.PrimitiveType <cimport 'sfVertexBuffer_getPrimitiveType', nodecl> end
-function sfml.VertexBuffer.setUsage(self: *sfml.VertexBuffer, usage: sfml.VertexBufferUsage): void <cimport 'sfVertexBuffer_setUsage', nodecl> end
-function sfml.VertexBuffer.getUsage(self: *sfml.VertexBuffer <const>): sfml.VertexBufferUsage <cimport 'sfVertexBuffer_getUsage', nodecl> end
+function sfml.VertexBuffer.get_native_handle(self: *sfml.VertexBuffer): cuint <cimport 'sfVertexBuffer_getNativeHandle', nodecl> end
+function sfml.VertexBuffer.get_primitive_type(self: *sfml.VertexBuffer <const>): sfml.PrimitiveType <cimport 'sfVertexBuffer_getPrimitiveType', nodecl> end
+function sfml.VertexBuffer.set_primitive_type(self: *sfml.VertexBuffer, type: sfml.PrimitiveType): void <cimport 'sfVertexBuffer_setPrimitiveType', nodecl> end
+function sfml.VertexBuffer.get_usage(self: *sfml.VertexBuffer <const>): sfml.VertexBufferUsage <cimport 'sfVertexBuffer_getUsage', nodecl> end
+function sfml.VertexBuffer.set_usage(self: *sfml.VertexBuffer, usage: sfml.VertexBufferUsage): void <cimport 'sfVertexBuffer_setUsage', nodecl> end
 function sfml.VertexBuffer.bind(self: *sfml.VertexBuffer <const>): void <cimport 'sfVertexBuffer_bind', nodecl> end
 
-function sfml.VertexBuffer.isAvailable(): sfml.Bool <cimport 'sfVertexBuffer_isAvailable', nodecl> end
+function sfml.VertexBuffer.is_available(): sfml.Bool <cimport 'sfVertexBuffer_isAvailable', nodecl> end
