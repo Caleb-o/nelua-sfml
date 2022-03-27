@@ -13,7 +13,7 @@ CSFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, in
 * CSFML 2.5.1
 * Nelua (Currently tested with latest main)
 
-## [Documentation](https://github.com/Caleb-o/nelua-sfml/blob/main/docs/README.md)
+## [Documentation](https://github.com/Caleb-o/nelua-sfml/blob/main/docs/tableofcontents.md)
 
 ## Examples
 * [Render Window](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/render_window.nelua)

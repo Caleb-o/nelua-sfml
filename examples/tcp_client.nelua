@@ -1,9 +1,8 @@
 require 'sfml'
 require 'string'
 
-local ip: [16]uint8 = { '1'_uint8, '2'_uint8, '7'_uint8, '.'_uint8, '0'_uint8, '.'_uint8, '0'_uint8, '.'_uint8, '1'_uint8 }
-
-local address = (@sfml.IpAddress){ ip }
+local ip = "127.0.0.1"
+local address = (@sfml.IpAddress){ $(@*[16]byte)(ip.data) }
 local port = 8080
 local expected = 19
 

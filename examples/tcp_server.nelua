@@ -1,9 +1,8 @@
 require 'sfml'
 require 'string'
 
-local ip: [16]byte = { '1', '2', '7', '.', '0', '.', '0', '.', '1' }
-
-local address = (@sfml.IpAddress){ ip.data }
+local ip = "127.0.0.1"
+local address = (@sfml.IpAddress){ $(@*[16]byte)(ip.data) }
 local port = 8080
 local message = "Hello from server!\0"
 
