@@ -10,9 +10,8 @@
 	* `InputStreamGetSizeFunc`
 * [Mutex](#mutex) - [Doc](https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Mutex.php)
 * [Thread](#thread) - [Doc](https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Thread.php)
-
-
-## Functions
+* [Vector2 Doc](https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Vector2.php)
+* [Vector3 Doc](https://www.sfml-dev.org/documentation/2.5.1/classsf_1_1Vector3.php)
 
 
 ### Time
@@ -101,7 +100,7 @@ mutex:unlock()
 [Back to Top](#system)
 
 
-### Threads
+### Thread
 
 `create(f: function(pointer): void, userdata: pointer) : *sfml.Thread`
 
