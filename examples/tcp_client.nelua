@@ -1,0 +1,32 @@
+require 'sfml'
+require 'string'
+
+local ip: [16]uint8 = { '1'_uint8, '2'_uint8, '7'_uint8, '.'_uint8, '0'_uint8, '.'_uint8, '0'_uint8, '.'_uint8, '1'_uint8 }
+
+local address = (@sfml.IpAddress){ ip }
+local port = 8080
+local expected = 19
+
+do print '# TCP Server'
+
+	local client = sfml.TcpSocket.create()
+	
+	if client:connect(address, port, sfml.Time.seconds(2)) ~= sfml.SocketStatus.Done then
+		print('Could not connect to the server!')
+		goto done
+	end
+
+	print 'Connected'
+
+	local message = string.create(expected)
+	local size: csize
+	if client:receive(message.data, expected, &size) ~= sfml.SocketStatus.Done then
+		print('Could not receive message')
+		goto done
+	end
+	
+	print('Message:', string.copy(message), size)
+
+	::done::
+	print 'Done!'
+end

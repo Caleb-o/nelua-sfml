@@ -141,7 +141,7 @@ global sfml.UdpSocket: type <cimport 'sfUdpSocket', nodecl, forwarddecl> = @reco
 
 -- Network: IpAddress
 global sfml.IpAddress: type <cimport 'sfIpAddress', nodecl> = @record {
-  address: [16]cchar
+  address: [16]uint8
 }
 
 global sfml.IpAddress.None: sfml.IpAddress <cimport 'sfIpAddress_None', nodecl, const>
