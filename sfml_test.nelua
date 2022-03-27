@@ -43,14 +43,14 @@ do print '\n# Vectors'
 	print(v3.x, v3.y, v3.z)
 end
 
-do print '# Window'
+do print '\n# Window'
 	local window = sfml.Window.create((@sfml.VideoMode){720, 480, 32}, "Hello", sfml.DefaultStyle, nilptr)
 	defer window:destroy() end
 
 	print('Open?', window:is_open())
 end
 
-do print '# Misc'
+do print '\n# Misc'
 	local m = sfml.MouseButton.Left
 	print(m)
 end

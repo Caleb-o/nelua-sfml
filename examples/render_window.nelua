@@ -1,0 +1,25 @@
+require 'sfml'
+
+do
+	-- Create a new render window
+	local rw = sfml.RenderWindow.create((@sfml.VideoMode){720, 480, 32}, "Hello, World!", sfml.DefaultStyle, nilptr)
+
+	-- Assert if the window failed
+	assert(rw ~= nilptr)
+	defer rw:destroy() end
+		
+	local evt: sfml.Event
+
+	while rw:is_open() == 1 do
+		while rw:poll_event(&evt) == 1 do
+			if evt.type == sfml.EventType.Closed then
+				rw:close()
+			end
+		end
+
+		rw:clear(sfml.Black)
+		rw:display()
+	end
+
+	print 'Done!'
+end
