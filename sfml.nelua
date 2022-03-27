@@ -89,7 +89,7 @@ function sfml.Mutex.destroy(self: *sfml.Mutex): void <cimport 'sfMutex_destroy',
 function sfml.Mutex.lock(self: *sfml.Mutex): void <cimport 'sfMutex_lock', nodecl> end
 function sfml.Mutex.unlock(self: *sfml.Mutex): void <cimport 'sfMutex_unlock', nodecl> end
 
-function sfml.Time.Sleep(duration: sfml.Time): void <cimport 'sfSleep', nodecl> end
+function sfml.Time.sleep(duration: sfml.Time): void <cimport 'sfSleep', nodecl> end
 
 -- Thread
 global sfml.Thread: type <cimport 'sfThread', nodecl, forwarddecl> = @record {}
