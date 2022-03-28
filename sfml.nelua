@@ -1748,3 +1748,6 @@ function sfml.VertexBuffer.set_usage(self: *sfml.VertexBuffer, usage: sfml.Verte
 function sfml.VertexBuffer.bind(self: *sfml.VertexBuffer <const>): void <cimport 'sfVertexBuffer_bind', nodecl> end
 
 function sfml.VertexBuffer.is_available(): sfml.Bool <cimport 'sfVertexBuffer_isAvailable', nodecl> end
+
+-- Return the module
+return sfml
