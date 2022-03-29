@@ -1423,7 +1423,7 @@ function sfml.RectangleShape.set_outline_color(self: *sfml.RectangleShape, color
 function sfml.RectangleShape.get_outline_thickness(self: *sfml.RectangleShape <const>): float32 <cimport 'sfRectangleShape_getOutlineThickness', nodecl> end
 function sfml.RectangleShape.set_outline_thickness(self: *sfml.RectangleShape, thickness: float32): void <cimport 'sfRectangleShape_setOutlineThickness', nodecl> end
 function sfml.RectangleShape.get_size(self: *sfml.RectangleShape <const>): sfml.Vector2f <cimport 'sfRectangleShape_getSize', nodecl> end
-function sfml.RectangleShape.set_size(self: *sfml.RectangleShape, size: float32): void <cimport 'sfRectangleShape_setSize', nodecl> end
+function sfml.RectangleShape.set_size(self: *sfml.RectangleShape, size: sfml.Vector2f): void <cimport 'sfRectangleShape_setSize', nodecl> end
 function sfml.RectangleShape.get_point_count(self: *sfml.RectangleShape <const>): csize <cimport 'sfRectangleShape_getPointCount', nodecl> end
 function sfml.RectangleShape.set_point_count(self: *sfml.RectangleShape, count: csize): void <cimport 'sfRectangleShape_setPointCount', nodecl> end
 function sfml.RectangleShape.move(self: *sfml.RectangleShape, offset: sfml.Vector2f): void <cimport 'sfRectangleShape_move', nodecl> end
