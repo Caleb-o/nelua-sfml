@@ -20,3 +20,4 @@ CSFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, in
 * [Sprite Drawing](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/sprite.nelua)
 * [TCP Client](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/tcp_client.nelua)
 * [TCP Server](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/tcp_server.nelua)
+* [Conway's Game of Life](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/game_of_life.nelua)

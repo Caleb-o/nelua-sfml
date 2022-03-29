@@ -1,0 +1,151 @@
+--[[
+	This is an example based on Conway's Game of Life found here:
+	https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life
+]]
+
+require 'sfml'
+require 'math' -- For random numbers
+require 'memory'
+require 'allocators.default'
+
+
+-- Record to hold our Cell state
+local Cell = @record {
+	alive: boolean,
+	alive_next: boolean,
+	gfx: *sfml.RectangleShape,
+}
+
+local WINDOW_SIZE: integer <comptime> = 640
+
+-- Cell settings (These can be tweaked)
+local CELL_SIZE: integer <comptime> = 8 -- Should be a power of 2
+local CELL_CHANCE: integer <comptime> = 15 -- Chance for cell to be alive
+local CELL_COLOUR: sfml.Color = sfml.White
+
+-- Auto cell settings
+local COUNT_N: integer <comptime> = WINDOW_SIZE // CELL_SIZE -- Amount of cells to draw in X/Y positions
+local CELL_COUNT: integer <comptime> = COUNT_N * COUNT_N -- Amount of cells
+
+-- Cell storage (This is a little better for performance, since it's a single contiguous block)
+local cells: [CELL_COUNT]*Cell
+
+
+local function init_cells(): void
+	-- Temporary variables
+	for x = 0, <COUNT_N do
+		for y = 0, <COUNT_N do
+			local rect = sfml.RectangleShape.create()
+			
+			rect:set_fill_color(CELL_COLOUR)
+			rect:set_size((@sfml.Vector2f){CELL_SIZE, CELL_SIZE})
+			rect:set_position((@sfml.Vector2f){x * CELL_SIZE, y * CELL_SIZE})
+			
+			local is_alive = math.random(100) < CELL_CHANCE
+
+			-- Construct a heap allocated cell
+			local cell = default_allocator:new(@Cell)
+			cell.alive = is_alive
+			cell.alive_next = is_alive
+			cell.gfx = rect
+
+			cells[x + y * COUNT_N] = cell
+		end
+	end
+end
+
+
+-- Check live neighbours of a cell
+local function live_neighbours(cellX: integer, cellY: integer): integer
+	local live_count: integer = 0
+	
+	-- Helper function (Have to pass extra values, since closures don't exist)
+	local function add(x: integer, y: integer, live_count: *integer): void
+		if x == COUNT_N then x = 0 elseif x == -1 then x = COUNT_N - 1 end
+		if y == COUNT_N then y = 0 elseif y == -1 then y = COUNT_N - 1 end
+
+		if cells[x + y * COUNT_N].alive then
+			$live_count = $live_count + 1
+		end
+	end
+
+	-- Check neighbours
+	add(cellX - 1, cellY, &live_count)
+	add(cellX + 1, cellY, &live_count)
+	add(cellX, cellY + 1, &live_count)
+	add(cellX, cellY - 1, &live_count)
+	add(cellX - 1, cellY + 1, &live_count)
+	add(cellX + 1, cellY + 1, &live_count)
+	add(cellX - 1, cellY - 1, &live_count)
+	add(cellX + 1, cellY - 1, &live_count)
+
+	return live_count
+end
+
+
+-- Check state of cell
+local function check_state(cellX: integer, cellY: integer): void
+	local cell: *Cell = cells[cellX + cellY * COUNT_N]
+
+	cell.alive, cell.alive_next = cell.alive_next, false
+
+	local live_count = live_neighbours(cellX, cellY)
+
+	-- Set next alive status
+	if cell.alive then
+		switch live_count do
+		case 0, 1 then
+			cell.alive_next = false
+		case 2, 3 then
+			cell.alive_next = true
+		else
+			cell.alive_next = false
+		end
+	else
+		if live_count == 3 then
+			cell.alive_next = true
+		end
+	end
+end
+
+
+do print '# Game of Life'
+	-- Initialise our cells
+	init_cells()
+
+	-- Create a new render window
+	local rw = sfml.RenderWindow.create((@sfml.VideoMode){WINDOW_SIZE, WINDOW_SIZE, 32}, 'Conways Game of Life', sfml.DefaultStyle, nilptr)
+	rw:set_framerate_limit(16)
+
+	-- Assert if the window failed
+	assert(rw ~= nilptr, "Failed to create a window")
+	defer rw:destroy() end
+		
+	local evt: sfml.Event
+
+	while rw:is_open() do
+		while rw:poll_event(&evt) do
+			if evt.type == sfml.EventType.Closed then
+				rw:close()
+			end
+		end
+
+		-- Update cells
+		for c = 0, < CELL_COUNT do
+			check_state(c % COUNT_N, c // COUNT_N)
+		end
+
+		rw:clear(sfml.Black)
+
+		-- Draw each cell if it's alive
+		for i = 0, < CELL_COUNT do
+			if cells[i].alive then
+				rw:draw_rectangle_shape(cells[i].gfx, nilptr)
+			end
+		end
+
+		rw:display()
+	end
+
+	print 'Done!'
+end
