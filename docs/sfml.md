@@ -2,7 +2,7 @@
 This is a binding of the CSFML library
 ### sfml
 
-```nelua
+```lua
 global sfml = @record{}
 ```
 
@@ -10,7 +10,7 @@ global sfml = @record{}
 
 ### sfml.VERSION_MAJOR
 
-```nelua
+```lua
 global sfml.VERSION_MAJOR: cint
 ```
 
@@ -18,7 +18,7 @@ Global Information
 
 ### sfml.VERSION_MINOR
 
-```nelua
+```lua
 global sfml.VERSION_MINOR: cint
 ```
 
@@ -26,7 +26,7 @@ global sfml.VERSION_MINOR: cint
 
 ### sfml.VERSION_PATCH
 
-```nelua
+```lua
 global sfml.VERSION_PATCH: cint
 ```
 
@@ -34,7 +34,7 @@ global sfml.VERSION_PATCH: cint
 
 ### sfml.SYSTEM_WINDOWS
 
-```nelua
+```lua
 global sfml.SYSTEM_WINDOWS: cint
 ```
 
@@ -42,7 +42,7 @@ global sfml.SYSTEM_WINDOWS: cint
 
 ### sfml.SYSTEM_LINUX
 
-```nelua
+```lua
 global sfml.SYSTEM_LINUX: cint
 ```
 
@@ -50,7 +50,7 @@ global sfml.SYSTEM_LINUX: cint
 
 ### sfml.SYSTEM_MACOS
 
-```nelua
+```lua
 global sfml.SYSTEM_MACOS: cint
 ```
 
@@ -58,7 +58,7 @@ global sfml.SYSTEM_MACOS: cint
 
 ### sfml.SYSTEM_FREEBSD
 
-```nelua
+```lua
 global sfml.SYSTEM_FREEBSD: cint
 ```
 
@@ -66,7 +66,7 @@ global sfml.SYSTEM_FREEBSD: cint
 
 ### sfml.Bool
 
-```nelua
+```lua
 global sfml.Bool: type = @boolean
 ```
 
@@ -74,7 +74,7 @@ Types
 
 ### sfml.False
 
-```nelua
+```lua
 global sfml.False: boolean
 ```
 
@@ -82,7 +82,7 @@ global sfml.False: boolean
 
 ### sfml.True
 
-```nelua
+```lua
 global sfml.True: boolean
 ```
 
@@ -90,7 +90,7 @@ global sfml.True: boolean
 
 ### sfml.Int8
 
-```nelua
+```lua
 global sfml.Int8: type = @int8
 ```
 
@@ -98,7 +98,7 @@ global sfml.Int8: type = @int8
 
 ### sfml.Uint8
 
-```nelua
+```lua
 global sfml.Uint8: type = @byte
 ```
 
@@ -106,7 +106,7 @@ global sfml.Uint8: type = @byte
 
 ### sfml.Int16
 
-```nelua
+```lua
 global sfml.Int16: type = @int16
 ```
 
@@ -114,7 +114,7 @@ global sfml.Int16: type = @int16
 
 ### sfml.Uint16
 
-```nelua
+```lua
 global sfml.Uint16: type = @uint16
 ```
 
@@ -122,7 +122,7 @@ global sfml.Uint16: type = @uint16
 
 ### sfml.Int32
 
-```nelua
+```lua
 global sfml.Int32: type = @int32
 ```
 
@@ -130,7 +130,7 @@ global sfml.Int32: type = @int32
 
 ### sfml.Uint32
 
-```nelua
+```lua
 global sfml.Uint32: type = @uint32
 ```
 
@@ -138,7 +138,7 @@ global sfml.Uint32: type = @uint32
 
 ### sfml.Int64
 
-```nelua
+```lua
 global sfml.Int64: type = @int64
 ```
 
@@ -146,7 +146,7 @@ global sfml.Int64: type = @int64
 
 ### sfml.Uint64
 
-```nelua
+```lua
 global sfml.Uint64: type = @uint64
 ```
 
@@ -154,7 +154,7 @@ global sfml.Uint64: type = @uint64
 
 ### sfml.Time
 
-```nelua
+```lua
 global sfml.Time: type = @record {
   microseconds: sfml.Int64
 }
@@ -164,7 +164,7 @@ Time
 
 ### sfml.Time.zero
 
-```nelua
+```lua
 global sfml.Time.zero: sfml.Time
 ```
 
@@ -172,7 +172,7 @@ global sfml.Time.zero: sfml.Time
 
 ### sfml.Time.as_seconds
 
-```nelua
+```lua
 function sfml.Time.as_seconds(self: sfml.Time): float32
 ```
 
@@ -180,7 +180,7 @@ function sfml.Time.as_seconds(self: sfml.Time): float32
 
 ### sfml.Time.as_milliseconds
 
-```nelua
+```lua
 function sfml.Time.as_milliseconds(self: sfml.Time): sfml.Int32
 ```
 
@@ -188,7 +188,7 @@ function sfml.Time.as_milliseconds(self: sfml.Time): sfml.Int32
 
 ### sfml.Time.as_microseconds
 
-```nelua
+```lua
 function sfml.Time.as_microseconds(self: sfml.Time): sfml.Int64
 ```
 
@@ -196,7 +196,7 @@ function sfml.Time.as_microseconds(self: sfml.Time): sfml.Int64
 
 ### sfml.Time.seconds
 
-```nelua
+```lua
 function sfml.Time.seconds(amount: float32): sfml.Time
 ```
 
@@ -204,7 +204,7 @@ function sfml.Time.seconds(amount: float32): sfml.Time
 
 ### sfml.Time.milliseconds
 
-```nelua
+```lua
 function sfml.Time.milliseconds(amount: sfml.Int32): sfml.Time
 ```
 
@@ -212,7 +212,7 @@ function sfml.Time.milliseconds(amount: sfml.Int32): sfml.Time
 
 ### sfml.Time.microseconds
 
-```nelua
+```lua
 function sfml.Time.microseconds(amount: sfml.Int64): sfml.Time
 ```
 
@@ -220,7 +220,7 @@ function sfml.Time.microseconds(amount: sfml.Int64): sfml.Time
 
 ### sfml.Clock
 
-```nelua
+```lua
 global sfml.Clock: type = @record {}
 ```
 
@@ -228,7 +228,7 @@ Clock
 
 ### sfml.Clock.create
 
-```nelua
+```lua
 function sfml.Clock.create(): *sfml.Clock
 ```
 
@@ -236,7 +236,7 @@ function sfml.Clock.create(): *sfml.Clock
 
 ### sfml.Clock.copy
 
-```nelua
+```lua
 function sfml.Clock.copy(self: *sfml.Clock <const>): *sfml.Clock
 ```
 
@@ -244,7 +244,7 @@ function sfml.Clock.copy(self: *sfml.Clock <const>): *sfml.Clock
 
 ### sfml.Clock.destroy
 
-```nelua
+```lua
 function sfml.Clock.destroy(self: *sfml.Clock): void
 ```
 
@@ -252,7 +252,7 @@ function sfml.Clock.destroy(self: *sfml.Clock): void
 
 ### sfml.Clock.get_elapsed_time
 
-```nelua
+```lua
 function sfml.Clock.get_elapsed_time(self: *sfml.Clock <const>): sfml.Time
 ```
 
@@ -260,7 +260,7 @@ function sfml.Clock.get_elapsed_time(self: *sfml.Clock <const>): sfml.Time
 
 ### sfml.Clock.restart
 
-```nelua
+```lua
 function sfml.Clock.restart(self: *sfml.Clock): sfml.Time
 ```
 
@@ -268,7 +268,7 @@ function sfml.Clock.restart(self: *sfml.Clock): sfml.Time
 
 ### sfml.InputStreamReadFunc
 
-```nelua
+```lua
 global sfml.InputStreamReadFunc: type = @function(pointer, sfml.Int64, pointer): sfml.Int64
 ```
 
@@ -276,7 +276,7 @@ InputStream
 
 ### sfml.InputStreamSeekFunc
 
-```nelua
+```lua
 global sfml.InputStreamSeekFunc: type = @function(sfml.Int64, pointer): sfml.Int64
 ```
 
@@ -284,7 +284,7 @@ global sfml.InputStreamSeekFunc: type = @function(sfml.Int64, pointer): sfml.Int
 
 ### sfml.InputStreamTellFunc
 
-```nelua
+```lua
 global sfml.InputStreamTellFunc: type = @function(pointer): sfml.Int64
 ```
 
@@ -292,7 +292,7 @@ global sfml.InputStreamTellFunc: type = @function(pointer): sfml.Int64
 
 ### sfml.InputStreamGetSizeFunc
 
-```nelua
+```lua
 global sfml.InputStreamGetSizeFunc: type = @function(pointer): sfml.Int64
 ```
 
@@ -300,7 +300,7 @@ global sfml.InputStreamGetSizeFunc: type = @function(pointer): sfml.Int64
 
 ### sfml.InputStream
 
-```nelua
+```lua
 global sfml.InputStream: type = @record {
   read: sfml.InputStreamReadFunc,
   seek: sfml.InputStreamSeekFunc,
@@ -314,7 +314,7 @@ global sfml.InputStream: type = @record {
 
 ### sfml.Mutex
 
-```nelua
+```lua
 global sfml.Mutex: type = @record {}
 ```
 
@@ -322,7 +322,7 @@ Mutex
 
 ### sfml.Mutex.create
 
-```nelua
+```lua
 function sfml.Mutex.create(): *sfml.Mutex
 ```
 
@@ -330,7 +330,7 @@ function sfml.Mutex.create(): *sfml.Mutex
 
 ### sfml.Mutex.destroy
 
-```nelua
+```lua
 function sfml.Mutex.destroy(self: *sfml.Mutex): void
 ```
 
@@ -338,7 +338,7 @@ function sfml.Mutex.destroy(self: *sfml.Mutex): void
 
 ### sfml.Mutex.lock
 
-```nelua
+```lua
 function sfml.Mutex.lock(self: *sfml.Mutex): void
 ```
 
@@ -346,7 +346,7 @@ function sfml.Mutex.lock(self: *sfml.Mutex): void
 
 ### sfml.Mutex.unlock
 
-```nelua
+```lua
 function sfml.Mutex.unlock(self: *sfml.Mutex): void
 ```
 
@@ -354,7 +354,7 @@ function sfml.Mutex.unlock(self: *sfml.Mutex): void
 
 ### sfml.Time.sleep
 
-```nelua
+```lua
 function sfml.Time.sleep(duration: sfml.Time): void
 ```
 
@@ -362,7 +362,7 @@ function sfml.Time.sleep(duration: sfml.Time): void
 
 ### sfml.Thread
 
-```nelua
+```lua
 global sfml.Thread: type = @record {}
 ```
 
@@ -370,7 +370,7 @@ Thread
 
 ### sfml.Thread.create
 
-```nelua
+```lua
 function sfml.Thread.create(f: function(pointer): void, userdata: pointer): *sfml.Thread
 ```
 
@@ -378,7 +378,7 @@ function sfml.Thread.create(f: function(pointer): void, userdata: pointer): *sfm
 
 ### sfml.Thread.destroy
 
-```nelua
+```lua
 function sfml.Thread.destroy(self: *sfml.Thread): void
 ```
 
@@ -386,7 +386,7 @@ function sfml.Thread.destroy(self: *sfml.Thread): void
 
 ### sfml.Thread.launch
 
-```nelua
+```lua
 function sfml.Thread.launch(self: *sfml.Thread): void
 ```
 
@@ -394,7 +394,7 @@ function sfml.Thread.launch(self: *sfml.Thread): void
 
 ### sfml.Thread.wait
 
-```nelua
+```lua
 function sfml.Thread.wait(self: *sfml.Thread): void
 ```
 
@@ -402,7 +402,7 @@ function sfml.Thread.wait(self: *sfml.Thread): void
 
 ### sfml.Thread.terminate
 
-```nelua
+```lua
 function sfml.Thread.terminate(self: *sfml.Thread): void
 ```
 
@@ -410,7 +410,7 @@ function sfml.Thread.terminate(self: *sfml.Thread): void
 
 ### sfml.Vector2i
 
-```nelua
+```lua
 global sfml.Vector2i: type = @record {
   x: cint,
   y: cint
@@ -421,7 +421,7 @@ Vector
 
 ### sfml.Vector2u
 
-```nelua
+```lua
 global sfml.Vector2u: type = @record {
   x: cuint,
   y: cuint
@@ -432,7 +432,7 @@ global sfml.Vector2u: type = @record {
 
 ### sfml.Vector2f
 
-```nelua
+```lua
 global sfml.Vector2f: type = @record {
   x: float32,
   y: float32
@@ -443,7 +443,7 @@ global sfml.Vector2f: type = @record {
 
 ### sfml.Vector3f
 
-```nelua
+```lua
 global sfml.Vector3f: type = @record {
   x: float32,
   y: float32,
@@ -455,7 +455,7 @@ global sfml.Vector3f: type = @record {
 
 ### sfml.FtpDirectoryResponse
 
-```nelua
+```lua
 global sfml.FtpDirectoryResponse: type = @record {}
 ```
 
@@ -463,7 +463,7 @@ Network
 
 ### sfml.FtpListingResponse
 
-```nelua
+```lua
 global sfml.FtpListingResponse: type = @record {}
 ```
 
@@ -471,7 +471,7 @@ global sfml.FtpListingResponse: type = @record {}
 
 ### sfml.FtpResponse
 
-```nelua
+```lua
 global sfml.FtpResponse: type = @record {}
 ```
 
@@ -479,7 +479,7 @@ global sfml.FtpResponse: type = @record {}
 
 ### sfml.Ftp
 
-```nelua
+```lua
 global sfml.Ftp: type = @record {}
 ```
 
@@ -487,7 +487,7 @@ global sfml.Ftp: type = @record {}
 
 ### sfml.HttpRequest
 
-```nelua
+```lua
 global sfml.HttpRequest: type = @record {}
 ```
 
@@ -495,7 +495,7 @@ global sfml.HttpRequest: type = @record {}
 
 ### sfml.HttpResponse
 
-```nelua
+```lua
 global sfml.HttpResponse: type = @record {}
 ```
 
@@ -503,7 +503,7 @@ global sfml.HttpResponse: type = @record {}
 
 ### sfml.Http
 
-```nelua
+```lua
 global sfml.Http: type = @record {}
 ```
 
@@ -511,7 +511,7 @@ global sfml.Http: type = @record {}
 
 ### sfml.Packet
 
-```nelua
+```lua
 global sfml.Packet: type = @record {}
 ```
 
@@ -519,7 +519,7 @@ global sfml.Packet: type = @record {}
 
 ### sfml.SocketSelector
 
-```nelua
+```lua
 global sfml.SocketSelector: type = @record {}
 ```
 
@@ -527,7 +527,7 @@ global sfml.SocketSelector: type = @record {}
 
 ### sfml.TcpListener
 
-```nelua
+```lua
 global sfml.TcpListener: type = @record {}
 ```
 
@@ -535,7 +535,7 @@ global sfml.TcpListener: type = @record {}
 
 ### sfml.TcpSocket
 
-```nelua
+```lua
 global sfml.TcpSocket: type = @record {}
 ```
 
@@ -543,7 +543,7 @@ global sfml.TcpSocket: type = @record {}
 
 ### sfml.UdpSocket
 
-```nelua
+```lua
 global sfml.UdpSocket: type = @record {}
 ```
 
@@ -551,7 +551,7 @@ global sfml.UdpSocket: type = @record {}
 
 ### sfml.IpAddress
 
-```nelua
+```lua
 global sfml.IpAddress: type = @record {
   address: [16]byte
 }
@@ -561,7 +561,7 @@ Network: IpAddress
 
 ### sfml.IpAddress.None
 
-```nelua
+```lua
 global sfml.IpAddress.None: sfml.IpAddress
 ```
 
@@ -569,7 +569,7 @@ global sfml.IpAddress.None: sfml.IpAddress
 
 ### sfml.IpAddress.Any
 
-```nelua
+```lua
 global sfml.IpAddress.Any: sfml.IpAddress
 ```
 
@@ -577,7 +577,7 @@ global sfml.IpAddress.Any: sfml.IpAddress
 
 ### sfml.IpAddress.LocalHost
 
-```nelua
+```lua
 global sfml.IpAddress.LocalHost: sfml.IpAddress
 ```
 
@@ -585,7 +585,7 @@ global sfml.IpAddress.LocalHost: sfml.IpAddress
 
 ### sfml.IpAddress.Broadcast
 
-```nelua
+```lua
 global sfml.IpAddress.Broadcast: sfml.IpAddress
 ```
 
@@ -593,7 +593,7 @@ global sfml.IpAddress.Broadcast: sfml.IpAddress
 
 ### sfml.IpAddress.from_string
 
-```nelua
+```lua
 function sfml.IpAddress.from_string(address: cstring <const>): sfml.IpAddress
 ```
 
@@ -601,7 +601,7 @@ function sfml.IpAddress.from_string(address: cstring <const>): sfml.IpAddress
 
 ### sfml.IpAddress.from_bytes
 
-```nelua
+```lua
 function sfml.IpAddress.from_bytes(byte0: sfml.Uint8, byte1: sfml.Uint8, byte2: sfml.Uint8, byte3: sfml.Uint8): sfml.IpAddress
 ```
 
@@ -609,7 +609,7 @@ function sfml.IpAddress.from_bytes(byte0: sfml.Uint8, byte1: sfml.Uint8, byte2: 
 
 ### sfml.IpAddress.from_integer
 
-```nelua
+```lua
 function sfml.IpAddress.from_integer(address: sfml.Uint32): sfml.IpAddress
 ```
 
@@ -617,7 +617,7 @@ function sfml.IpAddress.from_integer(address: sfml.Uint32): sfml.IpAddress
 
 ### sfml.IpAddress.to_string
 
-```nelua
+```lua
 function sfml.IpAddress.to_string(self: sfml.IpAddress, string: cstring): void
 ```
 
@@ -625,7 +625,7 @@ function sfml.IpAddress.to_string(self: sfml.IpAddress, string: cstring): void
 
 ### sfml.IpAddress.to_integer
 
-```nelua
+```lua
 function sfml.IpAddress.to_integer(self: sfml.IpAddress): sfml.Uint32
 ```
 
@@ -633,7 +633,7 @@ function sfml.IpAddress.to_integer(self: sfml.IpAddress): sfml.Uint32
 
 ### sfml.IpAddress.get_local_address
 
-```nelua
+```lua
 function sfml.IpAddress.get_local_address(): sfml.IpAddress
 ```
 
@@ -641,7 +641,7 @@ function sfml.IpAddress.get_local_address(): sfml.IpAddress
 
 ### sfml.IpAddress.get_public_address
 
-```nelua
+```lua
 function sfml.IpAddress.get_public_address(timeout: sfml.Time): sfml.IpAddress
 ```
 
@@ -649,7 +649,7 @@ function sfml.IpAddress.get_public_address(timeout: sfml.Time): sfml.IpAddress
 
 ### sfml.FtpTransferMode
 
-```nelua
+```lua
 global sfml.FtpTransferMode: type = @enum(cint) {
   Binary = 0,
   Ascii,
@@ -661,7 +661,7 @@ Network: FTP
 
 ### sfml.FtpStatus
 
-```nelua
+```lua
 global sfml.FtpStatus: type = @enum(cint) {
   RestartMarkerReply          = 110,
   ServiceReadySoon            = 120,
@@ -714,7 +714,7 @@ global sfml.FtpStatus: type = @enum(cint) {
 
 ### sfml.FtpListingResponse.destroy
 
-```nelua
+```lua
 function sfml.FtpListingResponse.destroy(self: *sfml.FtpListingResponse): void
 ```
 
@@ -722,7 +722,7 @@ function sfml.FtpListingResponse.destroy(self: *sfml.FtpListingResponse): void
 
 ### sfml.FtpListingResponse.is_ok
 
-```nelua
+```lua
 function sfml.FtpListingResponse.is_ok(self: *sfml.FtpListingResponse <const>): sfml.Bool
 ```
 
@@ -730,7 +730,7 @@ function sfml.FtpListingResponse.is_ok(self: *sfml.FtpListingResponse <const>): 
 
 ### sfml.FtpListingResponse.get_status
 
-```nelua
+```lua
 function sfml.FtpListingResponse.get_status(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus
 ```
 
@@ -738,7 +738,7 @@ function sfml.FtpListingResponse.get_status(self: *sfml.FtpListingResponse <cons
 
 ### sfml.FtpListingResponse.get_message
 
-```nelua
+```lua
 function sfml.FtpListingResponse.get_message(self: *sfml.FtpListingResponse <const>): cstring
 ```
 
@@ -746,7 +746,7 @@ function sfml.FtpListingResponse.get_message(self: *sfml.FtpListingResponse <con
 
 ### sfml.FtpListingResponse.get_count
 
-```nelua
+```lua
 function sfml.FtpListingResponse.get_count(self: *sfml.FtpListingResponse <const>): csize
 ```
 
@@ -754,7 +754,7 @@ function sfml.FtpListingResponse.get_count(self: *sfml.FtpListingResponse <const
 
 ### sfml.FtpListingResponse.get_name
 
-```nelua
+```lua
 function sfml.FtpListingResponse.get_name(self: *sfml.FtpListingResponse <const>, index: csize): cstring
 ```
 
@@ -762,7 +762,7 @@ function sfml.FtpListingResponse.get_name(self: *sfml.FtpListingResponse <const>
 
 ### sfml.FtpDirectoryResponse.destroy
 
-```nelua
+```lua
 function sfml.FtpDirectoryResponse.destroy(self: *sfml.FtpListingResponse): void
 ```
 
@@ -770,7 +770,7 @@ function sfml.FtpDirectoryResponse.destroy(self: *sfml.FtpListingResponse): void
 
 ### sfml.FtpDirectoryResponse.is_ok
 
-```nelua
+```lua
 function sfml.FtpDirectoryResponse.is_ok(self: *sfml.FtpListingResponse <const>): sfml.Bool
 ```
 
@@ -778,7 +778,7 @@ function sfml.FtpDirectoryResponse.is_ok(self: *sfml.FtpListingResponse <const>)
 
 ### sfml.FtpDirectoryResponse.get_status
 
-```nelua
+```lua
 function sfml.FtpDirectoryResponse.get_status(self: *sfml.FtpListingResponse <const>): sfml.FtpStatus
 ```
 
@@ -786,7 +786,7 @@ function sfml.FtpDirectoryResponse.get_status(self: *sfml.FtpListingResponse <co
 
 ### sfml.FtpDirectoryResponse.get_message
 
-```nelua
+```lua
 function sfml.FtpDirectoryResponse.get_message(self: *sfml.FtpListingResponse <const>): cstring
 ```
 
@@ -794,7 +794,7 @@ function sfml.FtpDirectoryResponse.get_message(self: *sfml.FtpListingResponse <c
 
 ### sfml.FtpDirectoryResponse.get_directory
 
-```nelua
+```lua
 function sfml.FtpDirectoryResponse.get_directory(self: *sfml.FtpListingResponse <const>): cstring
 ```
 
@@ -802,7 +802,7 @@ function sfml.FtpDirectoryResponse.get_directory(self: *sfml.FtpListingResponse 
 
 ### sfml.FtpResponse.destroy
 
-```nelua
+```lua
 function sfml.FtpResponse.destroy(self: *sfml.FtpResponse): void
 ```
 
@@ -810,7 +810,7 @@ function sfml.FtpResponse.destroy(self: *sfml.FtpResponse): void
 
 ### sfml.FtpResponse.is_ok
 
-```nelua
+```lua
 function sfml.FtpResponse.is_ok(self: *sfml.FtpResponse <const>): sfml.Bool
 ```
 
@@ -818,7 +818,7 @@ function sfml.FtpResponse.is_ok(self: *sfml.FtpResponse <const>): sfml.Bool
 
 ### sfml.FtpResponse.get_status
 
-```nelua
+```lua
 function sfml.FtpResponse.get_status(self: *sfml.FtpResponse <const>): sfml.FtpStatus
 ```
 
@@ -826,7 +826,7 @@ function sfml.FtpResponse.get_status(self: *sfml.FtpResponse <const>): sfml.FtpS
 
 ### sfml.FtpResponse.get_message
 
-```nelua
+```lua
 function sfml.FtpResponse.get_message(self: *sfml.FtpResponse <const>): cstring
 ```
 
@@ -834,7 +834,7 @@ function sfml.FtpResponse.get_message(self: *sfml.FtpResponse <const>): cstring
 
 ### sfml.Ftp.create
 
-```nelua
+```lua
 function sfml.Ftp.create(): *sfml.Ftp
 ```
 
@@ -842,7 +842,7 @@ function sfml.Ftp.create(): *sfml.Ftp
 
 ### sfml.Ftp.destroy
 
-```nelua
+```lua
 function sfml.Ftp.destroy(self: *sfml.Ftp): void
 ```
 
@@ -850,7 +850,7 @@ function sfml.Ftp.destroy(self: *sfml.Ftp): void
 
 ### sfml.Ftp.connect
 
-```nelua
+```lua
 function sfml.Ftp.connect(self: *sfml.Ftp, server: sfml.IpAddress, port: cushort, timeout: sfml.Time): *sfml.FtpResponse
 ```
 
@@ -858,7 +858,7 @@ function sfml.Ftp.connect(self: *sfml.Ftp, server: sfml.IpAddress, port: cushort
 
 ### sfml.Ftp.login_anonymous
 
-```nelua
+```lua
 function sfml.Ftp.login_anonymous(self: *sfml.Ftp): *sfml.FtpResponse
 ```
 
@@ -866,7 +866,7 @@ function sfml.Ftp.login_anonymous(self: *sfml.Ftp): *sfml.FtpResponse
 
 ### sfml.Ftp.login
 
-```nelua
+```lua
 function sfml.Ftp.login(self: *sfml.Ftp, name: cstring <const>, password: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -874,7 +874,7 @@ function sfml.Ftp.login(self: *sfml.Ftp, name: cstring <const>, password: cstrin
 
 ### sfml.Ftp.disconnect
 
-```nelua
+```lua
 function sfml.Ftp.disconnect(self: *sfml.Ftp): *sfml.FtpResponse
 ```
 
@@ -882,7 +882,7 @@ function sfml.Ftp.disconnect(self: *sfml.Ftp): *sfml.FtpResponse
 
 ### sfml.Ftp.keep_alive
 
-```nelua
+```lua
 function sfml.Ftp.keep_alive(self: *sfml.Ftp): *sfml.FtpResponse
 ```
 
@@ -890,7 +890,7 @@ function sfml.Ftp.keep_alive(self: *sfml.Ftp): *sfml.FtpResponse
 
 ### sfml.Ftp.get_working_directory
 
-```nelua
+```lua
 function sfml.Ftp.get_working_directory(self: *sfml.Ftp): *sfml.FtpDirectoryResponse
 ```
 
@@ -898,7 +898,7 @@ function sfml.Ftp.get_working_directory(self: *sfml.Ftp): *sfml.FtpDirectoryResp
 
 ### sfml.Ftp.get_directory_listing
 
-```nelua
+```lua
 function sfml.Ftp.get_directory_listing(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpListingResponse
 ```
 
@@ -906,7 +906,7 @@ function sfml.Ftp.get_directory_listing(self: *sfml.Ftp, directory: cstring <con
 
 ### sfml.Ftp.change_directory
 
-```nelua
+```lua
 function sfml.Ftp.change_directory(self: *sfml.Ftp, directory: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -914,7 +914,7 @@ function sfml.Ftp.change_directory(self: *sfml.Ftp, directory: cstring <const>):
 
 ### sfml.Ftp.parent_directory
 
-```nelua
+```lua
 function sfml.Ftp.parent_directory(self: *sfml.Ftp): *sfml.FtpResponse
 ```
 
@@ -922,7 +922,7 @@ function sfml.Ftp.parent_directory(self: *sfml.Ftp): *sfml.FtpResponse
 
 ### sfml.Ftp.create_directory
 
-```nelua
+```lua
 function sfml.Ftp.create_directory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -930,7 +930,7 @@ function sfml.Ftp.create_directory(self: *sfml.Ftp, name: cstring <const>): *sfm
 
 ### sfml.Ftp.delete_directory
 
-```nelua
+```lua
 function sfml.Ftp.delete_directory(self: *sfml.Ftp, name: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -938,7 +938,7 @@ function sfml.Ftp.delete_directory(self: *sfml.Ftp, name: cstring <const>): *sfm
 
 ### sfml.Ftp.rename_file
 
-```nelua
+```lua
 function sfml.Ftp.rename_file(self: *sfml.Ftp, file: cstring <const>, newName: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -946,7 +946,7 @@ function sfml.Ftp.rename_file(self: *sfml.Ftp, file: cstring <const>, newName: c
 
 ### sfml.Ftp.delete_file
 
-```nelua
+```lua
 function sfml.Ftp.delete_file(self: *sfml.Ftp, file: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -954,7 +954,7 @@ function sfml.Ftp.delete_file(self: *sfml.Ftp, file: cstring <const>): *sfml.Ftp
 
 ### sfml.Ftp.download
 
-```nelua
+```lua
 function sfml.Ftp.download(self: *sfml.Ftp, remoteFile: cstring <const>, localPath: cstring <const>, mode: sfml.FtpTransferMode): *sfml.FtpResponse
 ```
 
@@ -962,7 +962,7 @@ function sfml.Ftp.download(self: *sfml.Ftp, remoteFile: cstring <const>, localPa
 
 ### sfml.Ftp.upload
 
-```nelua
+```lua
 function sfml.Ftp.upload(self: *sfml.Ftp, localFile: cstring <const>, remotePath: cstring <const>, mode: sfml.FtpTransferMode, append: sfml.Bool): *sfml.FtpResponse
 ```
 
@@ -970,7 +970,7 @@ function sfml.Ftp.upload(self: *sfml.Ftp, localFile: cstring <const>, remotePath
 
 ### sfml.Ftp.send_command
 
-```nelua
+```lua
 function sfml.Ftp.send_command(self: *sfml.Ftp, command: cstring <const>, parameter: cstring <const>): *sfml.FtpResponse
 ```
 
@@ -978,7 +978,7 @@ function sfml.Ftp.send_command(self: *sfml.Ftp, command: cstring <const>, parame
 
 ### sfml.HttpMethod
 
-```nelua
+```lua
 global sfml.HttpMethod: type = @enum(cint) {
   Get = 0,
   Post,
@@ -992,7 +992,7 @@ Network: HTTP
 
 ### sfml.HttpStatus
 
-```nelua
+```lua
 global sfml.HttpStatus: type = @enum(cint) {
   Ok             = 200,
   Created        = 201,
@@ -1028,7 +1028,7 @@ global sfml.HttpStatus: type = @enum(cint) {
 
 ### sfml.HttpRequest.create
 
-```nelua
+```lua
 function sfml.HttpRequest.create(): *sfml.HttpRequest
 ```
 
@@ -1036,7 +1036,7 @@ function sfml.HttpRequest.create(): *sfml.HttpRequest
 
 ### sfml.HttpRequest.destroy
 
-```nelua
+```lua
 function sfml.HttpRequest.destroy(self: *sfml.HttpRequest): void
 ```
 
@@ -1044,7 +1044,7 @@ function sfml.HttpRequest.destroy(self: *sfml.HttpRequest): void
 
 ### sfml.HttpRequest.set_field
 
-```nelua
+```lua
 function sfml.HttpRequest.set_field(self: *sfml.HttpRequest, field: cstring <const>, value: cstring <const>): void
 ```
 
@@ -1052,7 +1052,7 @@ function sfml.HttpRequest.set_field(self: *sfml.HttpRequest, field: cstring <con
 
 ### sfml.HttpRequest.set_method
 
-```nelua
+```lua
 function sfml.HttpRequest.set_method(self: *sfml.HttpRequest, method: sfml.HttpMethod): void
 ```
 
@@ -1060,7 +1060,7 @@ function sfml.HttpRequest.set_method(self: *sfml.HttpRequest, method: sfml.HttpM
 
 ### sfml.HttpRequest.set_uri
 
-```nelua
+```lua
 function sfml.HttpRequest.set_uri(self: *sfml.HttpRequest, uri: cstring <const>): void
 ```
 
@@ -1068,7 +1068,7 @@ function sfml.HttpRequest.set_uri(self: *sfml.HttpRequest, uri: cstring <const>)
 
 ### sfml.HttpRequest.set_http_version
 
-```nelua
+```lua
 function sfml.HttpRequest.set_http_version(self: *sfml.HttpRequest, major: cuint, minor: cuint): void
 ```
 
@@ -1076,7 +1076,7 @@ function sfml.HttpRequest.set_http_version(self: *sfml.HttpRequest, major: cuint
 
 ### sfml.HttpRequest.set_body
 
-```nelua
+```lua
 function sfml.HttpRequest.set_body(self: *sfml.HttpRequest, body: cstring <const>): void
 ```
 
@@ -1084,7 +1084,7 @@ function sfml.HttpRequest.set_body(self: *sfml.HttpRequest, body: cstring <const
 
 ### sfml.HttpResponse.destroy
 
-```nelua
+```lua
 function sfml.HttpResponse.destroy(self: *sfml.HttpResponse): void
 ```
 
@@ -1092,7 +1092,7 @@ function sfml.HttpResponse.destroy(self: *sfml.HttpResponse): void
 
 ### sfml.HttpResponse.get_field
 
-```nelua
+```lua
 function sfml.HttpResponse.get_field(self: *sfml.HttpResponse <const>, field: cstring <const>): cstring
 ```
 
@@ -1100,7 +1100,7 @@ function sfml.HttpResponse.get_field(self: *sfml.HttpResponse <const>, field: cs
 
 ### sfml.HttpResponse.get_status
 
-```nelua
+```lua
 function sfml.HttpResponse.get_status(self: *sfml.HttpResponse <const>): sfml.HttpStatus
 ```
 
@@ -1108,7 +1108,7 @@ function sfml.HttpResponse.get_status(self: *sfml.HttpResponse <const>): sfml.Ht
 
 ### sfml.HttpResponse.get_major_version
 
-```nelua
+```lua
 function sfml.HttpResponse.get_major_version(self: *sfml.HttpResponse <const>): cuint
 ```
 
@@ -1116,7 +1116,7 @@ function sfml.HttpResponse.get_major_version(self: *sfml.HttpResponse <const>): 
 
 ### sfml.HttpResponse.get_minor_version
 
-```nelua
+```lua
 function sfml.HttpResponse.get_minor_version(self: *sfml.HttpResponse <const>): cuint
 ```
 
@@ -1124,7 +1124,7 @@ function sfml.HttpResponse.get_minor_version(self: *sfml.HttpResponse <const>): 
 
 ### sfml.HttpResponse.get_body
 
-```nelua
+```lua
 function sfml.HttpResponse.get_body(self: *sfml.HttpResponse <const>): cstring
 ```
 
@@ -1132,7 +1132,7 @@ function sfml.HttpResponse.get_body(self: *sfml.HttpResponse <const>): cstring
 
 ### sfml.Http.create
 
-```nelua
+```lua
 function sfml.Http.create(): *sfml.Http
 ```
 
@@ -1140,7 +1140,7 @@ function sfml.Http.create(): *sfml.Http
 
 ### sfml.Http.destroy
 
-```nelua
+```lua
 function sfml.Http.destroy(http: *sfml.Http): void
 ```
 
@@ -1148,7 +1148,7 @@ function sfml.Http.destroy(http: *sfml.Http): void
 
 ### sfml.Http.set_host
 
-```nelua
+```lua
 function sfml.Http.set_host(http: *sfml.Http, host: cstring <const>, port: cuint): void
 ```
 
@@ -1156,7 +1156,7 @@ function sfml.Http.set_host(http: *sfml.Http, host: cstring <const>, port: cuint
 
 ### sfml.Http.send_request
 
-```nelua
+```lua
 function sfml.Http.send_request(http: *sfml.Http, request: *sfml.HttpRequest <const>, timeout: sfml.Time): *sfml.HttpResponse
 ```
 
@@ -1164,7 +1164,7 @@ function sfml.Http.send_request(http: *sfml.Http, request: *sfml.HttpRequest <co
 
 ### sfml.Packet.create
 
-```nelua
+```lua
 function sfml.Packet.create(): *sfml.Packet
 ```
 
@@ -1172,7 +1172,7 @@ Network: Packet
 
 ### sfml.Packet.copy
 
-```nelua
+```lua
 function sfml.Packet.copy(self: *sfml.Packet <const>): *sfml.Packet
 ```
 
@@ -1180,7 +1180,7 @@ function sfml.Packet.copy(self: *sfml.Packet <const>): *sfml.Packet
 
 ### sfml.Packet.destroy
 
-```nelua
+```lua
 function sfml.Packet.destroy(self: *sfml.Packet): void
 ```
 
@@ -1188,7 +1188,7 @@ function sfml.Packet.destroy(self: *sfml.Packet): void
 
 ### sfml.Packet.append
 
-```nelua
+```lua
 function sfml.Packet.append(self: *sfml.Packet, data: pointer, sizeInBytes: csize): void
 ```
 
@@ -1196,7 +1196,7 @@ function sfml.Packet.append(self: *sfml.Packet, data: pointer, sizeInBytes: csiz
 
 ### sfml.Packet.clear
 
-```nelua
+```lua
 function sfml.Packet.clear(self: *sfml.Packet): void
 ```
 
@@ -1204,7 +1204,7 @@ function sfml.Packet.clear(self: *sfml.Packet): void
 
 ### sfml.Packet.get_data
 
-```nelua
+```lua
 function sfml.Packet.get_data(self: *sfml.Packet <const>): pointer
 ```
 
@@ -1212,7 +1212,7 @@ function sfml.Packet.get_data(self: *sfml.Packet <const>): pointer
 
 ### sfml.Packet.get_data_size
 
-```nelua
+```lua
 function sfml.Packet.get_data_size(self: *sfml.Packet <const>): csize
 ```
 
@@ -1220,7 +1220,7 @@ function sfml.Packet.get_data_size(self: *sfml.Packet <const>): csize
 
 ### sfml.Packet.end_of_packet
 
-```nelua
+```lua
 function sfml.Packet.end_of_packet(self: *sfml.Packet <const>): sfml.Bool
 ```
 
@@ -1228,7 +1228,7 @@ function sfml.Packet.end_of_packet(self: *sfml.Packet <const>): sfml.Bool
 
 ### sfml.Packet.can_read
 
-```nelua
+```lua
 function sfml.Packet.can_read(self: *sfml.Packet <const>): sfml.Bool
 ```
 
@@ -1236,7 +1236,7 @@ function sfml.Packet.can_read(self: *sfml.Packet <const>): sfml.Bool
 
 ### sfml.Packet.read_bool
 
-```nelua
+```lua
 function sfml.Packet.read_bool(self: *sfml.Packet): sfml.Bool
 ```
 
@@ -1244,7 +1244,7 @@ function sfml.Packet.read_bool(self: *sfml.Packet): sfml.Bool
 
 ### sfml.Packet.read_int8
 
-```nelua
+```lua
 function sfml.Packet.read_int8(self: *sfml.Packet): sfml.Int8
 ```
 
@@ -1252,7 +1252,7 @@ function sfml.Packet.read_int8(self: *sfml.Packet): sfml.Int8
 
 ### sfml.Packet.read_uint8
 
-```nelua
+```lua
 function sfml.Packet.read_uint8(self: *sfml.Packet): sfml.Uint8
 ```
 
@@ -1260,7 +1260,7 @@ function sfml.Packet.read_uint8(self: *sfml.Packet): sfml.Uint8
 
 ### sfml.Packet.read_int16
 
-```nelua
+```lua
 function sfml.Packet.read_int16(self: *sfml.Packet): sfml.Int16
 ```
 
@@ -1268,7 +1268,7 @@ function sfml.Packet.read_int16(self: *sfml.Packet): sfml.Int16
 
 ### sfml.Packet.read_uint16
 
-```nelua
+```lua
 function sfml.Packet.read_uint16(self: *sfml.Packet): sfml.Uint16
 ```
 
@@ -1276,7 +1276,7 @@ function sfml.Packet.read_uint16(self: *sfml.Packet): sfml.Uint16
 
 ### sfml.Packet.read_int32
 
-```nelua
+```lua
 function sfml.Packet.read_int32(self: *sfml.Packet): sfml.Int32
 ```
 
@@ -1284,7 +1284,7 @@ function sfml.Packet.read_int32(self: *sfml.Packet): sfml.Int32
 
 ### sfml.Packet.read_uint32
 
-```nelua
+```lua
 function sfml.Packet.read_uint32(self: *sfml.Packet): sfml.Uint32
 ```
 
@@ -1292,7 +1292,7 @@ function sfml.Packet.read_uint32(self: *sfml.Packet): sfml.Uint32
 
 ### sfml.Packet.read_float
 
-```nelua
+```lua
 function sfml.Packet.read_float(self: *sfml.Packet): float32
 ```
 
@@ -1300,7 +1300,7 @@ function sfml.Packet.read_float(self: *sfml.Packet): float32
 
 ### sfml.Packet.read_double
 
-```nelua
+```lua
 function sfml.Packet.read_double(self: *sfml.Packet): float64
 ```
 
@@ -1308,7 +1308,7 @@ function sfml.Packet.read_double(self: *sfml.Packet): float64
 
 ### sfml.Packet.read_string
 
-```nelua
+```lua
 function sfml.Packet.read_string(self: *sfml.Packet, str: cstring): void
 ```
 
@@ -1316,7 +1316,7 @@ function sfml.Packet.read_string(self: *sfml.Packet, str: cstring): void
 
 ### sfml.Packet.read_wide_string
 
-```nelua
+```lua
 function sfml.Packet.read_wide_string(self: *sfml.Packet, str: *[0]cint): void
 ```
 
@@ -1324,7 +1324,7 @@ function sfml.Packet.read_wide_string(self: *sfml.Packet, str: *[0]cint): void
 
 ### sfml.Packet.write_bool
 
-```nelua
+```lua
 function sfml.Packet.write_bool(self: *sfml.Packet, data: sfml.Bool): void
 ```
 
@@ -1332,7 +1332,7 @@ function sfml.Packet.write_bool(self: *sfml.Packet, data: sfml.Bool): void
 
 ### sfml.Packet.write_int8
 
-```nelua
+```lua
 function sfml.Packet.write_int8(self: *sfml.Packet, data: sfml.Int8): void
 ```
 
@@ -1340,7 +1340,7 @@ function sfml.Packet.write_int8(self: *sfml.Packet, data: sfml.Int8): void
 
 ### sfml.Packet.write_uint8
 
-```nelua
+```lua
 function sfml.Packet.write_uint8(self: *sfml.Packet, data: sfml.Uint8): void
 ```
 
@@ -1348,7 +1348,7 @@ function sfml.Packet.write_uint8(self: *sfml.Packet, data: sfml.Uint8): void
 
 ### sfml.Packet.write_int16
 
-```nelua
+```lua
 function sfml.Packet.write_int16(self: *sfml.Packet, data: sfml.Int16): void
 ```
 
@@ -1356,7 +1356,7 @@ function sfml.Packet.write_int16(self: *sfml.Packet, data: sfml.Int16): void
 
 ### sfml.Packet.write_uint16
 
-```nelua
+```lua
 function sfml.Packet.write_uint16(self: *sfml.Packet, data: sfml.Uint16): void
 ```
 
@@ -1364,7 +1364,7 @@ function sfml.Packet.write_uint16(self: *sfml.Packet, data: sfml.Uint16): void
 
 ### sfml.Packet.write_int32
 
-```nelua
+```lua
 function sfml.Packet.write_int32(self: *sfml.Packet, data: sfml.Int32): void
 ```
 
@@ -1372,7 +1372,7 @@ function sfml.Packet.write_int32(self: *sfml.Packet, data: sfml.Int32): void
 
 ### sfml.Packet.write_uint32
 
-```nelua
+```lua
 function sfml.Packet.write_uint32(self: *sfml.Packet, data: sfml.Uint32): void
 ```
 
@@ -1380,7 +1380,7 @@ function sfml.Packet.write_uint32(self: *sfml.Packet, data: sfml.Uint32): void
 
 ### sfml.Packet.write_float
 
-```nelua
+```lua
 function sfml.Packet.write_float(self: *sfml.Packet, data: float32): void
 ```
 
@@ -1388,7 +1388,7 @@ function sfml.Packet.write_float(self: *sfml.Packet, data: float32): void
 
 ### sfml.Packet.write_double
 
-```nelua
+```lua
 function sfml.Packet.write_double(self: *sfml.Packet, data: float64): void
 ```
 
@@ -1396,7 +1396,7 @@ function sfml.Packet.write_double(self: *sfml.Packet, data: float64): void
 
 ### sfml.Packet.write_string
 
-```nelua
+```lua
 function sfml.Packet.write_string(self: *sfml.Packet, data: cstring <const>): void
 ```
 
@@ -1404,7 +1404,7 @@ function sfml.Packet.write_string(self: *sfml.Packet, data: cstring <const>): vo
 
 ### sfml.Packet.write_wide_string
 
-```nelua
+```lua
 function sfml.Packet.write_wide_string(self: *sfml.Packet, data: *[0]cint): void
 ```
 
@@ -1412,7 +1412,7 @@ function sfml.Packet.write_wide_string(self: *sfml.Packet, data: *[0]cint): void
 
 ### sfml.SocketStatus
 
-```nelua
+```lua
 global sfml.SocketStatus: type = @enum(cint) {
   Done = 0,
   NotReady,
@@ -1426,7 +1426,7 @@ Network: Selector
 
 ### sfml.SocketSelector.create
 
-```nelua
+```lua
 function sfml.SocketSelector.create(): *sfml.SocketSelector
 ```
 
@@ -1434,7 +1434,7 @@ function sfml.SocketSelector.create(): *sfml.SocketSelector
 
 ### sfml.SocketSelector.copy
 
-```nelua
+```lua
 function sfml.SocketSelector.copy(self: *sfml.SocketSelector <const>): *sfml.SocketSelector
 ```
 
@@ -1442,7 +1442,7 @@ function sfml.SocketSelector.copy(self: *sfml.SocketSelector <const>): *sfml.Soc
 
 ### sfml.SocketSelector.destroy
 
-```nelua
+```lua
 function sfml.SocketSelector.destroy(self: *sfml.SocketSelector): void
 ```
 
@@ -1450,7 +1450,7 @@ function sfml.SocketSelector.destroy(self: *sfml.SocketSelector): void
 
 ### sfml.SocketSelector.add_tcp_listener
 
-```nelua
+```lua
 function sfml.SocketSelector.add_tcp_listener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void
 ```
 
@@ -1458,7 +1458,7 @@ function sfml.SocketSelector.add_tcp_listener(self: *sfml.SocketSelector, socket
 
 ### sfml.SocketSelector.add_tcp_socket
 
-```nelua
+```lua
 function sfml.SocketSelector.add_tcp_socket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void
 ```
 
@@ -1466,7 +1466,7 @@ function sfml.SocketSelector.add_tcp_socket(self: *sfml.SocketSelector, socket: 
 
 ### sfml.SocketSelector.add_udp_socket
 
-```nelua
+```lua
 function sfml.SocketSelector.add_udp_socket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void
 ```
 
@@ -1474,7 +1474,7 @@ function sfml.SocketSelector.add_udp_socket(self: *sfml.SocketSelector, socket: 
 
 ### sfml.SocketSelector.remove_tcp_listener
 
-```nelua
+```lua
 function sfml.SocketSelector.remove_tcp_listener(self: *sfml.SocketSelector, socket: *sfml.TcpListener): void
 ```
 
@@ -1482,7 +1482,7 @@ function sfml.SocketSelector.remove_tcp_listener(self: *sfml.SocketSelector, soc
 
 ### sfml.SocketSelector.remove_tcp_socket
 
-```nelua
+```lua
 function sfml.SocketSelector.remove_tcp_socket(self: *sfml.SocketSelector, socket: *sfml.TcpSocket): void
 ```
 
@@ -1490,7 +1490,7 @@ function sfml.SocketSelector.remove_tcp_socket(self: *sfml.SocketSelector, socke
 
 ### sfml.SocketSelector.remove_udp_socket
 
-```nelua
+```lua
 function sfml.SocketSelector.remove_udp_socket(self: *sfml.SocketSelector, socket: *sfml.UdpSocket): void
 ```
 
@@ -1498,7 +1498,7 @@ function sfml.SocketSelector.remove_udp_socket(self: *sfml.SocketSelector, socke
 
 ### sfml.SocketSelector.clear
 
-```nelua
+```lua
 function sfml.SocketSelector.clear(self: *sfml.SocketSelector): void
 ```
 
@@ -1506,7 +1506,7 @@ function sfml.SocketSelector.clear(self: *sfml.SocketSelector): void
 
 ### sfml.SocketSelector.wait
 
-```nelua
+```lua
 function sfml.SocketSelector.wait(self: *sfml.SocketSelector, timeout: sfml.Time): sfml.Bool
 ```
 
@@ -1514,7 +1514,7 @@ function sfml.SocketSelector.wait(self: *sfml.SocketSelector, timeout: sfml.Time
 
 ### sfml.SocketSelector.is_tcp_listener_ready
 
-```nelua
+```lua
 function sfml.SocketSelector.is_tcp_listener_ready(self: *sfml.SocketSelector <const>, socket: *sfml.TcpListener): void
 ```
 
@@ -1522,7 +1522,7 @@ function sfml.SocketSelector.is_tcp_listener_ready(self: *sfml.SocketSelector <c
 
 ### sfml.SocketSelector.is_tcp_socket_ready
 
-```nelua
+```lua
 function sfml.SocketSelector.is_tcp_socket_ready(self: *sfml.SocketSelector <const>, socket: *sfml.TcpSocket): void
 ```
 
@@ -1530,7 +1530,7 @@ function sfml.SocketSelector.is_tcp_socket_ready(self: *sfml.SocketSelector <con
 
 ### sfml.SocketSelector.is_udp_socket_ready
 
-```nelua
+```lua
 function sfml.SocketSelector.is_udp_socket_ready(self: *sfml.SocketSelector <const>, socket: *sfml.UdpSocket): void
 ```
 
@@ -1538,7 +1538,7 @@ function sfml.SocketSelector.is_udp_socket_ready(self: *sfml.SocketSelector <con
 
 ### sfml.TcpListener.create
 
-```nelua
+```lua
 function sfml.TcpListener.create(): *sfml.TcpListener
 ```
 
@@ -1546,7 +1546,7 @@ function sfml.TcpListener.create(): *sfml.TcpListener
 
 ### sfml.TcpListener.destroy
 
-```nelua
+```lua
 function sfml.TcpListener.destroy(self: *sfml.TcpListener): void
 ```
 
@@ -1554,7 +1554,7 @@ function sfml.TcpListener.destroy(self: *sfml.TcpListener): void
 
 ### sfml.TcpListener.set_blocking
 
-```nelua
+```lua
 function sfml.TcpListener.set_blocking(self: *sfml.TcpListener, blocking: sfml.Bool): void
 ```
 
@@ -1562,7 +1562,7 @@ function sfml.TcpListener.set_blocking(self: *sfml.TcpListener, blocking: sfml.B
 
 ### sfml.TcpListener.is_blocking
 
-```nelua
+```lua
 function sfml.TcpListener.is_blocking(self: *sfml.TcpListener <const>): sfml.Bool
 ```
 
@@ -1570,7 +1570,7 @@ function sfml.TcpListener.is_blocking(self: *sfml.TcpListener <const>): sfml.Boo
 
 ### sfml.TcpListener.get_local_port
 
-```nelua
+```lua
 function sfml.TcpListener.get_local_port(self: *sfml.TcpListener <const>): cushort
 ```
 
@@ -1578,7 +1578,7 @@ function sfml.TcpListener.get_local_port(self: *sfml.TcpListener <const>): cusho
 
 ### sfml.TcpListener.listen
 
-```nelua
+```lua
 function sfml.TcpListener.listen(self: *sfml.TcpListener <const>, port: cushort, address: sfml.IpAddress): sfml.SocketStatus
 ```
 
@@ -1586,7 +1586,7 @@ function sfml.TcpListener.listen(self: *sfml.TcpListener <const>, port: cushort,
 
 ### sfml.TcpListener.accept
 
-```nelua
+```lua
 function sfml.TcpListener.accept(self: *sfml.TcpListener <const>, connected: *[0]*sfml.TcpSocket): sfml.SocketStatus
 ```
 
@@ -1594,7 +1594,7 @@ function sfml.TcpListener.accept(self: *sfml.TcpListener <const>, connected: *[0
 
 ### sfml.TcpSocket.create
 
-```nelua
+```lua
 function sfml.TcpSocket.create(): *sfml.TcpSocket
 ```
 
@@ -1602,7 +1602,7 @@ function sfml.TcpSocket.create(): *sfml.TcpSocket
 
 ### sfml.TcpSocket.destroy
 
-```nelua
+```lua
 function sfml.TcpSocket.destroy(self: *sfml.TcpSocket): void
 ```
 
@@ -1610,7 +1610,7 @@ function sfml.TcpSocket.destroy(self: *sfml.TcpSocket): void
 
 ### sfml.TcpSocket.set_blocking
 
-```nelua
+```lua
 function sfml.TcpSocket.set_blocking(self: *sfml.TcpSocket, blocking: sfml.Bool): void
 ```
 
@@ -1618,7 +1618,7 @@ function sfml.TcpSocket.set_blocking(self: *sfml.TcpSocket, blocking: sfml.Bool)
 
 ### sfml.TcpSocket.is_blocking
 
-```nelua
+```lua
 function sfml.TcpSocket.is_blocking(self: *sfml.TcpSocket <const>): sfml.Bool
 ```
 
@@ -1626,7 +1626,7 @@ function sfml.TcpSocket.is_blocking(self: *sfml.TcpSocket <const>): sfml.Bool
 
 ### sfml.TcpSocket.get_local_port
 
-```nelua
+```lua
 function sfml.TcpSocket.get_local_port(self: *sfml.TcpSocket <const>): cushort
 ```
 
@@ -1634,7 +1634,7 @@ function sfml.TcpSocket.get_local_port(self: *sfml.TcpSocket <const>): cushort
 
 ### sfml.TcpSocket.get_remote_address
 
-```nelua
+```lua
 function sfml.TcpSocket.get_remote_address(self: *sfml.TcpSocket <const>): sfml.IpAddress
 ```
 
@@ -1642,7 +1642,7 @@ function sfml.TcpSocket.get_remote_address(self: *sfml.TcpSocket <const>): sfml.
 
 ### sfml.TcpSocket.get_remote_port
 
-```nelua
+```lua
 function sfml.TcpSocket.get_remote_port(self: *sfml.TcpSocket <const>): cushort
 ```
 
@@ -1650,7 +1650,7 @@ function sfml.TcpSocket.get_remote_port(self: *sfml.TcpSocket <const>): cushort
 
 ### sfml.TcpSocket.connect
 
-```nelua
+```lua
 function sfml.TcpSocket.connect(self: *sfml.TcpSocket, remoteAddress: sfml.IpAddress, remotePort: cushort, timeout: sfml.Time): sfml.SocketStatus
 ```
 
@@ -1658,7 +1658,7 @@ function sfml.TcpSocket.connect(self: *sfml.TcpSocket, remoteAddress: sfml.IpAdd
 
 ### sfml.TcpSocket.disconnect
 
-```nelua
+```lua
 function sfml.TcpSocket.disconnect(self: *sfml.TcpSocket): void
 ```
 
@@ -1666,7 +1666,7 @@ function sfml.TcpSocket.disconnect(self: *sfml.TcpSocket): void
 
 ### sfml.TcpSocket.send
 
-```nelua
+```lua
 function sfml.TcpSocket.send(self: *sfml.TcpSocket, data: pointer <const>, size: csize): sfml.SocketStatus
 ```
 
@@ -1674,7 +1674,7 @@ function sfml.TcpSocket.send(self: *sfml.TcpSocket, data: pointer <const>, size:
 
 ### sfml.TcpSocket.send_partial
 
-```nelua
+```lua
 function sfml.TcpSocket.send_partial(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus
 ```
 
@@ -1682,7 +1682,7 @@ function sfml.TcpSocket.send_partial(self: *sfml.TcpSocket, data: pointer <const
 
 ### sfml.TcpSocket.receive
 
-```nelua
+```lua
 function sfml.TcpSocket.receive(self: *sfml.TcpSocket, data: pointer <const>, size: csize, received: *csize): sfml.SocketStatus
 ```
 
@@ -1690,7 +1690,7 @@ function sfml.TcpSocket.receive(self: *sfml.TcpSocket, data: pointer <const>, si
 
 ### sfml.TcpSocket.send_packet
 
-```nelua
+```lua
 function sfml.TcpSocket.send_packet(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus
 ```
 
@@ -1698,7 +1698,7 @@ function sfml.TcpSocket.send_packet(self: *sfml.TcpSocket, packet: *sfml.Packet)
 
 ### sfml.TcpSocket.receive_packet
 
-```nelua
+```lua
 function sfml.TcpSocket.receive_packet(self: *sfml.TcpSocket, packet: *sfml.Packet): sfml.SocketStatus
 ```
 
@@ -1706,7 +1706,7 @@ function sfml.TcpSocket.receive_packet(self: *sfml.TcpSocket, packet: *sfml.Pack
 
 ### sfml.UdpSocket.create
 
-```nelua
+```lua
 function sfml.UdpSocket.create(): *sfml.UdpSocket
 ```
 
@@ -1714,7 +1714,7 @@ function sfml.UdpSocket.create(): *sfml.UdpSocket
 
 ### sfml.UdpSocket.destroy
 
-```nelua
+```lua
 function sfml.UdpSocket.destroy(self: *sfml.UdpSocket): void
 ```
 
@@ -1722,7 +1722,7 @@ function sfml.UdpSocket.destroy(self: *sfml.UdpSocket): void
 
 ### sfml.UdpSocket.set_blocking
 
-```nelua
+```lua
 function sfml.UdpSocket.set_blocking(self: *sfml.UdpSocket, blocking: sfml.Bool): void
 ```
 
@@ -1730,7 +1730,7 @@ function sfml.UdpSocket.set_blocking(self: *sfml.UdpSocket, blocking: sfml.Bool)
 
 ### sfml.UdpSocket.is_blocking
 
-```nelua
+```lua
 function sfml.UdpSocket.is_blocking(self: *sfml.UdpSocket <const>): sfml.Bool
 ```
 
@@ -1738,7 +1738,7 @@ function sfml.UdpSocket.is_blocking(self: *sfml.UdpSocket <const>): sfml.Bool
 
 ### sfml.UdpSocket.get_local_port
 
-```nelua
+```lua
 function sfml.UdpSocket.get_local_port(self: *sfml.UdpSocket <const>): cushort
 ```
 
@@ -1746,7 +1746,7 @@ function sfml.UdpSocket.get_local_port(self: *sfml.UdpSocket <const>): cushort
 
 ### sfml.UdpSocket.bind
 
-```nelua
+```lua
 function sfml.UdpSocket.bind(self: *sfml.UdpSocket <const>, port: cushort, address: sfml.IpAddress): sfml.SocketStatus
 ```
 
@@ -1754,7 +1754,7 @@ function sfml.UdpSocket.bind(self: *sfml.UdpSocket <const>, port: cushort, addre
 
 ### sfml.UdpSocket.unbind
 
-```nelua
+```lua
 function sfml.UdpSocket.unbind(self: *sfml.UdpSocket): void
 ```
 
@@ -1762,7 +1762,7 @@ function sfml.UdpSocket.unbind(self: *sfml.UdpSocket): void
 
 ### sfml.UdpSocket.send
 
-```nelua
+```lua
 function sfml.UdpSocket.send(self: *sfml.UdpSocket, data: pointer<const>, size: csize, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus
 ```
 
@@ -1770,7 +1770,7 @@ function sfml.UdpSocket.send(self: *sfml.UdpSocket, data: pointer<const>, size: 
 
 ### sfml.UdpSocket.receive
 
-```nelua
+```lua
 function sfml.UdpSocket.receive(self: *sfml.UdpSocket, data: pointer, size: csize, received: *csize, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus
 ```
 
@@ -1778,7 +1778,7 @@ function sfml.UdpSocket.receive(self: *sfml.UdpSocket, data: pointer, size: csiz
 
 ### sfml.UdpSocket.send_packet
 
-```nelua
+```lua
 function sfml.UdpSocket.send_packet(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: sfml.IpAddress, remotePort: cushort): sfml.SocketStatus
 ```
 
@@ -1786,7 +1786,7 @@ function sfml.UdpSocket.send_packet(self: *sfml.UdpSocket, packet: *sfml.Packet,
 
 ### sfml.UdpSocket.receive_packet
 
-```nelua
+```lua
 function sfml.UdpSocket.receive_packet(self: *sfml.UdpSocket, packet: *sfml.Packet, remoteAddress: *sfml.IpAddress, remotePort: *cushort): sfml.SocketStatus
 ```
 
@@ -1794,7 +1794,7 @@ function sfml.UdpSocket.receive_packet(self: *sfml.UdpSocket, packet: *sfml.Pack
 
 ### sfml.UdpSocket.max_datagram_size
 
-```nelua
+```lua
 function sfml.UdpSocket.max_datagram_size(): cuint
 ```
 
@@ -1802,7 +1802,7 @@ function sfml.UdpSocket.max_datagram_size(): cuint
 
 ### sfml.SoundStatus
 
-```nelua
+```lua
 global sfml.SoundStatus: type = @enum(cint) {
   Stopped = 0,
   Paused,
@@ -1814,7 +1814,7 @@ Audio
 
 ### sfml.TimeSpan
 
-```nelua
+```lua
 global sfml.TimeSpan: type = @record {
   offset: sfml.Time,
   length: sfml.Time
@@ -1825,7 +1825,7 @@ global sfml.TimeSpan: type = @record {
 
 ### sfml.Listener
 
-```nelua
+```lua
 global sfml.Listener = @record{}
 ```
 
@@ -1833,7 +1833,7 @@ Audio: Listener
 
 ### sfml.Listener.set_global_volume
 
-```nelua
+```lua
 function sfml.Listener.set_global_volume(volume: float32): void
 ```
 
@@ -1841,7 +1841,7 @@ function sfml.Listener.set_global_volume(volume: float32): void
 
 ### sfml.Listener.get_global_volume
 
-```nelua
+```lua
 function sfml.Listener.get_global_volume(): float32
 ```
 
@@ -1849,7 +1849,7 @@ function sfml.Listener.get_global_volume(): float32
 
 ### sfml.Listener.set_position
 
-```nelua
+```lua
 function sfml.Listener.set_position(position: sfml.Vector3f): void
 ```
 
@@ -1857,7 +1857,7 @@ function sfml.Listener.set_position(position: sfml.Vector3f): void
 
 ### sfml.Listener.get_position
 
-```nelua
+```lua
 function sfml.Listener.get_position(): sfml.Vector3f
 ```
 
@@ -1865,7 +1865,7 @@ function sfml.Listener.get_position(): sfml.Vector3f
 
 ### sfml.Listener.set_direction
 
-```nelua
+```lua
 function sfml.Listener.set_direction(direction: sfml.Vector3f): void
 ```
 
@@ -1873,7 +1873,7 @@ function sfml.Listener.set_direction(direction: sfml.Vector3f): void
 
 ### sfml.Listener.get_direction
 
-```nelua
+```lua
 function sfml.Listener.get_direction(): sfml.Vector3f
 ```
 
@@ -1881,7 +1881,7 @@ function sfml.Listener.get_direction(): sfml.Vector3f
 
 ### sfml.Listener.set_up_vector
 
-```nelua
+```lua
 function sfml.Listener.set_up_vector(upVector: sfml.Vector3f): void
 ```
 
@@ -1889,7 +1889,7 @@ function sfml.Listener.set_up_vector(upVector: sfml.Vector3f): void
 
 ### sfml.Listener.get_up_vector
 
-```nelua
+```lua
 function sfml.Listener.get_up_vector(): sfml.Vector3f
 ```
 
@@ -1897,7 +1897,7 @@ function sfml.Listener.get_up_vector(): sfml.Vector3f
 
 ### sfml.Music
 
-```nelua
+```lua
 global sfml.Music: type = @record {}
 ```
 
@@ -1905,7 +1905,7 @@ Audio: Music
 
 ### sfml.Sound
 
-```nelua
+```lua
 global sfml.Sound: type = @record {}
 ```
 
@@ -1913,7 +1913,7 @@ global sfml.Sound: type = @record {}
 
 ### sfml.SoundBuffer
 
-```nelua
+```lua
 global sfml.SoundBuffer: type = @record {}
 ```
 
@@ -1921,7 +1921,7 @@ global sfml.SoundBuffer: type = @record {}
 
 ### sfml.SoundBufferRecorder
 
-```nelua
+```lua
 global sfml.SoundBufferRecorder: type = @record {}
 ```
 
@@ -1929,7 +1929,7 @@ global sfml.SoundBufferRecorder: type = @record {}
 
 ### sfml.SoundRecorder
 
-```nelua
+```lua
 global sfml.SoundRecorder: type = @record {}
 ```
 
@@ -1937,7 +1937,7 @@ global sfml.SoundRecorder: type = @record {}
 
 ### sfml.SoundStream
 
-```nelua
+```lua
 global sfml.SoundStream: type = @record {}
 ```
 
@@ -1945,7 +1945,7 @@ global sfml.SoundStream: type = @record {}
 
 ### sfml.Music.create_from_file
 
-```nelua
+```lua
 function sfml.Music.create_from_file(filename: cstring <const>): *sfml.Music
 ```
 
@@ -1953,7 +1953,7 @@ function sfml.Music.create_from_file(filename: cstring <const>): *sfml.Music
 
 ### sfml.Music.create_from_memory
 
-```nelua
+```lua
 function sfml.Music.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.Music
 ```
 
@@ -1961,7 +1961,7 @@ function sfml.Music.create_from_memory(data: pointer <const>, sizeInBytes: csize
 
 ### sfml.Music.create_from_stream
 
-```nelua
+```lua
 function sfml.Music.create_from_stream(stream: *sfml.InputStream): *sfml.Music
 ```
 
@@ -1969,7 +1969,7 @@ function sfml.Music.create_from_stream(stream: *sfml.InputStream): *sfml.Music
 
 ### sfml.Music.destroy
 
-```nelua
+```lua
 function sfml.Music.destroy(self: *sfml.Music): void
 ```
 
@@ -1977,7 +1977,7 @@ function sfml.Music.destroy(self: *sfml.Music): void
 
 ### sfml.Music.get_loop
 
-```nelua
+```lua
 function sfml.Music.get_loop(self: *sfml.Music <const>): sfml.Bool
 ```
 
@@ -1985,7 +1985,7 @@ function sfml.Music.get_loop(self: *sfml.Music <const>): sfml.Bool
 
 ### sfml.Music.set_loop
 
-```nelua
+```lua
 function sfml.Music.set_loop(self: *sfml.Music, loop: sfml.Bool): void
 ```
 
@@ -1993,7 +1993,7 @@ function sfml.Music.set_loop(self: *sfml.Music, loop: sfml.Bool): void
 
 ### sfml.Music.get_duration
 
-```nelua
+```lua
 function sfml.Music.get_duration(self: *sfml.Music <const>): sfml.Time
 ```
 
@@ -2001,7 +2001,7 @@ function sfml.Music.get_duration(self: *sfml.Music <const>): sfml.Time
 
 ### sfml.Music.get_loop_points
 
-```nelua
+```lua
 function sfml.Music.get_loop_points(self: *sfml.Music <const>): sfml.TimeSpan
 ```
 
@@ -2009,7 +2009,7 @@ function sfml.Music.get_loop_points(self: *sfml.Music <const>): sfml.TimeSpan
 
 ### sfml.Music.set_loop_points
 
-```nelua
+```lua
 function sfml.Music.set_loop_points(self: *sfml.Music, timePoints: sfml.TimeSpan): void
 ```
 
@@ -2017,7 +2017,7 @@ function sfml.Music.set_loop_points(self: *sfml.Music, timePoints: sfml.TimeSpan
 
 ### sfml.Music.play
 
-```nelua
+```lua
 function sfml.Music.play(self: *sfml.Music): void
 ```
 
@@ -2025,7 +2025,7 @@ function sfml.Music.play(self: *sfml.Music): void
 
 ### sfml.Music.pause
 
-```nelua
+```lua
 function sfml.Music.pause(self: *sfml.Music): void
 ```
 
@@ -2033,7 +2033,7 @@ function sfml.Music.pause(self: *sfml.Music): void
 
 ### sfml.Music.stop
 
-```nelua
+```lua
 function sfml.Music.stop(self: *sfml.Music): void
 ```
 
@@ -2041,7 +2041,7 @@ function sfml.Music.stop(self: *sfml.Music): void
 
 ### sfml.Music.get_channel_count
 
-```nelua
+```lua
 function sfml.Music.get_channel_count(self: *sfml.Music <const>): cuint
 ```
 
@@ -2049,7 +2049,7 @@ function sfml.Music.get_channel_count(self: *sfml.Music <const>): cuint
 
 ### sfml.Music.get_sample_rate
 
-```nelua
+```lua
 function sfml.Music.get_sample_rate(self: *sfml.Music <const>): cuint
 ```
 
@@ -2057,7 +2057,7 @@ function sfml.Music.get_sample_rate(self: *sfml.Music <const>): cuint
 
 ### sfml.Music.get_status
 
-```nelua
+```lua
 function sfml.Music.get_status(self: *sfml.Music <const>): sfml.SoundStatus
 ```
 
@@ -2065,7 +2065,7 @@ function sfml.Music.get_status(self: *sfml.Music <const>): sfml.SoundStatus
 
 ### sfml.Music.get_playing_offset
 
-```nelua
+```lua
 function sfml.Music.get_playing_offset(self: *sfml.Music <const>): sfml.Time
 ```
 
@@ -2073,7 +2073,7 @@ function sfml.Music.get_playing_offset(self: *sfml.Music <const>): sfml.Time
 
 ### sfml.Music.set_playing_offset
 
-```nelua
+```lua
 function sfml.Music.set_playing_offset(self: *sfml.Music, timeOffset: sfml.Time): void
 ```
 
@@ -2081,7 +2081,7 @@ function sfml.Music.set_playing_offset(self: *sfml.Music, timeOffset: sfml.Time)
 
 ### sfml.Music.get_pitch
 
-```nelua
+```lua
 function sfml.Music.get_pitch(self: *sfml.Music <const>): float32
 ```
 
@@ -2089,7 +2089,7 @@ function sfml.Music.get_pitch(self: *sfml.Music <const>): float32
 
 ### sfml.Music.set_pitch
 
-```nelua
+```lua
 function sfml.Music.set_pitch(self: *sfml.Music, pitch: float32): void
 ```
 
@@ -2097,7 +2097,7 @@ function sfml.Music.set_pitch(self: *sfml.Music, pitch: float32): void
 
 ### sfml.Music.get_volume
 
-```nelua
+```lua
 function sfml.Music.get_volume(self: *sfml.Music <const>): float32
 ```
 
@@ -2105,7 +2105,7 @@ function sfml.Music.get_volume(self: *sfml.Music <const>): float32
 
 ### sfml.Music.set_volume
 
-```nelua
+```lua
 function sfml.Music.set_volume(self: *sfml.Music, volume: float32): void
 ```
 
@@ -2113,7 +2113,7 @@ function sfml.Music.set_volume(self: *sfml.Music, volume: float32): void
 
 ### sfml.Music.get_position
 
-```nelua
+```lua
 function sfml.Music.get_position(self: *sfml.Music <const>): sfml.Vector3f
 ```
 
@@ -2121,7 +2121,7 @@ function sfml.Music.get_position(self: *sfml.Music <const>): sfml.Vector3f
 
 ### sfml.Music.set_position
 
-```nelua
+```lua
 function sfml.Music.set_position(self: *sfml.Music, position: sfml.Vector3f): void
 ```
 
@@ -2129,7 +2129,7 @@ function sfml.Music.set_position(self: *sfml.Music, position: sfml.Vector3f): vo
 
 ### sfml.Music.set_relative_to_listener
 
-```nelua
+```lua
 function sfml.Music.set_relative_to_listener(music: *sfml.Music, relative: sfml.Bool): void
 ```
 
@@ -2137,7 +2137,7 @@ function sfml.Music.set_relative_to_listener(music: *sfml.Music, relative: sfml.
 
 ### sfml.Music.get_min_distance
 
-```nelua
+```lua
 function sfml.Music.get_min_distance(self: *sfml.Music <const>): float32
 ```
 
@@ -2145,7 +2145,7 @@ function sfml.Music.get_min_distance(self: *sfml.Music <const>): float32
 
 ### sfml.Music.set_min_distance
 
-```nelua
+```lua
 function sfml.Music.set_min_distance(self: *sfml.Music, distance: float32): void
 ```
 
@@ -2153,7 +2153,7 @@ function sfml.Music.set_min_distance(self: *sfml.Music, distance: float32): void
 
 ### sfml.Music.get_attenuation
 
-```nelua
+```lua
 function sfml.Music.get_attenuation(self: *sfml.Music <const>): float32
 ```
 
@@ -2161,7 +2161,7 @@ function sfml.Music.get_attenuation(self: *sfml.Music <const>): float32
 
 ### sfml.Music.set_attenuation
 
-```nelua
+```lua
 function sfml.Music.set_attenuation(self: *sfml.Music, attenuation: float32): void
 ```
 
@@ -2169,7 +2169,7 @@ function sfml.Music.set_attenuation(self: *sfml.Music, attenuation: float32): vo
 
 ### sfml.Music.is_relative_to_listener
 
-```nelua
+```lua
 function sfml.Music.is_relative_to_listener(self: *sfml.Music <const>): sfml.Bool
 ```
 
@@ -2177,7 +2177,7 @@ function sfml.Music.is_relative_to_listener(self: *sfml.Music <const>): sfml.Boo
 
 ### sfml.Sound.create
 
-```nelua
+```lua
 function sfml.Sound.create(): *sfml.Sound
 ```
 
@@ -2185,7 +2185,7 @@ Audio: Sound
 
 ### sfml.Sound.copy
 
-```nelua
+```lua
 function sfml.Sound.copy(self: *sfml.Sound <const>): *sfml.Sound
 ```
 
@@ -2193,7 +2193,7 @@ function sfml.Sound.copy(self: *sfml.Sound <const>): *sfml.Sound
 
 ### sfml.Sound.destroy
 
-```nelua
+```lua
 function sfml.Sound.destroy(self: *sfml.Sound): void
 ```
 
@@ -2201,7 +2201,7 @@ function sfml.Sound.destroy(self: *sfml.Sound): void
 
 ### sfml.Sound.play
 
-```nelua
+```lua
 function sfml.Sound.play(self: *sfml.Sound): void
 ```
 
@@ -2209,7 +2209,7 @@ function sfml.Sound.play(self: *sfml.Sound): void
 
 ### sfml.Sound.pause
 
-```nelua
+```lua
 function sfml.Sound.pause(self: *sfml.Sound): void
 ```
 
@@ -2217,7 +2217,7 @@ function sfml.Sound.pause(self: *sfml.Sound): void
 
 ### sfml.Sound.stop
 
-```nelua
+```lua
 function sfml.Sound.stop(self: *sfml.Sound): void
 ```
 
@@ -2225,7 +2225,7 @@ function sfml.Sound.stop(self: *sfml.Sound): void
 
 ### sfml.Sound.get_buffer
 
-```nelua
+```lua
 function sfml.Sound.get_buffer(self: *sfml.Sound <const>): *sfml.SoundBuffer
 ```
 
@@ -2233,7 +2233,7 @@ function sfml.Sound.get_buffer(self: *sfml.Sound <const>): *sfml.SoundBuffer
 
 ### sfml.Sound.set_buffer
 
-```nelua
+```lua
 function sfml.Sound.set_buffer(self: *sfml.Sound, buffer: *sfml.SoundBuffer <const>): void
 ```
 
@@ -2241,7 +2241,7 @@ function sfml.Sound.set_buffer(self: *sfml.Sound, buffer: *sfml.SoundBuffer <con
 
 ### sfml.Sound.set_loop
 
-```nelua
+```lua
 function sfml.Sound.set_loop(self: *sfml.Sound, loop: sfml.Bool): void
 ```
 
@@ -2249,7 +2249,7 @@ function sfml.Sound.set_loop(self: *sfml.Sound, loop: sfml.Bool): void
 
 ### sfml.Sound.get_loop
 
-```nelua
+```lua
 function sfml.Sound.get_loop(self: *sfml.Sound <const>): sfml.Bool
 ```
 
@@ -2257,7 +2257,7 @@ function sfml.Sound.get_loop(self: *sfml.Sound <const>): sfml.Bool
 
 ### sfml.Sound.get_status
 
-```nelua
+```lua
 function sfml.Sound.get_status(self: *sfml.Sound <const>): sfml.SoundStatus
 ```
 
@@ -2265,7 +2265,7 @@ function sfml.Sound.get_status(self: *sfml.Sound <const>): sfml.SoundStatus
 
 ### sfml.Sound.get_pitch
 
-```nelua
+```lua
 function sfml.Sound.get_pitch(self: *sfml.Sound <const>): float32
 ```
 
@@ -2273,7 +2273,7 @@ function sfml.Sound.get_pitch(self: *sfml.Sound <const>): float32
 
 ### sfml.Sound.set_pitch
 
-```nelua
+```lua
 function sfml.Sound.set_pitch(self: *sfml.Sound, pitch: float32): void
 ```
 
@@ -2281,7 +2281,7 @@ function sfml.Sound.set_pitch(self: *sfml.Sound, pitch: float32): void
 
 ### sfml.Sound.get_volume
 
-```nelua
+```lua
 function sfml.Sound.get_volume(self: *sfml.Sound <const>): float32
 ```
 
@@ -2289,7 +2289,7 @@ function sfml.Sound.get_volume(self: *sfml.Sound <const>): float32
 
 ### sfml.Sound.set_volume
 
-```nelua
+```lua
 function sfml.Sound.set_volume(self: *sfml.Sound, volume: float32): void
 ```
 
@@ -2297,7 +2297,7 @@ function sfml.Sound.set_volume(self: *sfml.Sound, volume: float32): void
 
 ### sfml.Sound.get_position
 
-```nelua
+```lua
 function sfml.Sound.get_position(self: *sfml.Sound <const>): sfml.Vector3f
 ```
 
@@ -2305,7 +2305,7 @@ function sfml.Sound.get_position(self: *sfml.Sound <const>): sfml.Vector3f
 
 ### sfml.Sound.set_position
 
-```nelua
+```lua
 function sfml.Sound.set_position(self: *sfml.Sound, position: sfml.Vector3f): void
 ```
 
@@ -2313,7 +2313,7 @@ function sfml.Sound.set_position(self: *sfml.Sound, position: sfml.Vector3f): vo
 
 ### sfml.Sound.get_min_distance
 
-```nelua
+```lua
 function sfml.Sound.get_min_distance(self: *sfml.Sound <const>): float32
 ```
 
@@ -2321,7 +2321,7 @@ function sfml.Sound.get_min_distance(self: *sfml.Sound <const>): float32
 
 ### sfml.Sound.set_min_distance
 
-```nelua
+```lua
 function sfml.Sound.set_min_distance(self: *sfml.Sound, distance: float32): void
 ```
 
@@ -2329,7 +2329,7 @@ function sfml.Sound.set_min_distance(self: *sfml.Sound, distance: float32): void
 
 ### sfml.Sound.get_attenuation
 
-```nelua
+```lua
 function sfml.Sound.get_attenuation(self: *sfml.Sound <const>): float32
 ```
 
@@ -2337,7 +2337,7 @@ function sfml.Sound.get_attenuation(self: *sfml.Sound <const>): float32
 
 ### sfml.Sound.set_attenuation
 
-```nelua
+```lua
 function sfml.Sound.set_attenuation(self: *sfml.Sound, attenuation: float32): void
 ```
 
@@ -2345,7 +2345,7 @@ function sfml.Sound.set_attenuation(self: *sfml.Sound, attenuation: float32): vo
 
 ### sfml.Sound.get_playing_offset
 
-```nelua
+```lua
 function sfml.Sound.get_playing_offset(self: *sfml.Sound <const>): sfml.Time
 ```
 
@@ -2353,7 +2353,7 @@ function sfml.Sound.get_playing_offset(self: *sfml.Sound <const>): sfml.Time
 
 ### sfml.Sound.set_playing_offset
 
-```nelua
+```lua
 function sfml.Sound.set_playing_offset(self: *sfml.Sound, timeOffset: sfml.Time): void
 ```
 
@@ -2361,7 +2361,7 @@ function sfml.Sound.set_playing_offset(self: *sfml.Sound, timeOffset: sfml.Time)
 
 ### sfml.Sound.set_relative_to_listener
 
-```nelua
+```lua
 function sfml.Sound.set_relative_to_listener(self: *sfml.Sound, relative: sfml.Bool): void
 ```
 
@@ -2369,7 +2369,7 @@ function sfml.Sound.set_relative_to_listener(self: *sfml.Sound, relative: sfml.B
 
 ### sfml.Sound.is_relative_to_listener
 
-```nelua
+```lua
 function sfml.Sound.is_relative_to_listener(self: *sfml.Sound <const>): sfml.Bool
 ```
 
@@ -2377,7 +2377,7 @@ function sfml.Sound.is_relative_to_listener(self: *sfml.Sound <const>): sfml.Boo
 
 ### sfml.SoundBuffer.create_from_file
 
-```nelua
+```lua
 function sfml.SoundBuffer.create_from_file(filename: cstring <const>): *sfml.SoundBuffer
 ```
 
@@ -2385,7 +2385,7 @@ Audio: Sound Buffer
 
 ### sfml.SoundBuffer.create_from_memory
 
-```nelua
+```lua
 function sfml.SoundBuffer.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.SoundBuffer
 ```
 
@@ -2393,7 +2393,7 @@ function sfml.SoundBuffer.create_from_memory(data: pointer <const>, sizeInBytes:
 
 ### sfml.SoundBuffer.create_from_stream
 
-```nelua
+```lua
 function sfml.SoundBuffer.create_from_stream(stream: *sfml.InputStream): *sfml.SoundBuffer
 ```
 
@@ -2401,7 +2401,7 @@ function sfml.SoundBuffer.create_from_stream(stream: *sfml.InputStream): *sfml.S
 
 ### sfml.SoundBuffer.create_from_samples
 
-```nelua
+```lua
 function sfml.SoundBuffer.create_from_samples(samples: *[0]sfml.Int16, sampleCount: sfml.Uint64, channelCount: cuint, sampleRate: cuint): *sfml.SoundBuffer
 ```
 
@@ -2409,7 +2409,7 @@ function sfml.SoundBuffer.create_from_samples(samples: *[0]sfml.Int16, sampleCou
 
 ### sfml.SoundBuffer.copy
 
-```nelua
+```lua
 function sfml.SoundBuffer.copy(self: *sfml.SoundBuffer <const>): *sfml.SoundBuffer
 ```
 
@@ -2417,7 +2417,7 @@ function sfml.SoundBuffer.copy(self: *sfml.SoundBuffer <const>): *sfml.SoundBuff
 
 ### sfml.SoundBuffer.destroy
 
-```nelua
+```lua
 function sfml.SoundBuffer.destroy(self: *sfml.SoundBuffer): void
 ```
 
@@ -2425,7 +2425,7 @@ function sfml.SoundBuffer.destroy(self: *sfml.SoundBuffer): void
 
 ### sfml.SoundBuffer.save_to_file
 
-```nelua
+```lua
 function sfml.SoundBuffer.save_to_file(self: *sfml.SoundBuffer <const>, filename: cstring <const>): sfml.Bool
 ```
 
@@ -2433,7 +2433,7 @@ function sfml.SoundBuffer.save_to_file(self: *sfml.SoundBuffer <const>, filename
 
 ### sfml.SoundBuffer.get_samples
 
-```nelua
+```lua
 function sfml.SoundBuffer.get_samples(self: *sfml.SoundBuffer <const>): *[0]sfml.Int16
 ```
 
@@ -2441,7 +2441,7 @@ function sfml.SoundBuffer.get_samples(self: *sfml.SoundBuffer <const>): *[0]sfml
 
 ### sfml.SoundBuffer.get_sample_count
 
-```nelua
+```lua
 function sfml.SoundBuffer.get_sample_count(self: *sfml.SoundBuffer <const>): sfml.Uint64
 ```
 
@@ -2449,7 +2449,7 @@ function sfml.SoundBuffer.get_sample_count(self: *sfml.SoundBuffer <const>): sfm
 
 ### sfml.SoundBuffer.get_sample_rate
 
-```nelua
+```lua
 function sfml.SoundBuffer.get_sample_rate(self: *sfml.SoundBuffer <const>): cuint
 ```
 
@@ -2457,7 +2457,7 @@ function sfml.SoundBuffer.get_sample_rate(self: *sfml.SoundBuffer <const>): cuin
 
 ### sfml.SoundBuffer.get_channel_count
 
-```nelua
+```lua
 function sfml.SoundBuffer.get_channel_count(self: *sfml.SoundBuffer <const>): cuint
 ```
 
@@ -2465,7 +2465,7 @@ function sfml.SoundBuffer.get_channel_count(self: *sfml.SoundBuffer <const>): cu
 
 ### sfml.SoundBuffer.get_duration
 
-```nelua
+```lua
 function sfml.SoundBuffer.get_duration(self: *sfml.SoundBuffer <const>): sfml.Time
 ```
 
@@ -2473,7 +2473,7 @@ function sfml.SoundBuffer.get_duration(self: *sfml.SoundBuffer <const>): sfml.Ti
 
 ### sfml.SoundBufferRecorder.create
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.create(): *sfml.SoundBufferRecorder
 ```
 
@@ -2481,7 +2481,7 @@ Audio: Sound Buffer Recorder
 
 ### sfml.SoundBufferRecorder.destroy
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.destroy(self: *sfml.SoundBufferRecorder): void
 ```
 
@@ -2489,7 +2489,7 @@ function sfml.SoundBufferRecorder.destroy(self: *sfml.SoundBufferRecorder): void
 
 ### sfml.SoundBufferRecorder.start
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.start(self: *sfml.SoundBufferRecorder, sampleRate: cuint): sfml.Bool
 ```
 
@@ -2497,7 +2497,7 @@ function sfml.SoundBufferRecorder.start(self: *sfml.SoundBufferRecorder, sampleR
 
 ### sfml.SoundBufferRecorder.stop
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.stop(self: *sfml.SoundBufferRecorder): void
 ```
 
@@ -2505,7 +2505,7 @@ function sfml.SoundBufferRecorder.stop(self: *sfml.SoundBufferRecorder): void
 
 ### sfml.SoundBufferRecorder.get_sample_rate
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.get_sample_rate(self: *sfml.SoundBufferRecorder <const>): cuint
 ```
 
@@ -2513,7 +2513,7 @@ function sfml.SoundBufferRecorder.get_sample_rate(self: *sfml.SoundBufferRecorde
 
 ### sfml.SoundBufferRecorder.get_buffer
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.get_buffer(self: *sfml.SoundBufferRecorder <const>): *sfml.SoundBuffer
 ```
 
@@ -2521,7 +2521,7 @@ function sfml.SoundBufferRecorder.get_buffer(self: *sfml.SoundBufferRecorder <co
 
 ### sfml.SoundBufferRecorder.set_device
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.set_device(self: *sfml.SoundBufferRecorder <const>, name: cstring <const>): sfml.Bool
 ```
 
@@ -2529,7 +2529,7 @@ function sfml.SoundBufferRecorder.set_device(self: *sfml.SoundBufferRecorder <co
 
 ### sfml.SoundBufferRecorder.get_device
 
-```nelua
+```lua
 function sfml.SoundBufferRecorder.get_device(self: *sfml.SoundBufferRecorder): cstring
 ```
 
@@ -2537,7 +2537,7 @@ function sfml.SoundBufferRecorder.get_device(self: *sfml.SoundBufferRecorder): c
 
 ### sfml.SoundRecorderStartCallback
 
-```nelua
+```lua
 global sfml.SoundRecorderStartCallback: type = @function(pointer): sfml.Bool
 ```
 
@@ -2545,7 +2545,7 @@ global sfml.SoundRecorderStartCallback: type = @function(pointer): sfml.Bool
 
 ### sfml.SoundRecorderProcessCallback
 
-```nelua
+```lua
 global sfml.SoundRecorderProcessCallback: type = @function(*[0]sfml.Int16, csize, pointer): sfml.Bool
 ```
 
@@ -2553,7 +2553,7 @@ global sfml.SoundRecorderProcessCallback: type = @function(*[0]sfml.Int16, csize
 
 ### sfml.SoundRecorderStopCallback
 
-```nelua
+```lua
 global sfml.SoundRecorderStopCallback: type = @function(pointer): void
 ```
 
@@ -2561,7 +2561,7 @@ global sfml.SoundRecorderStopCallback: type = @function(pointer): void
 
 ### sfml.SoundRecorder.create
 
-```nelua
+```lua
 function sfml.SoundRecorder.create(onStart: sfml.SoundRecorderStartCallback, onProcess: sfml.SoundRecorderProcessCallback, onStop: sfml.SoundRecorderStopCallback, userData: pointer): *sfml.SoundRecorder
 ```
 
@@ -2569,7 +2569,7 @@ Audio: Sound Recorder
 
 ### sfml.SoundRecorder.destroy
 
-```nelua
+```lua
 function sfml.SoundRecorder.destroy(self: *sfml.SoundRecorder): void
 ```
 
@@ -2577,7 +2577,7 @@ function sfml.SoundRecorder.destroy(self: *sfml.SoundRecorder): void
 
 ### sfml.SoundRecorder.start
 
-```nelua
+```lua
 function sfml.SoundRecorder.start(self: *sfml.SoundRecorder, sampleRate: cuint): sfml.Bool
 ```
 
@@ -2585,7 +2585,7 @@ function sfml.SoundRecorder.start(self: *sfml.SoundRecorder, sampleRate: cuint):
 
 ### sfml.SoundRecorder.stop
 
-```nelua
+```lua
 function sfml.SoundRecorder.stop(self: *sfml.SoundRecorder): void
 ```
 
@@ -2593,7 +2593,7 @@ function sfml.SoundRecorder.stop(self: *sfml.SoundRecorder): void
 
 ### sfml.SoundRecorder.get_sample_rate
 
-```nelua
+```lua
 function sfml.SoundRecorder.get_sample_rate(self: *sfml.SoundRecorder <const>): cuint
 ```
 
@@ -2601,7 +2601,7 @@ function sfml.SoundRecorder.get_sample_rate(self: *sfml.SoundRecorder <const>): 
 
 ### sfml.SoundRecorder.is_available
 
-```nelua
+```lua
 function sfml.SoundRecorder.is_available(): sfml.Bool
 ```
 
@@ -2609,7 +2609,7 @@ function sfml.SoundRecorder.is_available(): sfml.Bool
 
 ### sfml.SoundRecorder.set_processing_interval
 
-```nelua
+```lua
 function sfml.SoundRecorder.set_processing_interval(self: *sfml.SoundRecorder, interval: sfml.Time): void
 ```
 
@@ -2617,7 +2617,7 @@ function sfml.SoundRecorder.set_processing_interval(self: *sfml.SoundRecorder, i
 
 ### sfml.SoundRecorder.get_available_devices
 
-```nelua
+```lua
 function sfml.SoundRecorder.get_available_devices(count: csize): *[0]cstring
 ```
 
@@ -2625,7 +2625,7 @@ function sfml.SoundRecorder.get_available_devices(count: csize): *[0]cstring
 
 ### sfml.SoundRecorder.get_default_device
 
-```nelua
+```lua
 function sfml.SoundRecorder.get_default_device(): cstring
 ```
 
@@ -2633,7 +2633,7 @@ function sfml.SoundRecorder.get_default_device(): cstring
 
 ### sfml.SoundRecorder.get_device
 
-```nelua
+```lua
 function sfml.SoundRecorder.get_device(self: *sfml.SoundRecorder): cstring
 ```
 
@@ -2641,7 +2641,7 @@ function sfml.SoundRecorder.get_device(self: *sfml.SoundRecorder): cstring
 
 ### sfml.SoundRecorder.set_device
 
-```nelua
+```lua
 function sfml.SoundRecorder.set_device(self: *sfml.SoundRecorder, name: cstring <const>): sfml.Bool
 ```
 
@@ -2649,7 +2649,7 @@ function sfml.SoundRecorder.set_device(self: *sfml.SoundRecorder, name: cstring 
 
 ### sfml.SoundRecorder.get_channel_count
 
-```nelua
+```lua
 function sfml.SoundRecorder.get_channel_count(self: *sfml.SoundRecorder <const>): cuint
 ```
 
@@ -2657,7 +2657,7 @@ function sfml.SoundRecorder.get_channel_count(self: *sfml.SoundRecorder <const>)
 
 ### sfml.SoundRecorder.set_channel_count
 
-```nelua
+```lua
 function sfml.SoundRecorder.set_channel_count(self: *sfml.SoundRecorder, channelCount: cuint): void
 ```
 
@@ -2665,7 +2665,7 @@ function sfml.SoundRecorder.set_channel_count(self: *sfml.SoundRecorder, channel
 
 ### sfml.SoundStreamChunk
 
-```nelua
+```lua
 global sfml.SoundStreamChunk: type = @record {
   samples: *[0]sfml.Int16,
   sampleCount: cuint
@@ -2676,7 +2676,7 @@ Audio: SoundStream
 
 ### sfml.SoundStreamGetDataCallback
 
-```nelua
+```lua
 global sfml.SoundStreamGetDataCallback: type = @function(*sfml.SoundStreamChunk, pointer): sfml.Bool
 ```
 
@@ -2684,7 +2684,7 @@ global sfml.SoundStreamGetDataCallback: type = @function(*sfml.SoundStreamChunk,
 
 ### sfml.SoundStreamSeekCallback
 
-```nelua
+```lua
 global sfml.SoundStreamSeekCallback: type = @function(sfml.Time, pointer): void
 ```
 
@@ -2692,7 +2692,7 @@ global sfml.SoundStreamSeekCallback: type = @function(sfml.Time, pointer): void
 
 ### sfml.SoundStream.create
 
-```nelua
+```lua
 function sfml.SoundStream.create(onGetData: sfml.SoundStreamGetDataCallback, onSeek: sfml.SoundStreamSeekCallback, channelCount: cuint, sampleRate: cuint, userData: pointer): *sfml.SoundStream
 ```
 
@@ -2700,7 +2700,7 @@ function sfml.SoundStream.create(onGetData: sfml.SoundStreamGetDataCallback, onS
 
 ### sfml.SoundStream.destroy
 
-```nelua
+```lua
 function sfml.SoundStream.destroy(self: *sfml.SoundStream): void
 ```
 
@@ -2708,7 +2708,7 @@ function sfml.SoundStream.destroy(self: *sfml.SoundStream): void
 
 ### sfml.SoundStream.play
 
-```nelua
+```lua
 function sfml.SoundStream.play(self: *sfml.SoundStream): void
 ```
 
@@ -2716,7 +2716,7 @@ function sfml.SoundStream.play(self: *sfml.SoundStream): void
 
 ### sfml.SoundStream.pause
 
-```nelua
+```lua
 function sfml.SoundStream.pause(self: *sfml.SoundStream): void
 ```
 
@@ -2724,7 +2724,7 @@ function sfml.SoundStream.pause(self: *sfml.SoundStream): void
 
 ### sfml.SoundStream.stop
 
-```nelua
+```lua
 function sfml.SoundStream.stop(self: *sfml.SoundStream): void
 ```
 
@@ -2732,7 +2732,7 @@ function sfml.SoundStream.stop(self: *sfml.SoundStream): void
 
 ### sfml.SoundStream.get_status
 
-```nelua
+```lua
 function sfml.SoundStream.get_status(self: *sfml.SoundStream <const>): sfml.SoundStatus
 ```
 
@@ -2740,7 +2740,7 @@ function sfml.SoundStream.get_status(self: *sfml.SoundStream <const>): sfml.Soun
 
 ### sfml.SoundStream.get_channel_count
 
-```nelua
+```lua
 function sfml.SoundStream.get_channel_count(self: *sfml.SoundStream <const>): cuint
 ```
 
@@ -2748,7 +2748,7 @@ function sfml.SoundStream.get_channel_count(self: *sfml.SoundStream <const>): cu
 
 ### sfml.SoundStream.get_pitch
 
-```nelua
+```lua
 function sfml.SoundStream.get_pitch(self: *sfml.SoundStream <const>): float32
 ```
 
@@ -2756,7 +2756,7 @@ function sfml.SoundStream.get_pitch(self: *sfml.SoundStream <const>): float32
 
 ### sfml.SoundStream.set_pitch
 
-```nelua
+```lua
 function sfml.SoundStream.set_pitch(self: *sfml.SoundStream, pitch: float32): void
 ```
 
@@ -2764,7 +2764,7 @@ function sfml.SoundStream.set_pitch(self: *sfml.SoundStream, pitch: float32): vo
 
 ### sfml.SoundStream.get_volume
 
-```nelua
+```lua
 function sfml.SoundStream.get_volume(self: *sfml.SoundStream <const>): float32
 ```
 
@@ -2772,7 +2772,7 @@ function sfml.SoundStream.get_volume(self: *sfml.SoundStream <const>): float32
 
 ### sfml.SoundStream.set_volume
 
-```nelua
+```lua
 function sfml.SoundStream.set_volume(self: *sfml.SoundStream, volume: float32): void
 ```
 
@@ -2780,7 +2780,7 @@ function sfml.SoundStream.set_volume(self: *sfml.SoundStream, volume: float32): 
 
 ### sfml.SoundStream.get_position
 
-```nelua
+```lua
 function sfml.SoundStream.get_position(self: *sfml.SoundStream <const>): sfml.Vector3f
 ```
 
@@ -2788,7 +2788,7 @@ function sfml.SoundStream.get_position(self: *sfml.SoundStream <const>): sfml.Ve
 
 ### sfml.SoundStream.set_position
 
-```nelua
+```lua
 function sfml.SoundStream.set_position(self: *sfml.SoundStream, position: sfml.Vector3f): void
 ```
 
@@ -2796,7 +2796,7 @@ function sfml.SoundStream.set_position(self: *sfml.SoundStream, position: sfml.V
 
 ### sfml.SoundStream.get_min_distance
 
-```nelua
+```lua
 function sfml.SoundStream.get_min_distance(self: *sfml.SoundStream <const>): float32
 ```
 
@@ -2804,7 +2804,7 @@ function sfml.SoundStream.get_min_distance(self: *sfml.SoundStream <const>): flo
 
 ### sfml.SoundStream.set_min_distance
 
-```nelua
+```lua
 function sfml.SoundStream.set_min_distance(self: *sfml.SoundStream, distance: float32): void
 ```
 
@@ -2812,7 +2812,7 @@ function sfml.SoundStream.set_min_distance(self: *sfml.SoundStream, distance: fl
 
 ### sfml.SoundStream.get_playing_offset
 
-```nelua
+```lua
 function sfml.SoundStream.get_playing_offset(self: *sfml.SoundStream <const>): sfml.Time
 ```
 
@@ -2820,7 +2820,7 @@ function sfml.SoundStream.get_playing_offset(self: *sfml.SoundStream <const>): s
 
 ### sfml.SoundStream.set_playing_offset
 
-```nelua
+```lua
 function sfml.SoundStream.set_playing_offset(self: *sfml.SoundStream, timeOffset: sfml.Time): void
 ```
 
@@ -2828,7 +2828,7 @@ function sfml.SoundStream.set_playing_offset(self: *sfml.SoundStream, timeOffset
 
 ### sfml.SoundStream.get_loop
 
-```nelua
+```lua
 function sfml.SoundStream.get_loop(self: *sfml.SoundStream <const>): sfml.Bool
 ```
 
@@ -2836,7 +2836,7 @@ function sfml.SoundStream.get_loop(self: *sfml.SoundStream <const>): sfml.Bool
 
 ### sfml.SoundStream.set_loop
 
-```nelua
+```lua
 function sfml.SoundStream.set_loop(self: *sfml.SoundStream, loop: sfml.Bool): void
 ```
 
@@ -2844,7 +2844,7 @@ function sfml.SoundStream.set_loop(self: *sfml.SoundStream, loop: sfml.Bool): vo
 
 ### sfml.SoundStream.get_attenuation
 
-```nelua
+```lua
 function sfml.SoundStream.get_attenuation(self: *sfml.SoundStream <const>): float32
 ```
 
@@ -2852,7 +2852,7 @@ function sfml.SoundStream.get_attenuation(self: *sfml.SoundStream <const>): floa
 
 ### sfml.SoundStream.set_attenuation
 
-```nelua
+```lua
 function sfml.SoundStream.set_attenuation(self: *sfml.SoundStream, attenuation: float32): void
 ```
 
@@ -2860,7 +2860,7 @@ function sfml.SoundStream.set_attenuation(self: *sfml.SoundStream, attenuation: 
 
 ### sfml.SoundStream.is_relative_to_listener
 
-```nelua
+```lua
 function sfml.SoundStream.is_relative_to_listener(self: *sfml.SoundStream <const>): sfml.Bool
 ```
 
@@ -2868,7 +2868,7 @@ function sfml.SoundStream.is_relative_to_listener(self: *sfml.SoundStream <const
 
 ### sfml.SoundStream.set_relative_to_listener
 
-```nelua
+```lua
 function sfml.SoundStream.set_relative_to_listener(self: *sfml.SoundStream, relative: sfml.Bool): void
 ```
 
@@ -2876,7 +2876,7 @@ function sfml.SoundStream.set_relative_to_listener(self: *sfml.SoundStream, rela
 
 ### sfml.Context
 
-```nelua
+```lua
 global sfml.Context: type = @record {}
 ```
 
@@ -2884,7 +2884,7 @@ Clipboard
 
 ### sfml.Cursor
 
-```nelua
+```lua
 global sfml.Cursor: type = @record {}
 ```
 
@@ -2892,7 +2892,7 @@ global sfml.Cursor: type = @record {}
 
 ### sfml.Window
 
-```nelua
+```lua
 global sfml.Window: type = @record {}
 ```
 
@@ -2900,7 +2900,7 @@ global sfml.Window: type = @record {}
 
 ### sfml.Clipboard
 
-```nelua
+```lua
 global sfml.Clipboard = @record{}
 ```
 
@@ -2908,7 +2908,7 @@ global sfml.Clipboard = @record{}
 
 ### sfml.Clipboard.get_string
 
-```nelua
+```lua
 function sfml.Clipboard.get_string(): cstring
 ```
 
@@ -2916,7 +2916,7 @@ function sfml.Clipboard.get_string(): cstring
 
 ### sfml.Clipboard.get_unicode_string
 
-```nelua
+```lua
 function sfml.Clipboard.get_unicode_string(): *[0]sfml.Uint32
 ```
 
@@ -2924,7 +2924,7 @@ function sfml.Clipboard.get_unicode_string(): *[0]sfml.Uint32
 
 ### sfml.Clipboard.set_string
 
-```nelua
+```lua
 function sfml.Clipboard.set_string(text: cstring <const>): void
 ```
 
@@ -2932,7 +2932,7 @@ function sfml.Clipboard.set_string(text: cstring <const>): void
 
 ### sfml.Clipboard.set_unicode_string
 
-```nelua
+```lua
 function sfml.Clipboard.set_unicode_string(text: *[0]sfml.Uint32): void
 ```
 
@@ -2940,7 +2940,7 @@ function sfml.Clipboard.set_unicode_string(text: *[0]sfml.Uint32): void
 
 ### sfml.WindowHandle
 
-```nelua
+```lua
 global sfml.WindowHandle: type = @culong
 ```
 
@@ -2948,7 +2948,7 @@ global sfml.WindowHandle: type = @culong
 
 ### sfml.WindowHandle
 
-```nelua
+```lua
 global sfml.WindowHandle: type = @pointer
 ```
 
@@ -2956,7 +2956,7 @@ global sfml.WindowHandle: type = @pointer
 
 ### sfml.VideoMode
 
-```nelua
+```lua
 global sfml.VideoMode: type = @record {
   width: cuint,
   height: cuint,
@@ -2968,7 +2968,7 @@ Video Mode
 
 ### sfml.VideoMode.get_desktop_mode
 
-```nelua
+```lua
 function sfml.VideoMode.get_desktop_mode(): sfml.VideoMode
 ```
 
@@ -2976,7 +2976,7 @@ function sfml.VideoMode.get_desktop_mode(): sfml.VideoMode
 
 ### sfml.VideoMode.get_fullscreen_modes
 
-```nelua
+```lua
 function sfml.VideoMode.get_fullscreen_modes(count: *csize): *[0]sfml.VideoMode
 ```
 
@@ -2984,7 +2984,7 @@ function sfml.VideoMode.get_fullscreen_modes(count: *csize): *[0]sfml.VideoMode
 
 ### sfml.VideoMode.is_valid
 
-```nelua
+```lua
 function sfml.VideoMode.is_valid(mode: sfml.VideoMode): sfml.Bool
 ```
 
@@ -2992,7 +2992,7 @@ function sfml.VideoMode.is_valid(mode: sfml.VideoMode): sfml.Bool
 
 ### sfml.JoystickIdentification
 
-```nelua
+```lua
 global sfml.JoystickIdentification: type = @record {
   name: cstring,
   vendorId: cuint,
@@ -3004,7 +3004,7 @@ Control: Joystick
 
 ### sfml.JoystickCount
 
-```nelua
+```lua
 global sfml.JoystickCount: cint
 ```
 
@@ -3012,7 +3012,7 @@ global sfml.JoystickCount: cint
 
 ### sfml.JoystickButtonCount
 
-```nelua
+```lua
 global sfml.JoystickButtonCount: cint
 ```
 
@@ -3020,7 +3020,7 @@ global sfml.JoystickButtonCount: cint
 
 ### sfml.JoystickAxisCount
 
-```nelua
+```lua
 global sfml.JoystickAxisCount: cint
 ```
 
@@ -3028,7 +3028,7 @@ global sfml.JoystickAxisCount: cint
 
 ### sfml.JoystickAxis
 
-```nelua
+```lua
 global sfml.JoystickAxis: type = @enum(cint) {
   X = 0,
   Y,
@@ -3045,7 +3045,7 @@ global sfml.JoystickAxis: type = @enum(cint) {
 
 ### sfml.Joystick
 
-```nelua
+```lua
 global sfml.Joystick = @record{}
 ```
 
@@ -3053,7 +3053,7 @@ global sfml.Joystick = @record{}
 
 ### sfml.Joystick.is_connected
 
-```nelua
+```lua
 function sfml.Joystick.is_connected(joystick: cuint): sfml.Bool
 ```
 
@@ -3061,7 +3061,7 @@ function sfml.Joystick.is_connected(joystick: cuint): sfml.Bool
 
 ### sfml.Joystick.get_button_count
 
-```nelua
+```lua
 function sfml.Joystick.get_button_count(joystick: cuint): cuint
 ```
 
@@ -3069,7 +3069,7 @@ function sfml.Joystick.get_button_count(joystick: cuint): cuint
 
 ### sfml.Joystick.has_axis
 
-```nelua
+```lua
 function sfml.Joystick.has_axis(joystick: cuint, axis: sfml.JoystickAxis): sfml.Bool
 ```
 
@@ -3077,7 +3077,7 @@ function sfml.Joystick.has_axis(joystick: cuint, axis: sfml.JoystickAxis): sfml.
 
 ### sfml.Joystick.is_button_pressed
 
-```nelua
+```lua
 function sfml.Joystick.is_button_pressed(joystick: cuint, button: cuint): sfml.Bool
 ```
 
@@ -3085,7 +3085,7 @@ function sfml.Joystick.is_button_pressed(joystick: cuint, button: cuint): sfml.B
 
 ### sfml.Joystick.get_axis_position
 
-```nelua
+```lua
 function sfml.Joystick.get_axis_position(joystick: cuint, axis: sfml.JoystickAxis): float32
 ```
 
@@ -3093,7 +3093,7 @@ function sfml.Joystick.get_axis_position(joystick: cuint, axis: sfml.JoystickAxi
 
 ### sfml.Joystick.get_identification
 
-```nelua
+```lua
 function sfml.Joystick.get_identification(joystick: cuint): sfml.JoystickIdentification
 ```
 
@@ -3101,7 +3101,7 @@ function sfml.Joystick.get_identification(joystick: cuint): sfml.JoystickIdentif
 
 ### sfml.Joystick.update
 
-```nelua
+```lua
 function sfml.Joystick.update(): void
 ```
 
@@ -3109,7 +3109,7 @@ function sfml.Joystick.update(): void
 
 ### sfml.KeyCode
 
-```nelua
+```lua
 global sfml.KeyCode: type = @enum(cint) {
   Unknown = -1,
   A,
@@ -3221,7 +3221,7 @@ Control: Key
 
 ### sfml.KeyDash
 
-```nelua
+```lua
 global sfml.KeyDash: cint
 ```
 
@@ -3229,7 +3229,7 @@ global sfml.KeyDash: cint
 
 ### sfml.KeyBack
 
-```nelua
+```lua
 global sfml.KeyBack: cint
 ```
 
@@ -3237,7 +3237,7 @@ global sfml.KeyBack: cint
 
 ### sfml.KeyBackSlash
 
-```nelua
+```lua
 global sfml.KeyBackSlash: cint
 ```
 
@@ -3245,7 +3245,7 @@ global sfml.KeyBackSlash: cint
 
 ### sfml.KeySemiColon
 
-```nelua
+```lua
 global sfml.KeySemiColon: cint
 ```
 
@@ -3253,7 +3253,7 @@ global sfml.KeySemiColon: cint
 
 ### sfml.KeyReturn
 
-```nelua
+```lua
 global sfml.KeyReturn: cint
 ```
 
@@ -3261,7 +3261,7 @@ global sfml.KeyReturn: cint
 
 ### sfml.Keyboard
 
-```nelua
+```lua
 global sfml.Keyboard = @record{}
 ```
 
@@ -3269,7 +3269,7 @@ global sfml.Keyboard = @record{}
 
 ### sfml.Keyboard.is_key_pressed
 
-```nelua
+```lua
 function sfml.Keyboard.is_key_pressed(key: sfml.KeyCode): sfml.Bool
 ```
 
@@ -3277,7 +3277,7 @@ function sfml.Keyboard.is_key_pressed(key: sfml.KeyCode): sfml.Bool
 
 ### sfml.Keyboard.set_virtual_keyboard_visible
 
-```nelua
+```lua
 function sfml.Keyboard.set_virtual_keyboard_visible(visible: sfml.Bool): void
 ```
 
@@ -3285,7 +3285,7 @@ function sfml.Keyboard.set_virtual_keyboard_visible(visible: sfml.Bool): void
 
 ### sfml.MouseButton
 
-```nelua
+```lua
 global sfml.MouseButton: type = @enum(cint) {
   Left = 0,
   Right,
@@ -3300,7 +3300,7 @@ Control: Mouse
 
 ### sfml.MouseWheel
 
-```nelua
+```lua
 global sfml.MouseWheel: type = @enum(cint) {
   VerticalWheel = 0,
   HorizontalWheel
@@ -3311,7 +3311,7 @@ global sfml.MouseWheel: type = @enum(cint) {
 
 ### sfml.Mouse
 
-```nelua
+```lua
 global sfml.Mouse = @record{}
 ```
 
@@ -3319,7 +3319,7 @@ global sfml.Mouse = @record{}
 
 ### sfml.Mouse.is_button_pressed
 
-```nelua
+```lua
 function sfml.Mouse.is_button_pressed(button: sfml.MouseButton): sfml.Bool
 ```
 
@@ -3327,7 +3327,7 @@ function sfml.Mouse.is_button_pressed(button: sfml.MouseButton): sfml.Bool
 
 ### sfml.Mouse.get_position
 
-```nelua
+```lua
 function sfml.Mouse.get_position(relativeTo: *sfml.Window <const>): sfml.Vector2i
 ```
 
@@ -3335,7 +3335,7 @@ function sfml.Mouse.get_position(relativeTo: *sfml.Window <const>): sfml.Vector2
 
 ### sfml.Mouse.set_position
 
-```nelua
+```lua
 function sfml.Mouse.set_position(position: sfml.Vector2i, relativeTo: *sfml.Window <const>): void
 ```
 
@@ -3343,7 +3343,7 @@ function sfml.Mouse.set_position(position: sfml.Vector2i, relativeTo: *sfml.Wind
 
 ### sfml.CursorType
 
-```nelua
+```lua
 global sfml.CursorType: type = @enum(cint) {
   Arrow = 0,
   ArrowWait,
@@ -3365,7 +3365,7 @@ global sfml.CursorType: type = @enum(cint) {
 
 ### sfml.Cursor.create_from_pixels
 
-```nelua
+```lua
 function sfml.Cursor.create_from_pixels(pixels: *[0]sfml.Uint8 <const>, size: sfml.Vector2u, hotspot: sfml.Vector2u): *sfml.Cursor
 ```
 
@@ -3373,7 +3373,7 @@ function sfml.Cursor.create_from_pixels(pixels: *[0]sfml.Uint8 <const>, size: sf
 
 ### sfml.Cursor.create_from_system
 
-```nelua
+```lua
 function sfml.Cursor.create_from_system(cursor_type: sfml.CursorType): *sfml.Cursor
 ```
 
@@ -3381,7 +3381,7 @@ function sfml.Cursor.create_from_system(cursor_type: sfml.CursorType): *sfml.Cur
 
 ### sfml.Cursor.destroy
 
-```nelua
+```lua
 function sfml.Cursor.destroy(cursor: *sfml.Cursor): void
 ```
 
@@ -3389,7 +3389,7 @@ function sfml.Cursor.destroy(cursor: *sfml.Cursor): void
 
 ### sfml.SensorType
 
-```nelua
+```lua
 global sfml.SensorType: type = @enum(cint) {
   Accelerometer = 0,
   Gyroscope,
@@ -3404,7 +3404,7 @@ Contol: Sensor
 
 ### sfml.Sensor
 
-```nelua
+```lua
 global sfml.Sensor = @record{}
 ```
 
@@ -3412,7 +3412,7 @@ global sfml.Sensor = @record{}
 
 ### sfml.Sensor.is_available
 
-```nelua
+```lua
 function sfml.Sensor.is_available(sensor: sfml.SensorType): sfml.Bool
 ```
 
@@ -3420,7 +3420,7 @@ function sfml.Sensor.is_available(sensor: sfml.SensorType): sfml.Bool
 
 ### sfml.Sensor.set_enabled
 
-```nelua
+```lua
 function sfml.Sensor.set_enabled(sensor: sfml.SensorType, enabled: sfml.Bool): void
 ```
 
@@ -3428,7 +3428,7 @@ function sfml.Sensor.set_enabled(sensor: sfml.SensorType, enabled: sfml.Bool): v
 
 ### sfml.Sensor.get_value
 
-```nelua
+```lua
 function sfml.Sensor.get_value(sensor: sfml.SensorType): sfml.Vector3f
 ```
 
@@ -3436,7 +3436,7 @@ function sfml.Sensor.get_value(sensor: sfml.SensorType): sfml.Vector3f
 
 ### sfml.Touch
 
-```nelua
+```lua
 global sfml.Touch = @record{}
 ```
 
@@ -3444,7 +3444,7 @@ global sfml.Touch = @record{}
 
 ### sfml.Touch.is_down
 
-```nelua
+```lua
 function sfml.Touch.is_down(finger: cuint): sfml.Bool
 ```
 
@@ -3452,7 +3452,7 @@ function sfml.Touch.is_down(finger: cuint): sfml.Bool
 
 ### sfml.Touch.get_position
 
-```nelua
+```lua
 function sfml.Touch.get_position(finger: cuint, relativeTo: *sfml.Window <const>): sfml.Vector2i
 ```
 
@@ -3460,7 +3460,7 @@ function sfml.Touch.get_position(finger: cuint, relativeTo: *sfml.Window <const>
 
 ### sfml.EventType
 
-```nelua
+```lua
 global sfml.EventType: type = @enum(cint) {
   Closed = 0,
   Resized,
@@ -3501,7 +3501,7 @@ Event
 
 ### sfml.KeyEvent
 
-```nelua
+```lua
 global sfml.KeyEvent: type = @record {
   type: sfml.EventType,
   code: sfml.KeyCode,
@@ -3516,7 +3516,7 @@ global sfml.KeyEvent: type = @record {
 
 ### sfml.TextEvent
 
-```nelua
+```lua
 global sfml.TextEvent: type = @record {
   type: sfml.EventType,
   unicode: sfml.Uint32
@@ -3527,7 +3527,7 @@ global sfml.TextEvent: type = @record {
 
 ### sfml.MouseMoveEvent
 
-```nelua
+```lua
 global sfml.MouseMoveEvent: type = @record {
   type: sfml.EventType,
   x: cint,
@@ -3539,7 +3539,7 @@ global sfml.MouseMoveEvent: type = @record {
 
 ### sfml.MouseButtonEvent
 
-```nelua
+```lua
 global sfml.MouseButtonEvent: type = @record {
   type: sfml.EventType,
   button: sfml.MouseButton,
@@ -3552,7 +3552,7 @@ global sfml.MouseButtonEvent: type = @record {
 
 ### sfml.MouseWheelEvent
 
-```nelua
+```lua
 global sfml.MouseWheelEvent: type = @record {
   type: sfml.EventType,
   delta: cint,
@@ -3565,7 +3565,7 @@ global sfml.MouseWheelEvent: type = @record {
 
 ### sfml.MouseWheelScrollEvent
 
-```nelua
+```lua
 global sfml.MouseWheelScrollEvent: type = @record {
   type: sfml.EventType,
   wheel: sfml.MouseWheel,
@@ -3579,7 +3579,7 @@ global sfml.MouseWheelScrollEvent: type = @record {
 
 ### sfml.JoystickMoveEvent
 
-```nelua
+```lua
 global sfml.JoystickMoveEvent: type = @record {
   type: sfml.EventType,
   joystickId: cuint,
@@ -3592,7 +3592,7 @@ global sfml.JoystickMoveEvent: type = @record {
 
 ### sfml.JoystickButtonEvent
 
-```nelua
+```lua
 global sfml.JoystickButtonEvent: type = @record {
   type: sfml.EventType,
   joystickId: cuint,
@@ -3604,7 +3604,7 @@ global sfml.JoystickButtonEvent: type = @record {
 
 ### sfml.JoystickConnectEvent
 
-```nelua
+```lua
 global sfml.JoystickConnectEvent: type = @record {
   type: sfml.EventType,
   joystickId: cuint
@@ -3615,7 +3615,7 @@ global sfml.JoystickConnectEvent: type = @record {
 
 ### sfml.SizeEvent
 
-```nelua
+```lua
 global sfml.SizeEvent: type = @record {
   type: sfml.EventType,
   width: cuint,
@@ -3627,7 +3627,7 @@ global sfml.SizeEvent: type = @record {
 
 ### sfml.TouchEvent
 
-```nelua
+```lua
 global sfml.TouchEvent: type = @record {
   type: sfml.EventType,
   finger: cuint,
@@ -3640,7 +3640,7 @@ global sfml.TouchEvent: type = @record {
 
 ### sfml.SensorEvent
 
-```nelua
+```lua
 global sfml.SensorEvent: type = @record {
   type: sfml.EventType,
   sensorType: sfml.SensorType,
@@ -3654,7 +3654,7 @@ global sfml.SensorEvent: type = @record {
 
 ### sfml.Event
 
-```nelua
+```lua
 global sfml.Event: type = @union {
   type: sfml.EventType,
   size: sfml.SizeEvent,
@@ -3676,7 +3676,7 @@ global sfml.Event: type = @union {
 
 ### sfml.WindowStyle
 
-```nelua
+```lua
 global sfml.WindowStyle: type = @enum(cint) {
   None = 0,
   Titlebar = 1 << 0,
@@ -3690,7 +3690,7 @@ global sfml.WindowStyle: type = @enum(cint) {
 
 ### sfml.DefaultStyle
 
-```nelua
+```lua
 global sfml.DefaultStyle: cint
 ```
 
@@ -3698,7 +3698,7 @@ global sfml.DefaultStyle: cint
 
 ### sfml.ContextAttribute
 
-```nelua
+```lua
 global sfml.ContextAttribute: type = @enum(cint) {
   Default = 0,
   Core = 1 << 0,
@@ -3710,7 +3710,7 @@ global sfml.ContextAttribute: type = @enum(cint) {
 
 ### sfml.ContextSettings
 
-```nelua
+```lua
 global sfml.ContextSettings: type = @record {
   depthBits: cuint,
   stencilBits: cuint,
@@ -3726,7 +3726,7 @@ global sfml.ContextSettings: type = @record {
 
 ### sfml.Window.create
 
-```nelua
+```lua
 function sfml.Window.create(mode: sfml.VideoMode, title: cstring <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.Window
 ```
 
@@ -3734,7 +3734,7 @@ Window
 
 ### sfml.Window.create_unicode
 
-```nelua
+```lua
 function sfml.Window.create_unicode(mode: sfml.VideoMode, title: *[0]sfml.Uint32 <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.Window
 ```
 
@@ -3742,7 +3742,7 @@ function sfml.Window.create_unicode(mode: sfml.VideoMode, title: *[0]sfml.Uint32
 
 ### sfml.Window.create_from_handle
 
-```nelua
+```lua
 function sfml.Window.create_from_handle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.Window
 ```
 
@@ -3750,7 +3750,7 @@ function sfml.Window.create_from_handle(handle: sfml.WindowHandle, settings: *sf
 
 ### sfml.Window.destroy
 
-```nelua
+```lua
 function sfml.Window.destroy(self: *sfml.Window): void
 ```
 
@@ -3758,7 +3758,7 @@ function sfml.Window.destroy(self: *sfml.Window): void
 
 ### sfml.Window.close
 
-```nelua
+```lua
 function sfml.Window.close(self: *sfml.Window): void
 ```
 
@@ -3766,7 +3766,7 @@ function sfml.Window.close(self: *sfml.Window): void
 
 ### sfml.Window.is_open
 
-```nelua
+```lua
 function sfml.Window.is_open(self: *sfml.Window <const>): sfml.Bool
 ```
 
@@ -3774,7 +3774,7 @@ function sfml.Window.is_open(self: *sfml.Window <const>): sfml.Bool
 
 ### sfml.Window.get_settings
 
-```nelua
+```lua
 function sfml.Window.get_settings(self: *sfml.Window <const>): sfml.ContextSettings
 ```
 
@@ -3782,7 +3782,7 @@ function sfml.Window.get_settings(self: *sfml.Window <const>): sfml.ContextSetti
 
 ### sfml.Window.poll_event
 
-```nelua
+```lua
 function sfml.Window.poll_event(self: *sfml.Window, event: *sfml.Event): sfml.Bool
 ```
 
@@ -3790,7 +3790,7 @@ function sfml.Window.poll_event(self: *sfml.Window, event: *sfml.Event): sfml.Bo
 
 ### sfml.Window.wait_event
 
-```nelua
+```lua
 function sfml.Window.wait_event(self: *sfml.Window, event: *sfml.Event): sfml.Bool
 ```
 
@@ -3798,7 +3798,7 @@ function sfml.Window.wait_event(self: *sfml.Window, event: *sfml.Event): sfml.Bo
 
 ### sfml.Window.get_position
 
-```nelua
+```lua
 function sfml.Window.get_position(self: *sfml.Window <const>): sfml.Vector2i
 ```
 
@@ -3806,7 +3806,7 @@ function sfml.Window.get_position(self: *sfml.Window <const>): sfml.Vector2i
 
 ### sfml.Window.set_position
 
-```nelua
+```lua
 function sfml.Window.set_position(self: *sfml.Window, position: sfml.Vector2i): void
 ```
 
@@ -3814,7 +3814,7 @@ function sfml.Window.set_position(self: *sfml.Window, position: sfml.Vector2i): 
 
 ### sfml.Window.get_size
 
-```nelua
+```lua
 function sfml.Window.get_size(self: *sfml.Window <const>): sfml.Vector2u
 ```
 
@@ -3822,7 +3822,7 @@ function sfml.Window.get_size(self: *sfml.Window <const>): sfml.Vector2u
 
 ### sfml.Window.set_size
 
-```nelua
+```lua
 function sfml.Window.set_size(self: *sfml.Window, size: sfml.Vector2u): void
 ```
 
@@ -3830,7 +3830,7 @@ function sfml.Window.set_size(self: *sfml.Window, size: sfml.Vector2u): void
 
 ### sfml.Window.set_title
 
-```nelua
+```lua
 function sfml.Window.set_title(self: *sfml.Window, title: cstring <const>): void
 ```
 
@@ -3838,7 +3838,7 @@ function sfml.Window.set_title(self: *sfml.Window, title: cstring <const>): void
 
 ### sfml.Window.set_unicode_title
 
-```nelua
+```lua
 function sfml.Window.set_unicode_title(self: *sfml.Window, title: *[0]sfml.Uint32 <const>): void
 ```
 
@@ -3846,7 +3846,7 @@ function sfml.Window.set_unicode_title(self: *sfml.Window, title: *[0]sfml.Uint3
 
 ### sfml.Window.set_icon
 
-```nelua
+```lua
 function sfml.Window.set_icon(self: *sfml.Window, width: cuint, height: cuint, pixels: *[0]sfml.Uint8): void
 ```
 
@@ -3854,7 +3854,7 @@ function sfml.Window.set_icon(self: *sfml.Window, width: cuint, height: cuint, p
 
 ### sfml.Window.set_visible
 
-```nelua
+```lua
 function sfml.Window.set_visible(self: *sfml.Window, visible: sfml.Bool): void
 ```
 
@@ -3862,7 +3862,7 @@ function sfml.Window.set_visible(self: *sfml.Window, visible: sfml.Bool): void
 
 ### sfml.Window.set_vsync_enabled
 
-```nelua
+```lua
 function sfml.Window.set_vsync_enabled(self: *sfml.Window, enabled: sfml.Bool): void
 ```
 
@@ -3870,7 +3870,7 @@ function sfml.Window.set_vsync_enabled(self: *sfml.Window, enabled: sfml.Bool): 
 
 ### sfml.Window.set_mouse_cursor_visible
 
-```nelua
+```lua
 function sfml.Window.set_mouse_cursor_visible(self: *sfml.Window, visible: sfml.Bool): void
 ```
 
@@ -3878,7 +3878,7 @@ function sfml.Window.set_mouse_cursor_visible(self: *sfml.Window, visible: sfml.
 
 ### sfml.Window.set_mouse_cursor_grabbed
 
-```nelua
+```lua
 function sfml.Window.set_mouse_cursor_grabbed(self: *sfml.Window, grabbed: sfml.Bool): void
 ```
 
@@ -3886,7 +3886,7 @@ function sfml.Window.set_mouse_cursor_grabbed(self: *sfml.Window, grabbed: sfml.
 
 ### sfml.Window.set_mouse_cursor
 
-```nelua
+```lua
 function sfml.Window.set_mouse_cursor(self: *sfml.Window, cursor: *sfml.Cursor <const>): void
 ```
 
@@ -3894,7 +3894,7 @@ function sfml.Window.set_mouse_cursor(self: *sfml.Window, cursor: *sfml.Cursor <
 
 ### sfml.Window.set_key_repeat_enabled
 
-```nelua
+```lua
 function sfml.Window.set_key_repeat_enabled(self: *sfml.Window, enabled: sfml.Bool): void
 ```
 
@@ -3902,7 +3902,7 @@ function sfml.Window.set_key_repeat_enabled(self: *sfml.Window, enabled: sfml.Bo
 
 ### sfml.Window.set_framerate_limit
 
-```nelua
+```lua
 function sfml.Window.set_framerate_limit(self: *sfml.Window, threshold: float32): void
 ```
 
@@ -3910,7 +3910,7 @@ function sfml.Window.set_framerate_limit(self: *sfml.Window, threshold: float32)
 
 ### sfml.Window.set_active
 
-```nelua
+```lua
 function sfml.Window.set_active(self: *sfml.Window, active: sfml.Bool): void
 ```
 
@@ -3918,7 +3918,7 @@ function sfml.Window.set_active(self: *sfml.Window, active: sfml.Bool): void
 
 ### sfml.Window.request_focus
 
-```nelua
+```lua
 function sfml.Window.request_focus(self: *sfml.Window): void
 ```
 
@@ -3926,7 +3926,7 @@ function sfml.Window.request_focus(self: *sfml.Window): void
 
 ### sfml.Window.has_focus
 
-```nelua
+```lua
 function sfml.Window.has_focus(self: *sfml.Window <const>): sfml.Bool
 ```
 
@@ -3934,7 +3934,7 @@ function sfml.Window.has_focus(self: *sfml.Window <const>): sfml.Bool
 
 ### sfml.Window.display
 
-```nelua
+```lua
 function sfml.Window.display(self: *sfml.Window): void
 ```
 
@@ -3942,7 +3942,7 @@ function sfml.Window.display(self: *sfml.Window): void
 
 ### sfml.Window.get_system_handle
 
-```nelua
+```lua
 function sfml.Window.get_system_handle(self: *sfml.Window <const>): sfml.WindowHandle
 ```
 
@@ -3950,7 +3950,7 @@ function sfml.Window.get_system_handle(self: *sfml.Window <const>): sfml.WindowH
 
 ### sfml.Context.create
 
-```nelua
+```lua
 function sfml.Context.create(): *sfml.Context
 ```
 
@@ -3958,7 +3958,7 @@ Context
 
 ### sfml.Context.destroy
 
-```nelua
+```lua
 function sfml.Context.destroy(self: *sfml.Context): void
 ```
 
@@ -3966,7 +3966,7 @@ function sfml.Context.destroy(self: *sfml.Context): void
 
 ### sfml.Context.set_active
 
-```nelua
+```lua
 function sfml.Context.set_active(self: *sfml.Context, active: sfml.Bool): sfml.Bool
 ```
 
@@ -3974,7 +3974,7 @@ function sfml.Context.set_active(self: *sfml.Context, active: sfml.Bool): sfml.B
 
 ### sfml.Context.get_settings
 
-```nelua
+```lua
 function sfml.Context.get_settings(self: *sfml.Context <const>): sfml.ContextSettings
 ```
 
@@ -3982,7 +3982,7 @@ function sfml.Context.get_settings(self: *sfml.Context <const>): sfml.ContextSet
 
 ### sfml.Context.get_active_context_id
 
-```nelua
+```lua
 function sfml.Context.get_active_context_id(): sfml.Uint64
 ```
 
@@ -3990,7 +3990,7 @@ function sfml.Context.get_active_context_id(): sfml.Uint64
 
 ### sfml.CircleShape
 
-```nelua
+```lua
 global sfml.CircleShape: type = @record {}
 ```
 
@@ -3998,7 +3998,7 @@ Graphics
 
 ### sfml.ConvexShape
 
-```nelua
+```lua
 global sfml.ConvexShape: type = @record {}
 ```
 
@@ -4006,7 +4006,7 @@ global sfml.ConvexShape: type = @record {}
 
 ### sfml.Font
 
-```nelua
+```lua
 global sfml.Font: type = @record {}
 ```
 
@@ -4014,7 +4014,7 @@ global sfml.Font: type = @record {}
 
 ### sfml.Image
 
-```nelua
+```lua
 global sfml.Image: type = @record {}
 ```
 
@@ -4022,7 +4022,7 @@ global sfml.Image: type = @record {}
 
 ### sfml.Shader
 
-```nelua
+```lua
 global sfml.Shader: type = @record {}
 ```
 
@@ -4030,7 +4030,7 @@ global sfml.Shader: type = @record {}
 
 ### sfml.RectangleShape
 
-```nelua
+```lua
 global sfml.RectangleShape: type = @record {}
 ```
 
@@ -4038,7 +4038,7 @@ global sfml.RectangleShape: type = @record {}
 
 ### sfml.RenderTexture
 
-```nelua
+```lua
 global sfml.RenderTexture: type = @record {}
 ```
 
@@ -4046,7 +4046,7 @@ global sfml.RenderTexture: type = @record {}
 
 ### sfml.RenderWindow
 
-```nelua
+```lua
 global sfml.RenderWindow: type = @record {}
 ```
 
@@ -4054,7 +4054,7 @@ global sfml.RenderWindow: type = @record {}
 
 ### sfml.Shape
 
-```nelua
+```lua
 global sfml.Shape: type = @record {}
 ```
 
@@ -4062,7 +4062,7 @@ global sfml.Shape: type = @record {}
 
 ### sfml.Sprite
 
-```nelua
+```lua
 global sfml.Sprite: type = @record {}
 ```
 
@@ -4070,7 +4070,7 @@ global sfml.Sprite: type = @record {}
 
 ### sfml.Text
 
-```nelua
+```lua
 global sfml.Text: type = @record {}
 ```
 
@@ -4078,7 +4078,7 @@ global sfml.Text: type = @record {}
 
 ### sfml.Texture
 
-```nelua
+```lua
 global sfml.Texture: type = @record {}
 ```
 
@@ -4086,7 +4086,7 @@ global sfml.Texture: type = @record {}
 
 ### sfml.Transformable
 
-```nelua
+```lua
 global sfml.Transformable: type = @record {}
 ```
 
@@ -4094,7 +4094,7 @@ global sfml.Transformable: type = @record {}
 
 ### sfml.VertexArray
 
-```nelua
+```lua
 global sfml.VertexArray: type = @record {}
 ```
 
@@ -4102,7 +4102,7 @@ global sfml.VertexArray: type = @record {}
 
 ### sfml.VertexBuffer
 
-```nelua
+```lua
 global sfml.VertexBuffer: type = @record {}
 ```
 
@@ -4110,7 +4110,7 @@ global sfml.VertexBuffer: type = @record {}
 
 ### sfml.View
 
-```nelua
+```lua
 global sfml.View: type = @record {}
 ```
 
@@ -4118,7 +4118,7 @@ global sfml.View: type = @record {}
 
 ### sfml.BlendFactor
 
-```nelua
+```lua
 global sfml.BlendFactor: type = @enum(cint) {
   Zero = 0,
   One,
@@ -4137,7 +4137,7 @@ global sfml.BlendFactor: type = @enum(cint) {
 
 ### sfml.BlendEquation
 
-```nelua
+```lua
 global sfml.BlendEquation: type = @enum(cint) {
   Add = 0,
   Subtract,
@@ -4149,7 +4149,7 @@ global sfml.BlendEquation: type = @enum(cint) {
 
 ### sfml.BlendMode
 
-```nelua
+```lua
 global sfml.BlendMode: type = @record {
   colorSrcFactor: sfml.BlendFactor,
   colorDstFactor: sfml.BlendFactor,
@@ -4164,7 +4164,7 @@ global sfml.BlendMode: type = @record {
 
 ### sfml.BlendAlpha
 
-```nelua
+```lua
 global sfml.BlendAlpha: sfml.BlendMode
 ```
 
@@ -4172,7 +4172,7 @@ global sfml.BlendAlpha: sfml.BlendMode
 
 ### sfml.BlendAdd
 
-```nelua
+```lua
 global sfml.BlendAdd: sfml.BlendMode
 ```
 
@@ -4180,7 +4180,7 @@ global sfml.BlendAdd: sfml.BlendMode
 
 ### sfml.BlendMultiply
 
-```nelua
+```lua
 global sfml.BlendMultiply: sfml.BlendMode
 ```
 
@@ -4188,7 +4188,7 @@ global sfml.BlendMultiply: sfml.BlendMode
 
 ### sfml.BlendNone
 
-```nelua
+```lua
 global sfml.BlendNone: sfml.BlendMode
 ```
 
@@ -4196,7 +4196,7 @@ global sfml.BlendNone: sfml.BlendMode
 
 ### sfml.FloatRect
 
-```nelua
+```lua
 global sfml.FloatRect: type = @record {
   left: float32,
   top: float32,
@@ -4209,7 +4209,7 @@ global sfml.FloatRect: type = @record {
 
 ### sfml.IntRect
 
-```nelua
+```lua
 global sfml.IntRect: type = @record {
   left: cint,
   top: cint,
@@ -4222,7 +4222,7 @@ global sfml.IntRect: type = @record {
 
 ### sfml.FloatRect.contains
 
-```nelua
+```lua
 function sfml.FloatRect.contains(self: *sfml.FloatRect <const>, x: float32, y: float32): sfml.Bool
 ```
 
@@ -4230,7 +4230,7 @@ function sfml.FloatRect.contains(self: *sfml.FloatRect <const>, x: float32, y: f
 
 ### sfml.IntRect.contains
 
-```nelua
+```lua
 function sfml.IntRect.contains(self: *sfml.IntRect <const>, x: cint, y: cint): sfml.Bool
 ```
 
@@ -4238,7 +4238,7 @@ function sfml.IntRect.contains(self: *sfml.IntRect <const>, x: cint, y: cint): s
 
 ### sfml.FloatRect.intersects
 
-```nelua
+```lua
 function sfml.FloatRect.intersects(self: *sfml.FloatRect <const>, rect2: *sfml.FloatRect <const>, intersection: *sfml.FloatRect): sfml.Bool
 ```
 
@@ -4246,7 +4246,7 @@ function sfml.FloatRect.intersects(self: *sfml.FloatRect <const>, rect2: *sfml.F
 
 ### sfml.IntRect.intersects
 
-```nelua
+```lua
 function sfml.IntRect.intersects(self: *sfml.IntRect <const>, rect2: *sfml.IntRect <const>, intersection: *sfml.IntRect): sfml.Bool
 ```
 
@@ -4254,7 +4254,7 @@ function sfml.IntRect.intersects(self: *sfml.IntRect <const>, rect2: *sfml.IntRe
 
 ### sfml.Color
 
-```nelua
+```lua
 global sfml.Color: type = @record {
   r: sfml.Uint8,
   g: sfml.Uint8,
@@ -4267,7 +4267,7 @@ global sfml.Color: type = @record {
 
 ### sfml.Transform
 
-```nelua
+```lua
 global sfml.Transform: type = @record {
   matrix: [9]float32
 }
@@ -4277,7 +4277,7 @@ global sfml.Transform: type = @record {
 
 ### sfml.Glyph
 
-```nelua
+```lua
 global sfml.Glyph: type = @record {
   advance: float32,
   bounds: sfml.FloatRect,
@@ -4289,7 +4289,7 @@ global sfml.Glyph: type = @record {
 
 ### sfml.Vertex
 
-```nelua
+```lua
 global sfml.Vertex: type = @record {
   position: sfml.Vector2f,
   color: sfml.Color,
@@ -4301,7 +4301,7 @@ global sfml.Vertex: type = @record {
 
 ### sfml.PrimitiveType
 
-```nelua
+```lua
 global sfml.PrimitiveType: type = @enum(cint) {
   Points = 0,
   Lines,
@@ -4317,7 +4317,7 @@ global sfml.PrimitiveType: type = @enum(cint) {
 
 ### sfml.LinesStrip
 
-```nelua
+```lua
 global sfml.LinesStrip: cint
 ```
 
@@ -4325,7 +4325,7 @@ global sfml.LinesStrip: cint
 
 ### sfml.TrianglesStrip
 
-```nelua
+```lua
 global sfml.TrianglesStrip: cint
 ```
 
@@ -4333,7 +4333,7 @@ global sfml.TrianglesStrip: cint
 
 ### sfml.TrianglesFan
 
-```nelua
+```lua
 global sfml.TrianglesFan: cint
 ```
 
@@ -4341,7 +4341,7 @@ global sfml.TrianglesFan: cint
 
 ### sfml.RenderStates
 
-```nelua
+```lua
 global sfml.RenderStates: type = @record {
   blendMode: sfml.BlendMode,
   transform: sfml.Transform,
@@ -4354,7 +4354,7 @@ global sfml.RenderStates: type = @record {
 
 ### sfml.FontInfo
 
-```nelua
+```lua
 global sfml.FontInfo: type = @record {
   family: cstring
 }
@@ -4364,7 +4364,7 @@ global sfml.FontInfo: type = @record {
 
 ### sfml.Black
 
-```nelua
+```lua
 global sfml.Black: sfml.Color
 ```
 
@@ -4372,7 +4372,7 @@ Color: Constants
 
 ### sfml.White
 
-```nelua
+```lua
 global sfml.White: sfml.Color
 ```
 
@@ -4380,7 +4380,7 @@ global sfml.White: sfml.Color
 
 ### sfml.Red
 
-```nelua
+```lua
 global sfml.Red: sfml.Color
 ```
 
@@ -4388,7 +4388,7 @@ global sfml.Red: sfml.Color
 
 ### sfml.Green
 
-```nelua
+```lua
 global sfml.Green: sfml.Color
 ```
 
@@ -4396,7 +4396,7 @@ global sfml.Green: sfml.Color
 
 ### sfml.Blue
 
-```nelua
+```lua
 global sfml.Blue: sfml.Color
 ```
 
@@ -4404,7 +4404,7 @@ global sfml.Blue: sfml.Color
 
 ### sfml.Yellow
 
-```nelua
+```lua
 global sfml.Yellow: sfml.Color
 ```
 
@@ -4412,7 +4412,7 @@ global sfml.Yellow: sfml.Color
 
 ### sfml.Magenta
 
-```nelua
+```lua
 global sfml.Magenta: sfml.Color
 ```
 
@@ -4420,7 +4420,7 @@ global sfml.Magenta: sfml.Color
 
 ### sfml.Cyan
 
-```nelua
+```lua
 global sfml.Cyan: sfml.Color
 ```
 
@@ -4428,7 +4428,7 @@ global sfml.Cyan: sfml.Color
 
 ### sfml.Transparent
 
-```nelua
+```lua
 global sfml.Transparent: sfml.Color
 ```
 
@@ -4436,7 +4436,7 @@ global sfml.Transparent: sfml.Color
 
 ### sfml.Color.from_rgb
 
-```nelua
+```lua
 function sfml.Color.from_rgb(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8): sfml.Color
 ```
 
@@ -4444,7 +4444,7 @@ Color
 
 ### sfml.Color.from_rgba
 
-```nelua
+```lua
 function sfml.Color.from_rgba(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uint8, alpha: sfml.Uint8): sfml.Color
 ```
 
@@ -4452,7 +4452,7 @@ function sfml.Color.from_rgba(red: sfml.Uint8, green: sfml.Uint8, blue: sfml.Uin
 
 ### sfml.Color.from_integer
 
-```nelua
+```lua
 function sfml.Color.from_integer(color: sfml.Uint32): sfml.Color
 ```
 
@@ -4460,7 +4460,7 @@ function sfml.Color.from_integer(color: sfml.Uint32): sfml.Color
 
 ### sfml.Color.to_integer
 
-```nelua
+```lua
 function sfml.Color.to_integer(color: sfml.Color): sfml.Uint32
 ```
 
@@ -4468,7 +4468,7 @@ function sfml.Color.to_integer(color: sfml.Color): sfml.Uint32
 
 ### sfml.Color.add
 
-```nelua
+```lua
 function sfml.Color.add(color1: sfml.Color, color2: sfml.Color): sfml.Color
 ```
 
@@ -4476,7 +4476,7 @@ function sfml.Color.add(color1: sfml.Color, color2: sfml.Color): sfml.Color
 
 ### sfml.Color.subtract
 
-```nelua
+```lua
 function sfml.Color.subtract(color1: sfml.Color, color2: sfml.Color): sfml.Color
 ```
 
@@ -4484,7 +4484,7 @@ function sfml.Color.subtract(color1: sfml.Color, color2: sfml.Color): sfml.Color
 
 ### sfml.Color.modulate
 
-```nelua
+```lua
 function sfml.Color.modulate(color1: sfml.Color, color2: sfml.Color): sfml.Color
 ```
 
@@ -4492,7 +4492,7 @@ function sfml.Color.modulate(color1: sfml.Color, color2: sfml.Color): sfml.Color
 
 ### sfml.VertexArray.create
 
-```nelua
+```lua
 function sfml.VertexArray.create(): *sfml.VertexArray
 ```
 
@@ -4500,7 +4500,7 @@ Vertex Array
 
 ### sfml.VertexArray.copy
 
-```nelua
+```lua
 function sfml.VertexArray.copy(self: *sfml.VertexArray <const>): *sfml.VertexArray
 ```
 
@@ -4508,7 +4508,7 @@ function sfml.VertexArray.copy(self: *sfml.VertexArray <const>): *sfml.VertexArr
 
 ### sfml.VertexArray.destroy
 
-```nelua
+```lua
 function sfml.VertexArray.destroy(self: *sfml.VertexArray): void
 ```
 
@@ -4516,7 +4516,7 @@ function sfml.VertexArray.destroy(self: *sfml.VertexArray): void
 
 ### sfml.VertexArray.get_vertex_count
 
-```nelua
+```lua
 function sfml.VertexArray.get_vertex_count(self: *sfml.VertexArray <const>): csize
 ```
 
@@ -4524,7 +4524,7 @@ function sfml.VertexArray.get_vertex_count(self: *sfml.VertexArray <const>): csi
 
 ### sfml.VertexArray.get_vertex
 
-```nelua
+```lua
 function sfml.VertexArray.get_vertex(self: *sfml.VertexArray, index: csize): *sfml.Vertex
 ```
 
@@ -4532,7 +4532,7 @@ function sfml.VertexArray.get_vertex(self: *sfml.VertexArray, index: csize): *sf
 
 ### sfml.VertexArray.clear
 
-```nelua
+```lua
 function sfml.VertexArray.clear(self: *sfml.VertexArray): void
 ```
 
@@ -4540,7 +4540,7 @@ function sfml.VertexArray.clear(self: *sfml.VertexArray): void
 
 ### sfml.VertexArray.resize
 
-```nelua
+```lua
 function sfml.VertexArray.resize(self: *sfml.VertexArray, vertexCount: csize): void
 ```
 
@@ -4548,7 +4548,7 @@ function sfml.VertexArray.resize(self: *sfml.VertexArray, vertexCount: csize): v
 
 ### sfml.VertexArray.append
 
-```nelua
+```lua
 function sfml.VertexArray.append(self: *sfml.VertexArray, vertex: sfml.Vertex): void
 ```
 
@@ -4556,7 +4556,7 @@ function sfml.VertexArray.append(self: *sfml.VertexArray, vertex: sfml.Vertex): 
 
 ### sfml.VertexArray.get_primitive_type
 
-```nelua
+```lua
 function sfml.VertexArray.get_primitive_type(self: *sfml.VertexArray): sfml.PrimitiveType
 ```
 
@@ -4564,7 +4564,7 @@ function sfml.VertexArray.get_primitive_type(self: *sfml.VertexArray): sfml.Prim
 
 ### sfml.VertexArray.set_primitive_type
 
-```nelua
+```lua
 function sfml.VertexArray.set_primitive_type(self: *sfml.VertexArray, type: sfml.PrimitiveType): void
 ```
 
@@ -4572,7 +4572,7 @@ function sfml.VertexArray.set_primitive_type(self: *sfml.VertexArray, type: sfml
 
 ### sfml.VertexArray.get_bounds
 
-```nelua
+```lua
 function sfml.VertexArray.get_bounds(self: *sfml.VertexArray): sfml.FloatRect
 ```
 
@@ -4580,7 +4580,7 @@ function sfml.VertexArray.get_bounds(self: *sfml.VertexArray): sfml.FloatRect
 
 ### sfml.Transformable.create
 
-```nelua
+```lua
 function sfml.Transformable.create(): *sfml.Transformable
 ```
 
@@ -4588,7 +4588,7 @@ Transformable
 
 ### sfml.Transformable.copy
 
-```nelua
+```lua
 function sfml.Transformable.copy(self: *sfml.Transformable <const>): *sfml.Transformable
 ```
 
@@ -4596,7 +4596,7 @@ function sfml.Transformable.copy(self: *sfml.Transformable <const>): *sfml.Trans
 
 ### sfml.Transformable.destroy
 
-```nelua
+```lua
 function sfml.Transformable.destroy(self: *sfml.Transformable): void
 ```
 
@@ -4604,7 +4604,7 @@ function sfml.Transformable.destroy(self: *sfml.Transformable): void
 
 ### sfml.Transformable.get_position
 
-```nelua
+```lua
 function sfml.Transformable.get_position(self: *sfml.Transformable <const>): sfml.Vector2f
 ```
 
@@ -4612,7 +4612,7 @@ function sfml.Transformable.get_position(self: *sfml.Transformable <const>): sfm
 
 ### sfml.Transformable.set_position
 
-```nelua
+```lua
 function sfml.Transformable.set_position(self: *sfml.Transformable, position: sfml.Vector2f): void
 ```
 
@@ -4620,7 +4620,7 @@ function sfml.Transformable.set_position(self: *sfml.Transformable, position: sf
 
 ### sfml.Transformable.get_rotation
 
-```nelua
+```lua
 function sfml.Transformable.get_rotation(self: *sfml.Transformable <const>): float32
 ```
 
@@ -4628,7 +4628,7 @@ function sfml.Transformable.get_rotation(self: *sfml.Transformable <const>): flo
 
 ### sfml.Transformable.set_rotation
 
-```nelua
+```lua
 function sfml.Transformable.set_rotation(self: *sfml.Transformable, angle: float32): void
 ```
 
@@ -4636,7 +4636,7 @@ function sfml.Transformable.set_rotation(self: *sfml.Transformable, angle: float
 
 ### sfml.Transformable.get_scale
 
-```nelua
+```lua
 function sfml.Transformable.get_scale(self: *sfml.Transformable <const>): sfml.Vector2f
 ```
 
@@ -4644,7 +4644,7 @@ function sfml.Transformable.get_scale(self: *sfml.Transformable <const>): sfml.V
 
 ### sfml.Transformable.set_scale
 
-```nelua
+```lua
 function sfml.Transformable.set_scale(self: *sfml.Transformable, scale: sfml.Vector2f): void
 ```
 
@@ -4652,7 +4652,7 @@ function sfml.Transformable.set_scale(self: *sfml.Transformable, scale: sfml.Vec
 
 ### sfml.Transformable.get_origin
 
-```nelua
+```lua
 function sfml.Transformable.get_origin(self: *sfml.Transformable <const>): sfml.Vector2f
 ```
 
@@ -4660,7 +4660,7 @@ function sfml.Transformable.get_origin(self: *sfml.Transformable <const>): sfml.
 
 ### sfml.Transformable.set_origin
 
-```nelua
+```lua
 function sfml.Transformable.set_origin(self: *sfml.Transformable, origin: sfml.Vector2f): void
 ```
 
@@ -4668,7 +4668,7 @@ function sfml.Transformable.set_origin(self: *sfml.Transformable, origin: sfml.V
 
 ### sfml.Transformable.move
 
-```nelua
+```lua
 function sfml.Transformable.move(self: *sfml.Transformable, offset: sfml.Vector2f): void
 ```
 
@@ -4676,7 +4676,7 @@ function sfml.Transformable.move(self: *sfml.Transformable, offset: sfml.Vector2
 
 ### sfml.Transformable.rotate
 
-```nelua
+```lua
 function sfml.Transformable.rotate(self: *sfml.Transformable, angle: float32): void
 ```
 
@@ -4684,7 +4684,7 @@ function sfml.Transformable.rotate(self: *sfml.Transformable, angle: float32): v
 
 ### sfml.Transformable.scale
 
-```nelua
+```lua
 function sfml.Transformable.scale(self: *sfml.Transformable, factors: sfml.Vector2f): void
 ```
 
@@ -4692,7 +4692,7 @@ function sfml.Transformable.scale(self: *sfml.Transformable, factors: sfml.Vecto
 
 ### sfml.Transformable.get_transform
 
-```nelua
+```lua
 function sfml.Transformable.get_transform(self: *sfml.Transformable <const>): sfml.Transform
 ```
 
@@ -4700,7 +4700,7 @@ function sfml.Transformable.get_transform(self: *sfml.Transformable <const>): sf
 
 ### sfml.Transformable.get_inverse_transform
 
-```nelua
+```lua
 function sfml.Transformable.get_inverse_transform(self: *sfml.Transformable <const>): sfml.Transform
 ```
 
@@ -4708,7 +4708,7 @@ function sfml.Transformable.get_inverse_transform(self: *sfml.Transformable <con
 
 ### sfml.Transform_Identity
 
-```nelua
+```lua
 global sfml.Transform_Identity: sfml.Transform
 ```
 
@@ -4716,7 +4716,7 @@ Transform
 
 ### sfml.Transform.from_matrix
 
-```nelua
+```lua
 function sfml.Transform.from_matrix(a00: float32, a01: float32, a02: float32, a10: float32, a11: float32, a12: float32, a20: float32, a21: float32, a22: float32): sfml.Transform
 ```
 
@@ -4724,7 +4724,7 @@ function sfml.Transform.from_matrix(a00: float32, a01: float32, a02: float32, a1
 
 ### sfml.Transform.get_matrix
 
-```nelua
+```lua
 function sfml.Transform.get_matrix(self: *sfml.Transform <const>, matrix: *[0]float32): void
 ```
 
@@ -4732,7 +4732,7 @@ function sfml.Transform.get_matrix(self: *sfml.Transform <const>, matrix: *[0]fl
 
 ### sfml.Transform.get_inverse
 
-```nelua
+```lua
 function sfml.Transform.get_inverse(self: *sfml.Transform <const>): sfml.Transform
 ```
 
@@ -4740,7 +4740,7 @@ function sfml.Transform.get_inverse(self: *sfml.Transform <const>): sfml.Transfo
 
 ### sfml.Transform.transform_point
 
-```nelua
+```lua
 function sfml.Transform.transform_point(self: *sfml.Transform <const>, point: sfml.Vector2f): sfml.Vector2f
 ```
 
@@ -4748,7 +4748,7 @@ function sfml.Transform.transform_point(self: *sfml.Transform <const>, point: sf
 
 ### sfml.Transform.transform_rect
 
-```nelua
+```lua
 function sfml.Transform.transform_rect(self: *sfml.Transform <const>, rectangle: sfml.FloatRect): sfml.FloatRect
 ```
 
@@ -4756,7 +4756,7 @@ function sfml.Transform.transform_rect(self: *sfml.Transform <const>, rectangle:
 
 ### sfml.Transform.combine
 
-```nelua
+```lua
 function sfml.Transform.combine(self: *sfml.Transform, other: *sfml.Transform <const>): sfml.FloatRect
 ```
 
@@ -4764,7 +4764,7 @@ function sfml.Transform.combine(self: *sfml.Transform, other: *sfml.Transform <c
 
 ### sfml.Transform.translate
 
-```nelua
+```lua
 function sfml.Transform.translate(self: *sfml.Transform, x: float32, y: float32): void
 ```
 
@@ -4772,7 +4772,7 @@ function sfml.Transform.translate(self: *sfml.Transform, x: float32, y: float32)
 
 ### sfml.Transform.rotate
 
-```nelua
+```lua
 function sfml.Transform.rotate(self: *sfml.Transform, angle: float32): void
 ```
 
@@ -4780,7 +4780,7 @@ function sfml.Transform.rotate(self: *sfml.Transform, angle: float32): void
 
 ### sfml.Transform.rotate_with_center
 
-```nelua
+```lua
 function sfml.Transform.rotate_with_center(self: *sfml.Transform, angle: float32, centerX: float32, centerY: float32): void
 ```
 
@@ -4788,7 +4788,7 @@ function sfml.Transform.rotate_with_center(self: *sfml.Transform, angle: float32
 
 ### sfml.Transform.scale
 
-```nelua
+```lua
 function sfml.Transform.scale(self: *sfml.Transform, scaleX: float32, scaleY: float32): void
 ```
 
@@ -4796,7 +4796,7 @@ function sfml.Transform.scale(self: *sfml.Transform, scaleX: float32, scaleY: fl
 
 ### sfml.Transform.scale_with_center
 
-```nelua
+```lua
 function sfml.Transform.scale_with_center(self: *sfml.Transform, scaleX: float32, scaleY: float32, centerX: float32, centerY: float32): void
 ```
 
@@ -4804,7 +4804,7 @@ function sfml.Transform.scale_with_center(self: *sfml.Transform, scaleX: float32
 
 ### sfml.Transform.equal
 
-```nelua
+```lua
 function sfml.Transform.equal(self: *sfml.Transform, right: *sfml.Transform): sfml.Bool
 ```
 
@@ -4812,7 +4812,7 @@ function sfml.Transform.equal(self: *sfml.Transform, right: *sfml.Transform): sf
 
 ### sfml.GlslVec2
 
-```nelua
+```lua
 global sfml.GlslVec2: type = @sfml.Vector2f
 ```
 
@@ -4820,7 +4820,7 @@ OpenGL
 
 ### sfml.GlslIvec2
 
-```nelua
+```lua
 global sfml.GlslIvec2: type = @sfml.Vector2i
 ```
 
@@ -4828,7 +4828,7 @@ global sfml.GlslIvec2: type = @sfml.Vector2i
 
 ### sfml.GlslBvec2
 
-```nelua
+```lua
 global sfml.GlslBvec2: type = @record {
   x: sfml.Bool,
   y: sfml.Bool
@@ -4839,7 +4839,7 @@ global sfml.GlslBvec2: type = @record {
 
 ### sfml.GlslVec3
 
-```nelua
+```lua
 global sfml.GlslVec3: type = @sfml.Vector3f
 ```
 
@@ -4847,7 +4847,7 @@ global sfml.GlslVec3: type = @sfml.Vector3f
 
 ### sfml.GlslIvec3
 
-```nelua
+```lua
 global sfml.GlslIvec3: type = @record {
   x: cint,
   y: cint,
@@ -4859,7 +4859,7 @@ global sfml.GlslIvec3: type = @record {
 
 ### sfml.GlslBvec3
 
-```nelua
+```lua
 global sfml.GlslBvec3: type = @record {
   x: sfml.Bool,
   y: sfml.Bool,
@@ -4871,7 +4871,7 @@ global sfml.GlslBvec3: type = @record {
 
 ### sfml.GlslVec4
 
-```nelua
+```lua
 global sfml.GlslVec4: type = @record {
   x: float32,
   y: float32,
@@ -4884,7 +4884,7 @@ global sfml.GlslVec4: type = @record {
 
 ### sfml.GlslIvec4
 
-```nelua
+```lua
 global sfml.GlslIvec4: type = @record {
   x: cint,
   y: cint,
@@ -4897,7 +4897,7 @@ global sfml.GlslIvec4: type = @record {
 
 ### sfml.GlslBvec4
 
-```nelua
+```lua
 global sfml.GlslBvec4: type = @record {
   x: sfml.Bool,
   y: sfml.Bool,
@@ -4910,7 +4910,7 @@ global sfml.GlslBvec4: type = @record {
 
 ### sfml.GlslMat3
 
-```nelua
+```lua
 global sfml.GlslMat3: type = @record {
   array: [9]float32
 }
@@ -4920,7 +4920,7 @@ global sfml.GlslMat3: type = @record {
 
 ### sfml.GlslMat4
 
-```nelua
+```lua
 global sfml.GlslMat4: type = @record {
   array: [16]float32
 }
@@ -4930,7 +4930,7 @@ global sfml.GlslMat4: type = @record {
 
 ### sfml.View.create
 
-```nelua
+```lua
 function sfml.View.create(): *sfml.View
 ```
 
@@ -4938,7 +4938,7 @@ View
 
 ### sfml.View.create_from_rect
 
-```nelua
+```lua
 function sfml.View.create_from_rect(rectangle: sfml.FloatRect): *sfml.View
 ```
 
@@ -4946,7 +4946,7 @@ function sfml.View.create_from_rect(rectangle: sfml.FloatRect): *sfml.View
 
 ### sfml.View.copy
 
-```nelua
+```lua
 function sfml.View.copy(self: *sfml.View <const>): *sfml.View
 ```
 
@@ -4954,7 +4954,7 @@ function sfml.View.copy(self: *sfml.View <const>): *sfml.View
 
 ### sfml.View.destroy
 
-```nelua
+```lua
 function sfml.View.destroy(self: *sfml.View): void
 ```
 
@@ -4962,7 +4962,7 @@ function sfml.View.destroy(self: *sfml.View): void
 
 ### sfml.View.get_center
 
-```nelua
+```lua
 function sfml.View.get_center(self: *sfml.View <const>): sfml.Vector2f
 ```
 
@@ -4970,7 +4970,7 @@ function sfml.View.get_center(self: *sfml.View <const>): sfml.Vector2f
 
 ### sfml.View.set_center
 
-```nelua
+```lua
 function sfml.View.set_center(self: *sfml.View, center: sfml.Vector2f): void
 ```
 
@@ -4978,7 +4978,7 @@ function sfml.View.set_center(self: *sfml.View, center: sfml.Vector2f): void
 
 ### sfml.View.get_size
 
-```nelua
+```lua
 function sfml.View.get_size(self: *sfml.View <const>): sfml.Vector2f
 ```
 
@@ -4986,7 +4986,7 @@ function sfml.View.get_size(self: *sfml.View <const>): sfml.Vector2f
 
 ### sfml.View.set_size
 
-```nelua
+```lua
 function sfml.View.set_size(self: *sfml.View, size: sfml.Vector2f): void
 ```
 
@@ -4994,7 +4994,7 @@ function sfml.View.set_size(self: *sfml.View, size: sfml.Vector2f): void
 
 ### sfml.View.get_rotation
 
-```nelua
+```lua
 function sfml.View.get_rotation(self: *sfml.View <const>): float32
 ```
 
@@ -5002,7 +5002,7 @@ function sfml.View.get_rotation(self: *sfml.View <const>): float32
 
 ### sfml.View.set_rotation
 
-```nelua
+```lua
 function sfml.View.set_rotation(self: *sfml.View, angle: float32): void
 ```
 
@@ -5010,7 +5010,7 @@ function sfml.View.set_rotation(self: *sfml.View, angle: float32): void
 
 ### sfml.View.get_viewport
 
-```nelua
+```lua
 function sfml.View.get_viewport(self: *sfml.View <const>): sfml.FloatRect
 ```
 
@@ -5018,7 +5018,7 @@ function sfml.View.get_viewport(self: *sfml.View <const>): sfml.FloatRect
 
 ### sfml.View.set_viewport
 
-```nelua
+```lua
 function sfml.View.set_viewport(self: *sfml.View, viewport: sfml.FloatRect): void
 ```
 
@@ -5026,7 +5026,7 @@ function sfml.View.set_viewport(self: *sfml.View, viewport: sfml.FloatRect): voi
 
 ### sfml.View.reset
 
-```nelua
+```lua
 function sfml.View.reset(self: *sfml.View, rectangle: sfml.FloatRect): void
 ```
 
@@ -5034,7 +5034,7 @@ function sfml.View.reset(self: *sfml.View, rectangle: sfml.FloatRect): void
 
 ### sfml.View.move
 
-```nelua
+```lua
 function sfml.View.move(self: *sfml.View, offset: sfml.Vector2f): void
 ```
 
@@ -5042,7 +5042,7 @@ function sfml.View.move(self: *sfml.View, offset: sfml.Vector2f): void
 
 ### sfml.View.rotate
 
-```nelua
+```lua
 function sfml.View.rotate(self: *sfml.View, angle: float32): void
 ```
 
@@ -5050,7 +5050,7 @@ function sfml.View.rotate(self: *sfml.View, angle: float32): void
 
 ### sfml.View.zoom
 
-```nelua
+```lua
 function sfml.View.zoom(self: *sfml.View, factor: float32): void
 ```
 
@@ -5058,7 +5058,7 @@ function sfml.View.zoom(self: *sfml.View, factor: float32): void
 
 ### sfml.Font.create_from_file
 
-```nelua
+```lua
 function sfml.Font.create_from_file(filename: cstring <const>): *sfml.Font
 ```
 
@@ -5066,7 +5066,7 @@ Font
 
 ### sfml.Font.create_from_memory
 
-```nelua
+```lua
 function sfml.Font.create_from_memory(data: pointer <const>, sizeInBytes: csize): *sfml.Font
 ```
 
@@ -5074,7 +5074,7 @@ function sfml.Font.create_from_memory(data: pointer <const>, sizeInBytes: csize)
 
 ### sfml.Font.create_from_stream
 
-```nelua
+```lua
 function sfml.Font.create_from_stream(stream: *sfml.InputStream): *sfml.Font
 ```
 
@@ -5082,7 +5082,7 @@ function sfml.Font.create_from_stream(stream: *sfml.InputStream): *sfml.Font
 
 ### sfml.Font.copy
 
-```nelua
+```lua
 function sfml.Font.copy(self: *sfml.Font <const>): *sfml.Font
 ```
 
@@ -5090,7 +5090,7 @@ function sfml.Font.copy(self: *sfml.Font <const>): *sfml.Font
 
 ### sfml.Font.destroy
 
-```nelua
+```lua
 function sfml.Font.destroy(self: *sfml.Font): void
 ```
 
@@ -5098,7 +5098,7 @@ function sfml.Font.destroy(self: *sfml.Font): void
 
 ### sfml.Font.get_glyph
 
-```nelua
+```lua
 function sfml.Font.get_glyph(self: *sfml.Font <const>, codePoint: sfml.Uint32, characterSize: cuint, bold: sfml.Bool, outlineThickness: float32): sfml.Glyph
 ```
 
@@ -5106,7 +5106,7 @@ function sfml.Font.get_glyph(self: *sfml.Font <const>, codePoint: sfml.Uint32, c
 
 ### sfml.Font.get_kerning
 
-```nelua
+```lua
 function sfml.Font.get_kerning(self: *sfml.Font <const>, first: sfml.Uint32, second: sfml.Uint32, characterSize: cuint): float32
 ```
 
@@ -5114,7 +5114,7 @@ function sfml.Font.get_kerning(self: *sfml.Font <const>, first: sfml.Uint32, sec
 
 ### sfml.Font.get_line_spacing
 
-```nelua
+```lua
 function sfml.Font.get_line_spacing(self: *sfml.Font <const>, characterSize: cuint): float32
 ```
 
@@ -5122,7 +5122,7 @@ function sfml.Font.get_line_spacing(self: *sfml.Font <const>, characterSize: cui
 
 ### sfml.Font.get_underline_position
 
-```nelua
+```lua
 function sfml.Font.get_underline_position(self: *sfml.Font <const>, characterSize: cuint): float32
 ```
 
@@ -5130,7 +5130,7 @@ function sfml.Font.get_underline_position(self: *sfml.Font <const>, characterSiz
 
 ### sfml.Font.get_underline_thickness
 
-```nelua
+```lua
 function sfml.Font.get_underline_thickness(self: *sfml.Font <const>, characterSize: cuint): float32
 ```
 
@@ -5138,7 +5138,7 @@ function sfml.Font.get_underline_thickness(self: *sfml.Font <const>, characterSi
 
 ### sfml.Font.get_texture
 
-```nelua
+```lua
 function sfml.Font.get_texture(self: *sfml.Font <const>, characterSize: cuint): *sfml.Texture
 ```
 
@@ -5146,7 +5146,7 @@ function sfml.Font.get_texture(self: *sfml.Font <const>, characterSize: cuint): 
 
 ### sfml.Font.get_info
 
-```nelua
+```lua
 function sfml.Font.get_info(self: *sfml.Font <const>): sfml.FontInfo
 ```
 
@@ -5154,7 +5154,7 @@ function sfml.Font.get_info(self: *sfml.Font <const>): sfml.FontInfo
 
 ### sfml.Image.create
 
-```nelua
+```lua
 function sfml.Image.create(width: cuint, height: cuint): *sfml.Image
 ```
 
@@ -5162,7 +5162,7 @@ Image
 
 ### sfml.Image.create_from_color
 
-```nelua
+```lua
 function sfml.Image.create_from_color(width: cuint, height: cuint, color: sfml.Color): *sfml.Image
 ```
 
@@ -5170,7 +5170,7 @@ function sfml.Image.create_from_color(width: cuint, height: cuint, color: sfml.C
 
 ### sfml.Image.create_from_pixels
 
-```nelua
+```lua
 function sfml.Image.create_from_pixels(width: cuint, height: cuint, pixels: *[0]sfml.Uint8): *sfml.Image
 ```
 
@@ -5178,7 +5178,7 @@ function sfml.Image.create_from_pixels(width: cuint, height: cuint, pixels: *[0]
 
 ### sfml.Image.create_from_file
 
-```nelua
+```lua
 function sfml.Image.create_from_file(filename: cstring <const>): *sfml.Image
 ```
 
@@ -5186,7 +5186,7 @@ function sfml.Image.create_from_file(filename: cstring <const>): *sfml.Image
 
 ### sfml.Image.create_from_memory
 
-```nelua
+```lua
 function sfml.Image.create_from_memory(data: pointer <const>, size: csize): *sfml.Image
 ```
 
@@ -5194,7 +5194,7 @@ function sfml.Image.create_from_memory(data: pointer <const>, size: csize): *sfm
 
 ### sfml.Image.create_from_stream
 
-```nelua
+```lua
 function sfml.Image.create_from_stream(stream: *sfml.InputStream): *sfml.Image
 ```
 
@@ -5202,7 +5202,7 @@ function sfml.Image.create_from_stream(stream: *sfml.InputStream): *sfml.Image
 
 ### sfml.Image.copy
 
-```nelua
+```lua
 function sfml.Image.copy(self: *sfml.Image <const>): *sfml.Image
 ```
 
@@ -5210,7 +5210,7 @@ function sfml.Image.copy(self: *sfml.Image <const>): *sfml.Image
 
 ### sfml.Image.destroy
 
-```nelua
+```lua
 function sfml.Image.destroy(self: *sfml.Image): void
 ```
 
@@ -5218,7 +5218,7 @@ function sfml.Image.destroy(self: *sfml.Image): void
 
 ### sfml.Image.save_to_file
 
-```nelua
+```lua
 function sfml.Image.save_to_file(self: *sfml.Image <const>, filename: cstring <const>): sfml.Bool
 ```
 
@@ -5226,7 +5226,7 @@ function sfml.Image.save_to_file(self: *sfml.Image <const>, filename: cstring <c
 
 ### sfml.Image.get_size
 
-```nelua
+```lua
 function sfml.Image.get_size(self: *sfml.Image <const>): sfml.Vector2u
 ```
 
@@ -5234,7 +5234,7 @@ function sfml.Image.get_size(self: *sfml.Image <const>): sfml.Vector2u
 
 ### sfml.Image.create_mask_from_color
 
-```nelua
+```lua
 function sfml.Image.create_mask_from_color(self: *sfml.Image, color: sfml.Color, alpha: sfml.Uint8): void
 ```
 
@@ -5242,7 +5242,7 @@ function sfml.Image.create_mask_from_color(self: *sfml.Image, color: sfml.Color,
 
 ### sfml.Image.copy_image
 
-```nelua
+```lua
 function sfml.Image.copy_image(self: *sfml.Image, source: *sfml.Image <const>, destX: cuint, destY: cuint, sourceRect: sfml.IntRect, applyAlpha: sfml.Bool): void
 ```
 
@@ -5250,7 +5250,7 @@ function sfml.Image.copy_image(self: *sfml.Image, source: *sfml.Image <const>, d
 
 ### sfml.Image.get_pixel
 
-```nelua
+```lua
 function sfml.Image.get_pixel(self: *sfml.Image <const>, x: cuint, y: cuint): sfml.Color
 ```
 
@@ -5258,7 +5258,7 @@ function sfml.Image.get_pixel(self: *sfml.Image <const>, x: cuint, y: cuint): sf
 
 ### sfml.Image.set_pixel
 
-```nelua
+```lua
 function sfml.Image.set_pixel(self: *sfml.Image, x: cuint, y: cuint, color: sfml.Color): void
 ```
 
@@ -5266,7 +5266,7 @@ function sfml.Image.set_pixel(self: *sfml.Image, x: cuint, y: cuint, color: sfml
 
 ### sfml.Image.get_pixels_ptr
 
-```nelua
+```lua
 function sfml.Image.get_pixels_ptr(self: *sfml.Image <const>): *[0]sfml.Uint8
 ```
 
@@ -5274,7 +5274,7 @@ function sfml.Image.get_pixels_ptr(self: *sfml.Image <const>): *[0]sfml.Uint8
 
 ### sfml.Image.flip_horizontally
 
-```nelua
+```lua
 function sfml.Image.flip_horizontally(self: *sfml.Image): void
 ```
 
@@ -5282,7 +5282,7 @@ function sfml.Image.flip_horizontally(self: *sfml.Image): void
 
 ### sfml.Image.flip_vertically
 
-```nelua
+```lua
 function sfml.Image.flip_vertically(self: *sfml.Image): void
 ```
 
@@ -5290,7 +5290,7 @@ function sfml.Image.flip_vertically(self: *sfml.Image): void
 
 ### sfml.CircleShape.create
 
-```nelua
+```lua
 function sfml.CircleShape.create(): *sfml.CircleShape
 ```
 
@@ -5298,7 +5298,7 @@ Shape: Circle
 
 ### sfml.CircleShape.copy
 
-```nelua
+```lua
 function sfml.CircleShape.copy(self: *sfml.CircleShape <const>): *sfml.CircleShape
 ```
 
@@ -5306,7 +5306,7 @@ function sfml.CircleShape.copy(self: *sfml.CircleShape <const>): *sfml.CircleSha
 
 ### sfml.CircleShape.destroy
 
-```nelua
+```lua
 function sfml.CircleShape.destroy(self: *sfml.CircleShape): void
 ```
 
@@ -5314,7 +5314,7 @@ function sfml.CircleShape.destroy(self: *sfml.CircleShape): void
 
 ### sfml.CircleShape.get_position
 
-```nelua
+```lua
 function sfml.CircleShape.get_position(self: *sfml.CircleShape <const>): sfml.Vector2f
 ```
 
@@ -5322,7 +5322,7 @@ function sfml.CircleShape.get_position(self: *sfml.CircleShape <const>): sfml.Ve
 
 ### sfml.CircleShape.set_position
 
-```nelua
+```lua
 function sfml.CircleShape.set_position(self: *sfml.CircleShape, position: sfml.Vector2f): void
 ```
 
@@ -5330,7 +5330,7 @@ function sfml.CircleShape.set_position(self: *sfml.CircleShape, position: sfml.V
 
 ### sfml.CircleShape.get_rotation
 
-```nelua
+```lua
 function sfml.CircleShape.get_rotation(self: *sfml.CircleShape <const>): float32
 ```
 
@@ -5338,7 +5338,7 @@ function sfml.CircleShape.get_rotation(self: *sfml.CircleShape <const>): float32
 
 ### sfml.CircleShape.set_rotation
 
-```nelua
+```lua
 function sfml.CircleShape.set_rotation(self: *sfml.CircleShape, angle: float32): void
 ```
 
@@ -5346,7 +5346,7 @@ function sfml.CircleShape.set_rotation(self: *sfml.CircleShape, angle: float32):
 
 ### sfml.CircleShape.get_scale
 
-```nelua
+```lua
 function sfml.CircleShape.get_scale(self: *sfml.CircleShape <const>): sfml.Vector2f
 ```
 
@@ -5354,7 +5354,7 @@ function sfml.CircleShape.get_scale(self: *sfml.CircleShape <const>): sfml.Vecto
 
 ### sfml.CircleShape.set_scale
 
-```nelua
+```lua
 function sfml.CircleShape.set_scale(self: *sfml.CircleShape, scale: sfml.Vector2f): void
 ```
 
@@ -5362,7 +5362,7 @@ function sfml.CircleShape.set_scale(self: *sfml.CircleShape, scale: sfml.Vector2
 
 ### sfml.CircleShape.get_origin
 
-```nelua
+```lua
 function sfml.CircleShape.get_origin(self: *sfml.CircleShape <const>): sfml.Vector2f
 ```
 
@@ -5370,7 +5370,7 @@ function sfml.CircleShape.get_origin(self: *sfml.CircleShape <const>): sfml.Vect
 
 ### sfml.CircleShape.set_origin
 
-```nelua
+```lua
 function sfml.CircleShape.set_origin(self: *sfml.CircleShape, origin: sfml.Vector2f): void
 ```
 
@@ -5378,7 +5378,7 @@ function sfml.CircleShape.set_origin(self: *sfml.CircleShape, origin: sfml.Vecto
 
 ### sfml.CircleShape.get_transform
 
-```nelua
+```lua
 function sfml.CircleShape.get_transform(self: *sfml.CircleShape <const>): sfml.Transform
 ```
 
@@ -5386,7 +5386,7 @@ function sfml.CircleShape.get_transform(self: *sfml.CircleShape <const>): sfml.T
 
 ### sfml.CircleShape.get_inverse_transform
 
-```nelua
+```lua
 function sfml.CircleShape.get_inverse_transform(self: *sfml.CircleShape <const>): sfml.Transform
 ```
 
@@ -5394,7 +5394,7 @@ function sfml.CircleShape.get_inverse_transform(self: *sfml.CircleShape <const>)
 
 ### sfml.CircleShape.get_texture
 
-```nelua
+```lua
 function sfml.CircleShape.get_texture(self: *sfml.CircleShape <const>): *sfml.Texture
 ```
 
@@ -5402,7 +5402,7 @@ function sfml.CircleShape.get_texture(self: *sfml.CircleShape <const>): *sfml.Te
 
 ### sfml.CircleShape.set_texture
 
-```nelua
+```lua
 function sfml.CircleShape.set_texture(self: *sfml.CircleShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void
 ```
 
@@ -5410,7 +5410,7 @@ function sfml.CircleShape.set_texture(self: *sfml.CircleShape, texture: *sfml.Te
 
 ### sfml.CircleShape.get_texture_rect
 
-```nelua
+```lua
 function sfml.CircleShape.get_texture_rect(self: *sfml.CircleShape <const>): sfml.IntRect
 ```
 
@@ -5418,7 +5418,7 @@ function sfml.CircleShape.get_texture_rect(self: *sfml.CircleShape <const>): sfm
 
 ### sfml.CircleShape.set_texture_rect
 
-```nelua
+```lua
 function sfml.CircleShape.set_texture_rect(self: *sfml.CircleShape, rect: sfml.IntRect): void
 ```
 
@@ -5426,7 +5426,7 @@ function sfml.CircleShape.set_texture_rect(self: *sfml.CircleShape, rect: sfml.I
 
 ### sfml.CircleShape.get_fill_color
 
-```nelua
+```lua
 function sfml.CircleShape.get_fill_color(self: *sfml.CircleShape <const>): sfml.Color
 ```
 
@@ -5434,7 +5434,7 @@ function sfml.CircleShape.get_fill_color(self: *sfml.CircleShape <const>): sfml.
 
 ### sfml.CircleShape.set_fill_color
 
-```nelua
+```lua
 function sfml.CircleShape.set_fill_color(self: *sfml.CircleShape, color: sfml.Color): void
 ```
 
@@ -5442,7 +5442,7 @@ function sfml.CircleShape.set_fill_color(self: *sfml.CircleShape, color: sfml.Co
 
 ### sfml.CircleShape.get_radius
 
-```nelua
+```lua
 function sfml.CircleShape.get_radius(self: *sfml.CircleShape <const>): float32
 ```
 
@@ -5450,7 +5450,7 @@ function sfml.CircleShape.get_radius(self: *sfml.CircleShape <const>): float32
 
 ### sfml.CircleShape.set_radius
 
-```nelua
+```lua
 function sfml.CircleShape.set_radius(self: *sfml.CircleShape, radius: float32): void
 ```
 
@@ -5458,7 +5458,7 @@ function sfml.CircleShape.set_radius(self: *sfml.CircleShape, radius: float32): 
 
 ### sfml.CircleShape.move
 
-```nelua
+```lua
 function sfml.CircleShape.move(self: *sfml.CircleShape, offset: sfml.Vector2f): void
 ```
 
@@ -5466,7 +5466,7 @@ function sfml.CircleShape.move(self: *sfml.CircleShape, offset: sfml.Vector2f): 
 
 ### sfml.CircleShape.rotate
 
-```nelua
+```lua
 function sfml.CircleShape.rotate(self: *sfml.CircleShape, angle: float32): void
 ```
 
@@ -5474,7 +5474,7 @@ function sfml.CircleShape.rotate(self: *sfml.CircleShape, angle: float32): void
 
 ### sfml.CircleShape.scale
 
-```nelua
+```lua
 function sfml.CircleShape.scale(self: *sfml.CircleShape, factors: sfml.Vector2f): void
 ```
 
@@ -5482,7 +5482,7 @@ function sfml.CircleShape.scale(self: *sfml.CircleShape, factors: sfml.Vector2f)
 
 ### sfml.CircleShape.set_outline_color
 
-```nelua
+```lua
 function sfml.CircleShape.set_outline_color(self: *sfml.CircleShape, color: sfml.Color): void
 ```
 
@@ -5490,7 +5490,7 @@ function sfml.CircleShape.set_outline_color(self: *sfml.CircleShape, color: sfml
 
 ### sfml.CircleShape.set_outline_thickness
 
-```nelua
+```lua
 function sfml.CircleShape.set_outline_thickness(self: *sfml.CircleShape, thickness: float32): void
 ```
 
@@ -5498,7 +5498,7 @@ function sfml.CircleShape.set_outline_thickness(self: *sfml.CircleShape, thickne
 
 ### sfml.CircleShape.get_outline_color
 
-```nelua
+```lua
 function sfml.CircleShape.get_outline_color(self: *sfml.CircleShape <const>): sfml.Color
 ```
 
@@ -5506,7 +5506,7 @@ function sfml.CircleShape.get_outline_color(self: *sfml.CircleShape <const>): sf
 
 ### sfml.CircleShape.get_outline_thickness
 
-```nelua
+```lua
 function sfml.CircleShape.get_outline_thickness(self: *sfml.CircleShape <const>): float32
 ```
 
@@ -5514,7 +5514,7 @@ function sfml.CircleShape.get_outline_thickness(self: *sfml.CircleShape <const>)
 
 ### sfml.CircleShape.get_point_count
 
-```nelua
+```lua
 function sfml.CircleShape.get_point_count(self: *sfml.CircleShape <const>): csize
 ```
 
@@ -5522,7 +5522,7 @@ function sfml.CircleShape.get_point_count(self: *sfml.CircleShape <const>): csiz
 
 ### sfml.CircleShape.get_point
 
-```nelua
+```lua
 function sfml.CircleShape.get_point(self: *sfml.CircleShape <const>, index: csize): sfml.Vector2f
 ```
 
@@ -5530,7 +5530,7 @@ function sfml.CircleShape.get_point(self: *sfml.CircleShape <const>, index: csiz
 
 ### sfml.CircleShape.set_point_count
 
-```nelua
+```lua
 function sfml.CircleShape.set_point_count(self: *sfml.CircleShape, count: csize): void
 ```
 
@@ -5538,7 +5538,7 @@ function sfml.CircleShape.set_point_count(self: *sfml.CircleShape, count: csize)
 
 ### sfml.CircleShape.get_local_bounds
 
-```nelua
+```lua
 function sfml.CircleShape.get_local_bounds(self: *sfml.CircleShape <const>): sfml.FloatRect
 ```
 
@@ -5546,7 +5546,7 @@ function sfml.CircleShape.get_local_bounds(self: *sfml.CircleShape <const>): sfm
 
 ### sfml.CircleShape.get_global_bounds
 
-```nelua
+```lua
 function sfml.CircleShape.get_global_bounds(self: *sfml.CircleShape <const>): sfml.FloatRect
 ```
 
@@ -5554,7 +5554,7 @@ function sfml.CircleShape.get_global_bounds(self: *sfml.CircleShape <const>): sf
 
 ### sfml.ConvexShape.create
 
-```nelua
+```lua
 function sfml.ConvexShape.create(): *sfml.ConvexShape
 ```
 
@@ -5562,7 +5562,7 @@ Shape: Convex
 
 ### sfml.ConvexShape.copy
 
-```nelua
+```lua
 function sfml.ConvexShape.copy(self: *sfml.ConvexShape <const>): *sfml.ConvexShape
 ```
 
@@ -5570,7 +5570,7 @@ function sfml.ConvexShape.copy(self: *sfml.ConvexShape <const>): *sfml.ConvexSha
 
 ### sfml.ConvexShape.destroy
 
-```nelua
+```lua
 function sfml.ConvexShape.destroy(self: *sfml.ConvexShape): void
 ```
 
@@ -5578,7 +5578,7 @@ function sfml.ConvexShape.destroy(self: *sfml.ConvexShape): void
 
 ### sfml.ConvexShape.get_position
 
-```nelua
+```lua
 function sfml.ConvexShape.get_position(self: *sfml.ConvexShape <const>): sfml.Vector2f
 ```
 
@@ -5586,7 +5586,7 @@ function sfml.ConvexShape.get_position(self: *sfml.ConvexShape <const>): sfml.Ve
 
 ### sfml.ConvexShape.set_position
 
-```nelua
+```lua
 function sfml.ConvexShape.set_position(self: *sfml.ConvexShape, position: sfml.Vector2f): void
 ```
 
@@ -5594,7 +5594,7 @@ function sfml.ConvexShape.set_position(self: *sfml.ConvexShape, position: sfml.V
 
 ### sfml.ConvexShape.get_rotation
 
-```nelua
+```lua
 function sfml.ConvexShape.get_rotation(self: *sfml.ConvexShape <const>): float32
 ```
 
@@ -5602,7 +5602,7 @@ function sfml.ConvexShape.get_rotation(self: *sfml.ConvexShape <const>): float32
 
 ### sfml.ConvexShape.set_rotation
 
-```nelua
+```lua
 function sfml.ConvexShape.set_rotation(self: *sfml.ConvexShape, angle: float32): void
 ```
 
@@ -5610,7 +5610,7 @@ function sfml.ConvexShape.set_rotation(self: *sfml.ConvexShape, angle: float32):
 
 ### sfml.ConvexShape.get_scale
 
-```nelua
+```lua
 function sfml.ConvexShape.get_scale(self: *sfml.ConvexShape <const>): sfml.Vector2f
 ```
 
@@ -5618,7 +5618,7 @@ function sfml.ConvexShape.get_scale(self: *sfml.ConvexShape <const>): sfml.Vecto
 
 ### sfml.ConvexShape.set_scale
 
-```nelua
+```lua
 function sfml.ConvexShape.set_scale(self: *sfml.ConvexShape, scale: sfml.Vector2f): void
 ```
 
@@ -5626,7 +5626,7 @@ function sfml.ConvexShape.set_scale(self: *sfml.ConvexShape, scale: sfml.Vector2
 
 ### sfml.ConvexShape.get_origin
 
-```nelua
+```lua
 function sfml.ConvexShape.get_origin(self: *sfml.ConvexShape <const>): sfml.Vector2f
 ```
 
@@ -5634,7 +5634,7 @@ function sfml.ConvexShape.get_origin(self: *sfml.ConvexShape <const>): sfml.Vect
 
 ### sfml.ConvexShape.set_origin
 
-```nelua
+```lua
 function sfml.ConvexShape.set_origin(self: *sfml.ConvexShape, origin: sfml.Vector2f): void
 ```
 
@@ -5642,7 +5642,7 @@ function sfml.ConvexShape.set_origin(self: *sfml.ConvexShape, origin: sfml.Vecto
 
 ### sfml.ConvexShape.get_texture
 
-```nelua
+```lua
 function sfml.ConvexShape.get_texture(self: *sfml.ConvexShape <const>): *sfml.Texture
 ```
 
@@ -5650,7 +5650,7 @@ function sfml.ConvexShape.get_texture(self: *sfml.ConvexShape <const>): *sfml.Te
 
 ### sfml.ConvexShape.set_texture
 
-```nelua
+```lua
 function sfml.ConvexShape.set_texture(self: *sfml.ConvexShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void
 ```
 
@@ -5658,7 +5658,7 @@ function sfml.ConvexShape.set_texture(self: *sfml.ConvexShape, texture: *sfml.Te
 
 ### sfml.ConvexShape.get_fill_color
 
-```nelua
+```lua
 function sfml.ConvexShape.get_fill_color(self: *sfml.ConvexShape <const>): sfml.Color
 ```
 
@@ -5666,7 +5666,7 @@ function sfml.ConvexShape.get_fill_color(self: *sfml.ConvexShape <const>): sfml.
 
 ### sfml.ConvexShape.set_fill_color
 
-```nelua
+```lua
 function sfml.ConvexShape.set_fill_color(self: *sfml.ConvexShape, color: sfml.Color): void
 ```
 
@@ -5674,7 +5674,7 @@ function sfml.ConvexShape.set_fill_color(self: *sfml.ConvexShape, color: sfml.Co
 
 ### sfml.ConvexShape.get_outline_color
 
-```nelua
+```lua
 function sfml.ConvexShape.get_outline_color(self: *sfml.ConvexShape <const>): sfml.Color
 ```
 
@@ -5682,7 +5682,7 @@ function sfml.ConvexShape.get_outline_color(self: *sfml.ConvexShape <const>): sf
 
 ### sfml.ConvexShape.set_outline_color
 
-```nelua
+```lua
 function sfml.ConvexShape.set_outline_color(self: *sfml.ConvexShape, color: sfml.Color): void
 ```
 
@@ -5690,7 +5690,7 @@ function sfml.ConvexShape.set_outline_color(self: *sfml.ConvexShape, color: sfml
 
 ### sfml.ConvexShape.get_outline_thickness
 
-```nelua
+```lua
 function sfml.ConvexShape.get_outline_thickness(self: *sfml.ConvexShape <const>): float32
 ```
 
@@ -5698,7 +5698,7 @@ function sfml.ConvexShape.get_outline_thickness(self: *sfml.ConvexShape <const>)
 
 ### sfml.ConvexShape.set_outline_thickness
 
-```nelua
+```lua
 function sfml.ConvexShape.set_outline_thickness(self: *sfml.ConvexShape, thickness: float32): void
 ```
 
@@ -5706,7 +5706,7 @@ function sfml.ConvexShape.set_outline_thickness(self: *sfml.ConvexShape, thickne
 
 ### sfml.ConvexShape.get_texture_rect
 
-```nelua
+```lua
 function sfml.ConvexShape.get_texture_rect(self: *sfml.ConvexShape <const>): sfml.IntRect
 ```
 
@@ -5714,7 +5714,7 @@ function sfml.ConvexShape.get_texture_rect(self: *sfml.ConvexShape <const>): sfm
 
 ### sfml.ConvexShape.set_texture_rect
 
-```nelua
+```lua
 function sfml.ConvexShape.set_texture_rect(self: *sfml.ConvexShape, rect: sfml.IntRect): void
 ```
 
@@ -5722,7 +5722,7 @@ function sfml.ConvexShape.set_texture_rect(self: *sfml.ConvexShape, rect: sfml.I
 
 ### sfml.ConvexShape.get_radius
 
-```nelua
+```lua
 function sfml.ConvexShape.get_radius(self: *sfml.ConvexShape <const>): float32
 ```
 
@@ -5730,7 +5730,7 @@ function sfml.ConvexShape.get_radius(self: *sfml.ConvexShape <const>): float32
 
 ### sfml.ConvexShape.set_radius
 
-```nelua
+```lua
 function sfml.ConvexShape.set_radius(self: *sfml.ConvexShape, radius: float32): void
 ```
 
@@ -5738,7 +5738,7 @@ function sfml.ConvexShape.set_radius(self: *sfml.ConvexShape, radius: float32): 
 
 ### sfml.ConvexShape.get_point_count
 
-```nelua
+```lua
 function sfml.ConvexShape.get_point_count(self: *sfml.ConvexShape <const>): csize
 ```
 
@@ -5746,7 +5746,7 @@ function sfml.ConvexShape.get_point_count(self: *sfml.ConvexShape <const>): csiz
 
 ### sfml.ConvexShape.set_point_count
 
-```nelua
+```lua
 function sfml.ConvexShape.set_point_count(self: *sfml.ConvexShape, count: csize): void
 ```
 
@@ -5754,7 +5754,7 @@ function sfml.ConvexShape.set_point_count(self: *sfml.ConvexShape, count: csize)
 
 ### sfml.ConvexShape.get_transform
 
-```nelua
+```lua
 function sfml.ConvexShape.get_transform(self: *sfml.ConvexShape <const>): sfml.Transform
 ```
 
@@ -5762,7 +5762,7 @@ function sfml.ConvexShape.get_transform(self: *sfml.ConvexShape <const>): sfml.T
 
 ### sfml.ConvexShape.get_inverse_transform
 
-```nelua
+```lua
 function sfml.ConvexShape.get_inverse_transform(self: *sfml.ConvexShape <const>): sfml.Transform
 ```
 
@@ -5770,7 +5770,7 @@ function sfml.ConvexShape.get_inverse_transform(self: *sfml.ConvexShape <const>)
 
 ### sfml.ConvexShape.move
 
-```nelua
+```lua
 function sfml.ConvexShape.move(self: *sfml.ConvexShape, offset: sfml.Vector2f): void
 ```
 
@@ -5778,7 +5778,7 @@ function sfml.ConvexShape.move(self: *sfml.ConvexShape, offset: sfml.Vector2f): 
 
 ### sfml.ConvexShape.rotate
 
-```nelua
+```lua
 function sfml.ConvexShape.rotate(self: *sfml.ConvexShape, angle: float32): void
 ```
 
@@ -5786,7 +5786,7 @@ function sfml.ConvexShape.rotate(self: *sfml.ConvexShape, angle: float32): void
 
 ### sfml.ConvexShape.scale
 
-```nelua
+```lua
 function sfml.ConvexShape.scale(self: *sfml.ConvexShape, factors: sfml.Vector2f): void
 ```
 
@@ -5794,7 +5794,7 @@ function sfml.ConvexShape.scale(self: *sfml.ConvexShape, factors: sfml.Vector2f)
 
 ### sfml.ConvexShape.get_point
 
-```nelua
+```lua
 function sfml.ConvexShape.get_point(self: *sfml.ConvexShape <const>, index: csize): sfml.Vector2f
 ```
 
@@ -5802,7 +5802,7 @@ function sfml.ConvexShape.get_point(self: *sfml.ConvexShape <const>, index: csiz
 
 ### sfml.ConvexShape.get_local_bounds
 
-```nelua
+```lua
 function sfml.ConvexShape.get_local_bounds(self: *sfml.ConvexShape <const>): sfml.FloatRect
 ```
 
@@ -5810,7 +5810,7 @@ function sfml.ConvexShape.get_local_bounds(self: *sfml.ConvexShape <const>): sfm
 
 ### sfml.ConvexShape.get_global_bounds
 
-```nelua
+```lua
 function sfml.ConvexShape.get_global_bounds(self: *sfml.ConvexShape <const>): sfml.FloatRect
 ```
 
@@ -5818,7 +5818,7 @@ function sfml.ConvexShape.get_global_bounds(self: *sfml.ConvexShape <const>): sf
 
 ### sfml.RectangleShape.create
 
-```nelua
+```lua
 function sfml.RectangleShape.create(): *sfml.RectangleShape
 ```
 
@@ -5826,7 +5826,7 @@ Rectangle
 
 ### sfml.RectangleShape.copy
 
-```nelua
+```lua
 function sfml.RectangleShape.copy(self: *sfml.RectangleShape <const>): *sfml.RectangleShape
 ```
 
@@ -5834,7 +5834,7 @@ function sfml.RectangleShape.copy(self: *sfml.RectangleShape <const>): *sfml.Rec
 
 ### sfml.RectangleShape.destroy
 
-```nelua
+```lua
 function sfml.RectangleShape.destroy(self: *sfml.RectangleShape): void
 ```
 
@@ -5842,7 +5842,7 @@ function sfml.RectangleShape.destroy(self: *sfml.RectangleShape): void
 
 ### sfml.RectangleShape.get_position
 
-```nelua
+```lua
 function sfml.RectangleShape.get_position(self: *sfml.RectangleShape <const>): sfml.Vector2f
 ```
 
@@ -5850,7 +5850,7 @@ function sfml.RectangleShape.get_position(self: *sfml.RectangleShape <const>): s
 
 ### sfml.RectangleShape.set_position
 
-```nelua
+```lua
 function sfml.RectangleShape.set_position(self: *sfml.RectangleShape, position: sfml.Vector2f): void
 ```
 
@@ -5858,7 +5858,7 @@ function sfml.RectangleShape.set_position(self: *sfml.RectangleShape, position: 
 
 ### sfml.RectangleShape.get_rotation
 
-```nelua
+```lua
 function sfml.RectangleShape.get_rotation(self: *sfml.RectangleShape <const>): float32
 ```
 
@@ -5866,7 +5866,7 @@ function sfml.RectangleShape.get_rotation(self: *sfml.RectangleShape <const>): f
 
 ### sfml.RectangleShape.set_rotation
 
-```nelua
+```lua
 function sfml.RectangleShape.set_rotation(self: *sfml.RectangleShape, angle: float32): void
 ```
 
@@ -5874,7 +5874,7 @@ function sfml.RectangleShape.set_rotation(self: *sfml.RectangleShape, angle: flo
 
 ### sfml.RectangleShape.get_scale
 
-```nelua
+```lua
 function sfml.RectangleShape.get_scale(self: *sfml.RectangleShape <const>): sfml.Vector2f
 ```
 
@@ -5882,7 +5882,7 @@ function sfml.RectangleShape.get_scale(self: *sfml.RectangleShape <const>): sfml
 
 ### sfml.RectangleShape.set_scale
 
-```nelua
+```lua
 function sfml.RectangleShape.set_scale(self: *sfml.RectangleShape, scale: sfml.Vector2f): void
 ```
 
@@ -5890,7 +5890,7 @@ function sfml.RectangleShape.set_scale(self: *sfml.RectangleShape, scale: sfml.V
 
 ### sfml.RectangleShape.get_origin
 
-```nelua
+```lua
 function sfml.RectangleShape.get_origin(self: *sfml.RectangleShape <const>): sfml.Vector2f
 ```
 
@@ -5898,7 +5898,7 @@ function sfml.RectangleShape.get_origin(self: *sfml.RectangleShape <const>): sfm
 
 ### sfml.RectangleShape.set_origin
 
-```nelua
+```lua
 function sfml.RectangleShape.set_origin(self: *sfml.RectangleShape, origin: sfml.Vector2f): void
 ```
 
@@ -5906,7 +5906,7 @@ function sfml.RectangleShape.set_origin(self: *sfml.RectangleShape, origin: sfml
 
 ### sfml.RectangleShape.get_texture
 
-```nelua
+```lua
 function sfml.RectangleShape.get_texture(self: *sfml.RectangleShape <const>): *sfml.Texture
 ```
 
@@ -5914,7 +5914,7 @@ function sfml.RectangleShape.get_texture(self: *sfml.RectangleShape <const>): *s
 
 ### sfml.RectangleShape.set_texture
 
-```nelua
+```lua
 function sfml.RectangleShape.set_texture(self: *sfml.RectangleShape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void
 ```
 
@@ -5922,7 +5922,7 @@ function sfml.RectangleShape.set_texture(self: *sfml.RectangleShape, texture: *s
 
 ### sfml.RectangleShape.get_texture_rect
 
-```nelua
+```lua
 function sfml.RectangleShape.get_texture_rect(self: *sfml.RectangleShape <const>): sfml.IntRect
 ```
 
@@ -5930,7 +5930,7 @@ function sfml.RectangleShape.get_texture_rect(self: *sfml.RectangleShape <const>
 
 ### sfml.RectangleShape.set_texture_rect
 
-```nelua
+```lua
 function sfml.RectangleShape.set_texture_rect(self: *sfml.RectangleShape, rect: sfml.IntRect): void
 ```
 
@@ -5938,7 +5938,7 @@ function sfml.RectangleShape.set_texture_rect(self: *sfml.RectangleShape, rect: 
 
 ### sfml.RectangleShape.get_fill_color
 
-```nelua
+```lua
 function sfml.RectangleShape.get_fill_color(self: *sfml.RectangleShape <const>): sfml.Color
 ```
 
@@ -5946,7 +5946,7 @@ function sfml.RectangleShape.get_fill_color(self: *sfml.RectangleShape <const>):
 
 ### sfml.RectangleShape.set_fill_color
 
-```nelua
+```lua
 function sfml.RectangleShape.set_fill_color(self: *sfml.RectangleShape, color: sfml.Color): void
 ```
 
@@ -5954,7 +5954,7 @@ function sfml.RectangleShape.set_fill_color(self: *sfml.RectangleShape, color: s
 
 ### sfml.RectangleShape.get_outline_color
 
-```nelua
+```lua
 function sfml.RectangleShape.get_outline_color(self: *sfml.RectangleShape <const>): sfml.Color
 ```
 
@@ -5962,7 +5962,7 @@ function sfml.RectangleShape.get_outline_color(self: *sfml.RectangleShape <const
 
 ### sfml.RectangleShape.set_outline_color
 
-```nelua
+```lua
 function sfml.RectangleShape.set_outline_color(self: *sfml.RectangleShape, color: sfml.Color): void
 ```
 
@@ -5970,7 +5970,7 @@ function sfml.RectangleShape.set_outline_color(self: *sfml.RectangleShape, color
 
 ### sfml.RectangleShape.get_outline_thickness
 
-```nelua
+```lua
 function sfml.RectangleShape.get_outline_thickness(self: *sfml.RectangleShape <const>): float32
 ```
 
@@ -5978,7 +5978,7 @@ function sfml.RectangleShape.get_outline_thickness(self: *sfml.RectangleShape <c
 
 ### sfml.RectangleShape.set_outline_thickness
 
-```nelua
+```lua
 function sfml.RectangleShape.set_outline_thickness(self: *sfml.RectangleShape, thickness: float32): void
 ```
 
@@ -5986,7 +5986,7 @@ function sfml.RectangleShape.set_outline_thickness(self: *sfml.RectangleShape, t
 
 ### sfml.RectangleShape.get_size
 
-```nelua
+```lua
 function sfml.RectangleShape.get_size(self: *sfml.RectangleShape <const>): sfml.Vector2f
 ```
 
@@ -5994,7 +5994,7 @@ function sfml.RectangleShape.get_size(self: *sfml.RectangleShape <const>): sfml.
 
 ### sfml.RectangleShape.set_size
 
-```nelua
+```lua
 function sfml.RectangleShape.set_size(self: *sfml.RectangleShape, size: sfml.Vector2f): void
 ```
 
@@ -6002,7 +6002,7 @@ function sfml.RectangleShape.set_size(self: *sfml.RectangleShape, size: sfml.Vec
 
 ### sfml.RectangleShape.get_point_count
 
-```nelua
+```lua
 function sfml.RectangleShape.get_point_count(self: *sfml.RectangleShape <const>): csize
 ```
 
@@ -6010,7 +6010,7 @@ function sfml.RectangleShape.get_point_count(self: *sfml.RectangleShape <const>)
 
 ### sfml.RectangleShape.set_point_count
 
-```nelua
+```lua
 function sfml.RectangleShape.set_point_count(self: *sfml.RectangleShape, count: csize): void
 ```
 
@@ -6018,7 +6018,7 @@ function sfml.RectangleShape.set_point_count(self: *sfml.RectangleShape, count: 
 
 ### sfml.RectangleShape.move
 
-```nelua
+```lua
 function sfml.RectangleShape.move(self: *sfml.RectangleShape, offset: sfml.Vector2f): void
 ```
 
@@ -6026,7 +6026,7 @@ function sfml.RectangleShape.move(self: *sfml.RectangleShape, offset: sfml.Vecto
 
 ### sfml.RectangleShape.rotate
 
-```nelua
+```lua
 function sfml.RectangleShape.rotate(self: *sfml.RectangleShape, angle: float32): void
 ```
 
@@ -6034,7 +6034,7 @@ function sfml.RectangleShape.rotate(self: *sfml.RectangleShape, angle: float32):
 
 ### sfml.RectangleShape.scale
 
-```nelua
+```lua
 function sfml.RectangleShape.scale(self: *sfml.RectangleShape, factors: sfml.Vector2f): void
 ```
 
@@ -6042,7 +6042,7 @@ function sfml.RectangleShape.scale(self: *sfml.RectangleShape, factors: sfml.Vec
 
 ### sfml.RectangleShape.get_transform
 
-```nelua
+```lua
 function sfml.RectangleShape.get_transform(self: *sfml.RectangleShape <const>): sfml.Transform
 ```
 
@@ -6050,7 +6050,7 @@ function sfml.RectangleShape.get_transform(self: *sfml.RectangleShape <const>): 
 
 ### sfml.RectangleShape.get_inverse_transform
 
-```nelua
+```lua
 function sfml.RectangleShape.get_inverse_transform(self: *sfml.RectangleShape <const>): sfml.Transform
 ```
 
@@ -6058,7 +6058,7 @@ function sfml.RectangleShape.get_inverse_transform(self: *sfml.RectangleShape <c
 
 ### sfml.RectangleShape.get_point
 
-```nelua
+```lua
 function sfml.RectangleShape.get_point(self: *sfml.RectangleShape <const>, index: csize): sfml.Vector2f
 ```
 
@@ -6066,7 +6066,7 @@ function sfml.RectangleShape.get_point(self: *sfml.RectangleShape <const>, index
 
 ### sfml.RectangleShape.get_local_bounds
 
-```nelua
+```lua
 function sfml.RectangleShape.get_local_bounds(self: *sfml.RectangleShape <const>): sfml.FloatRect
 ```
 
@@ -6074,7 +6074,7 @@ function sfml.RectangleShape.get_local_bounds(self: *sfml.RectangleShape <const>
 
 ### sfml.RectangleShape.get_global_bounds
 
-```nelua
+```lua
 function sfml.RectangleShape.get_global_bounds(self: *sfml.RectangleShape <const>): sfml.FloatRect
 ```
 
@@ -6082,7 +6082,7 @@ function sfml.RectangleShape.get_global_bounds(self: *sfml.RectangleShape <const
 
 ### sfml.RenderTexture.create
 
-```nelua
+```lua
 function sfml.RenderTexture.create(width: cuint, height: cuint, depthBuffer: sfml.Bool): *sfml.RenderTexture
 ```
 
@@ -6090,7 +6090,7 @@ Render Texture
 
 ### sfml.RenderTexture.create_with_settings
 
-```nelua
+```lua
 function sfml.RenderTexture.create_with_settings(width: cuint, height: cuint, settings: *sfml.ContextSettings <const>): *sfml.RenderTexture
 ```
 
@@ -6098,7 +6098,7 @@ function sfml.RenderTexture.create_with_settings(width: cuint, height: cuint, se
 
 ### sfml.RenderTexture.destroy
 
-```nelua
+```lua
 function sfml.RenderTexture.destroy(self: *sfml.RenderTexture): void
 ```
 
@@ -6106,7 +6106,7 @@ function sfml.RenderTexture.destroy(self: *sfml.RenderTexture): void
 
 ### sfml.RenderTexture.get_size
 
-```nelua
+```lua
 function sfml.RenderTexture.get_size(self: *sfml.RenderTexture <const>): sfml.Vector2u
 ```
 
@@ -6114,7 +6114,7 @@ function sfml.RenderTexture.get_size(self: *sfml.RenderTexture <const>): sfml.Ve
 
 ### sfml.RenderTexture.set_active
 
-```nelua
+```lua
 function sfml.RenderTexture.set_active(self: *sfml.RenderTexture, active: sfml.Bool): sfml.Vector2u
 ```
 
@@ -6122,7 +6122,7 @@ function sfml.RenderTexture.set_active(self: *sfml.RenderTexture, active: sfml.B
 
 ### sfml.RenderTexture.display
 
-```nelua
+```lua
 function sfml.RenderTexture.display(self: *sfml.RenderTexture): void
 ```
 
@@ -6130,7 +6130,7 @@ function sfml.RenderTexture.display(self: *sfml.RenderTexture): void
 
 ### sfml.RenderTexture.clear
 
-```nelua
+```lua
 function sfml.RenderTexture.clear(self: *sfml.RenderTexture, color: sfml.Color): void
 ```
 
@@ -6138,7 +6138,7 @@ function sfml.RenderTexture.clear(self: *sfml.RenderTexture, color: sfml.Color):
 
 ### sfml.RenderTexture.get_view
 
-```nelua
+```lua
 function sfml.RenderTexture.get_view(self: *sfml.RenderTexture <const>): *sfml.View
 ```
 
@@ -6146,7 +6146,7 @@ function sfml.RenderTexture.get_view(self: *sfml.RenderTexture <const>): *sfml.V
 
 ### sfml.RenderTexture.set_view
 
-```nelua
+```lua
 function sfml.RenderTexture.set_view(self: *sfml.RenderTexture, view: *sfml.View <const>): void
 ```
 
@@ -6154,7 +6154,7 @@ function sfml.RenderTexture.set_view(self: *sfml.RenderTexture, view: *sfml.View
 
 ### sfml.RenderTexture.get_default_view
 
-```nelua
+```lua
 function sfml.RenderTexture.get_default_view(self: *sfml.RenderTexture <const>): *sfml.View
 ```
 
@@ -6162,7 +6162,7 @@ function sfml.RenderTexture.get_default_view(self: *sfml.RenderTexture <const>):
 
 ### sfml.RenderTexture.get_viewport
 
-```nelua
+```lua
 function sfml.RenderTexture.get_viewport(self: *sfml.RenderTexture <const>, view: *sfml.View <const>): sfml.IntRect
 ```
 
@@ -6170,7 +6170,7 @@ function sfml.RenderTexture.get_viewport(self: *sfml.RenderTexture <const>, view
 
 ### sfml.RenderTexture.map_pixel_to_coords
 
-```nelua
+```lua
 function sfml.RenderTexture.map_pixel_to_coords(self: *sfml.RenderTexture <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f
 ```
 
@@ -6178,7 +6178,7 @@ function sfml.RenderTexture.map_pixel_to_coords(self: *sfml.RenderTexture <const
 
 ### sfml.RenderTexture.map_coords_to_pixel
 
-```nelua
+```lua
 function sfml.RenderTexture.map_coords_to_pixel(self: *sfml.RenderTexture <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i
 ```
 
@@ -6186,7 +6186,7 @@ function sfml.RenderTexture.map_coords_to_pixel(self: *sfml.RenderTexture <const
 
 ### sfml.RenderTexture.draw_sprite
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_sprite(self: *sfml.RenderTexture, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6194,7 +6194,7 @@ function sfml.RenderTexture.draw_sprite(self: *sfml.RenderTexture, object: *sfml
 
 ### sfml.RenderTexture.draw_text
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_text(self: *sfml.RenderTexture, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6202,7 +6202,7 @@ function sfml.RenderTexture.draw_text(self: *sfml.RenderTexture, object: *sfml.T
 
 ### sfml.RenderTexture.draw_shape
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_shape(self: *sfml.RenderTexture, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6210,7 +6210,7 @@ function sfml.RenderTexture.draw_shape(self: *sfml.RenderTexture, object: *sfml.
 
 ### sfml.RenderTexture.draw_circle_shape
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_circle_shape(self: *sfml.RenderTexture, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6218,7 +6218,7 @@ function sfml.RenderTexture.draw_circle_shape(self: *sfml.RenderTexture, object:
 
 ### sfml.RenderTexture.draw_convex_shape
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_convex_shape(self: *sfml.RenderTexture, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6226,7 +6226,7 @@ function sfml.RenderTexture.draw_convex_shape(self: *sfml.RenderTexture, object:
 
 ### sfml.RenderTexture.draw_rectangle_shape
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_rectangle_shape(self: *sfml.RenderTexture, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6234,7 +6234,7 @@ function sfml.RenderTexture.draw_rectangle_shape(self: *sfml.RenderTexture, obje
 
 ### sfml.RenderTexture.draw_vertex_array
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_vertex_array(self: *sfml.RenderTexture, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6242,7 +6242,7 @@ function sfml.RenderTexture.draw_vertex_array(self: *sfml.RenderTexture, object:
 
 ### sfml.RenderTexture.draw_vertex_buffer
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_vertex_buffer(self: *sfml.RenderTexture, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6250,7 +6250,7 @@ function sfml.RenderTexture.draw_vertex_buffer(self: *sfml.RenderTexture, object
 
 ### sfml.RenderTexture.draw_primitives
 
-```nelua
+```lua
 function sfml.RenderTexture.draw_primitives(self: *sfml.RenderTexture, vertices: *[0]sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6258,7 +6258,7 @@ function sfml.RenderTexture.draw_primitives(self: *sfml.RenderTexture, vertices:
 
 ### sfml.RenderTexture.push_gl_states
 
-```nelua
+```lua
 function sfml.RenderTexture.push_gl_states(self: *sfml.RenderTexture): void
 ```
 
@@ -6266,7 +6266,7 @@ function sfml.RenderTexture.push_gl_states(self: *sfml.RenderTexture): void
 
 ### sfml.RenderTexture.pop_gl_states
 
-```nelua
+```lua
 function sfml.RenderTexture.pop_gl_states(self: *sfml.RenderTexture): void
 ```
 
@@ -6274,7 +6274,7 @@ function sfml.RenderTexture.pop_gl_states(self: *sfml.RenderTexture): void
 
 ### sfml.RenderTexture.reset_gl_states
 
-```nelua
+```lua
 function sfml.RenderTexture.reset_gl_states(self: *sfml.RenderTexture): void
 ```
 
@@ -6282,7 +6282,7 @@ function sfml.RenderTexture.reset_gl_states(self: *sfml.RenderTexture): void
 
 ### sfml.RenderTexture.get_texture
 
-```nelua
+```lua
 function sfml.RenderTexture.get_texture(self: *sfml.RenderTexture <const>): *sfml.Texture
 ```
 
@@ -6290,7 +6290,7 @@ function sfml.RenderTexture.get_texture(self: *sfml.RenderTexture <const>): *sfm
 
 ### sfml.RenderTexture.get_maximum_antialiasing_level
 
-```nelua
+```lua
 function sfml.RenderTexture.get_maximum_antialiasing_level(): cuint
 ```
 
@@ -6298,7 +6298,7 @@ function sfml.RenderTexture.get_maximum_antialiasing_level(): cuint
 
 ### sfml.RenderTexture.is_smooth
 
-```nelua
+```lua
 function sfml.RenderTexture.is_smooth(self: *sfml.RenderTexture <const>): sfml.Bool
 ```
 
@@ -6306,7 +6306,7 @@ function sfml.RenderTexture.is_smooth(self: *sfml.RenderTexture <const>): sfml.B
 
 ### sfml.RenderTexture.set_smooth
 
-```nelua
+```lua
 function sfml.RenderTexture.set_smooth(self: *sfml.RenderTexture, smooth: sfml.Bool): void
 ```
 
@@ -6314,7 +6314,7 @@ function sfml.RenderTexture.set_smooth(self: *sfml.RenderTexture, smooth: sfml.B
 
 ### sfml.RenderTexture.is_repeated
 
-```nelua
+```lua
 function sfml.RenderTexture.is_repeated(self: *sfml.RenderTexture <const>): sfml.Bool
 ```
 
@@ -6322,7 +6322,7 @@ function sfml.RenderTexture.is_repeated(self: *sfml.RenderTexture <const>): sfml
 
 ### sfml.RenderTexture.set_repeated
 
-```nelua
+```lua
 function sfml.RenderTexture.set_repeated(self: *sfml.RenderTexture, repeated: sfml.Bool): void
 ```
 
@@ -6330,7 +6330,7 @@ function sfml.RenderTexture.set_repeated(self: *sfml.RenderTexture, repeated: sf
 
 ### sfml.RenderTexture.generate_mipmap
 
-```nelua
+```lua
 function sfml.RenderTexture.generate_mipmap(self: *sfml.RenderTexture): sfml.Bool
 ```
 
@@ -6338,7 +6338,7 @@ function sfml.RenderTexture.generate_mipmap(self: *sfml.RenderTexture): sfml.Boo
 
 ### sfml.RenderWindow.create
 
-```nelua
+```lua
 function sfml.RenderWindow.create(mode: sfml.VideoMode, title: cstring <const>, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow
 ```
 
@@ -6346,7 +6346,7 @@ Render Window
 
 ### sfml.RenderWindow.create_unicode
 
-```nelua
+```lua
 function sfml.RenderWindow.create_unicode(mode: sfml.VideoMode, title: *sfml.Uint32, style: sfml.Uint32, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow
 ```
 
@@ -6354,7 +6354,7 @@ function sfml.RenderWindow.create_unicode(mode: sfml.VideoMode, title: *sfml.Uin
 
 ### sfml.RenderWindow.create_from_handle
 
-```nelua
+```lua
 function sfml.RenderWindow.create_from_handle(handle: sfml.WindowHandle, settings: *sfml.ContextSettings <const>): *sfml.RenderWindow
 ```
 
@@ -6362,7 +6362,7 @@ function sfml.RenderWindow.create_from_handle(handle: sfml.WindowHandle, setting
 
 ### sfml.RenderWindow.destroy
 
-```nelua
+```lua
 function sfml.RenderWindow.destroy(self: *sfml.RenderWindow): void
 ```
 
@@ -6370,7 +6370,7 @@ function sfml.RenderWindow.destroy(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.close
 
-```nelua
+```lua
 function sfml.RenderWindow.close(self: *sfml.RenderWindow): void
 ```
 
@@ -6378,7 +6378,7 @@ function sfml.RenderWindow.close(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.is_open
 
-```nelua
+```lua
 function sfml.RenderWindow.is_open(self: *sfml.RenderWindow <const>): sfml.Bool
 ```
 
@@ -6386,7 +6386,7 @@ function sfml.RenderWindow.is_open(self: *sfml.RenderWindow <const>): sfml.Bool
 
 ### sfml.RenderWindow.get_settings
 
-```nelua
+```lua
 function sfml.RenderWindow.get_settings(self: *sfml.RenderWindow <const>): sfml.ContextSettings
 ```
 
@@ -6394,7 +6394,7 @@ function sfml.RenderWindow.get_settings(self: *sfml.RenderWindow <const>): sfml.
 
 ### sfml.RenderWindow.poll_event
 
-```nelua
+```lua
 function sfml.RenderWindow.poll_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.Bool
 ```
 
@@ -6402,7 +6402,7 @@ function sfml.RenderWindow.poll_event(self: *sfml.RenderWindow, event: *sfml.Eve
 
 ### sfml.RenderWindow.wait_event
 
-```nelua
+```lua
 function sfml.RenderWindow.wait_event(self: *sfml.RenderWindow, event: *sfml.Event): sfml.Bool
 ```
 
@@ -6410,7 +6410,7 @@ function sfml.RenderWindow.wait_event(self: *sfml.RenderWindow, event: *sfml.Eve
 
 ### sfml.RenderWindow.get_position
 
-```nelua
+```lua
 function sfml.RenderWindow.get_position(self: *sfml.RenderWindow <const>): sfml.Vector2i
 ```
 
@@ -6418,7 +6418,7 @@ function sfml.RenderWindow.get_position(self: *sfml.RenderWindow <const>): sfml.
 
 ### sfml.RenderWindow.set_position
 
-```nelua
+```lua
 function sfml.RenderWindow.set_position(self: *sfml.RenderWindow, position: sfml.Vector2i): void
 ```
 
@@ -6426,7 +6426,7 @@ function sfml.RenderWindow.set_position(self: *sfml.RenderWindow, position: sfml
 
 ### sfml.RenderWindow.get_size
 
-```nelua
+```lua
 function sfml.RenderWindow.get_size(self: *sfml.RenderWindow <const>): sfml.Vector2u
 ```
 
@@ -6434,7 +6434,7 @@ function sfml.RenderWindow.get_size(self: *sfml.RenderWindow <const>): sfml.Vect
 
 ### sfml.RenderWindow.set_size
 
-```nelua
+```lua
 function sfml.RenderWindow.set_size(self: *sfml.RenderWindow, size: sfml.Vector2u): void
 ```
 
@@ -6442,7 +6442,7 @@ function sfml.RenderWindow.set_size(self: *sfml.RenderWindow, size: sfml.Vector2
 
 ### sfml.RenderWindow.set_unicode_title
 
-```nelua
+```lua
 function sfml.RenderWindow.set_unicode_title(self: *sfml.RenderWindow, title: *sfml.Uint32 <const>): void
 ```
 
@@ -6450,7 +6450,7 @@ function sfml.RenderWindow.set_unicode_title(self: *sfml.RenderWindow, title: *s
 
 ### sfml.RenderWindow.set_icon
 
-```nelua
+```lua
 function sfml.RenderWindow.set_icon(self: *sfml.RenderWindow, width: cuint, height: cuint, pixels: *[0]sfml.Uint8 <const>): void
 ```
 
@@ -6458,7 +6458,7 @@ function sfml.RenderWindow.set_icon(self: *sfml.RenderWindow, width: cuint, heig
 
 ### sfml.RenderWindow.set_visible
 
-```nelua
+```lua
 function sfml.RenderWindow.set_visible(self: *sfml.RenderWindow, visible: sfml.Bool): void
 ```
 
@@ -6466,7 +6466,7 @@ function sfml.RenderWindow.set_visible(self: *sfml.RenderWindow, visible: sfml.B
 
 ### sfml.RenderWindow.set_vsync_enabled
 
-```nelua
+```lua
 function sfml.RenderWindow.set_vsync_enabled(self: *sfml.RenderWindow, enabled: sfml.Bool): void
 ```
 
@@ -6474,7 +6474,7 @@ function sfml.RenderWindow.set_vsync_enabled(self: *sfml.RenderWindow, enabled: 
 
 ### sfml.RenderWindow.set_mouse_cursor_visible
 
-```nelua
+```lua
 function sfml.RenderWindow.set_mouse_cursor_visible(self: *sfml.RenderWindow, show: sfml.Bool): void
 ```
 
@@ -6482,7 +6482,7 @@ function sfml.RenderWindow.set_mouse_cursor_visible(self: *sfml.RenderWindow, sh
 
 ### sfml.RenderWindow.set_mouse_cursor_grabbed
 
-```nelua
+```lua
 function sfml.RenderWindow.set_mouse_cursor_grabbed(self: *sfml.RenderWindow, grabbed: sfml.Bool): void
 ```
 
@@ -6490,7 +6490,7 @@ function sfml.RenderWindow.set_mouse_cursor_grabbed(self: *sfml.RenderWindow, gr
 
 ### sfml.RenderWindow.set_mouse_cursor
 
-```nelua
+```lua
 function sfml.RenderWindow.set_mouse_cursor(self: *sfml.RenderWindow, cursor: *sfml.Cursor <const>): void
 ```
 
@@ -6498,7 +6498,7 @@ function sfml.RenderWindow.set_mouse_cursor(self: *sfml.RenderWindow, cursor: *s
 
 ### sfml.RenderWindow.set_key_repeat_enabled
 
-```nelua
+```lua
 function sfml.RenderWindow.set_key_repeat_enabled(self: *sfml.RenderWindow, enabled: sfml.Bool): void
 ```
 
@@ -6506,7 +6506,7 @@ function sfml.RenderWindow.set_key_repeat_enabled(self: *sfml.RenderWindow, enab
 
 ### sfml.RenderWindow.set_framerate_limit
 
-```nelua
+```lua
 function sfml.RenderWindow.set_framerate_limit(self: *sfml.RenderWindow, limit: cuint): void
 ```
 
@@ -6514,7 +6514,7 @@ function sfml.RenderWindow.set_framerate_limit(self: *sfml.RenderWindow, limit: 
 
 ### sfml.RenderWindow.set_joystick_threshold
 
-```nelua
+```lua
 function sfml.RenderWindow.set_joystick_threshold(self: *sfml.RenderWindow, threshold: float32): void
 ```
 
@@ -6522,7 +6522,7 @@ function sfml.RenderWindow.set_joystick_threshold(self: *sfml.RenderWindow, thre
 
 ### sfml.RenderWindow.set_active
 
-```nelua
+```lua
 function sfml.RenderWindow.set_active(self: *sfml.RenderWindow, active: sfml.Bool): void
 ```
 
@@ -6530,7 +6530,7 @@ function sfml.RenderWindow.set_active(self: *sfml.RenderWindow, active: sfml.Boo
 
 ### sfml.RenderWindow.has_focus
 
-```nelua
+```lua
 function sfml.RenderWindow.has_focus(self: *sfml.RenderWindow <const>): sfml.Bool
 ```
 
@@ -6538,7 +6538,7 @@ function sfml.RenderWindow.has_focus(self: *sfml.RenderWindow <const>): sfml.Boo
 
 ### sfml.RenderWindow.request_focus
 
-```nelua
+```lua
 function sfml.RenderWindow.request_focus(self: *sfml.RenderWindow): void
 ```
 
@@ -6546,7 +6546,7 @@ function sfml.RenderWindow.request_focus(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.display
 
-```nelua
+```lua
 function sfml.RenderWindow.display(self: *sfml.RenderWindow): void
 ```
 
@@ -6554,7 +6554,7 @@ function sfml.RenderWindow.display(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.get_system_handle
 
-```nelua
+```lua
 function sfml.RenderWindow.get_system_handle(self: *sfml.RenderWindow <const>): sfml.WindowHandle
 ```
 
@@ -6562,7 +6562,7 @@ function sfml.RenderWindow.get_system_handle(self: *sfml.RenderWindow <const>): 
 
 ### sfml.RenderWindow.clear
 
-```nelua
+```lua
 function sfml.RenderWindow.clear(self: *sfml.RenderWindow, color: sfml.Color): void
 ```
 
@@ -6570,7 +6570,7 @@ function sfml.RenderWindow.clear(self: *sfml.RenderWindow, color: sfml.Color): v
 
 ### sfml.RenderWindow.get_view
 
-```nelua
+```lua
 function sfml.RenderWindow.get_view(self: *sfml.RenderWindow <const>): *sfml.View
 ```
 
@@ -6578,7 +6578,7 @@ function sfml.RenderWindow.get_view(self: *sfml.RenderWindow <const>): *sfml.Vie
 
 ### sfml.RenderWindow.set_view
 
-```nelua
+```lua
 function sfml.RenderWindow.set_view(self: *sfml.RenderWindow, view: *sfml.View): void
 ```
 
@@ -6586,7 +6586,7 @@ function sfml.RenderWindow.set_view(self: *sfml.RenderWindow, view: *sfml.View):
 
 ### sfml.RenderWindow.get_default_view
 
-```nelua
+```lua
 function sfml.RenderWindow.get_default_view(self: *sfml.RenderWindow <const>): *sfml.View
 ```
 
@@ -6594,7 +6594,7 @@ function sfml.RenderWindow.get_default_view(self: *sfml.RenderWindow <const>): *
 
 ### sfml.RenderWindow.get_viewport
 
-```nelua
+```lua
 function sfml.RenderWindow.get_viewport(self: *sfml.RenderWindow <const>, view: *sfml.View <const>): sfml.IntRect
 ```
 
@@ -6602,7 +6602,7 @@ function sfml.RenderWindow.get_viewport(self: *sfml.RenderWindow <const>, view: 
 
 ### sfml.RenderWindow.map_pixel_to_coords
 
-```nelua
+```lua
 function sfml.RenderWindow.map_pixel_to_coords(self: *sfml.RenderWindow <const>, point: sfml.Vector2i, view: *sfml.View <const>): sfml.Vector2f
 ```
 
@@ -6610,7 +6610,7 @@ function sfml.RenderWindow.map_pixel_to_coords(self: *sfml.RenderWindow <const>,
 
 ### sfml.RenderWindow.map_coords_to_pixel
 
-```nelua
+```lua
 function sfml.RenderWindow.map_coords_to_pixel(self: *sfml.RenderWindow <const>, point: sfml.Vector2f, view: *sfml.View <const>): sfml.Vector2i
 ```
 
@@ -6618,7 +6618,7 @@ function sfml.RenderWindow.map_coords_to_pixel(self: *sfml.RenderWindow <const>,
 
 ### sfml.RenderWindow.draw_sprite
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_sprite(self: *sfml.RenderWindow, object: *sfml.Sprite <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6626,7 +6626,7 @@ function sfml.RenderWindow.draw_sprite(self: *sfml.RenderWindow, object: *sfml.S
 
 ### sfml.RenderWindow.draw_text
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_text(self: *sfml.RenderWindow, object: *sfml.Text <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6634,7 +6634,7 @@ function sfml.RenderWindow.draw_text(self: *sfml.RenderWindow, object: *sfml.Tex
 
 ### sfml.RenderWindow.draw_shape
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_shape(self: *sfml.RenderWindow, object: *sfml.Shape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6642,7 +6642,7 @@ function sfml.RenderWindow.draw_shape(self: *sfml.RenderWindow, object: *sfml.Sh
 
 ### sfml.RenderWindow.draw_circle_shape
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_circle_shape(self: *sfml.RenderWindow, object: *sfml.CircleShape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6650,7 +6650,7 @@ function sfml.RenderWindow.draw_circle_shape(self: *sfml.RenderWindow, object: *
 
 ### sfml.RenderWindow.draw_convex_shape
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_convex_shape(self: *sfml.RenderWindow, object: *sfml.ConvexShape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6658,7 +6658,7 @@ function sfml.RenderWindow.draw_convex_shape(self: *sfml.RenderWindow, object: *
 
 ### sfml.RenderWindow.draw_rectangle_shape
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_rectangle_shape(self: *sfml.RenderWindow, object: *sfml.RectangleShape <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6666,7 +6666,7 @@ function sfml.RenderWindow.draw_rectangle_shape(self: *sfml.RenderWindow, object
 
 ### sfml.RenderWindow.draw_vertex_array
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_vertex_array(self: *sfml.RenderWindow, object: *sfml.VertexArray <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6674,7 +6674,7 @@ function sfml.RenderWindow.draw_vertex_array(self: *sfml.RenderWindow, object: *
 
 ### sfml.RenderWindow.draw_vertex_buffer
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_vertex_buffer(self: *sfml.RenderWindow, object: *sfml.VertexBuffer <const>, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6682,7 +6682,7 @@ function sfml.RenderWindow.draw_vertex_buffer(self: *sfml.RenderWindow, object: 
 
 ### sfml.RenderWindow.draw_primitives
 
-```nelua
+```lua
 function sfml.RenderWindow.draw_primitives(self: *sfml.RenderWindow, vertices: *sfml.Vertex <const>, vertexCount: csize, type: sfml.PrimitiveType, states: *sfml.RenderStates <const>): void
 ```
 
@@ -6690,7 +6690,7 @@ function sfml.RenderWindow.draw_primitives(self: *sfml.RenderWindow, vertices: *
 
 ### sfml.RenderWindow.push_gl_states
 
-```nelua
+```lua
 function sfml.RenderWindow.push_gl_states(self: *sfml.RenderWindow): void
 ```
 
@@ -6698,7 +6698,7 @@ function sfml.RenderWindow.push_gl_states(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.pop_gl_states
 
-```nelua
+```lua
 function sfml.RenderWindow.pop_gl_states(self: *sfml.RenderWindow): void
 ```
 
@@ -6706,7 +6706,7 @@ function sfml.RenderWindow.pop_gl_states(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.reset_gl_states
 
-```nelua
+```lua
 function sfml.RenderWindow.reset_gl_states(self: *sfml.RenderWindow): void
 ```
 
@@ -6714,7 +6714,7 @@ function sfml.RenderWindow.reset_gl_states(self: *sfml.RenderWindow): void
 
 ### sfml.RenderWindow.capture
 
-```nelua
+```lua
 function sfml.RenderWindow.capture(self: *sfml.RenderWindow <const>): *sfml.Image
 ```
 
@@ -6722,7 +6722,7 @@ function sfml.RenderWindow.capture(self: *sfml.RenderWindow <const>): *sfml.Imag
 
 ### sfml.Mouse.get_position_render_window
 
-```nelua
+```lua
 function sfml.Mouse.get_position_render_window(relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i
 ```
 
@@ -6730,7 +6730,7 @@ Render Window: Mouse
 
 ### sfml.Mouse.set_position_render_window
 
-```nelua
+```lua
 function sfml.Mouse.set_position_render_window(position: sfml.Vector2i, relativeTo: *sfml.RenderWindow <const>): void
 ```
 
@@ -6738,7 +6738,7 @@ function sfml.Mouse.set_position_render_window(position: sfml.Vector2i, relative
 
 ### sfml.Touch.get_position_render_window
 
-```nelua
+```lua
 function sfml.Touch.get_position_render_window(finger: cuint, relativeTo: *sfml.RenderWindow <const>): sfml.Vector2i
 ```
 
@@ -6746,7 +6746,7 @@ function sfml.Touch.get_position_render_window(finger: cuint, relativeTo: *sfml.
 
 ### sfml.Shader.create_from_file
 
-```nelua
+```lua
 function sfml.Shader.create_from_file(vertexShaderFilename: cstring <const>, geometryShaderFilename: cstring <const>, fragmentShaderFilename: cstring <const>): *sfml.Shader
 ```
 
@@ -6754,7 +6754,7 @@ Shader
 
 ### sfml.Shader.create_from_memory
 
-```nelua
+```lua
 function sfml.Shader.create_from_memory(vertexShader: cstring <const>, geometryShader: cstring <const>, fragmentShader: cstring <const>): *sfml.Shader
 ```
 
@@ -6762,7 +6762,7 @@ function sfml.Shader.create_from_memory(vertexShader: cstring <const>, geometryS
 
 ### sfml.Shader.create_from_stream
 
-```nelua
+```lua
 function sfml.Shader.create_from_stream(vertexShader: *sfml.InputStream, geometryShader: *sfml.InputStream, fragmentShader: *sfml.InputStream): *sfml.Shader
 ```
 
@@ -6770,7 +6770,7 @@ function sfml.Shader.create_from_stream(vertexShader: *sfml.InputStream, geometr
 
 ### sfml.Shader.destroy
 
-```nelua
+```lua
 function sfml.Shader.destroy(self: *sfml.Shader): void
 ```
 
@@ -6778,7 +6778,7 @@ function sfml.Shader.destroy(self: *sfml.Shader): void
 
 ### sfml.Shader.set_float_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_float_uniform(self: *sfml.Shader, name: cstring <const>, x: float32): void
 ```
 
@@ -6786,7 +6786,7 @@ function sfml.Shader.set_float_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_vec3_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_vec3_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec3): void
 ```
 
@@ -6794,7 +6794,7 @@ function sfml.Shader.set_vec3_uniform(self: *sfml.Shader, name: cstring <const>,
 
 ### sfml.Shader.set_vec4_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_vec4_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslVec4): void
 ```
 
@@ -6802,7 +6802,7 @@ function sfml.Shader.set_vec4_uniform(self: *sfml.Shader, name: cstring <const>,
 
 ### sfml.Shader.set_color_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_color_uniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void
 ```
 
@@ -6810,7 +6810,7 @@ function sfml.Shader.set_color_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_int_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_int_uniform(self: *sfml.Shader, name: cstring <const>, x: cint): void
 ```
 
@@ -6818,7 +6818,7 @@ function sfml.Shader.set_int_uniform(self: *sfml.Shader, name: cstring <const>, 
 
 ### sfml.Shader.set_ivec2_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_ivec2_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec2): void
 ```
 
@@ -6826,7 +6826,7 @@ function sfml.Shader.set_ivec2_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_ivec3_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_ivec3_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec3): void
 ```
 
@@ -6834,7 +6834,7 @@ function sfml.Shader.set_ivec3_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_ivec4_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_ivec4_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslIvec4): void
 ```
 
@@ -6842,7 +6842,7 @@ function sfml.Shader.set_ivec4_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_int_color_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_int_color_uniform(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void
 ```
 
@@ -6850,7 +6850,7 @@ function sfml.Shader.set_int_color_uniform(self: *sfml.Shader, name: cstring <co
 
 ### sfml.Shader.set_bool_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_bool_uniform(self: *sfml.Shader, name: cstring <const>, x: sfml.Bool): void
 ```
 
@@ -6858,7 +6858,7 @@ function sfml.Shader.set_bool_uniform(self: *sfml.Shader, name: cstring <const>,
 
 ### sfml.Shader.set_bvec2_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_bvec2_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec2): void
 ```
 
@@ -6866,7 +6866,7 @@ function sfml.Shader.set_bvec2_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_bvec3_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_bvec3_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec3): void
 ```
 
@@ -6874,7 +6874,7 @@ function sfml.Shader.set_bvec3_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_bvec4_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_bvec4_uniform(self: *sfml.Shader, name: cstring <const>, vector: sfml.GlslBvec4): void
 ```
 
@@ -6882,7 +6882,7 @@ function sfml.Shader.set_bvec4_uniform(self: *sfml.Shader, name: cstring <const>
 
 ### sfml.Shader.set_mat3_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_mat3_uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat3 <const>): void
 ```
 
@@ -6890,7 +6890,7 @@ function sfml.Shader.set_mat3_uniform(self: *sfml.Shader, name: cstring <const>,
 
 ### sfml.Shader.set_mat4_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_mat4_uniform(self: *sfml.Shader, name: cstring <const>, matrix: *sfml.GlslMat4 <const>): void
 ```
 
@@ -6898,7 +6898,7 @@ function sfml.Shader.set_mat4_uniform(self: *sfml.Shader, name: cstring <const>,
 
 ### sfml.Shader.set_texture_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_texture_uniform(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void
 ```
 
@@ -6906,7 +6906,7 @@ function sfml.Shader.set_texture_uniform(self: *sfml.Shader, name: cstring <cons
 
 ### sfml.Shader.set_current_texture_uniform
 
-```nelua
+```lua
 function sfml.Shader.set_current_texture_uniform(self: *sfml.Shader, name: cstring <const>): void
 ```
 
@@ -6914,7 +6914,7 @@ function sfml.Shader.set_current_texture_uniform(self: *sfml.Shader, name: cstri
 
 ### sfml.Shader.set_float_uniform_array
 
-```nelua
+```lua
 function sfml.Shader.set_float_uniform_array(self: *sfml.Shader, name: cstring <const>, scalarArray: *[0]float32, length: csize): void
 ```
 
@@ -6922,7 +6922,7 @@ function sfml.Shader.set_float_uniform_array(self: *sfml.Shader, name: cstring <
 
 ### sfml.Shader.set_vec2_uniform_array
 
-```nelua
+```lua
 function sfml.Shader.set_vec2_uniform_array(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec2, length: csize): void
 ```
 
@@ -6930,7 +6930,7 @@ function sfml.Shader.set_vec2_uniform_array(self: *sfml.Shader, name: cstring <c
 
 ### sfml.Shader.set_vec3_uniform_array
 
-```nelua
+```lua
 function sfml.Shader.set_vec3_uniform_array(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec3, length: csize): void
 ```
 
@@ -6938,7 +6938,7 @@ function sfml.Shader.set_vec3_uniform_array(self: *sfml.Shader, name: cstring <c
 
 ### sfml.Shader.set_vec4_uniform_array
 
-```nelua
+```lua
 function sfml.Shader.set_vec4_uniform_array(self: *sfml.Shader, name: cstring <const>, vectorArray: *[0]sfml.GlslVec4, length: csize): void
 ```
 
@@ -6946,7 +6946,7 @@ function sfml.Shader.set_vec4_uniform_array(self: *sfml.Shader, name: cstring <c
 
 ### sfml.Shader.set_mat3_uniform_array
 
-```nelua
+```lua
 function sfml.Shader.set_mat3_uniform_array(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat3, length: csize): void
 ```
 
@@ -6954,7 +6954,7 @@ function sfml.Shader.set_mat3_uniform_array(self: *sfml.Shader, name: cstring <c
 
 ### sfml.Shader.set_mat4_uniform_array
 
-```nelua
+```lua
 function sfml.Shader.set_mat4_uniform_array(self: *sfml.Shader, name: cstring <const>, matrixArray: *[0]sfml.GlslMat4, length: csize): void
 ```
 
@@ -6962,7 +6962,7 @@ function sfml.Shader.set_mat4_uniform_array(self: *sfml.Shader, name: cstring <c
 
 ### sfml.Shader.set_float_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_float_parameter(self: *sfml.Shader, name: cstring <const>, x: float32): void
 ```
 
@@ -6970,7 +6970,7 @@ function sfml.Shader.set_float_parameter(self: *sfml.Shader, name: cstring <cons
 
 ### sfml.Shader.set_float2_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_float2_parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32): void
 ```
 
@@ -6978,7 +6978,7 @@ function sfml.Shader.set_float2_parameter(self: *sfml.Shader, name: cstring <con
 
 ### sfml.Shader.set_float3_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_float3_parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32): void
 ```
 
@@ -6986,7 +6986,7 @@ function sfml.Shader.set_float3_parameter(self: *sfml.Shader, name: cstring <con
 
 ### sfml.Shader.set_float4_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_float4_parameter(self: *sfml.Shader, name: cstring <const>, x: float32, y: float32, z: float32, w: float32): void
 ```
 
@@ -6994,7 +6994,7 @@ function sfml.Shader.set_float4_parameter(self: *sfml.Shader, name: cstring <con
 
 ### sfml.Shader.set_vector2_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_vector2_parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector2f): void
 ```
 
@@ -7002,7 +7002,7 @@ function sfml.Shader.set_vector2_parameter(self: *sfml.Shader, name: cstring <co
 
 ### sfml.Shader.set_vector3_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_vector3_parameter(self: *sfml.Shader, name: cstring <const>, vector: sfml.Vector3f): void
 ```
 
@@ -7010,7 +7010,7 @@ function sfml.Shader.set_vector3_parameter(self: *sfml.Shader, name: cstring <co
 
 ### sfml.Shader.set_color_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_color_parameter(self: *sfml.Shader, name: cstring <const>, color: sfml.Color): void
 ```
 
@@ -7018,7 +7018,7 @@ function sfml.Shader.set_color_parameter(self: *sfml.Shader, name: cstring <cons
 
 ### sfml.Shader.set_transform_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_transform_parameter(self: *sfml.Shader, name: cstring <const>, transform: sfml.Transform): void
 ```
 
@@ -7026,7 +7026,7 @@ function sfml.Shader.set_transform_parameter(self: *sfml.Shader, name: cstring <
 
 ### sfml.Shader.set_texture_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_texture_parameter(self: *sfml.Shader, name: cstring <const>, texture: *sfml.Texture <const>): void
 ```
 
@@ -7034,7 +7034,7 @@ function sfml.Shader.set_texture_parameter(self: *sfml.Shader, name: cstring <co
 
 ### sfml.Shader.set_current_texture_parameter
 
-```nelua
+```lua
 function sfml.Shader.set_current_texture_parameter(self: *sfml.Shader, name: cstring <const>): void
 ```
 
@@ -7042,7 +7042,7 @@ function sfml.Shader.set_current_texture_parameter(self: *sfml.Shader, name: cst
 
 ### sfml.Shader.get_native_handle
 
-```nelua
+```lua
 function sfml.Shader.get_native_handle(self: *sfml.Shader <const>): cuint
 ```
 
@@ -7050,7 +7050,7 @@ function sfml.Shader.get_native_handle(self: *sfml.Shader <const>): cuint
 
 ### sfml.Shader.bind
 
-```nelua
+```lua
 function sfml.Shader.bind(self: *sfml.Shader <const>): void
 ```
 
@@ -7058,7 +7058,7 @@ function sfml.Shader.bind(self: *sfml.Shader <const>): void
 
 ### sfml.Shader.is_available
 
-```nelua
+```lua
 function sfml.Shader.is_available(): sfml.Bool
 ```
 
@@ -7066,7 +7066,7 @@ function sfml.Shader.is_available(): sfml.Bool
 
 ### sfml.Shader.is_geometry_available
 
-```nelua
+```lua
 function sfml.Shader.is_geometry_available(): sfml.Bool
 ```
 
@@ -7074,7 +7074,7 @@ function sfml.Shader.is_geometry_available(): sfml.Bool
 
 ### sfml.ShapeGetPointCountCallback
 
-```nelua
+```lua
 global sfml.ShapeGetPointCountCallback: type = @function(pointer): csize
 ```
 
@@ -7082,7 +7082,7 @@ Shape
 
 ### sfml.ShapeGetPointCallback
 
-```nelua
+```lua
 global sfml.ShapeGetPointCallback: type = @function(csize, pointer): sfml.Vector2f
 ```
 
@@ -7090,7 +7090,7 @@ global sfml.ShapeGetPointCallback: type = @function(csize, pointer): sfml.Vector
 
 ### sfml.Shape.create
 
-```nelua
+```lua
 function sfml.Shape.create(getPointCount: sfml.ShapeGetPointCountCallback, getPoint: sfml.ShapeGetPointCallback, userData: pointer): *sfml.Shape
 ```
 
@@ -7098,7 +7098,7 @@ function sfml.Shape.create(getPointCount: sfml.ShapeGetPointCountCallback, getPo
 
 ### sfml.Shape.destroy
 
-```nelua
+```lua
 function sfml.Shape.destroy(self: *sfml.Shape): void
 ```
 
@@ -7106,7 +7106,7 @@ function sfml.Shape.destroy(self: *sfml.Shape): void
 
 ### sfml.Shape.get_position
 
-```nelua
+```lua
 function sfml.Shape.get_position(self: *sfml.Shape <const>): sfml.Vector2f
 ```
 
@@ -7114,7 +7114,7 @@ function sfml.Shape.get_position(self: *sfml.Shape <const>): sfml.Vector2f
 
 ### sfml.Shape.set_position
 
-```nelua
+```lua
 function sfml.Shape.set_position(self: *sfml.Shape, position: sfml.Vector2f): void
 ```
 
@@ -7122,7 +7122,7 @@ function sfml.Shape.set_position(self: *sfml.Shape, position: sfml.Vector2f): vo
 
 ### sfml.Shape.get_rotation
 
-```nelua
+```lua
 function sfml.Shape.get_rotation(self: *sfml.Shape <const>): float32
 ```
 
@@ -7130,7 +7130,7 @@ function sfml.Shape.get_rotation(self: *sfml.Shape <const>): float32
 
 ### sfml.Shape.set_rotation
 
-```nelua
+```lua
 function sfml.Shape.set_rotation(self: *sfml.Shape, angle: float32): void
 ```
 
@@ -7138,7 +7138,7 @@ function sfml.Shape.set_rotation(self: *sfml.Shape, angle: float32): void
 
 ### sfml.Shape.get_scale
 
-```nelua
+```lua
 function sfml.Shape.get_scale(self: *sfml.Shape <const>): sfml.Vector2f
 ```
 
@@ -7146,7 +7146,7 @@ function sfml.Shape.get_scale(self: *sfml.Shape <const>): sfml.Vector2f
 
 ### sfml.Shape.set_scale
 
-```nelua
+```lua
 function sfml.Shape.set_scale(self: *sfml.Shape, scale: sfml.Vector2f): void
 ```
 
@@ -7154,7 +7154,7 @@ function sfml.Shape.set_scale(self: *sfml.Shape, scale: sfml.Vector2f): void
 
 ### sfml.Shape.get_origin
 
-```nelua
+```lua
 function sfml.Shape.get_origin(self: *sfml.Shape <const>): sfml.Vector2f
 ```
 
@@ -7162,7 +7162,7 @@ function sfml.Shape.get_origin(self: *sfml.Shape <const>): sfml.Vector2f
 
 ### sfml.Shape.set_origin
 
-```nelua
+```lua
 function sfml.Shape.set_origin(self: *sfml.Shape, origin: sfml.Vector2f): void
 ```
 
@@ -7170,7 +7170,7 @@ function sfml.Shape.set_origin(self: *sfml.Shape, origin: sfml.Vector2f): void
 
 ### sfml.Shape.get_size
 
-```nelua
+```lua
 function sfml.Shape.get_size(self: *sfml.Shape <const>): sfml.Vector2f
 ```
 
@@ -7178,7 +7178,7 @@ function sfml.Shape.get_size(self: *sfml.Shape <const>): sfml.Vector2f
 
 ### sfml.Shape.set_size
 
-```nelua
+```lua
 function sfml.Shape.set_size(self: *sfml.Shape, size: float32): void
 ```
 
@@ -7186,7 +7186,7 @@ function sfml.Shape.set_size(self: *sfml.Shape, size: float32): void
 
 ### sfml.Shape.get_texture
 
-```nelua
+```lua
 function sfml.Shape.get_texture(self: *sfml.Shape <const>): *sfml.Texture
 ```
 
@@ -7194,7 +7194,7 @@ function sfml.Shape.get_texture(self: *sfml.Shape <const>): *sfml.Texture
 
 ### sfml.Shape.set_texture
 
-```nelua
+```lua
 function sfml.Shape.set_texture(self: *sfml.Shape, texture: *sfml.Texture <const>, resetRect: sfml.Bool): void
 ```
 
@@ -7202,7 +7202,7 @@ function sfml.Shape.set_texture(self: *sfml.Shape, texture: *sfml.Texture <const
 
 ### sfml.Shape.get_texture_rect
 
-```nelua
+```lua
 function sfml.Shape.get_texture_rect(self: *sfml.Shape <const>): sfml.IntRect
 ```
 
@@ -7210,7 +7210,7 @@ function sfml.Shape.get_texture_rect(self: *sfml.Shape <const>): sfml.IntRect
 
 ### sfml.Shape.set_texture_rect
 
-```nelua
+```lua
 function sfml.Shape.set_texture_rect(self: *sfml.Shape, rect: sfml.IntRect): void
 ```
 
@@ -7218,7 +7218,7 @@ function sfml.Shape.set_texture_rect(self: *sfml.Shape, rect: sfml.IntRect): voi
 
 ### sfml.Shape.get_fill_color
 
-```nelua
+```lua
 function sfml.Shape.get_fill_color(self: *sfml.Shape <const>): sfml.Color
 ```
 
@@ -7226,7 +7226,7 @@ function sfml.Shape.get_fill_color(self: *sfml.Shape <const>): sfml.Color
 
 ### sfml.Shape.set_fill_color
 
-```nelua
+```lua
 function sfml.Shape.set_fill_color(self: *sfml.Shape, color: sfml.Color): void
 ```
 
@@ -7234,7 +7234,7 @@ function sfml.Shape.set_fill_color(self: *sfml.Shape, color: sfml.Color): void
 
 ### sfml.Shape.get_outline_color
 
-```nelua
+```lua
 function sfml.Shape.get_outline_color(self: *sfml.Shape <const>): sfml.Color
 ```
 
@@ -7242,7 +7242,7 @@ function sfml.Shape.get_outline_color(self: *sfml.Shape <const>): sfml.Color
 
 ### sfml.Shape.set_outline_color
 
-```nelua
+```lua
 function sfml.Shape.set_outline_color(self: *sfml.Shape, color: sfml.Color): void
 ```
 
@@ -7250,7 +7250,7 @@ function sfml.Shape.set_outline_color(self: *sfml.Shape, color: sfml.Color): voi
 
 ### sfml.Shape.get_outline_thickness
 
-```nelua
+```lua
 function sfml.Shape.get_outline_thickness(self: *sfml.Shape <const>): float32
 ```
 
@@ -7258,7 +7258,7 @@ function sfml.Shape.get_outline_thickness(self: *sfml.Shape <const>): float32
 
 ### sfml.Shape.set_outline_thickness
 
-```nelua
+```lua
 function sfml.Shape.set_outline_thickness(self: *sfml.Shape, thickness: float32): void
 ```
 
@@ -7266,7 +7266,7 @@ function sfml.Shape.set_outline_thickness(self: *sfml.Shape, thickness: float32)
 
 ### sfml.Shape.get_point_count
 
-```nelua
+```lua
 function sfml.Shape.get_point_count(self: *sfml.Shape <const>): csize
 ```
 
@@ -7274,7 +7274,7 @@ function sfml.Shape.get_point_count(self: *sfml.Shape <const>): csize
 
 ### sfml.Shape.set_point_count
 
-```nelua
+```lua
 function sfml.Shape.set_point_count(self: *sfml.Shape, count: csize): void
 ```
 
@@ -7282,7 +7282,7 @@ function sfml.Shape.set_point_count(self: *sfml.Shape, count: csize): void
 
 ### sfml.Shape.move
 
-```nelua
+```lua
 function sfml.Shape.move(self: *sfml.Shape, offset: sfml.Vector2f): void
 ```
 
@@ -7290,7 +7290,7 @@ function sfml.Shape.move(self: *sfml.Shape, offset: sfml.Vector2f): void
 
 ### sfml.Shape.rotate
 
-```nelua
+```lua
 function sfml.Shape.rotate(self: *sfml.Shape, angle: float32): void
 ```
 
@@ -7298,7 +7298,7 @@ function sfml.Shape.rotate(self: *sfml.Shape, angle: float32): void
 
 ### sfml.Shape.scale
 
-```nelua
+```lua
 function sfml.Shape.scale(self: *sfml.Shape, factors: sfml.Vector2f): void
 ```
 
@@ -7306,7 +7306,7 @@ function sfml.Shape.scale(self: *sfml.Shape, factors: sfml.Vector2f): void
 
 ### sfml.Shape.get_transform
 
-```nelua
+```lua
 function sfml.Shape.get_transform(self: *sfml.Shape <const>): sfml.Transform
 ```
 
@@ -7314,7 +7314,7 @@ function sfml.Shape.get_transform(self: *sfml.Shape <const>): sfml.Transform
 
 ### sfml.Shape.get_inverse_transform
 
-```nelua
+```lua
 function sfml.Shape.get_inverse_transform(self: *sfml.Shape <const>): sfml.Transform
 ```
 
@@ -7322,7 +7322,7 @@ function sfml.Shape.get_inverse_transform(self: *sfml.Shape <const>): sfml.Trans
 
 ### sfml.Shape.get_point
 
-```nelua
+```lua
 function sfml.Shape.get_point(self: *sfml.Shape <const>, index: csize): sfml.Vector2f
 ```
 
@@ -7330,7 +7330,7 @@ function sfml.Shape.get_point(self: *sfml.Shape <const>, index: csize): sfml.Vec
 
 ### sfml.Shape.get_local_bounds
 
-```nelua
+```lua
 function sfml.Shape.get_local_bounds(self: *sfml.Shape <const>): sfml.FloatRect
 ```
 
@@ -7338,7 +7338,7 @@ function sfml.Shape.get_local_bounds(self: *sfml.Shape <const>): sfml.FloatRect
 
 ### sfml.Shape.get_global_bounds
 
-```nelua
+```lua
 function sfml.Shape.get_global_bounds(self: *sfml.Shape <const>): sfml.FloatRect
 ```
 
@@ -7346,7 +7346,7 @@ function sfml.Shape.get_global_bounds(self: *sfml.Shape <const>): sfml.FloatRect
 
 ### sfml.Shape.update
 
-```nelua
+```lua
 function sfml.Shape.update(self: *sfml.Shape): void
 ```
 
@@ -7354,7 +7354,7 @@ function sfml.Shape.update(self: *sfml.Shape): void
 
 ### sfml.Sprite.create
 
-```nelua
+```lua
 function sfml.Sprite.create(): *sfml.Sprite
 ```
 
@@ -7362,7 +7362,7 @@ Sprite
 
 ### sfml.Sprite.copy
 
-```nelua
+```lua
 function sfml.Sprite.copy(self: *sfml.Sprite <const>): *sfml.Sprite
 ```
 
@@ -7370,7 +7370,7 @@ function sfml.Sprite.copy(self: *sfml.Sprite <const>): *sfml.Sprite
 
 ### sfml.Sprite.destroy
 
-```nelua
+```lua
 function sfml.Sprite.destroy(self: *sfml.Sprite): void
 ```
 
@@ -7378,7 +7378,7 @@ function sfml.Sprite.destroy(self: *sfml.Sprite): void
 
 ### sfml.Sprite.get_position
 
-```nelua
+```lua
 function sfml.Sprite.get_position(self: *sfml.Sprite <const>): sfml.Vector2f
 ```
 
@@ -7386,7 +7386,7 @@ function sfml.Sprite.get_position(self: *sfml.Sprite <const>): sfml.Vector2f
 
 ### sfml.Sprite.set_position
 
-```nelua
+```lua
 function sfml.Sprite.set_position(self: *sfml.Sprite, position: sfml.Vector2f): void
 ```
 
@@ -7394,7 +7394,7 @@ function sfml.Sprite.set_position(self: *sfml.Sprite, position: sfml.Vector2f): 
 
 ### sfml.Sprite.get_rotation
 
-```nelua
+```lua
 function sfml.Sprite.get_rotation(self: *sfml.Sprite <const>): float32
 ```
 
@@ -7402,7 +7402,7 @@ function sfml.Sprite.get_rotation(self: *sfml.Sprite <const>): float32
 
 ### sfml.Sprite.set_rotation
 
-```nelua
+```lua
 function sfml.Sprite.set_rotation(self: *sfml.Sprite, angle: float32): void
 ```
 
@@ -7410,7 +7410,7 @@ function sfml.Sprite.set_rotation(self: *sfml.Sprite, angle: float32): void
 
 ### sfml.Sprite.get_scale
 
-```nelua
+```lua
 function sfml.Sprite.get_scale(self: *sfml.Sprite <const>): sfml.Vector2f
 ```
 
@@ -7418,7 +7418,7 @@ function sfml.Sprite.get_scale(self: *sfml.Sprite <const>): sfml.Vector2f
 
 ### sfml.Sprite.set_scale
 
-```nelua
+```lua
 function sfml.Sprite.set_scale(self: *sfml.Sprite, scale: sfml.Vector2f): void
 ```
 
@@ -7426,7 +7426,7 @@ function sfml.Sprite.set_scale(self: *sfml.Sprite, scale: sfml.Vector2f): void
 
 ### sfml.Sprite.get_origin
 
-```nelua
+```lua
 function sfml.Sprite.get_origin(self: *sfml.Sprite <const>): sfml.Vector2f
 ```
 
@@ -7434,7 +7434,7 @@ function sfml.Sprite.get_origin(self: *sfml.Sprite <const>): sfml.Vector2f
 
 ### sfml.Sprite.set_origin
 
-```nelua
+```lua
 function sfml.Sprite.set_origin(self: *sfml.Sprite, origin: sfml.Vector2f): void
 ```
 
@@ -7442,7 +7442,7 @@ function sfml.Sprite.set_origin(self: *sfml.Sprite, origin: sfml.Vector2f): void
 
 ### sfml.Sprite.get_texture
 
-```nelua
+```lua
 function sfml.Sprite.get_texture(self: *sfml.Sprite <const>): *sfml.Texture
 ```
 
@@ -7450,7 +7450,7 @@ function sfml.Sprite.get_texture(self: *sfml.Sprite <const>): *sfml.Texture
 
 ### sfml.Sprite.set_texture
 
-```nelua
+```lua
 function sfml.Sprite.set_texture(self: *sfml.Sprite, texture: *sfml.Texture, resetRect: sfml.Bool): void
 ```
 
@@ -7458,7 +7458,7 @@ function sfml.Sprite.set_texture(self: *sfml.Sprite, texture: *sfml.Texture, res
 
 ### sfml.Sprite.get_texture_rect
 
-```nelua
+```lua
 function sfml.Sprite.get_texture_rect(self: *sfml.Sprite <const>): sfml.IntRect
 ```
 
@@ -7466,7 +7466,7 @@ function sfml.Sprite.get_texture_rect(self: *sfml.Sprite <const>): sfml.IntRect
 
 ### sfml.Sprite.set_texture_rect
 
-```nelua
+```lua
 function sfml.Sprite.set_texture_rect(self: *sfml.Sprite, rectangle: sfml.IntRect): void
 ```
 
@@ -7474,7 +7474,7 @@ function sfml.Sprite.set_texture_rect(self: *sfml.Sprite, rectangle: sfml.IntRec
 
 ### sfml.Sprite.get_color
 
-```nelua
+```lua
 function sfml.Sprite.get_color(self: *sfml.Sprite <const>): sfml.Color
 ```
 
@@ -7482,7 +7482,7 @@ function sfml.Sprite.get_color(self: *sfml.Sprite <const>): sfml.Color
 
 ### sfml.Sprite.set_color
 
-```nelua
+```lua
 function sfml.Sprite.set_color(self: *sfml.Sprite, color: sfml.Color): void
 ```
 
@@ -7490,7 +7490,7 @@ function sfml.Sprite.set_color(self: *sfml.Sprite, color: sfml.Color): void
 
 ### sfml.Sprite.move
 
-```nelua
+```lua
 function sfml.Sprite.move(self: *sfml.Sprite, offset: sfml.Vector2f): void
 ```
 
@@ -7498,7 +7498,7 @@ function sfml.Sprite.move(self: *sfml.Sprite, offset: sfml.Vector2f): void
 
 ### sfml.Sprite.rotate
 
-```nelua
+```lua
 function sfml.Sprite.rotate(self: *sfml.Sprite, angle: float32): void
 ```
 
@@ -7506,7 +7506,7 @@ function sfml.Sprite.rotate(self: *sfml.Sprite, angle: float32): void
 
 ### sfml.Sprite.scale
 
-```nelua
+```lua
 function sfml.Sprite.scale(self: *sfml.Sprite, factors: sfml.Vector2f): void
 ```
 
@@ -7514,7 +7514,7 @@ function sfml.Sprite.scale(self: *sfml.Sprite, factors: sfml.Vector2f): void
 
 ### sfml.Sprite.get_transform
 
-```nelua
+```lua
 function sfml.Sprite.get_transform(self: *sfml.Sprite <const>): sfml.Transform
 ```
 
@@ -7522,7 +7522,7 @@ function sfml.Sprite.get_transform(self: *sfml.Sprite <const>): sfml.Transform
 
 ### sfml.Sprite.get_inverse_transform
 
-```nelua
+```lua
 function sfml.Sprite.get_inverse_transform(self: *sfml.Sprite <const>): sfml.Transform
 ```
 
@@ -7530,7 +7530,7 @@ function sfml.Sprite.get_inverse_transform(self: *sfml.Sprite <const>): sfml.Tra
 
 ### sfml.Sprite.get_local_bounds
 
-```nelua
+```lua
 function sfml.Sprite.get_local_bounds(self: *sfml.Sprite <const>): sfml.FloatRect
 ```
 
@@ -7538,7 +7538,7 @@ function sfml.Sprite.get_local_bounds(self: *sfml.Sprite <const>): sfml.FloatRec
 
 ### sfml.Sprite.get_global_bounds
 
-```nelua
+```lua
 function sfml.Sprite.get_global_bounds(self: *sfml.Sprite <const>): sfml.FloatRect
 ```
 
@@ -7546,7 +7546,7 @@ function sfml.Sprite.get_global_bounds(self: *sfml.Sprite <const>): sfml.FloatRe
 
 ### sfml.TextStyle
 
-```nelua
+```lua
 global sfml.TextStyle: type = @enum(cint) {
   Regular       = 0,
   Bold          = 1 << 0,
@@ -7560,7 +7560,7 @@ Text
 
 ### sfml.Text.create
 
-```nelua
+```lua
 function sfml.Text.create(): *sfml.Text
 ```
 
@@ -7568,7 +7568,7 @@ function sfml.Text.create(): *sfml.Text
 
 ### sfml.Text.copy
 
-```nelua
+```lua
 function sfml.Text.copy(self: *sfml.Text <const>): *sfml.Text
 ```
 
@@ -7576,7 +7576,7 @@ function sfml.Text.copy(self: *sfml.Text <const>): *sfml.Text
 
 ### sfml.Text.destroy
 
-```nelua
+```lua
 function sfml.Text.destroy(self: *sfml.Text): void
 ```
 
@@ -7584,7 +7584,7 @@ function sfml.Text.destroy(self: *sfml.Text): void
 
 ### sfml.Text.get_position
 
-```nelua
+```lua
 function sfml.Text.get_position(self: *sfml.Text <const>): sfml.Vector2f
 ```
 
@@ -7592,7 +7592,7 @@ function sfml.Text.get_position(self: *sfml.Text <const>): sfml.Vector2f
 
 ### sfml.Text.set_position
 
-```nelua
+```lua
 function sfml.Text.set_position(self: *sfml.Text, position: sfml.Vector2f): void
 ```
 
@@ -7600,7 +7600,7 @@ function sfml.Text.set_position(self: *sfml.Text, position: sfml.Vector2f): void
 
 ### sfml.Text.get_rotation
 
-```nelua
+```lua
 function sfml.Text.get_rotation(self: *sfml.Text <const>): float32
 ```
 
@@ -7608,7 +7608,7 @@ function sfml.Text.get_rotation(self: *sfml.Text <const>): float32
 
 ### sfml.Text.set_rotation
 
-```nelua
+```lua
 function sfml.Text.set_rotation(self: *sfml.Text, angle: float32): void
 ```
 
@@ -7616,7 +7616,7 @@ function sfml.Text.set_rotation(self: *sfml.Text, angle: float32): void
 
 ### sfml.Text.get_scale
 
-```nelua
+```lua
 function sfml.Text.get_scale(self: *sfml.Text <const>): sfml.Vector2f
 ```
 
@@ -7624,7 +7624,7 @@ function sfml.Text.get_scale(self: *sfml.Text <const>): sfml.Vector2f
 
 ### sfml.Text.set_scale
 
-```nelua
+```lua
 function sfml.Text.set_scale(self: *sfml.Text, scale: sfml.Vector2f): void
 ```
 
@@ -7632,7 +7632,7 @@ function sfml.Text.set_scale(self: *sfml.Text, scale: sfml.Vector2f): void
 
 ### sfml.Text.get_origin
 
-```nelua
+```lua
 function sfml.Text.get_origin(self: *sfml.Text <const>): sfml.Vector2f
 ```
 
@@ -7640,7 +7640,7 @@ function sfml.Text.get_origin(self: *sfml.Text <const>): sfml.Vector2f
 
 ### sfml.Text.set_origin
 
-```nelua
+```lua
 function sfml.Text.set_origin(self: *sfml.Text, origin: sfml.Vector2f): void
 ```
 
@@ -7648,7 +7648,7 @@ function sfml.Text.set_origin(self: *sfml.Text, origin: sfml.Vector2f): void
 
 ### sfml.Text.get_string
 
-```nelua
+```lua
 function sfml.Text.get_string(self: *sfml.Text <const>): cstring
 ```
 
@@ -7656,7 +7656,7 @@ function sfml.Text.get_string(self: *sfml.Text <const>): cstring
 
 ### sfml.Text.set_string
 
-```nelua
+```lua
 function sfml.Text.set_string(self: *sfml.Text, string: cstring <const>): void
 ```
 
@@ -7664,7 +7664,7 @@ function sfml.Text.set_string(self: *sfml.Text, string: cstring <const>): void
 
 ### sfml.Text.get_unicod_string
 
-```nelua
+```lua
 function sfml.Text.get_unicod_string(self: *sfml.Text <const>): *sfml.Uint32
 ```
 
@@ -7672,7 +7672,7 @@ function sfml.Text.get_unicod_string(self: *sfml.Text <const>): *sfml.Uint32
 
 ### sfml.Text.set_unicod_string
 
-```nelua
+```lua
 function sfml.Text.set_unicod_string(self: *sfml.Text, string: *sfml.Uint32 <const>): void
 ```
 
@@ -7680,7 +7680,7 @@ function sfml.Text.set_unicod_string(self: *sfml.Text, string: *sfml.Uint32 <con
 
 ### sfml.Text.get_font
 
-```nelua
+```lua
 function sfml.Text.get_font(self: *sfml.Text <const>): *sfml.Font
 ```
 
@@ -7688,7 +7688,7 @@ function sfml.Text.get_font(self: *sfml.Text <const>): *sfml.Font
 
 ### sfml.Text.set_font
 
-```nelua
+```lua
 function sfml.Text.set_font(self: *sfml.Text, font: *sfml.Font <const>): void
 ```
 
@@ -7696,7 +7696,7 @@ function sfml.Text.set_font(self: *sfml.Text, font: *sfml.Font <const>): void
 
 ### sfml.Text.get_character_size
 
-```nelua
+```lua
 function sfml.Text.get_character_size(self: *sfml.Text <const>): cuint
 ```
 
@@ -7704,7 +7704,7 @@ function sfml.Text.get_character_size(self: *sfml.Text <const>): cuint
 
 ### sfml.Text.set_character_size
 
-```nelua
+```lua
 function sfml.Text.set_character_size(self: *sfml.Text, size: cuint): void
 ```
 
@@ -7712,7 +7712,7 @@ function sfml.Text.set_character_size(self: *sfml.Text, size: cuint): void
 
 ### sfml.Text.get_line_spacing
 
-```nelua
+```lua
 function sfml.Text.get_line_spacing(self: *sfml.Text <const>): float32
 ```
 
@@ -7720,7 +7720,7 @@ function sfml.Text.get_line_spacing(self: *sfml.Text <const>): float32
 
 ### sfml.Text.set_line_spacing
 
-```nelua
+```lua
 function sfml.Text.set_line_spacing(self: *sfml.Text, spacingFactor: float32): void
 ```
 
@@ -7728,7 +7728,7 @@ function sfml.Text.set_line_spacing(self: *sfml.Text, spacingFactor: float32): v
 
 ### sfml.Text.get_letter_spacing
 
-```nelua
+```lua
 function sfml.Text.get_letter_spacing(self: *sfml.Text <const>): float32
 ```
 
@@ -7736,7 +7736,7 @@ function sfml.Text.get_letter_spacing(self: *sfml.Text <const>): float32
 
 ### sfml.Text.set_letter_spacing
 
-```nelua
+```lua
 function sfml.Text.set_letter_spacing(self: *sfml.Text, spacingFactor: float32): void
 ```
 
@@ -7744,7 +7744,7 @@ function sfml.Text.set_letter_spacing(self: *sfml.Text, spacingFactor: float32):
 
 ### sfml.Text.get_style
 
-```nelua
+```lua
 function sfml.Text.get_style(self: *sfml.Text <const>): sfml.Uint32
 ```
 
@@ -7752,7 +7752,7 @@ function sfml.Text.get_style(self: *sfml.Text <const>): sfml.Uint32
 
 ### sfml.Text.set_style
 
-```nelua
+```lua
 function sfml.Text.set_style(self: *sfml.Text, style: sfml.Uint32): void
 ```
 
@@ -7760,7 +7760,7 @@ function sfml.Text.set_style(self: *sfml.Text, style: sfml.Uint32): void
 
 ### sfml.Text.get_color
 
-```nelua
+```lua
 function sfml.Text.get_color(self: *sfml.Text <const>): sfml.Color
 ```
 
@@ -7768,7 +7768,7 @@ function sfml.Text.get_color(self: *sfml.Text <const>): sfml.Color
 
 ### sfml.Text.set_color
 
-```nelua
+```lua
 function sfml.Text.set_color(self: *sfml.Text, color: sfml.Color): void
 ```
 
@@ -7776,7 +7776,7 @@ function sfml.Text.set_color(self: *sfml.Text, color: sfml.Color): void
 
 ### sfml.Text.get_fill_color
 
-```nelua
+```lua
 function sfml.Text.get_fill_color(self: *sfml.Text <const>): sfml.Color
 ```
 
@@ -7784,7 +7784,7 @@ function sfml.Text.get_fill_color(self: *sfml.Text <const>): sfml.Color
 
 ### sfml.Text.set_fill_color
 
-```nelua
+```lua
 function sfml.Text.set_fill_color(self: *sfml.Text, color: sfml.Color): void
 ```
 
@@ -7792,7 +7792,7 @@ function sfml.Text.set_fill_color(self: *sfml.Text, color: sfml.Color): void
 
 ### sfml.Text.get_outline_color
 
-```nelua
+```lua
 function sfml.Text.get_outline_color(self: *sfml.Text <const>): sfml.Color
 ```
 
@@ -7800,7 +7800,7 @@ function sfml.Text.get_outline_color(self: *sfml.Text <const>): sfml.Color
 
 ### sfml.Text.set_outline_color
 
-```nelua
+```lua
 function sfml.Text.set_outline_color(self: *sfml.Text, color: sfml.Color): void
 ```
 
@@ -7808,7 +7808,7 @@ function sfml.Text.set_outline_color(self: *sfml.Text, color: sfml.Color): void
 
 ### sfml.Text.get_outline_thickness
 
-```nelua
+```lua
 function sfml.Text.get_outline_thickness(self: *sfml.Text <const>): float32
 ```
 
@@ -7816,7 +7816,7 @@ function sfml.Text.get_outline_thickness(self: *sfml.Text <const>): float32
 
 ### sfml.Text.set_outline_thickness
 
-```nelua
+```lua
 function sfml.Text.set_outline_thickness(self: *sfml.Text, thickness: float32): void
 ```
 
@@ -7824,7 +7824,7 @@ function sfml.Text.set_outline_thickness(self: *sfml.Text, thickness: float32): 
 
 ### sfml.Text.move
 
-```nelua
+```lua
 function sfml.Text.move(self: *sfml.Text, offset: sfml.Vector2f): void
 ```
 
@@ -7832,7 +7832,7 @@ function sfml.Text.move(self: *sfml.Text, offset: sfml.Vector2f): void
 
 ### sfml.Text.rotate
 
-```nelua
+```lua
 function sfml.Text.rotate(self: *sfml.Text, angle: float32): void
 ```
 
@@ -7840,7 +7840,7 @@ function sfml.Text.rotate(self: *sfml.Text, angle: float32): void
 
 ### sfml.Text.scale
 
-```nelua
+```lua
 function sfml.Text.scale(self: *sfml.Text, factors: sfml.Vector2f): void
 ```
 
@@ -7848,7 +7848,7 @@ function sfml.Text.scale(self: *sfml.Text, factors: sfml.Vector2f): void
 
 ### sfml.Text.get_transform
 
-```nelua
+```lua
 function sfml.Text.get_transform(self: *sfml.Text <const>): sfml.Transform
 ```
 
@@ -7856,7 +7856,7 @@ function sfml.Text.get_transform(self: *sfml.Text <const>): sfml.Transform
 
 ### sfml.Text.get_inverse_transform
 
-```nelua
+```lua
 function sfml.Text.get_inverse_transform(self: *sfml.Text <const>): sfml.Transform
 ```
 
@@ -7864,7 +7864,7 @@ function sfml.Text.get_inverse_transform(self: *sfml.Text <const>): sfml.Transfo
 
 ### sfml.Text.find_character_pos
 
-```nelua
+```lua
 function sfml.Text.find_character_pos(text: cstring <const>, index: csize): sfml.Vector2f
 ```
 
@@ -7872,7 +7872,7 @@ function sfml.Text.find_character_pos(text: cstring <const>, index: csize): sfml
 
 ### sfml.Text.get_local_bounds
 
-```nelua
+```lua
 function sfml.Text.get_local_bounds(text: cstring <const>): sfml.FloatRect
 ```
 
@@ -7880,7 +7880,7 @@ function sfml.Text.get_local_bounds(text: cstring <const>): sfml.FloatRect
 
 ### sfml.Text.get_global_bounds
 
-```nelua
+```lua
 function sfml.Text.get_global_bounds(text: cstring <const>): sfml.FloatRect
 ```
 
@@ -7888,7 +7888,7 @@ function sfml.Text.get_global_bounds(text: cstring <const>): sfml.FloatRect
 
 ### sfml.Texture.create
 
-```nelua
+```lua
 function sfml.Texture.create(width: cuint, height: cuint): *sfml.Texture
 ```
 
@@ -7896,7 +7896,7 @@ Texture
 
 ### sfml.Texture.create_from_file
 
-```nelua
+```lua
 function sfml.Texture.create_from_file(filename: cstring <const>, area: *sfml.IntRect <const>): *sfml.Texture
 ```
 
@@ -7904,7 +7904,7 @@ function sfml.Texture.create_from_file(filename: cstring <const>, area: *sfml.In
 
 ### sfml.Texture.create_from_memory
 
-```nelua
+```lua
 function sfml.Texture.create_from_memory(data: pointer <const>, sizeInBytes: csize, area: *sfml.IntRect <const>): *sfml.Texture
 ```
 
@@ -7912,7 +7912,7 @@ function sfml.Texture.create_from_memory(data: pointer <const>, sizeInBytes: csi
 
 ### sfml.Texture.create_from_stream
 
-```nelua
+```lua
 function sfml.Texture.create_from_stream(stream: *sfml.InputStream, area: *sfml.IntRect <const>): *sfml.Texture
 ```
 
@@ -7920,7 +7920,7 @@ function sfml.Texture.create_from_stream(stream: *sfml.InputStream, area: *sfml.
 
 ### sfml.Texture.create_from_image
 
-```nelua
+```lua
 function sfml.Texture.create_from_image(image: *sfml.Image <const>, area: *sfml.IntRect <const>): *sfml.Texture
 ```
 
@@ -7928,7 +7928,7 @@ function sfml.Texture.create_from_image(image: *sfml.Image <const>, area: *sfml.
 
 ### sfml.Texture.copy
 
-```nelua
+```lua
 function sfml.Texture.copy(self: *sfml.Texture <const>): *sfml.Texture
 ```
 
@@ -7936,7 +7936,7 @@ function sfml.Texture.copy(self: *sfml.Texture <const>): *sfml.Texture
 
 ### sfml.Texture.destroy
 
-```nelua
+```lua
 function sfml.Texture.destroy(self: *sfml.Texture): void
 ```
 
@@ -7944,7 +7944,7 @@ function sfml.Texture.destroy(self: *sfml.Texture): void
 
 ### sfml.Texture.getSize
 
-```nelua
+```lua
 function sfml.Texture.getSize(self: *sfml.Texture <const>): sfml.Vector2u
 ```
 
@@ -7952,7 +7952,7 @@ function sfml.Texture.getSize(self: *sfml.Texture <const>): sfml.Vector2u
 
 ### sfml.Texture.copy_to_image
 
-```nelua
+```lua
 function sfml.Texture.copy_to_image(self: *sfml.Texture <const>): *sfml.Image
 ```
 
@@ -7960,7 +7960,7 @@ function sfml.Texture.copy_to_image(self: *sfml.Texture <const>): *sfml.Image
 
 ### sfml.Texture.update_from_pixels
 
-```nelua
+```lua
 function sfml.Texture.update_from_pixels(self: *sfml.Texture, pixels: *[0]sfml.Uint8 <const>, width: cuint, height: cuint, x: cuint, y: cuint): void
 ```
 
@@ -7968,7 +7968,7 @@ function sfml.Texture.update_from_pixels(self: *sfml.Texture, pixels: *[0]sfml.U
 
 ### sfml.Texture.update_from_image
 
-```nelua
+```lua
 function sfml.Texture.update_from_image(self: *sfml.Texture, source: *sfml.Texture, x: cuint, y: cuint): void
 ```
 
@@ -7976,7 +7976,7 @@ function sfml.Texture.update_from_image(self: *sfml.Texture, source: *sfml.Textu
 
 ### sfml.Texture.update_from_window
 
-```nelua
+```lua
 function sfml.Texture.update_from_window(self: *sfml.Texture, window: *sfml.Window <const>, x: cuint, y: cuint): void
 ```
 
@@ -7984,7 +7984,7 @@ function sfml.Texture.update_from_window(self: *sfml.Texture, window: *sfml.Wind
 
 ### sfml.Texture.update_from_render_window
 
-```nelua
+```lua
 function sfml.Texture.update_from_render_window(self: *sfml.Texture, renderWindow: *sfml.RenderWindow <const>, x: cuint, y: cuint): void
 ```
 
@@ -7992,7 +7992,7 @@ function sfml.Texture.update_from_render_window(self: *sfml.Texture, renderWindo
 
 ### sfml.Texture.is_smooth
 
-```nelua
+```lua
 function sfml.Texture.is_smooth(self: *sfml.Texture <const>): sfml.Bool
 ```
 
@@ -8000,7 +8000,7 @@ function sfml.Texture.is_smooth(self: *sfml.Texture <const>): sfml.Bool
 
 ### sfml.Texture.set_smooth
 
-```nelua
+```lua
 function sfml.Texture.set_smooth(self: *sfml.Texture, smooth: sfml.Bool): void
 ```
 
@@ -8008,7 +8008,7 @@ function sfml.Texture.set_smooth(self: *sfml.Texture, smooth: sfml.Bool): void
 
 ### sfml.Texture.is_srgb
 
-```nelua
+```lua
 function sfml.Texture.is_srgb(self: *sfml.Texture <const>): sfml.Bool
 ```
 
@@ -8016,7 +8016,7 @@ function sfml.Texture.is_srgb(self: *sfml.Texture <const>): sfml.Bool
 
 ### sfml.Texture.set_srgb
 
-```nelua
+```lua
 function sfml.Texture.set_srgb(self: *sfml.Texture, sRgb: sfml.Bool): void
 ```
 
@@ -8024,7 +8024,7 @@ function sfml.Texture.set_srgb(self: *sfml.Texture, sRgb: sfml.Bool): void
 
 ### sfml.Texture.is_repeated
 
-```nelua
+```lua
 function sfml.Texture.is_repeated(self: *sfml.Texture <const>): sfml.Bool
 ```
 
@@ -8032,7 +8032,7 @@ function sfml.Texture.is_repeated(self: *sfml.Texture <const>): sfml.Bool
 
 ### sfml.Texture.set_repeated
 
-```nelua
+```lua
 function sfml.Texture.set_repeated(self: *sfml.Texture, repeated: sfml.Bool): void
 ```
 
@@ -8040,7 +8040,7 @@ function sfml.Texture.set_repeated(self: *sfml.Texture, repeated: sfml.Bool): vo
 
 ### sfml.Texture.generate_mipmap
 
-```nelua
+```lua
 function sfml.Texture.generate_mipmap(self: *sfml.Texture): sfml.Bool
 ```
 
@@ -8048,7 +8048,7 @@ function sfml.Texture.generate_mipmap(self: *sfml.Texture): sfml.Bool
 
 ### sfml.Texture.swap
 
-```nelua
+```lua
 function sfml.Texture.swap(self: *sfml.Texture, right: *sfml.Texture): void
 ```
 
@@ -8056,7 +8056,7 @@ function sfml.Texture.swap(self: *sfml.Texture, right: *sfml.Texture): void
 
 ### sfml.Texture.get_native_handle
 
-```nelua
+```lua
 function sfml.Texture.get_native_handle(self: *sfml.Texture <const>): cuint
 ```
 
@@ -8064,7 +8064,7 @@ function sfml.Texture.get_native_handle(self: *sfml.Texture <const>): cuint
 
 ### sfml.Texture.get_maximum_size
 
-```nelua
+```lua
 function sfml.Texture.get_maximum_size(): cuint
 ```
 
@@ -8072,7 +8072,7 @@ function sfml.Texture.get_maximum_size(): cuint
 
 ### sfml.VertexBufferUsage
 
-```nelua
+```lua
 global sfml.VertexBufferUsage: type = @enum(cint) {
   Stream = 0,
   Dynamic,
@@ -8084,7 +8084,7 @@ Vertex Buffer
 
 ### sfml.VertexBuffer.create
 
-```nelua
+```lua
 function sfml.VertexBuffer.create(vertexCount: cuint, type: sfml.PrimitiveType, usage: sfml.VertexBufferUsage): *sfml.VertexBuffer
 ```
 
@@ -8092,7 +8092,7 @@ function sfml.VertexBuffer.create(vertexCount: cuint, type: sfml.PrimitiveType, 
 
 ### sfml.VertexBuffer.copy
 
-```nelua
+```lua
 function sfml.VertexBuffer.copy(self: *sfml.VertexBuffer <const>): *sfml.VertexBuffer
 ```
 
@@ -8100,7 +8100,7 @@ function sfml.VertexBuffer.copy(self: *sfml.VertexBuffer <const>): *sfml.VertexB
 
 ### sfml.VertexBuffer.destroy
 
-```nelua
+```lua
 function sfml.VertexBuffer.destroy(self: *sfml.VertexBuffer): void
 ```
 
@@ -8108,7 +8108,7 @@ function sfml.VertexBuffer.destroy(self: *sfml.VertexBuffer): void
 
 ### sfml.VertexBuffer.get_vertex_count
 
-```nelua
+```lua
 function sfml.VertexBuffer.get_vertex_count(self: *sfml.VertexBuffer <const>): cuint
 ```
 
@@ -8116,7 +8116,7 @@ function sfml.VertexBuffer.get_vertex_count(self: *sfml.VertexBuffer <const>): c
 
 ### sfml.VertexBuffer.update
 
-```nelua
+```lua
 function sfml.VertexBuffer.update(self: *sfml.VertexBuffer , vertices: *[0]sfml.Vertex <const>, vertexCount: cuint, offset: cuint): sfml.Bool
 ```
 
@@ -8124,7 +8124,7 @@ function sfml.VertexBuffer.update(self: *sfml.VertexBuffer , vertices: *[0]sfml.
 
 ### sfml.VertexBuffer.update_from_vertex_buffer
 
-```nelua
+```lua
 function sfml.VertexBuffer.update_from_vertex_buffer(self: *sfml.VertexBuffer, other: *sfml.VertexBuffer <const>): sfml.Bool
 ```
 
@@ -8132,7 +8132,7 @@ function sfml.VertexBuffer.update_from_vertex_buffer(self: *sfml.VertexBuffer, o
 
 ### sfml.VertexBuffer.swap
 
-```nelua
+```lua
 function sfml.VertexBuffer.swap(self: *sfml.VertexBuffer, right: *sfml.VertexBuffer): void
 ```
 
@@ -8140,7 +8140,7 @@ function sfml.VertexBuffer.swap(self: *sfml.VertexBuffer, right: *sfml.VertexBuf
 
 ### sfml.VertexBuffer.get_native_handle
 
-```nelua
+```lua
 function sfml.VertexBuffer.get_native_handle(self: *sfml.VertexBuffer): cuint
 ```
 
@@ -8148,7 +8148,7 @@ function sfml.VertexBuffer.get_native_handle(self: *sfml.VertexBuffer): cuint
 
 ### sfml.VertexBuffer.get_primitive_type
 
-```nelua
+```lua
 function sfml.VertexBuffer.get_primitive_type(self: *sfml.VertexBuffer <const>): sfml.PrimitiveType
 ```
 
@@ -8156,7 +8156,7 @@ function sfml.VertexBuffer.get_primitive_type(self: *sfml.VertexBuffer <const>):
 
 ### sfml.VertexBuffer.set_primitive_type
 
-```nelua
+```lua
 function sfml.VertexBuffer.set_primitive_type(self: *sfml.VertexBuffer, type: sfml.PrimitiveType): void
 ```
 
@@ -8164,7 +8164,7 @@ function sfml.VertexBuffer.set_primitive_type(self: *sfml.VertexBuffer, type: sf
 
 ### sfml.VertexBuffer.get_usage
 
-```nelua
+```lua
 function sfml.VertexBuffer.get_usage(self: *sfml.VertexBuffer <const>): sfml.VertexBufferUsage
 ```
 
@@ -8172,7 +8172,7 @@ function sfml.VertexBuffer.get_usage(self: *sfml.VertexBuffer <const>): sfml.Ver
 
 ### sfml.VertexBuffer.set_usage
 
-```nelua
+```lua
 function sfml.VertexBuffer.set_usage(self: *sfml.VertexBuffer, usage: sfml.VertexBufferUsage): void
 ```
 
@@ -8180,7 +8180,7 @@ function sfml.VertexBuffer.set_usage(self: *sfml.VertexBuffer, usage: sfml.Verte
 
 ### sfml.VertexBuffer.bind
 
-```nelua
+```lua
 function sfml.VertexBuffer.bind(self: *sfml.VertexBuffer <const>): void
 ```
 
@@ -8188,7 +8188,7 @@ function sfml.VertexBuffer.bind(self: *sfml.VertexBuffer <const>): void
 
 ### sfml.VertexBuffer.is_available
 
-```nelua
+```lua
 function sfml.VertexBuffer.is_available(): sfml.Bool
 ```
 
