@@ -13,9 +13,8 @@ CSFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, in
 * CSFML 2.5.1
 * Nelua (Currently tested with latest main)
 
-## Documentation
-*Note: Temporarily removed until a nicer, less redundant format is created*
-Since it is a binding to CSFML, you can use: the [SFML website](https://www.sfml-dev.org/learn.php) or the [CSFML github](https://github.com/SFML/CSFML)
+## [Documentation]((https://github.com/Caleb-o/nelua-sfml/blob/main/docs/sfml.nelua))
+Since it is a binding to CSFML, you can use: the [SFML website](https://www.sfml-dev.org/learn.php) or the [CSFML github](https://github.com/SFML/CSFML) to learn more.
 
 ## Examples
 * [Render Window](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/render_window.nelua)

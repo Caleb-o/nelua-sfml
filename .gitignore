@@ -5,3 +5,6 @@ temp
 MakeFile
 *.exe
 *.dll
+
+# Documentation generation
+nldoc.lua
