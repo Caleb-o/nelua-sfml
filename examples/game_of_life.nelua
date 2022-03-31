@@ -115,10 +115,11 @@ do print '# Game of Life'
 
 	-- Create a new render window
 	local rw = sfml.RenderWindow.create((@sfml.VideoMode){WINDOW_SIZE, WINDOW_SIZE, 32}, 'Conways Game of Life', sfml.DefaultStyle, nilptr)
-	rw:set_framerate_limit(16)
 
 	-- Assert if the window failed
 	assert(rw ~= nilptr, "Failed to create a window")
+	
+	rw:set_framerate_limit(16)
 	defer rw:destroy() end
 		
 	local evt: sfml.Event
