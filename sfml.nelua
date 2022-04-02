@@ -1667,8 +1667,8 @@ function sfml.Text.get_origin(self: *sfml.Text <const>): sfml.Vector2f <cimport 
 function sfml.Text.set_origin(self: *sfml.Text, origin: sfml.Vector2f): void <cimport 'sfText_setOrigin', nodecl> end
 function sfml.Text.get_string(self: *sfml.Text <const>): cstring <cimport 'sfText_getString', nodecl> end
 function sfml.Text.set_string(self: *sfml.Text, string: cstring <const>): void <cimport 'sfText_setString', nodecl> end
-function sfml.Text.get_unicod_string(self: *sfml.Text <const>): *sfml.Uint32 <cimport 'sfText_getUnicodeString', nodecl> end
-function sfml.Text.set_unicod_string(self: *sfml.Text, string: *sfml.Uint32 <const>): void <cimport 'sfText_setUnicodeString', nodecl> end
+function sfml.Text.get_unicode_string(self: *sfml.Text <const>): *sfml.Uint32 <cimport 'sfText_getUnicodeString', nodecl> end
+function sfml.Text.set_unicode_string(self: *sfml.Text, string: *sfml.Uint32 <const>): void <cimport 'sfText_setUnicodeString', nodecl> end
 function sfml.Text.get_font(self: *sfml.Text <const>): *sfml.Font <cimport 'sfText_getFont', nodecl> end
 function sfml.Text.set_font(self: *sfml.Text, font: *sfml.Font <const>): void <cimport 'sfText_setFont', nodecl> end
 function sfml.Text.get_character_size(self: *sfml.Text <const>): cuint <cimport 'sfText_getCharacterSize', nodecl> end
