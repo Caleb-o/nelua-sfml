@@ -3,10 +3,11 @@ require 'sfml'
 do print '# Sprites'
 	-- Create a new render window
 	local rw = sfml.RenderWindow.create((@sfml.VideoMode){720, 480, 32}, 'Sprites', sfml.DefaultStyle, nilptr)
-	rw:set_framerate_limit(30)
 
 	-- Assert if the window failed
 	assert(rw ~= nilptr)
+	
+	rw:set_framerate_limit(30)
 	defer rw:destroy() end
 
 	-- Load a texture
