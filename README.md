@@ -11,7 +11,7 @@ CSFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, in
 
 ## Requirements
 * CSFML 2.5.1
-* Nelua (Currently tested with latest main)
+* Nelua - Currently tested with Nelua 0.2.0-dev
 
 ## [Documentation]((https://github.com/Caleb-o/nelua-sfml/blob/main/docs/sfml.nelua))
 Since it is a binding to CSFML, you can use: the [SFML website](https://www.sfml-dev.org/learn.php) or the [CSFML github](https://github.com/SFML/CSFML) to learn more.
