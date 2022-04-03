@@ -13,8 +13,12 @@ CSFML 2.5.1 binding for the Nelua language. This uses Nelua's record methods, in
 * CSFML 2.5.1
 * Nelua - Currently tested with Nelua 0.2.0-dev
 
-## [Documentation]((https://github.com/Caleb-o/nelua-sfml/blob/main/docs/sfml.nelua))
-Since it is a binding to CSFML, you can use: the [SFML website](https://www.sfml-dev.org/learn.php) or the [CSFML github](https://github.com/SFML/CSFML) to learn more.
+**Note:** If you're on windows, you will need to add the include and lib folders and link against the libraries. 
+
+**Note 2:** Since it binds everything, it will require all the libs and dlls. You can do this by passing cflags to nelua `--cflags="-L lib -I include -static"`
+
+## Documentation
+Since it is a binding to CSFML, you can use: the [SFML website](https://www.sfml-dev.org/learn.php) or the [CSFML github](https://github.com/SFML/CSFML) to learn more. There is an auto generated doc [here](https://github.com/Caleb-o/nelua-sfml/blob/main/docs/sfml.nelua).
 
 ## Examples
 * [Render Window](https://github.com/Caleb-o/nelua-sfml/blob/main/examples/render_window.nelua)
